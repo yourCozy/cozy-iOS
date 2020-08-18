@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - NMapsMap (3.8.0)
+  - SwiftLint (0.40.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.8.2)
+  - Kingfisher (~> 5.0)
+  - NMapsMap
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - NMapsMap
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  NMapsMap: b3633ad688483a318be9293aeddd323a714fb08b
+  SwiftLint: 4154893c73a4c52d6240195507eb7a3e3c64087e
+
+PODFILE CHECKSUM: 950809dc59d5ff9b97bd1c5875e46d527e5c129a
+
+COCOAPODS: 1.9.3
