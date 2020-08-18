@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,14 @@
 		B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF6124EBFFEB00AC96A9 /* UIColor+Extensions.swift */; };
 		B646AF6824EC00C800AC96A9 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF6724EC00C800AC96A9 /* APIConstants.swift */; };
 		B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF6924EC00E900AC96A9 /* NetworkResult.swift */; };
+		B646AF7024EC02FB00AC96A9 /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B646AF6F24EC02FB00AC96A9 /* Recommend.storyboard */; };
+		B646AF7324EC030B00AC96A9 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B646AF7224EC030B00AC96A9 /* Map.storyboard */; };
+		B646AF7524EC031500AC96A9 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B646AF7424EC031500AC96A9 /* Activity.storyboard */; };
+		B646AF7724EC031F00AC96A9 /* Mypage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B646AF7624EC031F00AC96A9 /* Mypage.storyboard */; };
+		B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF7C24EC037000AC96A9 /* RecommendVC.swift */; };
+		B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF7E24EC037F00AC96A9 /* MapVC.swift */; };
+		B646AF8124EC039200AC96A9 /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF8024EC039200AC96A9 /* ActivityVC.swift */; };
+		B646AF8324EC03A500AC96A9 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF8224EC03A500AC96A9 /* MypageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +45,14 @@
 		B646AF6124EBFFEB00AC96A9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		B646AF6724EC00C800AC96A9 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		B646AF6924EC00E900AC96A9 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		B646AF6F24EC02FB00AC96A9 /* Recommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
+		B646AF7224EC030B00AC96A9 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		B646AF7424EC031500AC96A9 /* Activity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		B646AF7624EC031F00AC96A9 /* Mypage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mypage.storyboard; sourceTree = "<group>"; };
+		B646AF7C24EC037000AC96A9 /* RecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendVC.swift; sourceTree = "<group>"; };
+		B646AF7E24EC037F00AC96A9 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		B646AF8024EC039200AC96A9 /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
+		B646AF8224EC03A500AC96A9 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +128,10 @@
 		B646AF5F24EBFFCE00AC96A9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B646AF7B24EC034A00AC96A9 /* Recommend */,
+				B646AF7A24EC034500AC96A9 /* Map */,
+				B646AF7924EC033F00AC96A9 /* Activity */,
+				B646AF7824EC033900AC96A9 /* Mypage */,
 				B646AF4824EBFE4B00AC96A9 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -138,6 +158,10 @@
 		B646AF6424EC005000AC96A9 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				B646AF6B24EC028F00AC96A9 /* Recommend */,
+				B646AF6C24EC029800AC96A9 /* Map */,
+				B646AF6D24EC02A000AC96A9 /* Activity */,
+				B646AF6E24EC02AF00AC96A9 /* Mypage */,
 				B646AF4A24EBFE4B00AC96A9 /* Main.storyboard */,
 			);
 			path = Storyboard;
@@ -162,6 +186,70 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		B646AF6B24EC028F00AC96A9 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF6F24EC02FB00AC96A9 /* Recommend.storyboard */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		B646AF6C24EC029800AC96A9 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF7224EC030B00AC96A9 /* Map.storyboard */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B646AF6D24EC02A000AC96A9 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF7424EC031500AC96A9 /* Activity.storyboard */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		B646AF6E24EC02AF00AC96A9 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF7624EC031F00AC96A9 /* Mypage.storyboard */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		B646AF7824EC033900AC96A9 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF8224EC03A500AC96A9 /* MypageVC.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		B646AF7924EC033F00AC96A9 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF8024EC039200AC96A9 /* ActivityVC.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		B646AF7A24EC034500AC96A9 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF7E24EC037F00AC96A9 /* MapVC.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B646AF7B24EC034A00AC96A9 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF7C24EC037000AC96A9 /* RecommendVC.swift */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,6 +262,7 @@
 				B646AF3E24EBFE4B00AC96A9 /* Frameworks */,
 				B646AF3F24EBFE4B00AC96A9 /* Resources */,
 				B646AF5D24EBFEFC00AC96A9 /* ShellScript */,
+				D79ECC0A4F05820CDDA42823 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,9 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B646AF5C24EBFED800AC96A9 /* .swiftlint.yml in Resources */,
+				B646AF7024EC02FB00AC96A9 /* Recommend.storyboard in Resources */,
 				B646AF5424EBFE4C00AC96A9 /* LaunchScreen.storyboard in Resources */,
+				B646AF7724EC031F00AC96A9 /* Mypage.storyboard in Resources */,
 				B646AF5124EBFE4C00AC96A9 /* Assets.xcassets in Resources */,
+				B646AF7524EC031500AC96A9 /* Activity.storyboard in Resources */,
 				B646AF4C24EBFE4B00AC96A9 /* Main.storyboard in Resources */,
+				B646AF7324EC030B00AC96A9 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +341,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n";
+		};
+		D79ECC0A4F05820CDDA42823 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cozy/Pods-cozy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cozy/Pods-cozy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cozy/Pods-cozy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		DBB3DBFB60B0069BC0244D94 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -279,12 +389,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B646AF4924EBFE4B00AC96A9 /* ViewController.swift in Sources */,
+				B646AF8124EC039200AC96A9 /* ActivityVC.swift in Sources */,
+				B646AF8324EC03A500AC96A9 /* MypageVC.swift in Sources */,
 				B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */,
 				B646AF6824EC00C800AC96A9 /* APIConstants.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
 				B646AF4F24EBFE4B00AC96A9 /* cozy.xcdatamodeld in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
+				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
+				B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
