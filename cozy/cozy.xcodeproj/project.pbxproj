@@ -31,6 +31,8 @@
 		B649409F24F14ED30052A21F /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B649409B24F14ED30052A21F /* NanumSquareRoundB.ttf */; };
 		B64940A024F14ED30052A21F /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B649409C24F14ED30052A21F /* NanumSquareRoundR.ttf */; };
 		B64940A124F14ED30052A21F /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B649409D24F14ED30052A21F /* NanumSquareRoundEB.ttf */; };
+		B64940A524F1750E0052A21F /* MainNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64940A424F1750E0052A21F /* MainNavController.swift */; };
+		B64940A724F186380052A21F /* MypageNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64940A624F186380052A21F /* MypageNavController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		B649409B24F14ED30052A21F /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundB.ttf; path = "../../../../../../../../../../Volumes/나눔스퀘어라운드 맥용 TTF/NanumSquareRoundB.ttf"; sourceTree = "<group>"; };
 		B649409C24F14ED30052A21F /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundR.ttf; path = "../../../../../../../../../../Volumes/나눔스퀘어라운드 맥용 TTF/NanumSquareRoundR.ttf"; sourceTree = "<group>"; };
 		B649409D24F14ED30052A21F /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundEB.ttf; path = "../../../../../../../../../../Volumes/나눔스퀘어라운드 맥용 TTF/NanumSquareRoundEB.ttf"; sourceTree = "<group>"; };
+		B64940A424F1750E0052A21F /* MainNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavController.swift; sourceTree = "<group>"; };
+		B64940A624F186380052A21F /* MypageNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNavController.swift; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +140,7 @@
 		B646AF5F24EBFFCE00AC96A9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B64940A324F174CF0052A21F /* NavBar */,
 				B646AF7B24EC034A00AC96A9 /* Recommend */,
 				B646AF7A24EC034500AC96A9 /* Map */,
 				B646AF7924EC033F00AC96A9 /* Activity */,
@@ -268,6 +273,15 @@
 				B649409C24F14ED30052A21F /* NanumSquareRoundR.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B64940A324F174CF0052A21F /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				B64940A424F1750E0052A21F /* MainNavController.swift */,
+				B64940A624F186380052A21F /* MypageNavController.swift */,
+			);
+			path = NavBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +430,7 @@
 				B646AF8124EC039200AC96A9 /* ActivityVC.swift in Sources */,
 				B646AF8324EC03A500AC96A9 /* MypageVC.swift in Sources */,
 				B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */,
+				B64940A524F1750E0052A21F /* MainNavController.swift in Sources */,
 				B646AF6824EC00C800AC96A9 /* APIConstants.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
 				B646AF4F24EBFE4B00AC96A9 /* cozy.xcdatamodeld in Sources */,
@@ -423,6 +438,7 @@
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
 				B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */,
+				B64940A724F186380052A21F /* MypageNavController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

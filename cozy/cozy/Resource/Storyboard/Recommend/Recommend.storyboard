@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YFB-87-Jgp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nxr-WG-s7n">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--RecommendVC-->
+        <!--추천-->
         <scene sceneID="PdP-ji-3rF">
             <objects>
                 <viewController id="zWb-Pl-UVL" customClass="RecommendVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,31 +17,31 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WC0-U8-eaL"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="jIe-R3-0fc"/>
                     <navigationItem key="navigationItem" id="6jF-jZ-Msq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUt-7K-rq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186.9565217391305" y="-244.41964285714283"/>
+            <point key="canvasLocation" x="2097.1014492753625" y="-244.41964285714283"/>
         </scene>
-        <!--추천-->
-        <scene sceneID="yea-Je-abP">
+        <!--Main Nav Controller-->
+        <scene sceneID="GNK-9v-08a">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YFB-87-Jgp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="oue-QD-dWO"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nxr-WG-s7n" customClass="MainNavController" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Th2-wM-roL">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jCa-yv-bJK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zWb-Pl-UVL" kind="relationship" relationship="rootViewController" id="8sJ-gL-XaS"/>
+                        <segue destination="zWb-Pl-UVL" kind="relationship" relationship="rootViewController" id="vAY-Y1-sLW"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WuB-Ip-1gP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bk6-MY-hfS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276.81159420289856" y="-244.41964285714283"/>
+            <point key="canvasLocation" x="1186.9565217391305" y="-244.41964285714283"/>
         </scene>
     </scenes>
     <resources>
