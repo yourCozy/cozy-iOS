@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="WC0-U8-eaL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="추천" image="paperplane" catalog="system" id="oue-QD-dWO"/>
+                    <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="oue-QD-dWO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUt-7K-rq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +26,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="paperplane" catalog="system" width="128" height="121"/>
+        <image name="tapiconrecommendpressed" width="23" height="22"/>
     </resources>
 </document>

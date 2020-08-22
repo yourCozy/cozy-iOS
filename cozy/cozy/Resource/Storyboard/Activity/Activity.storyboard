@@ -17,7 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="grH-NH-Rgc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="활동" image="sun.min" catalog="system" id="vc4-hT-uhh"/>
+                    <tabBarItem key="tabBarItem" title="활동" image="tapiconactivitypressed" id="vc4-hT-uhh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oo7-cT-PUA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +26,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sun.min" catalog="system" width="128" height="121"/>
+        <image name="tapiconactivitypressed" width="22" height="22"/>
     </resources>
 </document>
