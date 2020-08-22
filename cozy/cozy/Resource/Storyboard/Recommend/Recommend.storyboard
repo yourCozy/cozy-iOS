@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zWb-Pl-UVL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YFB-87-Jgp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="NanumSquareRoundB.ttf">
-            <string>NanumSquareRoundB</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--추천-->
+        <!--RecommendVC-->
         <scene sceneID="PdP-ji-3rF">
             <objects>
                 <viewController id="zWb-Pl-UVL" customClass="RecommendVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1T7-x3-U0E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="폰트 적용 테스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulg-qj-0bq">
-                                <rect key="frame" x="148.5" y="438.5" width="117" height="19"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="ulg-qj-0bq" firstAttribute="centerX" secondItem="1T7-x3-U0E" secondAttribute="centerX" id="M9p-8h-p0D"/>
-                            <constraint firstItem="ulg-qj-0bq" firstAttribute="centerY" secondItem="1T7-x3-U0E" secondAttribute="centerY" id="zaX-6O-Ze2"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WC0-U8-eaL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="oue-QD-dWO"/>
+                    <navigationItem key="navigationItem" id="6jF-jZ-Msq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUt-7K-rq1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277" y="-244"/>
+            <point key="canvasLocation" x="1186.9565217391305" y="-244.41964285714283"/>
+        </scene>
+        <!--추천-->
+        <scene sceneID="yea-Je-abP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YFB-87-Jgp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="oue-QD-dWO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Th2-wM-roL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zWb-Pl-UVL" kind="relationship" relationship="rootViewController" id="8sJ-gL-XaS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WuB-Ip-1gP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276.81159420289856" y="-244.41964285714283"/>
         </scene>
     </scenes>
     <resources>
