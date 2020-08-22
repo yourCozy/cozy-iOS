@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareRoundB.ttf">
+            <string>NanumSquareRoundB</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--추천-->
         <scene sceneID="PdP-ji-3rF">
@@ -14,7 +19,19 @@
                     <view key="view" contentMode="scaleToFill" id="1T7-x3-U0E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="폰트 적용 테스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulg-qj-0bq">
+                                <rect key="frame" x="148.5" y="438.5" width="117" height="19"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ulg-qj-0bq" firstAttribute="centerX" secondItem="1T7-x3-U0E" secondAttribute="centerX" id="M9p-8h-p0D"/>
+                            <constraint firstItem="ulg-qj-0bq" firstAttribute="centerY" secondItem="1T7-x3-U0E" secondAttribute="centerY" id="zaX-6O-Ze2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="WC0-U8-eaL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="oue-QD-dWO"/>
