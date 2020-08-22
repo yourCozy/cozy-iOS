@@ -12,15 +12,24 @@ class bookstoreCell: UITableViewCell {
 
     @IBOutlet weak var bookstoreImageView: UIImageView!
 
+    @IBOutlet weak var tag1: UIButton!
+    @IBOutlet weak var tag2: UIButton!
+    @IBOutlet weak var tag3: UIButton!
+
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        tag1.setTagButton()
+        tag2.setTagButton()
+        tag3.setTagButton()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

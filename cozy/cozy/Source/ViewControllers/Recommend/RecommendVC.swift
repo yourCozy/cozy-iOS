@@ -57,7 +57,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
             cell.recommendLabel.numberOfLines = 2
 
             let style = NSMutableParagraphStyle()
-            style.lineSpacing = 0.0
+            style.lineSpacing = 2.0
 
             let text1 = NSAttributedString(string: "지윤", attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])
             let text2 = NSAttributedString(string: "님, \n오늘밤 책 한잔 어때요?", attributes: [.font: UIFont(name: "NanumSquareRoundL", size: 22)!])
@@ -73,6 +73,15 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier2) as! bookstoreCell
             cell.bookstoreImageView.image = UIImage(named: "image1")
+
+            cell.tag1.setTitle("    #이국적인    ", for: .normal)
+            cell.tag2.setTitle("    #이국적    ", for: .normal)
+            cell.tag3.setTitle("    #이국적인    ", for: .normal)
+
+            cell.descriptionLabel.text = "빵과 함께하는 달콤한 책"
+            cell.nameLabel.text = "홍철책방"
+            cell.addressLabel.text = "서울특별시 용산구 한강대로 102길"
+
             return cell
         }
     }

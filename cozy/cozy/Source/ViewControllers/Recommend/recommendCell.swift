@@ -14,10 +14,6 @@ class recommendCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        recommendLabel.numberOfLines = 0
-
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
