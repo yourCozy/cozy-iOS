@@ -33,6 +33,8 @@
 		B64940A124F14ED30052A21F /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B649409D24F14ED30052A21F /* NanumSquareRoundEB.ttf */; };
 		B64940A524F1750E0052A21F /* MainNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64940A424F1750E0052A21F /* MainNavController.swift */; };
 		B64940A724F186380052A21F /* MypageNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64940A624F186380052A21F /* MypageNavController.swift */; };
+		B64940A924F189780052A21F /* recommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64940A824F189780052A21F /* recommendCell.swift */; };
+		B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64940AA24F18A3B0052A21F /* bookstoreCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		B649409D24F14ED30052A21F /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundEB.ttf; path = "../../../../../../../../../../Volumes/나눔스퀘어라운드 맥용 TTF/NanumSquareRoundEB.ttf"; sourceTree = "<group>"; };
 		B64940A424F1750E0052A21F /* MainNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavController.swift; sourceTree = "<group>"; };
 		B64940A624F186380052A21F /* MypageNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNavController.swift; sourceTree = "<group>"; };
+		B64940A824F189780052A21F /* recommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendCell.swift; sourceTree = "<group>"; };
+		B64940AA24F18A3B0052A21F /* bookstoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookstoreCell.swift; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				B646AF6F24EC02FB00AC96A9 /* Recommend.storyboard */,
+				B64940A824F189780052A21F /* recommendCell.swift */,
+				B64940AA24F18A3B0052A21F /* bookstoreCell.swift */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -436,7 +442,9 @@
 				B646AF4F24EBFE4B00AC96A9 /* cozy.xcdatamodeld in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
+				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
+				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
 				B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */,
 				B64940A724F186380052A21F /* MypageNavController.swift in Sources */,
 			);
