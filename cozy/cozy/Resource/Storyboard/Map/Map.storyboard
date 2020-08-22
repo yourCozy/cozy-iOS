@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sIP-xt-qjG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Tc-N1-dsT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -17,12 +17,32 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="QEy-mm-DCY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="지도" image="tapiconmappressed" id="4BP-ut-xad"/>
+                    <tabBarItem key="tabBarItem" title="지도" image="tapiconmappressed" id="TvI-fG-ePF"/>
+                    <navigationItem key="navigationItem" id="5mR-Ch-kAL"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfG-4q-Jcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="307" y="-200"/>
+            <point key="canvasLocation" x="1215.9420289855072" y="-200.22321428571428"/>
+        </scene>
+        <!--지도-->
+        <scene sceneID="Cg9-jv-eSb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Tc-N1-dsT" customClass="MainNavController" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="지도" image="tapiconmappressed" id="4BP-ut-xad"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="csL-UO-yNZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sIP-xt-qjG" kind="relationship" relationship="rootViewController" id="Gk9-Rz-qg1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7rs-2d-AN9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305.79710144927537" y="-200.22321428571428"/>
         </scene>
     </scenes>
     <resources>
