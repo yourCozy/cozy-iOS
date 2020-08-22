@@ -53,7 +53,22 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier1) as! recommendCell
-            cell.recommendLabel.text = "추천웅앵"
+
+            cell.recommendLabel.numberOfLines = 2
+
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 0.0
+
+            let text1 = NSAttributedString(string: "지윤", attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])
+            let text2 = NSAttributedString(string: "님, \n오늘밤 책 한잔 어때요?", attributes: [.font: UIFont(name: "NanumSquareRoundL", size: 22)!])
+
+            let attrString = NSMutableAttributedString()
+            attrString.append(text1)
+            attrString.append(text2)
+            attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
+
+            cell.recommendLabel.attributedText = attrString
+
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier2) as! bookstoreCell
