@@ -10,20 +10,33 @@ import UIKit
 
 class MapVC: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    private let collectionIdentifier: String = "addressCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MapVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
     }
-    */
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionIdentifier, for: indexPath) as! addressCell
+
+        cell.bookstoreImage.image = UIImage(named: "asdfdghfgjhj")
+        cell.nameLabel.text = "홍철책방"
+        cell.addressLabel.text = "마포구 송문길 206 1층"
+
+        return cell
+    }
 
 }
