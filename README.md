@@ -1,3 +1,2 @@
 # cozy-iOS
-> cozy Develop iOS
-:hammer_and_wrench::bomb:iOS:bomb:
+> cozy Develop :hammer_and_wrench::bomb:iOS:bomb:
