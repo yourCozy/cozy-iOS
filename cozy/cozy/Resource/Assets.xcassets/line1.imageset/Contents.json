@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tapiconmap.png",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "line1.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "tapiconmap@2x.png"
+      "filename" : "line1@2x.png",
+      "scale" : "2x"
     },
     {
+      "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "tapiconmap@3x.png",
-      "scale" : "3x"
+      "filename" : "line1@3x.png"
     }
   ],
   "info" : {
