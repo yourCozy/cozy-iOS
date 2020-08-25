@@ -10,10 +10,15 @@ import UIKit
 
 class ActivityVC: UIViewController {
 
+    @IBOutlet var buttonActivityCollection: [UIButton]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 버튼 폰트 설정
+        for button in buttonActivityCollection {
+            button.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 14)
+        }
     }
 
     /*
