@@ -10,20 +10,42 @@ import UIKit
 
 class MypageVC: UIViewController {
 
+    @IBOutlet weak var emailLabel: UILabel!
+
+    @IBOutlet weak var recentCollectionView: UICollectionView!
+    private let collectionViewIdentifier: String = "recentCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        emailLabel.textColor = UIColor.brownishGrey
+
+        recentCollectionView.dataSource = self
+        recentCollectionView.delegate = self
     }
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MypageVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
     }
-    */
 
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewIdentifier, for: indexPath) as!
+        recentCell
+
+        cell.bookstoreImage.image = UIImage(named: "asdfdghfgjhj")
+        cell.bookstoreLabel.text = "홍철책방"
+
+        return cell
+    }
+}
+extension MypageVC: UICollectionViewDelegateFlowLayout {
+    // 가로 스크롤
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.scrollDirection = .horizontal
+    }
 }
