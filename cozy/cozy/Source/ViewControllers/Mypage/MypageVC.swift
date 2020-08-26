@@ -43,18 +43,6 @@ extension MypageVC: UICollectionViewDataSource {
     }
 }
 extension MypageVC: UICollectionViewDelegateFlowLayout {
-    // 셀 height, width 지정
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 136, height: 140)
-//    }
-    // contentinset 지정
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//    }
-    // cell 좌, 우 간격
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 13
-//    }
     // 가로 스크롤
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
