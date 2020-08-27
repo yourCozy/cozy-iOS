@@ -1,23 +1,23 @@
 {
   "images" : [
     {
-      "filename" : "tapiconrecommend.png",
       "idiom" : "universal",
+      "filename" : "tapiconrecommend.png",
       "scale" : "1x"
     },
     {
-      "filename" : "tapiconrecommend@2x.png",
+      "scale" : "2x",
       "idiom" : "universal",
-      "scale" : "2x"
+      "filename" : "tapiconrecommend@2x.png"
     },
     {
+      "scale" : "3x",
       "filename" : "tapiconrecommend@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "universal"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }

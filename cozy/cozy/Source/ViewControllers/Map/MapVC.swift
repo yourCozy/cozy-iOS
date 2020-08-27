@@ -10,33 +10,50 @@ import UIKit
 
 class MapVC: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    private let mapIdentifier1: String = "mapSelectCell"
+    private let mapIdentifier2: String = "mapListCell"
 
-    private let collectionIdentifier: String = "addressCell"
+    @IBOutlet weak var mapTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.dataSource = self
-        collectionView.delegate = self
-
+        mapTableView.delegate = self
+        mapTableView.dataSource = self
     }
 
 }
 
-extension MapVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+extension MapVC: UITableViewDelegate, UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionIdentifier, for: indexPath) as! addressCell
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 106
+        } else {
+            return 370
+        }
+    }
 
-        cell.bookstoreImage.image = UIImage(named: "asdfdghfgjhj")
-        cell.nameLabel.text = "홍철책방"
-        cell.addressLabel.text = "마포구 송문길 206 1층"
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            return 5
+        }
+    }
 
-        return cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier1) as! MapSelectCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier2) as! MapListCell
+            return cell
+        }
     }
 
 }
