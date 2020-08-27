@@ -7,17 +7,17 @@
     },
     {
       "filename" : "sadsfdgfhgjhk@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "idiom" : "universal"
     },
     {
-      "filename" : "sadsfdgfhgjhk@3x.png",
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "sadsfdgfhgjhk@3x.png"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }
