@@ -18,4 +18,11 @@ extension UIButton {
         self.setTitleColor(UIColor.white, for: .normal)
     }
 
+    func setMapTagButton() {
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
+        self.layer.cornerRadius = 13
+        self.setTitleColor(UIColor.brownishGrey, for: .normal)
+    }
+
 }
