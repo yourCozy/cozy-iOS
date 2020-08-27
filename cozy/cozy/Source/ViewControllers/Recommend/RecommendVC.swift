@@ -78,7 +78,17 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
             cell.tag2.setTitle("    #이국적    ", for: .normal)
             cell.tag3.setTitle("    #이국적인    ", for: .normal)
 
-            cell.descriptionLabel.text = "빵과 함께하는 달콤한 책"
+            cell.descriptionLabel.numberOfLines = 2
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 1.0
+
+            let descripText = NSAttributedString(string: "매일 쌔로 구운 빵과 함께하는 달콤한 책\n그리고 오늘, 봄날의 책방")
+            let attrString = NSMutableAttributedString()
+            attrString.append(descripText)
+            attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
+
+            cell.descriptionLabel.attributedText = attrString
+
             cell.nameLabel.text = "홍철책방"
             cell.addressLabel.text = "서울특별시 용산구 한강대로 102길"
 

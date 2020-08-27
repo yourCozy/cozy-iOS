@@ -133,6 +133,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addressLabel" destination="XN2-Om-Zc5" id="iaD-Yd-h9C"/>
+                                            <outlet property="bookmarkButton" destination="Ikb-Mh-zUE" id="yBa-Ny-4ws"/>
                                             <outlet property="bookstoreImageView" destination="pqc-OR-odi" id="7s1-4i-KOb"/>
                                             <outlet property="descriptionLabel" destination="tmx-Zi-X4t" id="dfW-Rk-W1Q"/>
                                             <outlet property="nameLabel" destination="Zey-cz-nEk" id="Iu4-ng-iSj"/>
