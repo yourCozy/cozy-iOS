@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "scale" : "1x",
       "filename" : "tapiconmappressed.png",
-      "idiom" : "universal",
-      "scale" : "1x"
+      "idiom" : "universal"
     },
     {
-      "filename" : "tapiconmappressed@2x.png",
       "idiom" : "universal",
+      "filename" : "tapiconmappressed@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "tapiconmappressed@3x.png",
+      "scale" : "3x",
       "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "tapiconmappressed@3x.png"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }
