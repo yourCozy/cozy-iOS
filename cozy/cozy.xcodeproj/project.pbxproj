@@ -31,12 +31,14 @@
 		B64940A724F186380052A21F /* MypageNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64940A624F186380052A21F /* MypageNavController.swift */; };
 		B64940A924F189780052A21F /* recommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64940A824F189780052A21F /* recommendCell.swift */; };
 		B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64940AA24F18A3B0052A21F /* bookstoreCell.swift */; };
+		B6F2597A24F2580B00C9BAAD /* addressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F2597924F2580B00C9BAAD /* addressCell.swift */; };
 		B6F4140A24F19B36009863D7 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */; };
 		B6F4140B24F19B36009863D7 /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */; };
 		B6F4140C24F19B36009863D7 /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140824F19B36009863D7 /* NanumSquareRoundR.ttf */; };
 		B6F4140D24F19B36009863D7 /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140924F19B36009863D7 /* NanumSquareRoundB.ttf */; };
 		B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */; };
 		B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */; };
+		CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05FEC224F5590F008747B6 /* recentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,7 @@
 		B64940A624F186380052A21F /* MypageNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNavController.swift; sourceTree = "<group>"; };
 		B64940A824F189780052A21F /* recommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendCell.swift; sourceTree = "<group>"; };
 		B64940AA24F18A3B0052A21F /* bookstoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookstoreCell.swift; sourceTree = "<group>"; };
+		B6F2597924F2580B00C9BAAD /* addressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressCell.swift; sourceTree = "<group>"; };
 		B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundL.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundL.ttf; sourceTree = "<group>"; };
 		B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundEB.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
 		B6F4140824F19B36009863D7 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundR.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundR.ttf; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
+		CC05FEC224F5590F008747B6 /* recentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				B646AF8224EC03A500AC96A9 /* MypageVC.swift */,
+				CC05FEC224F5590F008747B6 /* recentCell.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				B646AF7E24EC037F00AC96A9 /* MapVC.swift */,
+				B6F2597924F2580B00C9BAAD /* addressCell.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -440,12 +446,14 @@
 			files = (
 				B646AF4924EBFE4B00AC96A9 /* ViewController.swift in Sources */,
 				B646AF8124EC039200AC96A9 /* ActivityVC.swift in Sources */,
+				CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */,
 				B646AF8324EC03A500AC96A9 /* MypageVC.swift in Sources */,
 				B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */,
 				B64940A524F1750E0052A21F /* MainNavController.swift in Sources */,
 				B646AF6824EC00C800AC96A9 /* APIConstants.swift in Sources */,
 				B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
+				B6F2597A24F2580B00C9BAAD /* addressCell.swift in Sources */,
 				B646AF4F24EBFE4B00AC96A9 /* cozy.xcdatamodeld in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
