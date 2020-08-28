@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9624F90C4C00D6A921 /* ActivityListVC.swift */; };
+		18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */; };
+		18981F9B24F9104900D6A921 /* BookStoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9A24F9104900D6A921 /* BookStoreData.swift */; };
 		33B85403B84CB70CCCF3B7E8 /* Pods_cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693EA2F950DEF536626A6863 /* Pods_cozy.framework */; };
 		B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF4424EBFE4B00AC96A9 /* AppDelegate.swift */; };
 		B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF4624EBFE4B00AC96A9 /* SceneDelegate.swift */; };
@@ -42,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18981F9624F90C4C00D6A921 /* ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListVC.swift; sourceTree = "<group>"; };
+		18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		18981F9A24F9104900D6A921 /* BookStoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreData.swift; sourceTree = "<group>"; };
 		693EA2F950DEF536626A6863 /* Pods_cozy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cozy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EA692FCFEDD58231F78E42 /* Pods-cozy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.debug.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.debug.xcconfig"; sourceTree = "<group>"; };
 		B646AF4124EBFE4B00AC96A9 /* cozy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cozy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +265,9 @@
 			isa = PBXGroup;
 			children = (
 				B646AF8024EC039200AC96A9 /* ActivityVC.swift */,
+				18981F9624F90C4C00D6A921 /* ActivityListVC.swift */,
+				18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */,
+				18981F9A24F9104900D6A921 /* BookStoreData.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -444,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18981F9B24F9104900D6A921 /* BookStoreData.swift in Sources */,
 				B646AF4924EBFE4B00AC96A9 /* ViewController.swift in Sources */,
 				B646AF8124EC039200AC96A9 /* ActivityVC.swift in Sources */,
 				CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */,
@@ -455,12 +465,14 @@
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
 				B6F2597A24F2580B00C9BAAD /* addressCell.swift in Sources */,
 				B646AF4F24EBFE4B00AC96A9 /* cozy.xcdatamodeld in Sources */,
+				18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
+				18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */,
 				B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */,
 				B64940A724F186380052A21F /* MypageNavController.swift in Sources */,
 			);
