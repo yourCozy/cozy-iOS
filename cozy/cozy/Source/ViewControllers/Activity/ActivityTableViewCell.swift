@@ -15,10 +15,20 @@ class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var activityCellLabel: UILabel!
     @IBOutlet weak var activityPriceLabel: UILabel!
     @IBOutlet weak var activityCellBookStoreNameLabel: UILabel!
+    @IBOutlet weak var innerView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        innerView.layer.shadowColor = UIColor.veryLightPinkTwo.cgColor
+        innerView.layer.shadowOpacity = 0.4
+        innerView.layer.shadowOffset = .zero
+//        innerView.layer.shadowRadius = 3
+
+        activityCellLabel.font = UIFont(name: "NanumSquareRoundB", size: 14)
+        activityCellBookStoreNameLabel.font = UIFont(name: "NanumSquareRoundB", size: 12)
+        activityCellBookStoreNameLabel.textColor = UIColor.brownishGrey
+        activityPriceLabel.font = UIFont(name: "NanumSquareRoundB", size: 14)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

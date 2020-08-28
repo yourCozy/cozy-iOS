@@ -50,7 +50,7 @@ class ActivityListVC: UIViewController {
 
 extension ActivityListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 265
+        return 370
     }
 }
 
