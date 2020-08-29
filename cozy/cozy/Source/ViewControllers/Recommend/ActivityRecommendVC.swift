@@ -21,6 +21,9 @@ class ActivityRecommendVC: UIViewController {
     @IBOutlet weak var lblNumOfPeople: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
 
+    @IBOutlet weak var btnApply: UIButton!
+    @IBOutlet weak var activityTextView: UITextView!
+
     // outlet collection
     @IBOutlet var lblFixedCollection: [UILabel]!
     @IBOutlet var lblNotFixedCollection: [UILabel]!
@@ -30,6 +33,8 @@ class ActivityRecommendVC: UIViewController {
 
         setLabelStyle()
         setLabelData()
+        setButtonStyle()
+        setTextViewStyle()
     }
 
     func setLabelStyle() {
@@ -64,6 +69,15 @@ class ActivityRecommendVC: UIViewController {
         lblDeadline.text = "2020.08.19"
         lblNumOfPeople.text = "제한없음"
         lblPrice.text = "18,000원"
+    }
+
+    func setButtonStyle() {
+        btnApply.layer.cornerRadius = 20
+        btnApply.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 16)
+    }
+
+    func setTextViewStyle() {
+        activityTextView.isEditable = false
     }
 
 }
