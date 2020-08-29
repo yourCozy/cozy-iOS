@@ -10,7 +10,7 @@
 		18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9624F90C4C00D6A921 /* ActivityListVC.swift */; };
 		18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */; };
 		18981F9B24F9104900D6A921 /* BookStoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9A24F9104900D6A921 /* BookStoreData.swift */; };
-		18981F9D24FA4BD900D6A921 /* Sample.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9C24FA4BD900D6A921 /* Sample.storyboard */; };
+		18981F9D24FA4BD900D6A921 /* ActivityList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */; };
 		33B85403B84CB70CCCF3B7E8 /* Pods_cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693EA2F950DEF536626A6863 /* Pods_cozy.framework */; };
 		B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF4424EBFE4B00AC96A9 /* AppDelegate.swift */; };
 		B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF4624EBFE4B00AC96A9 /* SceneDelegate.swift */; };
@@ -50,7 +50,7 @@
 		18981F9624F90C4C00D6A921 /* ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListVC.swift; sourceTree = "<group>"; };
 		18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		18981F9A24F9104900D6A921 /* BookStoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreData.swift; sourceTree = "<group>"; };
-		18981F9C24FA4BD900D6A921 /* Sample.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sample.storyboard; sourceTree = "<group>"; };
+		18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityList.storyboard; sourceTree = "<group>"; };
 		693EA2F950DEF536626A6863 /* Pods_cozy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cozy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EA692FCFEDD58231F78E42 /* Pods-cozy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.debug.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.debug.xcconfig"; sourceTree = "<group>"; };
 		B646AF4124EBFE4B00AC96A9 /* cozy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cozy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,7 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				B646AF7424EC031500AC96A9 /* Activity.storyboard */,
-				18981F9C24FA4BD900D6A921 /* Sample.storyboard */,
+				18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -383,7 +383,7 @@
 				B646AF5424EBFE4C00AC96A9 /* LaunchScreen.storyboard in Resources */,
 				B646AF7724EC031F00AC96A9 /* Mypage.storyboard in Resources */,
 				B6F4140C24F19B36009863D7 /* NanumSquareRoundR.ttf in Resources */,
-				18981F9D24FA4BD900D6A921 /* Sample.storyboard in Resources */,
+				18981F9D24FA4BD900D6A921 /* ActivityList.storyboard in Resources */,
 				B646AF5124EBFE4C00AC96A9 /* Assets.xcassets in Resources */,
 				B6F4140B24F19B36009863D7 /* NanumSquareRoundEB.ttf in Resources */,
 				B6F4140A24F19B36009863D7 /* NanumSquareRoundL.ttf in Resources */,

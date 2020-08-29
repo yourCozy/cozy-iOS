@@ -19,16 +19,14 @@ class ActivityVC: UIViewController {
         for button in buttonActivityCollection {
             button.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 14)
         }
+
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnActivityAction(_ sender: Any) {
+        let sb = UIStoryboard(name: "ActivityList", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    */
 
 }
