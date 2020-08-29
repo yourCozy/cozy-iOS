@@ -23,9 +23,10 @@ class ActivityVC: UIViewController {
     }
 
     @IBAction func btnActivityAction(_ sender: Any) {
+        print(sender)
         let sb = UIStoryboard(name: "ActivityList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
-        
+
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
