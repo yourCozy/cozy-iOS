@@ -36,7 +36,7 @@
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
-                                                            <segue destination="rYh-aT-ujU" kind="push" id="uw9-pe-SCO"/>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="4u2-mN-nXK"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -62,6 +62,9 @@
                                                         <state key="normal" title="글쓰기 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="Esq-YQ-Fwk"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -86,6 +89,9 @@
                                                         <state key="normal" title="공간대여">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="ZyP-dV-ooZ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -115,6 +121,9 @@
                                                         <state key="normal" title="독서 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="mQm-Zl-PPR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -139,6 +148,9 @@
                                                         <state key="normal" title="심야 책방">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="W8z-ea-kYe"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -163,6 +175,9 @@
                                                         <state key="normal" title="전시, 공연">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="ieN-D6-LLH"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -192,6 +207,9 @@
                                                         <state key="normal" title="책 추천">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="TKd-26-img"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -215,6 +233,9 @@
                                                         <state key="normal" title="워크숍">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="oPg-yD-Pot"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -239,6 +260,9 @@
                                                         <state key="normal" title="북토크">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="2K9-ku-zed"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -268,6 +292,9 @@
                                                         <state key="normal" title="음악 감상">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="01q-Ly-2fT"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -292,6 +319,9 @@
                                                         <state key="normal" title="낭독 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="ex6-dL-e4Y"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -316,6 +346,9 @@
                                                         <state key="normal" title="묵독 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="y5f-KL-7uM"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -345,6 +378,9 @@
                                                         <state key="normal" title="필사 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="KgJ-aA-jHf"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -369,6 +405,9 @@
                                                         <state key="normal" title="숙박">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="th0-av-fZL"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -393,6 +432,9 @@
                                                         <state key="normal" title="만들기">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="osQ-h9-4ty"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -422,6 +464,9 @@
                                                         <state key="normal" title="정기간행물">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="1oQ-K6-jil"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -446,6 +491,17 @@
                                                         <state key="normal" title="강연">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="dcE-JD-1aO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tO0-Cp-9ax">
+                                                        <rect key="frame" x="84" y="83" width="46" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="testBtn:" destination="xX9-M1-hcf" eventType="touchUpInside" id="ssn-0E-t5c"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -470,6 +526,9 @@
                                                         <state key="normal" title="마켓">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="btnActivityAction:" destination="xX9-M1-hcf" eventType="touchUpInside" id="QJQ-Es-evx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -567,133 +626,11 @@
             </objects>
             <point key="canvasLocation" x="363.768115942029" y="-198.21428571428569"/>
         </scene>
-        <!--Activity ListVC-->
-        <scene sceneID="o9d-C8-0yM">
-            <objects>
-                <viewController id="rYh-aT-ujU" customClass="ActivityListVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LZT-bD-RCu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nck-jT-rns">
-                                <rect key="frame" x="24" y="115" width="73" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="Z9x-nF-lyx"/>
-                                </constraints>
-                                <state key="normal" title="마감임박순">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonyellow73" translatesAutoresizingMaskIntoConstraints="NO" id="fmO-aK-Cyw">
-                                <rect key="frame" x="24" y="149" width="73" height="2"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kxi-Mz-SEF">
-                                <rect key="frame" x="0.0" y="161" width="414" height="652"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityTableViewCell" rowHeight="338" id="aEc-5w-VOz" customClass="ActivityTableViewCell" customModule="cozy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="338"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aEc-5w-VOz" id="9He-1M-e6H">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="338"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ks0-Yn-k3L">
-                                                    <rect key="frame" x="20" y="11" width="374" height="316"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadsfdgfhgjhk" translatesAutoresizingMaskIntoConstraints="NO" id="1jc-B8-oci">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="221"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contents" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vLx-uw-3NI">
-                                                            <rect key="frame" x="16" y="237" width="342" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MS-14-2Ah">
-                                                            <rect key="frame" x="16" y="290" width="158" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.99215686274509807" green="0.72156862745098038" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconlocationgray" translatesAutoresizingMaskIntoConstraints="NO" id="80B-cR-Ma7">
-                                                            <rect key="frame" x="16" y="263.5" width="11" height="14"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bookStoreName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il3-oO-y6c">
-                                                            <rect key="frame" x="31" y="260" width="124.5" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <constraints>
-                                                        <constraint firstItem="8MS-14-2Ah" firstAttribute="leading" secondItem="Ks0-Yn-k3L" secondAttribute="leading" constant="16" id="0Vy-cI-YNm"/>
-                                                        <constraint firstItem="il3-oO-y6c" firstAttribute="leading" secondItem="80B-cR-Ma7" secondAttribute="trailing" constant="4" id="32s-yL-zno"/>
-                                                        <constraint firstItem="80B-cR-Ma7" firstAttribute="top" secondItem="vLx-uw-3NI" secondAttribute="bottom" constant="6" id="9Zw-vv-jeh"/>
-                                                        <constraint firstItem="8MS-14-2Ah" firstAttribute="top" secondItem="il3-oO-y6c" secondAttribute="bottom" constant="9" id="9yk-Je-awS"/>
-                                                        <constraint firstAttribute="trailing" secondItem="1jc-B8-oci" secondAttribute="trailing" id="A9n-U7-x36"/>
-                                                        <constraint firstItem="vLx-uw-3NI" firstAttribute="leading" secondItem="Ks0-Yn-k3L" secondAttribute="leading" constant="16" id="B0k-aY-oe3"/>
-                                                        <constraint firstAttribute="trailing" secondItem="vLx-uw-3NI" secondAttribute="trailing" constant="16" id="GZ8-JJ-1B9"/>
-                                                        <constraint firstItem="il3-oO-y6c" firstAttribute="centerY" secondItem="80B-cR-Ma7" secondAttribute="centerY" id="IFv-iL-B6m"/>
-                                                        <constraint firstItem="80B-cR-Ma7" firstAttribute="leading" secondItem="Ks0-Yn-k3L" secondAttribute="leading" constant="16" id="OBy-cX-1pL"/>
-                                                        <constraint firstAttribute="trailing" secondItem="8MS-14-2Ah" secondAttribute="trailing" constant="200" id="TgU-qv-7uY"/>
-                                                        <constraint firstItem="1jc-B8-oci" firstAttribute="height" secondItem="Ks0-Yn-k3L" secondAttribute="height" multiplier="0.7" id="bBY-nn-EZj"/>
-                                                        <constraint firstItem="vLx-uw-3NI" firstAttribute="top" secondItem="1jc-B8-oci" secondAttribute="bottom" constant="16" id="rNa-ds-Cjy"/>
-                                                        <constraint firstItem="1jc-B8-oci" firstAttribute="top" secondItem="Ks0-Yn-k3L" secondAttribute="top" id="v0v-ld-Wnx"/>
-                                                        <constraint firstItem="1jc-B8-oci" firstAttribute="leading" secondItem="Ks0-Yn-k3L" secondAttribute="leading" id="vC2-Ey-gli"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Ks0-Yn-k3L" firstAttribute="top" secondItem="9He-1M-e6H" secondAttribute="topMargin" id="DQb-Na-WFB"/>
-                                                <constraint firstItem="Ks0-Yn-k3L" firstAttribute="leading" secondItem="9He-1M-e6H" secondAttribute="leadingMargin" id="d6E-Rv-CQo"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Ks0-Yn-k3L" secondAttribute="bottom" id="gOH-IA-2P0"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Ks0-Yn-k3L" secondAttribute="trailing" id="kYQ-vq-yuH"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="activityCellBookStoreNameLabel" destination="il3-oO-y6c" id="A46-Hc-Nfd"/>
-                                            <outlet property="activityCellImageView" destination="1jc-B8-oci" id="Oo2-WD-B5k"/>
-                                            <outlet property="activityCellLabel" destination="vLx-uw-3NI" id="JMT-OC-YMA"/>
-                                            <outlet property="activityPriceLabel" destination="8MS-14-2Ah" id="BFp-if-72q"/>
-                                            <outlet property="innerView" destination="Ks0-Yn-k3L" id="eZL-jw-i6j"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="fmO-aK-Cyw" firstAttribute="top" secondItem="Nck-jT-rns" secondAttribute="bottom" constant="4" id="9Fc-yz-zfi"/>
-                            <constraint firstItem="Kxi-Mz-SEF" firstAttribute="trailing" secondItem="gPB-ur-3p0" secondAttribute="trailing" id="DEJ-m5-slX"/>
-                            <constraint firstItem="Kxi-Mz-SEF" firstAttribute="top" secondItem="Nck-jT-rns" secondAttribute="bottom" constant="16" id="Guf-fi-b7b"/>
-                            <constraint firstItem="fmO-aK-Cyw" firstAttribute="leading" secondItem="gPB-ur-3p0" secondAttribute="leading" constant="24" id="Tap-zk-Hxv"/>
-                            <constraint firstItem="gPB-ur-3p0" firstAttribute="bottom" secondItem="Kxi-Mz-SEF" secondAttribute="bottom" id="jTB-Ss-0nE"/>
-                            <constraint firstItem="Nck-jT-rns" firstAttribute="top" secondItem="gPB-ur-3p0" secondAttribute="top" constant="27" id="kz8-yN-AbS"/>
-                            <constraint firstItem="Nck-jT-rns" firstAttribute="leading" secondItem="gPB-ur-3p0" secondAttribute="leading" constant="24" id="ld3-mm-66T"/>
-                            <constraint firstItem="Kxi-Mz-SEF" firstAttribute="leading" secondItem="LZT-bD-RCu" secondAttribute="leading" id="sxa-3Y-UBD"/>
-                            <constraint firstItem="fmO-aK-Cyw" firstAttribute="width" secondItem="Nck-jT-rns" secondAttribute="width" id="twi-8r-bPb"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="gPB-ur-3p0"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="jCh-6z-86f"/>
-                    <connections>
-                        <outlet property="activityTableView" destination="Kxi-Mz-SEF" id="YuO-v8-PX3"/>
-                        <outlet property="btnLimit" destination="Nck-jT-rns" id="83Y-2S-oTI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfx-Rf-HOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2075.36231884058" y="-198.21428571428569"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="buttonyellow73" width="73" height="2"/>
         <image name="iconbooktalk" width="30" height="27"/>
         <image name="iconclass" width="29" height="30"/>
         <image name="icondisplay" width="22" height="30"/>
-        <image name="iconlocationgray" width="11" height="14"/>
         <image name="iconmaking" width="30" height="28"/>
         <image name="iconmarket" width="24" height="30"/>
         <image name="iconmovie" width="30" height="29"/>
@@ -709,7 +646,6 @@
         <image name="icontranscription" width="30" height="25"/>
         <image name="iconworkshop" width="21" height="30"/>
         <image name="iconwriting" width="30" height="30"/>
-        <image name="sadsfdgfhgjhk" width="500" height="375"/>
         <image name="tapiconactivitypressed" width="22" height="22"/>
     </resources>
 </document>
