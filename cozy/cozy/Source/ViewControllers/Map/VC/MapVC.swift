@@ -20,25 +20,14 @@ class MapVC: UIViewController {
 
         let nibName = UINib(nibName: "BookListCell", bundle: nil)
         mapTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)
-
         mapTableView.delegate = self
         mapTableView.dataSource = self
     }
-
 }
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource {
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 106
-        } else {
-            return 370
-        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +35,14 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource {
             return 1
         } else {
             return 5
+        }
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 106
+        } else {
+            return 370
         }
     }
 
@@ -65,8 +62,6 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource {
             cell.tag3.setTitle("    #맥주    ", for: .normal)
 
             return cell
-
         }
     }
-
 }

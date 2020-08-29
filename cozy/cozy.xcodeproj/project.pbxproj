@@ -40,6 +40,12 @@
 		B649CCE724FAAEFE0032AF31 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649CCE624FAAEFE0032AF31 /* NSObject+Extensions.swift */; };
 		B649CCEC24FAB1E20032AF31 /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649CCEA24FAB1E20032AF31 /* BookListCell.swift */; };
 		B649CCED24FAB1E20032AF31 /* BookListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B649CCEB24FAB1E20032AF31 /* BookListCell.xib */; };
+		B649CCF224FAB6AB0032AF31 /* BookDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B649CCF124FAB6AB0032AF31 /* BookDetail.storyboard */; };
+		B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649CCF324FAB6C80032AF31 /* BookDetailVC.swift */; };
+		B6985F1624FAC682002A3E6B /* detailCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6985F1424FAC682002A3E6B /* detailCell1.swift */; };
+		B6985F1724FAC682002A3E6B /* detailCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6985F1524FAC682002A3E6B /* detailCell1.xib */; };
+		B6985F1A24FAC81B002A3E6B /* detailCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6985F1824FAC81B002A3E6B /* detailCell2.swift */; };
+		B6985F1B24FAC81B002A3E6B /* detailCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6985F1924FAC81B002A3E6B /* detailCell2.xib */; };
 		B6A487AE24F812F50058025C /* MapSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A487AD24F812F50058025C /* MapSelectCell.swift */; };
 		B6F4140A24F19B36009863D7 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */; };
 		B6F4140B24F19B36009863D7 /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */; };
@@ -87,6 +93,12 @@
 		B649CCE624FAAEFE0032AF31 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		B649CCEA24FAB1E20032AF31 /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		B649CCEB24FAB1E20032AF31 /* BookListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookListCell.xib; sourceTree = "<group>"; };
+		B649CCF124FAB6AB0032AF31 /* BookDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookDetail.storyboard; sourceTree = "<group>"; };
+		B649CCF324FAB6C80032AF31 /* BookDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailVC.swift; sourceTree = "<group>"; };
+		B6985F1424FAC682002A3E6B /* detailCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell1.swift; sourceTree = "<group>"; };
+		B6985F1524FAC682002A3E6B /* detailCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailCell1.xib; sourceTree = "<group>"; };
+		B6985F1824FAC81B002A3E6B /* detailCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell2.swift; sourceTree = "<group>"; };
+		B6985F1924FAC81B002A3E6B /* detailCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailCell2.xib; sourceTree = "<group>"; };
 		B6A487AD24F812F50058025C /* MapSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectCell.swift; sourceTree = "<group>"; };
 		B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundL.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundL.ttf; sourceTree = "<group>"; };
 		B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundEB.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
@@ -237,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				B646AF6F24EC02FB00AC96A9 /* Recommend.storyboard */,
+				B649CCF124FAB6AB0032AF31 /* BookDetail.storyboard */,
 				18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */,
 			);
 			path = Recommend;
@@ -299,10 +312,8 @@
 		B646AF7B24EC034A00AC96A9 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
-				B646AF7C24EC037000AC96A9 /* RecommendVC.swift */,
-				B64940AA24F18A3B0052A21F /* bookstoreCell.swift */,
-				B64940A824F189780052A21F /* recommendCell.swift */,
-				185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */,
+				B649CCEF24FAB6450032AF31 /* VC */,
+				B649CCF024FAB64B0032AF31 /* Cell */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -343,6 +354,29 @@
 				B646AF7E24EC037F00AC96A9 /* MapVC.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		B649CCEF24FAB6450032AF31 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */,
+				B646AF7C24EC037000AC96A9 /* RecommendVC.swift */,
+				B649CCF324FAB6C80032AF31 /* BookDetailVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		B649CCF024FAB64B0032AF31 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B64940A824F189780052A21F /* recommendCell.swift */,
+				B64940AA24F18A3B0052A21F /* bookstoreCell.swift */,
+				B6985F1424FAC682002A3E6B /* detailCell1.swift */,
+				B6985F1524FAC682002A3E6B /* detailCell1.xib */,
+				B6985F1824FAC81B002A3E6B /* detailCell2.swift */,
+				B6985F1924FAC81B002A3E6B /* detailCell2.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,6 +443,8 @@
 				18981F9F24FA5CBD00D6A921 /* ActivityRecommend.storyboard in Resources */,
 				B646AF5C24EBFED800AC96A9 /* .swiftlint.yml in Resources */,
 				B646AF7024EC02FB00AC96A9 /* Recommend.storyboard in Resources */,
+				B6985F1B24FAC81B002A3E6B /* detailCell2.xib in Resources */,
+				B6985F1724FAC682002A3E6B /* detailCell1.xib in Resources */,
 				B646AF5424EBFE4C00AC96A9 /* LaunchScreen.storyboard in Resources */,
 				B646AF7724EC031F00AC96A9 /* Mypage.storyboard in Resources */,
 				B6F4140C24F19B36009863D7 /* NanumSquareRoundR.ttf in Resources */,
@@ -416,6 +452,7 @@
 				B646AF5124EBFE4C00AC96A9 /* Assets.xcassets in Resources */,
 				B6F4140B24F19B36009863D7 /* NanumSquareRoundEB.ttf in Resources */,
 				B6F4140A24F19B36009863D7 /* NanumSquareRoundL.ttf in Resources */,
+				B649CCF224FAB6AB0032AF31 /* BookDetail.storyboard in Resources */,
 				B646AF7524EC031500AC96A9 /* Activity.storyboard in Resources */,
 				B646AF4C24EBFE4B00AC96A9 /* Main.storyboard in Resources */,
 				B649CCED24FAB1E20032AF31 /* BookListCell.xib in Resources */,
@@ -495,8 +532,10 @@
 				B646AF8124EC039200AC96A9 /* ActivityVC.swift in Sources */,
 				CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */,
 				185D45C824FA657D001860E7 /* ActivityRecommendVC.swift in Sources */,
+				B6985F1A24FAC81B002A3E6B /* detailCell2.swift in Sources */,
 				B649CCE724FAAEFE0032AF31 /* NSObject+Extensions.swift in Sources */,
 				B649CCEC24FAB1E20032AF31 /* BookListCell.swift in Sources */,
+				B6985F1624FAC682002A3E6B /* detailCell1.swift in Sources */,
 				B646AF8324EC03A500AC96A9 /* MypageVC.swift in Sources */,
 				B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */,
 				B64940A524F1750E0052A21F /* MainNavController.swift in Sources */,
@@ -510,6 +549,7 @@
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
+				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
 				18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */,

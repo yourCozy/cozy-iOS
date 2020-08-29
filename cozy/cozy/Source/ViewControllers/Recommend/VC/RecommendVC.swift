@@ -30,6 +30,12 @@ class RecommendVC: UIViewController {
 
 extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "BookDetail", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }

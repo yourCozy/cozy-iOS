@@ -38,13 +38,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hH9-ia-mDZ">
-                                                    <rect key="frame" x="24" y="30" width="366" height="24.5"/>
+                                                    <rect key="frame" x="24" y="30" width="366" height="67"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareRoundL" family="NanumSquareRound" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="hH9-ia-mDZ" secondAttribute="bottom" constant="2" id="FuM-x8-ebT"/>
                                                 <constraint firstItem="hH9-ia-mDZ" firstAttribute="top" secondItem="d0M-VT-uiH" secondAttribute="top" constant="30" id="IWN-jM-h38"/>
                                                 <constraint firstItem="hH9-ia-mDZ" firstAttribute="leading" secondItem="d0M-VT-uiH" secondAttribute="leading" constant="24" id="P7M-qC-9iD"/>
                                                 <constraint firstAttribute="trailing" secondItem="hH9-ia-mDZ" secondAttribute="trailing" constant="24" id="giQ-xU-rpz"/>
