@@ -21,7 +21,6 @@ class MypageVC: UIViewController {
         emailLabel.textColor = UIColor.brownishGrey
 
         recentCollectionView.dataSource = self
-        recentCollectionView.delegate = self
     }
 
 }
@@ -40,12 +39,5 @@ extension MypageVC: UICollectionViewDataSource {
         cell.bookstoreLabel.text = "홍철책방"
 
         return cell
-    }
-}
-extension MypageVC: UICollectionViewDelegateFlowLayout {
-    // 가로 스크롤
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.scrollDirection = .horizontal
     }
 }
