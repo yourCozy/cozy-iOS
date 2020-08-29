@@ -23,11 +23,16 @@ class ActivityVC: UIViewController {
     }
 
     @IBAction func btnActivityAction(_ sender: Any) {
-        print(sender)
         let sb = UIStoryboard(name: "ActivityList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
 
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    @IBAction func testBtn(_ sender: Any) {
+        let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

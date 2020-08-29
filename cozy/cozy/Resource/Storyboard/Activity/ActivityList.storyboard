@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umt-D4-XbB">
-                                <rect key="frame" x="24" y="71" width="73" height="30"/>
+                                <rect key="frame" x="24" y="115" width="73" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="73" id="Kv3-cL-CDS"/>
                                 </constraints>
@@ -25,10 +25,10 @@
                                 </state>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonyellow73" translatesAutoresizingMaskIntoConstraints="NO" id="b0c-QW-w3g">
-                                <rect key="frame" x="24" y="105" width="73" height="2"/>
+                                <rect key="frame" x="24" y="149" width="73" height="2"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iD0-tg-dwj">
-                                <rect key="frame" x="0.0" y="117" width="414" height="745"/>
+                                <rect key="frame" x="0.0" y="161" width="414" height="701"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityTableViewCell" rowHeight="338" id="g44-yE-r6j" customClass="ActivityTableViewCell" customModule="cozy" customModuleProvider="target">
@@ -56,10 +56,10 @@
                                                             <color key="textColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconlocationgray" translatesAutoresizingMaskIntoConstraints="NO" id="Q8O-tY-F7G">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="iconlocationgray" translatesAutoresizingMaskIntoConstraints="NO" id="Q8O-tY-F7G">
                                                             <rect key="frame" x="16" y="263.5" width="11" height="14"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bookStoreName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjU-HM-t9g">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="bookStoreName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjU-HM-t9g">
                                                             <rect key="frame" x="31" y="260" width="124.5" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -82,6 +82,7 @@
                                                         <constraint firstItem="bjU-HM-t9g" firstAttribute="leading" secondItem="Q8O-tY-F7G" secondAttribute="trailing" constant="4" id="drf-4x-hVq"/>
                                                         <constraint firstItem="Q8O-tY-F7G" firstAttribute="leading" secondItem="OsD-eT-2bN" secondAttribute="leading" constant="16" id="hwU-EI-grc"/>
                                                         <constraint firstItem="gdw-km-Gik" firstAttribute="leading" secondItem="OsD-eT-2bN" secondAttribute="leading" id="lVb-Le-Xbl"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bjU-HM-t9g" secondAttribute="bottom" constant="35" id="ob2-3G-Z99"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -125,7 +126,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDJ-fe-Nal" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2183" y="-342"/>
+            <point key="canvasLocation" x="3092.753623188406" y="-342.1875"/>
+        </scene>
+        <!--Main Nav Controller-->
+        <scene sceneID="Paf-E2-Lrt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="02x-Ky-1FS" customClass="MainNavController" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KSa-PI-kcK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3bV-yh-p2k" kind="relationship" relationship="rootViewController" id="URf-ZV-b8W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pB-Qp-UXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2182.608695652174" y="-342.1875"/>
         </scene>
     </scenes>
     <resources>
