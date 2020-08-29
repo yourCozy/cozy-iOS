@@ -11,6 +11,14 @@ import UIKit
 class detailCell1: UITableViewCell {
 
     @IBOutlet weak var bookstoreImageView: UIImageView!
+
+    @IBOutlet weak var bossImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+
+    @IBOutlet weak var tag1: UIButton!
+    @IBOutlet weak var tag2: UIButton!
+    @IBOutlet weak var tag3: UIButton!
+
     @IBOutlet weak var descriptionLabel: UILabel!
 
     @IBOutlet weak var callButton1: UIButton!
@@ -33,13 +41,14 @@ class detailCell1: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        bossImageView.layer.cornerRadius = bossImageView.frame.height/2
+        tag1.setTagButton()
+        tag2.setTagButton()
+        tag3.setTagButton()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -14,6 +14,8 @@ class RecommendVC: UIViewController {
     private let cellIdentifier1: String = "recommendCell"
     private let cellIdentifier2: String = "bookstoreCell"
 
+    let searchButton = UIButton()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

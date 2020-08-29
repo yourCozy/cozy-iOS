@@ -156,7 +156,11 @@
                         <viewLayoutGuide key="safeArea" id="WC0-U8-eaL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="jIe-R3-0fc"/>
-                    <navigationItem key="navigationItem" id="6jF-jZ-Msq"/>
+                    <navigationItem key="navigationItem" id="6jF-jZ-Msq">
+                        <barButtonItem key="rightBarButtonItem" image="iconsearch" id="5Z3-Hb-wi7">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="eNH-d6-ywN" id="DTg-eJ-dVm"/>
@@ -166,11 +170,12 @@
             </objects>
             <point key="canvasLocation" x="2097.1014492753625" y="-244.41964285714283"/>
         </scene>
-        <!--Main Nav Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="GNK-9v-08a">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nxr-WG-s7n" customClass="MainNavController" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nxr-WG-s7n" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jCa-yv-bJK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -188,6 +193,7 @@
     <resources>
         <image name="iconplace" width="11" height="14"/>
         <image name="iconsavewhite" width="14" height="20"/>
+        <image name="iconsearch" width="22" height="22"/>
         <image name="tapiconrecommendpressed" width="23" height="22"/>
     </resources>
 </document>
