@@ -23,9 +23,28 @@ class MapVC: UIViewController {
         mapTableView.delegate = self
         mapTableView.dataSource = self
     }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if let index = self.mapTableView.indexPathForSelectedRow {
+            self.mapTableView.deselectRow(at: index, animated: true)
+        }
+    }
+
+    @objc func selectRegionButton() {
+        print("click!")
+    }
+
 }
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "BookDetail", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -49,6 +68,8 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier1) as! MapSelectCell
+            cell.selectRegionButton1.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
+            cell.selectRegionButton2.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier2) as! BookListCell

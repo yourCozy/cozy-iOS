@@ -61,6 +61,10 @@
                                                 <constraint firstItem="h0C-01-lVc" firstAttribute="top" secondItem="s4M-fA-TeA" secondAttribute="top" constant="36" id="zd5-Uk-NUz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="selectRegionButton1" destination="gvR-cY-zw9" id="pYM-Tg-YM3"/>
+                                            <outlet property="selectRegionButton2" destination="rbr-Of-2ih" id="IRV-sG-Opx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -84,6 +88,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfG-4q-Jcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1214.4927536231885" y="-200.22321428571428"/>
+        </scene>
+        <!--Map SelectVC-->
+        <scene sceneID="KNQ-OJ-Kjt">
+            <objects>
+                <viewController storyboardIdentifier="MapSelectVC" id="Ghj-oV-crn" customClass="MapSelectVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aCb-Ac-pvq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XLI-RT-vTU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoI-yz-Wu2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047" y="-202"/>
         </scene>
         <!--지도-->
         <scene sceneID="Cg9-jv-eSb">

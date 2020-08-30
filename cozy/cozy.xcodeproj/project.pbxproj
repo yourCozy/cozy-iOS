@@ -46,6 +46,7 @@
 		B6985F1724FAC682002A3E6B /* detailCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6985F1524FAC682002A3E6B /* detailCell1.xib */; };
 		B6985F1A24FAC81B002A3E6B /* detailCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6985F1824FAC81B002A3E6B /* detailCell2.swift */; };
 		B6985F1B24FAC81B002A3E6B /* detailCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6985F1924FAC81B002A3E6B /* detailCell2.xib */; };
+		B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A0BFAD24FC1EAF00D0083D /* MapSelectVC.swift */; };
 		B6A487AE24F812F50058025C /* MapSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A487AD24F812F50058025C /* MapSelectCell.swift */; };
 		B6F4140A24F19B36009863D7 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */; };
 		B6F4140B24F19B36009863D7 /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */; };
@@ -99,6 +100,7 @@
 		B6985F1524FAC682002A3E6B /* detailCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailCell1.xib; sourceTree = "<group>"; };
 		B6985F1824FAC81B002A3E6B /* detailCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell2.swift; sourceTree = "<group>"; };
 		B6985F1924FAC81B002A3E6B /* detailCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailCell2.xib; sourceTree = "<group>"; };
+		B6A0BFAD24FC1EAF00D0083D /* MapSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectVC.swift; sourceTree = "<group>"; };
 		B6A487AD24F812F50058025C /* MapSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectCell.swift; sourceTree = "<group>"; };
 		B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundL.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundL.ttf; sourceTree = "<group>"; };
 		B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundEB.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				B646AF7E24EC037F00AC96A9 /* MapVC.swift */,
+				B6A0BFAD24FC1EAF00D0083D /* MapSelectVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
+				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,

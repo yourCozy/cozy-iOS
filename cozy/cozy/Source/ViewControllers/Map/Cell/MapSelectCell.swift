@@ -10,6 +10,9 @@ import UIKit
 
 class MapSelectCell: UITableViewCell {
 
+    @IBOutlet weak var selectRegionButton1: UIButton!
+    @IBOutlet weak var selectRegionButton2: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
