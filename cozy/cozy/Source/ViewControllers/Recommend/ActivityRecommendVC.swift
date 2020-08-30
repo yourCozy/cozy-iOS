@@ -12,6 +12,8 @@ class ActivityRecommendVC: UIViewController {
 
     @IBOutlet weak var lblHashtag: UILabel!
     @IBOutlet weak var lblHashtag2: UILabel!
+    @IBOutlet weak var hashtagView: UIView!
+    @IBOutlet weak var hashtagView2: UIView!
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDday: UILabel!
@@ -22,7 +24,8 @@ class ActivityRecommendVC: UIViewController {
     @IBOutlet weak var lblPrice: UILabel!
 
     @IBOutlet weak var btnApply: UIButton!
-    @IBOutlet weak var activityTextView: UITextView!
+
+    @IBOutlet weak var lblActivityIntroduction: UILabel!
 
     // outlet collection
     @IBOutlet var lblFixedCollection: [UILabel]!
@@ -34,17 +37,18 @@ class ActivityRecommendVC: UIViewController {
         setLabelStyle()
         setLabelData()
         setButtonStyle()
-        setTextViewStyle()
+        //setTextViewStyle()
     }
 
     func setLabelStyle() {
-        lblHashtag.layer.borderWidth = 1
-        lblHashtag.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
-        lblHashtag.layer.cornerRadius = 5
 
-        lblHashtag2.layer.borderWidth = 1
-        lblHashtag2.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
-        lblHashtag2.layer.cornerRadius = 5
+        hashtagView.layer.borderWidth = 1
+        hashtagView.layer.cornerRadius = 5
+        hashtagView.layer.borderColor = UIColor.brownishGrey.cgColor
+
+        hashtagView2.layer.borderWidth = 1
+        hashtagView2.layer.cornerRadius = 5
+        hashtagView2.layer.borderColor = UIColor.brownishGrey.cgColor
 
         lblTitle.font = UIFont(name: "NanumSquareRoundB", size: 20)
         lblDday.font = UIFont(name: "NanumSquareRoundB", size: 12)
@@ -57,6 +61,9 @@ class ActivityRecommendVC: UIViewController {
             lbl.font = UIFont(name: "NanumSquareRoundB", size: 16)
             lbl.textColor = UIColor.veryLightPinkTwo
         }
+
+        lblActivityIntroduction.font = UIFont(name: "NanumSquareRoundB", size: 16)
+        lblActivityIntroduction.textColor = UIColor.brownishGrey
     }
 
     // setting sample data
@@ -76,8 +83,8 @@ class ActivityRecommendVC: UIViewController {
         btnApply.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 16)
     }
 
-    func setTextViewStyle() {
-        activityTextView.isEditable = false
-    }
+//    func setTextViewStyle() {
+//        activityTextView.isEditable = false
+//    }
 
 }
