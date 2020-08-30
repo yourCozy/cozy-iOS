@@ -14,7 +14,7 @@ class MainNavController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.prefersLargeTitles = true
+//        navigationBar.prefersLargeTitles = true
         self.setNav()
     }
 
