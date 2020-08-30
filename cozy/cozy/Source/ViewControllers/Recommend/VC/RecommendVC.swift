@@ -61,6 +61,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier1) as! recommendCell
+            cell.selectionStyle = .none
 
             cell.recommendLabel.numberOfLines = 2
 
@@ -80,6 +81,8 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier2) as! bookstoreCell
+            cell.selectionStyle = .none
+
             cell.bookstoreImageView.image = UIImage(named: "image1")
 
             cell.tag1.setTitle("    #이국적인    ", for: .normal)

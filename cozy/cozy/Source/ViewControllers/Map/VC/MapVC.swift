@@ -87,11 +87,13 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier1) as! MapSelectCell
+            cell.selectionStyle = .none
             cell.selectRegionButton1.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
             cell.selectRegionButton2.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier2) as! BookListCell
+            cell.selectionStyle = .none
 
             cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
             cell.nameLabel.text = "코지서점"
