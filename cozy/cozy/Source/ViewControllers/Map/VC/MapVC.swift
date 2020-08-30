@@ -112,7 +112,7 @@ class HalfSizePresentationController: UIPresentationController {
             guard let theView = containerView else {
                 return CGRect.zero
             }
-            return CGRect(x: 0, y: theView.bounds.height-306, width: theView.bounds.width, height: 306)
+            return CGRect(x: 0, y: theView.bounds.height-568, width: theView.bounds.width, height: 568)
         }
     }
 }
