@@ -11,31 +11,23 @@ import UIKit
 class MapVC: UIViewController {
 
     private let mapIdentifier1: String = "mapSelectCell"
-    private let mapIdentifier2: String = "mapListCell"
+    private let mapIdentifier2: String = "bookListCell"
 
     @IBOutlet weak var mapTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let nibName = UINib(nibName: "BookListCell", bundle: nil)
+        mapTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)
         mapTableView.delegate = self
         mapTableView.dataSource = self
     }
-
 }
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource {
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 106
-        } else {
-            return 370
-        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,14 +38,22 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 106
+        } else {
+            return 370
+        }
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier1) as! MapSelectCell
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier2) as! MapListCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier2) as! BookListCell
 
-            cell.bookstoreImageView.image = UIImage(named: "asdfdghfgjhj")
+            cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
             cell.nameLabel.text = "코지서점"
             cell.addressLabel.text = "서울특별시 용산구 한강대로 10길"
 
@@ -64,5 +64,4 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
-
 }

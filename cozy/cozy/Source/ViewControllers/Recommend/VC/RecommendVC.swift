@@ -14,6 +14,8 @@ class RecommendVC: UIViewController {
     private let cellIdentifier1: String = "recommendCell"
     private let cellIdentifier2: String = "bookstoreCell"
 
+    let searchButton = UIButton()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -29,6 +31,12 @@ class RecommendVC: UIViewController {
 }
 
 extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "BookDetail", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2

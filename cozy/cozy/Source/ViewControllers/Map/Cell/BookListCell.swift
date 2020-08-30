@@ -1,29 +1,30 @@
 //
-//  MapListCell.swift
+//  BookListCell.swift
 //  cozy
 //
-//  Created by 최은지 on 2020/08/28.
+//  Created by 최은지 on 2020/08/30.
 //  Copyright © 2020 최은지. All rights reserved.
 //
 
 import UIKit
 
-class MapListCell: UITableViewCell {
+class BookListCell: UITableViewCell {
 
     @IBOutlet weak var wholeView: UIView!
-    @IBOutlet weak var bookstoreImageView: UIImageView!
-    @IBOutlet weak var selectButton: UIButton!
+    @IBOutlet weak var bookStoreImageView: UIImageView!
+
+    @IBOutlet weak var bookMarkButton: UIButton!
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
 
     @IBOutlet weak var tag1: UIButton!
     @IBOutlet weak var tag2: UIButton!
+
     @IBOutlet weak var tag3: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
         wholeView.setViewShadow()
 
         tag1.setMapTagButton()
@@ -34,6 +35,7 @@ class MapListCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        // Configure the view for the selected state
     }
 
 }
