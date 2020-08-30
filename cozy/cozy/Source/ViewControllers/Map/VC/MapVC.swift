@@ -17,8 +17,18 @@ class MapVC: UIViewController {
 
     private var backView = UIView()
 
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(selectEvent(_:)), name: .dismissSlideView, object: nil)
+    }
+
+    @objc func selectEvent(_ notification: NSNotification) {
+//        let getIdx = notification.object as! Int
+        self.backView.isHidden = true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        addObserver()
 
         let nibName = UINib(nibName: "BookListCell", bundle: nil)
         mapTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)

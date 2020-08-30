@@ -8,6 +8,11 @@
 
 import UIKit
 
+// notification 등록
+extension NSNotification.Name {
+    static let dismissSlideView = NSNotification.Name("dismissSlideView")
+}
+
 class MapSelectVC: UIViewController {
 
     @IBOutlet weak var headerView: UIView!
@@ -35,7 +40,9 @@ class MapSelectVC: UIViewController {
 
     @IBAction func clickComplete(_ sender: UIButton) {
         if isSelectedRegion {
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: {
+                NotificationCenter.default.post(name: .dismissSlideView, object: sender.tag)
+            })
         }
     }
 
@@ -58,7 +65,7 @@ extension MapSelectVC: UITableViewDelegate, UITableViewDataSource {
         self.isSelectedRegion = true
         self.completeButton.backgroundColor = UIColor.mango
         self.completeButton.setTitleColor(.white, for: .normal)
-        
+
         let cell = tableView.cellForRow(at: indexPath)
         cell?.contentView.backgroundColor = .mango
     }
