@@ -15,6 +15,8 @@ class MapVC: UIViewController {
 
     @IBOutlet weak var mapTableView: UITableView!
 
+    private var backView = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,12 +34,29 @@ class MapVC: UIViewController {
     }
 
     @objc func selectRegionButton() {
-        print("click!")
+        let storybaord = UIStoryboard(name: "Map", bundle: nil)
+        let pvc = storybaord.instantiateViewController(identifier: "MapSelectVC") as! MapSelectVC
+
+        pvc.transitioningDelegate = self
+        pvc.modalPresentationStyle = .custom
+
+        self.backView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        self.backView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        window?.addSubview(backView)
+        self.backView.isHidden = false
+        present(pvc, animated: true, completion: nil)
     }
 
 }
 
-extension MapVC: UITableViewDelegate, UITableViewDataSource {
+extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
+
+    // present half
+     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+         return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
+     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
@@ -83,6 +102,17 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource {
             cell.tag3.setTitle("    #맥주    ", for: .normal)
 
             return cell
+        }
+    }
+}
+
+class HalfSizePresentationController: UIPresentationController {
+    override var frameOfPresentedViewInContainerView: CGRect {
+        get {
+            guard let theView = containerView else {
+                return CGRect.zero
+            }
+            return CGRect(x: 0, y: theView.bounds.height-306, width: theView.bounds.width, height: 306)
         }
     }
 }
