@@ -33,14 +33,14 @@ class ActivityRecommendVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setHashtagStyle()
         setLabelStyle()
         setLabelData()
         setButtonStyle()
     }
 
-    func setHashtagStyle(){
+    func setHashtagStyle() {
         hashtagView.layer.borderWidth = 1
         hashtagView.layer.cornerRadius = 10
         hashtagView.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
@@ -54,7 +54,7 @@ class ActivityRecommendVC: UIViewController {
         lblHashtag2.font = UIFont(name: "NanumSquareRoundB", size: 12)
         lblHashtag2.textColor = UIColor.brownishGrey
     }
-    
+
     func setLabelStyle() {
 
         lblTitle.font = UIFont(name: "NanumSquareRoundB", size: 20)
