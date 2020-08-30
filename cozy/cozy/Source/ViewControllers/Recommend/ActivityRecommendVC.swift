@@ -33,22 +33,29 @@ class ActivityRecommendVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setHashtagStyle()
         setLabelStyle()
         setLabelData()
         setButtonStyle()
-        //setTextViewStyle()
     }
 
-    func setLabelStyle() {
-
+    func setHashtagStyle(){
         hashtagView.layer.borderWidth = 1
-        hashtagView.layer.cornerRadius = 5
-        hashtagView.layer.borderColor = UIColor.brownishGrey.cgColor
+        hashtagView.layer.cornerRadius = 10
+        hashtagView.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
 
         hashtagView2.layer.borderWidth = 1
-        hashtagView2.layer.cornerRadius = 5
-        hashtagView2.layer.borderColor = UIColor.brownishGrey.cgColor
+        hashtagView2.layer.cornerRadius = 10
+        hashtagView2.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
+
+        lblHashtag.font = UIFont(name: "NanumSquareRoundB", size: 12)
+        lblHashtag.textColor = UIColor.brownishGrey
+        lblHashtag2.font = UIFont(name: "NanumSquareRoundB", size: 12)
+        lblHashtag2.textColor = UIColor.brownishGrey
+    }
+    
+    func setLabelStyle() {
 
         lblTitle.font = UIFont(name: "NanumSquareRoundB", size: 20)
         lblDday.font = UIFont(name: "NanumSquareRoundB", size: 12)
@@ -82,9 +89,5 @@ class ActivityRecommendVC: UIViewController {
         btnApply.layer.cornerRadius = 20
         btnApply.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 16)
     }
-
-//    func setTextViewStyle() {
-//        activityTextView.isEditable = false
-//    }
 
 }
