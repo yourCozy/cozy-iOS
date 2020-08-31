@@ -1,17 +1,17 @@
 //
-//  MapSelectCell.swift
+//  RegionCell.swift
 //  cozy
 //
-//  Created by 최은지 on 2020/08/28.
+//  Created by 최은지 on 2020/08/31.
 //  Copyright © 2020 최은지. All rights reserved.
 //
 
 import UIKit
 
-class MapSelectCell: UITableViewCell {
+class RegionCell: UITableViewCell {
 
-    @IBOutlet weak var selectRegionButton1: UIButton!
-    @IBOutlet weak var selectRegionButton2: UIButton!
+    @IBOutlet weak var regionLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,8 +20,6 @@ class MapSelectCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
