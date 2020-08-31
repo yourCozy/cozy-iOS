@@ -10,6 +10,11 @@ import UIKit
 
 class ActivityRecommendVC: UIViewController {
 
+    private var displayDetailList: [DisplayDetailData] = []
+
+    @IBOutlet weak var mainImgView: UIImageView!
+    @IBOutlet weak var subImgCollectionView: UICollectionView!
+
     @IBOutlet weak var lblHashtag: UILabel!
     @IBOutlet weak var lblHashtag2: UILabel!
     @IBOutlet weak var hashtagView: UIView!
@@ -34,10 +39,28 @@ class ActivityRecommendVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        subImgCollectionView.delegate = self
+        subImgCollectionView.dataSource = self
+
+        setDisplayDetailCellData()
         setHashtagStyle()
         setLabelStyle()
         setLabelData()
         setButtonStyle()
+    }
+
+    //sample data
+    func setDisplayDetailCellData() {
+        let data1 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
+        let data2 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
+        let data3 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
+        let data4 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
+        let data5 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
+        let data6 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
+        let data7 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
+        let data8 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
+
+        displayDetailList = [data1, data2, data3, data4, data5, data6, data7, data8]
     }
 
     func setHashtagStyle() {
@@ -66,7 +89,7 @@ class ActivityRecommendVC: UIViewController {
 
         for lbl in lblNotFixedCollection {
             lbl.font = UIFont(name: "NanumSquareRoundB", size: 16)
-            lbl.textColor = UIColor.veryLightPinkTwo
+            lbl.textColor = UIColor.brownishGrey
         }
 
         lblActivityIntroduction.font = UIFont(name: "NanumSquareRoundB", size: 16)
@@ -88,6 +111,37 @@ class ActivityRecommendVC: UIViewController {
     func setButtonStyle() {
         btnApply.layer.cornerRadius = 20
         btnApply.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 16)
+    }
+
+}
+
+extension ActivityRecommendVC: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+
+        return 8
+
+    }
+}
+
+extension ActivityRecommendVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return displayDetailList.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        guard let detailCell = collectionView.dequeueReusableCell(withReuseIdentifier: DisplayDetailCell.identifier, for: indexPath) as? DisplayDetailCell else { return UICollectionViewCell() }
+
+        detailCell.set(displayDetailList[indexPath.row])
+
+        return detailCell
     }
 
 }
