@@ -46,6 +46,8 @@
 		B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */; };
 		B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */; };
 		CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05FEC224F5590F008747B6 /* recentCell.swift */; };
+		CC88717824FAB2DB008E23F7 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC88717724FAB2DB008E23F7 /* Onboarding.storyboard */; };
+		CC88717B24FAB3B2008E23F7 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC88717A24FAB3B2008E23F7 /* OnboardingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
 		CC05FEC224F5590F008747B6 /* recentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentCell.swift; sourceTree = "<group>"; };
+		CC88717724FAB2DB008E23F7 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		CC88717A24FAB3B2008E23F7 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 		B646AF5F24EBFFCE00AC96A9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC88717924FAB353008E23F7 /* Onboarding */,
 				B64940A324F174CF0052A21F /* NavBar */,
 				B646AF7B24EC034A00AC96A9 /* Recommend */,
 				B646AF7A24EC034500AC96A9 /* Map */,
@@ -200,6 +205,7 @@
 		B646AF6424EC005000AC96A9 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				CCB7D97E24FAB1AA00D517F1 /* Onboarding */,
 				B646AF6B24EC028F00AC96A9 /* Recommend */,
 				B646AF6C24EC029800AC96A9 /* Map */,
 				B646AF6D24EC02A000AC96A9 /* Activity */,
@@ -323,6 +329,22 @@
 			path = NavBar;
 			sourceTree = "<group>";
 		};
+		CC88717924FAB353008E23F7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CC88717A24FAB3B2008E23F7 /* OnboardingVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CCB7D97E24FAB1AA00D517F1 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CC88717724FAB2DB008E23F7 /* Onboarding.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -390,6 +412,7 @@
 				B646AF5424EBFE4C00AC96A9 /* LaunchScreen.storyboard in Resources */,
 				B646AF7724EC031F00AC96A9 /* Mypage.storyboard in Resources */,
 				B6F4140C24F19B36009863D7 /* NanumSquareRoundR.ttf in Resources */,
+				CC88717824FAB2DB008E23F7 /* Onboarding.storyboard in Resources */,
 				18981F9D24FA4BD900D6A921 /* ActivityList.storyboard in Resources */,
 				B646AF5124EBFE4C00AC96A9 /* Assets.xcassets in Resources */,
 				B6F4140B24F19B36009863D7 /* NanumSquareRoundEB.ttf in Resources */,
@@ -469,6 +492,7 @@
 			files = (
 				18981F9B24F9104900D6A921 /* BookStoreData.swift in Sources */,
 				B646AF4924EBFE4B00AC96A9 /* ViewController.swift in Sources */,
+				CC88717B24FAB3B2008E23F7 /* OnboardingVC.swift in Sources */,
 				B646AF8124EC039200AC96A9 /* ActivityVC.swift in Sources */,
 				CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */,
 				185D45C824FA657D001860E7 /* ActivityRecommendVC.swift in Sources */,

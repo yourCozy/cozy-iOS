@@ -23,6 +23,12 @@ class MypageVC: UIViewController {
         recentCollectionView.dataSource = self
     }
 
+    @IBAction func testBtn(_ sender: Any) {
+        let sb = UIStoryboard(name: "Onboarding", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingVC
+
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension MypageVC: UICollectionViewDataSource {
