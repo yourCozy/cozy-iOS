@@ -49,6 +49,7 @@ class ActivityRecommendVC: UIViewController {
         setButtonStyle()
     }
 
+    //sample data
     func setDisplayDetailCellData() {
         let data1 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
         let data2 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
