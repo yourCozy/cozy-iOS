@@ -10,11 +10,11 @@ import UIKit
 
 class detailCell3: UITableViewCell {
 
-    @IBOutlet weak var image1: UIImageView!
-    @IBOutlet weak var image2: UIImageView!
+    @IBOutlet weak var imageButton1: UIButton!
+    @IBOutlet weak var imageButton2: UIButton!
 
-    @IBOutlet weak var dayLabel1: UILabel!
-    @IBOutlet weak var dayLabel2: UILabel!
+    @IBOutlet weak var daycntLabel1: UILabel!
+    @IBOutlet weak var dayCntLabel2: UILabel!
 
     @IBOutlet weak var nameLabel1: UILabel!
     @IBOutlet weak var nameLabel2: UILabel!

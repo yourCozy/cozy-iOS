@@ -133,14 +133,14 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
                 cell.selectionStyle = .none
 
-                cell.image1.image = UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash")
-                cell.image2.image = UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash")
+                cell.imageButton1.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
+                cell.imageButton2.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
                 cell.nameLabel1.text = "책방 영화관"
                 cell.nameLabel2.text = "책방 영화관"
                 cell.descripLabel1.text = "대표 책방 영화관"
                 cell.descripLabel2.text = "대표 책방 영화관"
-                cell.dayLabel1.text = "D-3"
-                cell.dayLabel2.text = "D-4"
+                cell.daycntLabel1.text = "D-3"
+                cell.dayCntLabel2.text = "D-4"
                 cell.priceLabel1.text = "16,000 원"
                 cell.priceLabel2.text = "16,000 원"
 
