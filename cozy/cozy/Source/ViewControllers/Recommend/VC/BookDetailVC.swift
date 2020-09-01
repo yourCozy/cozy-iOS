@@ -12,6 +12,7 @@ class BookDetailVC: UIViewController {
 
     private let detailIdentifier1: String = "detailCell1"
     private let detailIdentifier2: String = "detailCell2"
+    private let detailIdentifier3: String = "detailCell3"
 
     @IBOutlet weak var detailTableView: UITableView!
 
@@ -22,8 +23,10 @@ class BookDetailVC: UIViewController {
         setNav()
         let detailNib1 = UINib(nibName: "detailCell1", bundle: nil)
         let detailNib2 = UINib(nibName: "detailCell2", bundle: nil)
+        let detailNib3 = UINib(nibName: "detailCell3", bundle: nil)
         detailTableView.register(detailNib1, forCellReuseIdentifier: detailIdentifier1)
         detailTableView.register(detailNib2, forCellReuseIdentifier: detailIdentifier2)
+        detailTableView.register(detailNib3, forCellReuseIdentifier: detailIdentifier3)
 
         detailTableView.delegate = self
         detailTableView.dataSource = self
@@ -45,13 +48,11 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
     func selectBookButton() {
         isClickBook = true
         self.detailTableView.reloadData()
-        print("select book button")
     }
 
     func selectActivityButton() {
         isClickBook = false
         self.detailTableView.reloadData()
-        print("select activity button")
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -119,9 +120,14 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
-            cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
-            return cell
+            if isClickBook {
+                let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
+                cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
+                return cell
+            }
         }
     }
 }
