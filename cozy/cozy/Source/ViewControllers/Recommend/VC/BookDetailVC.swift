@@ -71,7 +71,11 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         if indexPath.section == 0 {
             return 701
         } else {
-            return 450
+            if self.isClickBook {
+                return 450
+            } else {
+                return 350
+            }
         }
     }
 
@@ -122,10 +126,24 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         } else {
             if isClickBook {
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
+                cell.selectionStyle = .none
                 cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
+                cell.selectionStyle = .none
+
+                cell.image1.image = UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash")
+                cell.image2.image = UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash")
+                cell.nameLabel1.text = "책방 영화관"
+                cell.nameLabel2.text = "책방 영화관"
+                cell.descripLabel1.text = "대표 책방 영화관"
+                cell.descripLabel2.text = "대표 책방 영화관"
+                cell.dayLabel1.text = "D-3"
+                cell.dayLabel2.text = "D-4"
+                cell.priceLabel1.text = "16,000 원"
+                cell.priceLabel2.text = "16,000 원"
+
                 return cell
             }
         }

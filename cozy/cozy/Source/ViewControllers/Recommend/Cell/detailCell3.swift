@@ -10,6 +10,21 @@ import UIKit
 
 class detailCell3: UITableViewCell {
 
+    @IBOutlet weak var image1: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
+
+    @IBOutlet weak var dayLabel1: UILabel!
+    @IBOutlet weak var dayLabel2: UILabel!
+
+    @IBOutlet weak var nameLabel1: UILabel!
+    @IBOutlet weak var nameLabel2: UILabel!
+
+    @IBOutlet weak var descripLabel1: UILabel!
+    @IBOutlet weak var descripLabel2: UILabel!
+
+    @IBOutlet weak var priceLabel1: UILabel!
+    @IBOutlet weak var priceLabel2: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
