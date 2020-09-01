@@ -60,6 +60,7 @@
 		B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */; };
 		B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */; };
 		CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05FEC224F5590F008747B6 /* recentCell.swift */; };
+		CCA0FB2824FE9A9E006B1F5B /* InterestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
 		CC05FEC224F5590F008747B6 /* recentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentCell.swift; sourceTree = "<group>"; };
+		CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 			children = (
 				B646AF8224EC03A500AC96A9 /* MypageVC.swift */,
 				CC05FEC224F5590F008747B6 /* recentCell.swift */,
+				CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */,
 				B64940A524F1750E0052A21F /* MainNavController.swift in Sources */,
 				B6A487AE24F812F50058025C /* MapSelectCell.swift in Sources */,
+				CCA0FB2824FE9A9E006B1F5B /* InterestVC.swift in Sources */,
 				B646AF6824EC00C800AC96A9 /* APIConstants.swift in Sources */,
 				B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,

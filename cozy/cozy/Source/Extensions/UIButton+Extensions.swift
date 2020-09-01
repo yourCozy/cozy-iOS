@@ -25,4 +25,12 @@ extension UIButton {
         self.setTitleColor(UIColor.brownishGrey, for: .normal)
     }
 
+    func setTasteButton() {
+        self.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 14)
+        self.setTitleColor(UIColor.brownishGrey, for: .normal)
+        self.layer.cornerRadius = 20
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.veryLightPink.cgColor
+        self.clipsToBounds = true
+    }
 }
