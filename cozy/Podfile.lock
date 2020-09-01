@@ -5,14 +5,12 @@ PODS:
   - Kingfisher/Core (5.14.0)
   - NMapsMap (3.8.0)
   - SwiftLint (0.40.0)
-  - SwiftyOnboard (1.3.8)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8.2)
   - Kingfisher (~> 5.0)
   - NMapsMap
   - SwiftLint
-  - SwiftyOnboard
 
 SPEC REPOS:
   trunk:
@@ -20,15 +18,13 @@ SPEC REPOS:
     - Kingfisher
     - NMapsMap
     - SwiftLint
-    - SwiftyOnboard
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   NMapsMap: b3633ad688483a318be9293aeddd323a714fb08b
   SwiftLint: 4154893c73a4c52d6240195507eb7a3e3c64087e
-  SwiftyOnboard: de60e90c2af23dd61b01ec0c6a8d0be3370f857b
 
-PODFILE CHECKSUM: 03d1e14a054aea9e4cf6795e9317b0462a4394ad
+PODFILE CHECKSUM: 950809dc59d5ff9b97bd1c5875e46d527e5c129a
 
 COCOAPODS: 1.9.3

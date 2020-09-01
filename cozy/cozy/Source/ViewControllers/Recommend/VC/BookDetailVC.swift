@@ -39,7 +39,15 @@ class BookDetailVC: UIViewController {
     }
 }
 
-extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
+extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1Delegate {
+    func selectBookButton() {
+        print("select book button")
+    }
+
+    func selectActivityButton() {
+        print("select activity button")
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -63,6 +71,8 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier1) as! detailCell1
+            cell.selectionStyle = .none
+            cell.delegate = self
 
             cell.bookstoreImageView.image = UIImage(named: "image1")
             cell.bossImageView.image = UIImage(named: "74966Cd691014Bbbf2E445Bbc67Cddbc")
