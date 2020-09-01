@@ -54,6 +54,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8xt-Xd-Qys" secondAttribute="height" id="RJH-dg-Q8F"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="clickImageButton1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4GV-TV-Ymc"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIH-VD-LPS">
                                         <rect key="frame" x="34" y="10" width="40" height="24"/>
@@ -109,6 +112,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="s1n-wQ-hJw" secondAttribute="height" multiplier="1:1" id="5fq-h5-6Qd"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="clickImageButton2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="MEe-Tj-sTZ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ7-jk-Zit">
                                         <rect key="frame" x="20" y="10" width="40" height="24"/>

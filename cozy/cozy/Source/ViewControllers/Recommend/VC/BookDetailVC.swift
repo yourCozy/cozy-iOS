@@ -44,7 +44,19 @@ class BookDetailVC: UIViewController {
     }
 }
 
-extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1Delegate {
+extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1Delegate, detailCell3Delegate {
+    func clickImageButton1() {
+        let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func clickImageBUtton2() {
+        let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     func selectBookButton() {
         isClickBook = true
         self.detailTableView.reloadData()
@@ -132,6 +144,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
                 cell.selectionStyle = .none
+                cell.delegate = self
 
                 cell.imageButton1.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
                 cell.imageButton2.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)

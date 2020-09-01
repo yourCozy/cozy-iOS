@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol detailCell3Delegate: AnyObject {
+    func clickImageButton1()
+    func clickImageBUtton2()
+}
+
 class detailCell3: UITableViewCell {
+
+    weak var delegate: detailCell3Delegate?
 
     @IBOutlet weak var imageButton1: UIButton!
     @IBOutlet weak var imageButton2: UIButton!
@@ -27,13 +34,18 @@ class detailCell3: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
 
-        // Configure the view for the selected state
+    @IBAction func clickImageButton1(_ sender: UIButton) {
+        self.delegate?.clickImageButton1()
+    }
+
+    @IBAction func clickImageButton2(_ sender: UIButton) {
+        self.delegate?.clickImageBUtton2()
     }
 
 }

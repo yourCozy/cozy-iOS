@@ -30,8 +30,12 @@ class RecommendVC: UIViewController {
     }
 }
 
-extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
-
+extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDelegate {
+    
+    func clickBookmarkButton() {
+        // 북마크 버튼 클릭 이벤트
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
@@ -82,6 +86,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier2) as! bookstoreCell
             cell.selectionStyle = .none
+            cell.delegate = self
 
             cell.bookstoreImageView.image = UIImage(named: "image1")
 

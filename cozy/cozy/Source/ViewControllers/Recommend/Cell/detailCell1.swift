@@ -59,14 +59,10 @@ class detailCell1: UITableViewCell {
     }
 
     @IBAction func selectBookButton(_ sender: UIButton) {
-//        self.bookUnderline.isHidden = false
-//        self.activityUnderline.isHidden = true
         self.delegate?.selectBookButton()
     }
 
     @IBAction func selectActivityButton(_ sender: UIButton) {
-//        self.bookUnderline.isHidden = true
-//        self.activityUnderline.isHidden = false
         self.delegate?.selectActivityButton()
     }
 

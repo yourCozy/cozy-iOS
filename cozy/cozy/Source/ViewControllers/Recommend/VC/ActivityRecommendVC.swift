@@ -39,6 +39,8 @@ class ActivityRecommendVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setNav()
+
         subImgCollectionView.delegate = self
         subImgCollectionView.dataSource = self
 
@@ -47,6 +49,17 @@ class ActivityRecommendVC: UIViewController {
         setLabelStyle()
         setLabelData()
         setButtonStyle()
+    }
+
+    func setNav() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+
+    @objc func goBack() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     //sample data
