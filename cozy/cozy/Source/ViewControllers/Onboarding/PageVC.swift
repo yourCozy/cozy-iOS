@@ -30,6 +30,10 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 
         let previousIndex = viewControllerIndex - 1
 
+        if previousIndex < 0 {
+            return nil
+        }
+
         guard previousIndex >= 0 else {
             return VCArray.last
         }
@@ -48,6 +52,10 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
 
         let nextIndex = viewControllerIndex + 1
 
+        if nextIndex == 4 {
+            return nil
+        }
+
         guard nextIndex < VCArray.count else {
             return VCArray.first
         }
@@ -57,10 +65,6 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
         }
 
         return VCArray[nextIndex]
-    }
-
-    public func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return VCArray.count
     }
 
     public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
@@ -74,7 +78,6 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
 
