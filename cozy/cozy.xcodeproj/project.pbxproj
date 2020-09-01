@@ -10,6 +10,12 @@
 		185D45C824FA657D001860E7 /* ActivityRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */; };
 		187FEED524FCD58600476D89 /* DisplayDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEED424FCD58600476D89 /* DisplayDetailData.swift */; };
 		187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */; };
+		187FEEE024FE725A00476D89 /* SlideOnboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187FEEDF24FE725A00476D89 /* SlideOnboarding.storyboard */; };
+		187FEEEC24FE960C00476D89 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEEEB24FE960C00476D89 /* PageVC.swift */; };
+		187FEEEE24FE963600476D89 /* vc1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEEED24FE963600476D89 /* vc1.swift */; };
+		187FEEF024FE964100476D89 /* vc2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEEEF24FE964100476D89 /* vc2.swift */; };
+		187FEEF224FE964A00476D89 /* vc3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEEF124FE964A00476D89 /* vc3.swift */; };
+		187FEEF424FE997400476D89 /* vc0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEEF324FE997400476D89 /* vc0.swift */; };
 		18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9624F90C4C00D6A921 /* ActivityListVC.swift */; };
 		18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */; };
 		18981F9B24F9104900D6A921 /* BookStoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9A24F9104900D6A921 /* BookStoreData.swift */; };
@@ -66,6 +72,12 @@
 		185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommendVC.swift; sourceTree = "<group>"; };
 		187FEED424FCD58600476D89 /* DisplayDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailData.swift; sourceTree = "<group>"; };
 		187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailCell.swift; sourceTree = "<group>"; };
+		187FEEDF24FE725A00476D89 /* SlideOnboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SlideOnboarding.storyboard; sourceTree = "<group>"; };
+		187FEEEB24FE960C00476D89 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		187FEEED24FE963600476D89 /* vc1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vc1.swift; sourceTree = "<group>"; };
+		187FEEEF24FE964100476D89 /* vc2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vc2.swift; sourceTree = "<group>"; };
+		187FEEF124FE964A00476D89 /* vc3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vc3.swift; sourceTree = "<group>"; };
+		187FEEF324FE997400476D89 /* vc0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vc0.swift; sourceTree = "<group>"; };
 		18981F9624F90C4C00D6A921 /* ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListVC.swift; sourceTree = "<group>"; };
 		18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		18981F9A24F9104900D6A921 /* BookStoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreData.swift; sourceTree = "<group>"; };
@@ -433,6 +445,11 @@
 			isa = PBXGroup;
 			children = (
 				B64AF18E24FD5C100015F2A7 /* OnboardingVC.swift */,
+				187FEEEB24FE960C00476D89 /* PageVC.swift */,
+				187FEEED24FE963600476D89 /* vc1.swift */,
+				187FEEEF24FE964100476D89 /* vc2.swift */,
+				187FEEF124FE964A00476D89 /* vc3.swift */,
+				187FEEF324FE997400476D89 /* vc0.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -441,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				B64AF19124FD5C270015F2A7 /* Onboarding.storyboard */,
+				187FEEDF24FE725A00476D89 /* SlideOnboarding.storyboard */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -523,6 +541,7 @@
 				B646AF4C24EBFE4B00AC96A9 /* Main.storyboard in Resources */,
 				B649CCED24FAB1E20032AF31 /* BookListCell.xib in Resources */,
 				B64AF19224FD5C270015F2A7 /* Onboarding.storyboard in Resources */,
+				187FEEE024FE725A00476D89 /* SlideOnboarding.storyboard in Resources */,
 				B646AF7324EC030B00AC96A9 /* Map.storyboard in Resources */,
 				B6F4140D24F19B36009863D7 /* NanumSquareRoundB.ttf in Resources */,
 			);
@@ -610,12 +629,15 @@
 				B6A487AE24F812F50058025C /* MapSelectCell.swift in Sources */,
 				B646AF6824EC00C800AC96A9 /* APIConstants.swift in Sources */,
 				B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */,
+				187FEEF224FE964A00476D89 /* vc3.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
 				187FEED524FCD58600476D89 /* DisplayDetailData.swift in Sources */,
 				B646AF4F24EBFE4B00AC96A9 /* cozy.xcdatamodeld in Sources */,
 				18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */,
+				187FEEF024FE964100476D89 /* vc2.swift in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
+				187FEEEE24FE963600476D89 /* vc1.swift in Sources */,
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
@@ -624,7 +646,9 @@
 				187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */,
 				B64AF18F24FD5C100015F2A7 /* OnboardingVC.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
+				187FEEEC24FE960C00476D89 /* PageVC.swift in Sources */,
 				18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */,
+				187FEEF424FE997400476D89 /* vc0.swift in Sources */,
 				B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */,
 				B64940A724F186380052A21F /* MypageNavController.swift in Sources */,
 			);
