@@ -11,12 +11,13 @@ import UIKit
 class OnboardingVC: UIViewController {
 
     @IBOutlet weak var onboardingLabel: UILabel!
+    @IBOutlet var tastes: [UIButton]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setLabelLooksLike()
-        setButtonLooksLike()
+        setBtn()
     }
 
     func setLabelLooksLike() {
@@ -39,21 +40,15 @@ class OnboardingVC: UIViewController {
 
     }
 
-    func setButtonLooksLike() {
-//        for i in 0..<tastes.count {
-//            let _: UIButton = {
-//                let btn = tastes[i]
-//                btn.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 14)
-//                btn.setTitleColor(UIColor.brownishGrey, for: .normal)
-//                btn.layer.cornerRadius = 20
-//                btn.layer.borderWidth = 1
-//                btn.layer.borderColor = UIColor.veryLightPink.cgColor
-//                btn.clipsToBounds = true
-//                //btn.backgroundColor = .white
-//
-//                return btn
-//            }()
-//        }
+    func setBtn() {
+        for i in 0..<tastes.count {
+        let _: UIButton = {
+            let btn = tastes[i]
+            btn.setTasteButton()
+
+    return btn
+        }()
     }
 
+}
 }
