@@ -58,9 +58,8 @@ class ActivityRecommendVC: UIViewController {
         let data5 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
         let data6 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
         let data7 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
-        let data8 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
 
-        displayDetailList = [data1, data2, data3, data4, data5, data6, data7, data8]
+        displayDetailList = [data1, data2, data3, data4, data5, data6, data7]
     }
 
     func setHashtagStyle() {
