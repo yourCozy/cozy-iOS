@@ -35,4 +35,12 @@ class ActivityVC: UIViewController {
 
         self.navigationController?.pushViewController(vc, animated: true)
     }
+
+    @IBAction func goOnboarding(_ sender: Any) {
+        let sb = UIStoryboard(name: "SlideOnboarding", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "PageVC") as! PageVC
+
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 }
