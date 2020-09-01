@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol detailCell1Delegate {
+protocol detailCell1Delegate: AnyObject {
     func selectBookButton()
     func selectActivityButton()
 }
@@ -59,14 +59,14 @@ class detailCell1: UITableViewCell {
     }
 
     @IBAction func selectBookButton(_ sender: UIButton) {
-        self.bookUnderline.isHidden = false
-        self.activityUnderline.isHidden = true
+//        self.bookUnderline.isHidden = false
+//        self.activityUnderline.isHidden = true
         self.delegate?.selectBookButton()
     }
 
     @IBAction func selectActivityButton(_ sender: UIButton) {
-        self.bookUnderline.isHidden = true
-        self.activityUnderline.isHidden = false
+//        self.bookUnderline.isHidden = true
+//        self.activityUnderline.isHidden = false
         self.delegate?.selectActivityButton()
     }
 

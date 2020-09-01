@@ -15,6 +15,8 @@ class BookDetailVC: UIViewController {
 
     @IBOutlet weak var detailTableView: UITableView!
 
+    var isClickBook: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setNav()
@@ -41,10 +43,14 @@ class BookDetailVC: UIViewController {
 
 extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1Delegate {
     func selectBookButton() {
+        isClickBook = true
+        self.detailTableView.reloadData()
         print("select book button")
     }
 
     func selectActivityButton() {
+        isClickBook = false
+        self.detailTableView.reloadData()
         print("select activity button")
     }
 
@@ -56,7 +62,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         if section == 0 {
             return 1
         } else {
-            return 1
+            return 3
         }
     }
 
@@ -64,7 +70,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         if indexPath.section == 0 {
             return 701
         } else {
-            return 100
+            return 450
         }
     }
 
@@ -103,11 +109,18 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
             cell.homeLabel.text = "공간 대여, 워크샵, 온라인 서점"
 
-            cell.activityUnderline.isHidden = true
+            if isClickBook {
+                cell.bookUnderline.isHidden = false
+                cell.activityUnderline.isHidden = true
+            } else {
+                cell.bookUnderline.isHidden = true
+                cell.activityUnderline.isHidden = false
+            }
 
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
+            cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
             return cell
         }
     }
