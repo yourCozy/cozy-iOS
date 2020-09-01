@@ -12,18 +12,14 @@ class ActivityListVC: UIViewController {
 
     private var bookStoreList: [BookStoreData] = []
 
-    @IBOutlet weak var btnLimit: UIButton!
     @IBOutlet weak var activityTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        btnLimit.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 16)
-
         setBookStoreData()
         activityTableView.delegate = self
         activityTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
 
     private func setBookStoreData() {
@@ -35,16 +31,6 @@ class ActivityListVC: UIViewController {
 
         bookStoreList = [bs1, bs2, bs3, bs4, bs5]
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

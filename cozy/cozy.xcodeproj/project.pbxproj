@@ -142,6 +142,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		187FEED824FE3BCA00476D89 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		187FEED924FE3BD500476D89 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF8024EC039200AC96A9 /* ActivityVC.swift */,
+				18981F9624F90C4C00D6A921 /* ActivityListVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		187FEEDA24FE3BDA00476D89 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18981F9A24F9104900D6A921 /* BookStoreData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		32D7E29C1D6E872DB03CDCE2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,10 +339,9 @@
 		B646AF7924EC033F00AC96A9 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				B646AF8024EC039200AC96A9 /* ActivityVC.swift */,
-				18981F9624F90C4C00D6A921 /* ActivityListVC.swift */,
-				18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */,
-				18981F9A24F9104900D6A921 /* BookStoreData.swift */,
+				187FEEDA24FE3BDA00476D89 /* Model */,
+				187FEED924FE3BD500476D89 /* VC */,
+				187FEED824FE3BCA00476D89 /* Cell */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
