@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol detailCell1Delegate: AnyObject {
+    func selectBookButton()
+    func selectActivityButton()
+}
+
 class detailCell1: UITableViewCell {
+
+    weak var delegate: detailCell1Delegate?
 
     @IBOutlet weak var bookstoreImageView: UIImageView!
 
@@ -49,6 +56,14 @@ class detailCell1: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    @IBAction func selectBookButton(_ sender: UIButton) {
+        self.delegate?.selectBookButton()
+    }
+
+    @IBAction func selectActivityButton(_ sender: UIButton) {
+        self.delegate?.selectActivityButton()
     }
 
 }

@@ -12,16 +12,21 @@ class BookDetailVC: UIViewController {
 
     private let detailIdentifier1: String = "detailCell1"
     private let detailIdentifier2: String = "detailCell2"
+    private let detailIdentifier3: String = "detailCell3"
 
     @IBOutlet weak var detailTableView: UITableView!
+
+    var isClickBook: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setNav()
         let detailNib1 = UINib(nibName: "detailCell1", bundle: nil)
         let detailNib2 = UINib(nibName: "detailCell2", bundle: nil)
+        let detailNib3 = UINib(nibName: "detailCell3", bundle: nil)
         detailTableView.register(detailNib1, forCellReuseIdentifier: detailIdentifier1)
         detailTableView.register(detailNib2, forCellReuseIdentifier: detailIdentifier2)
+        detailTableView.register(detailNib3, forCellReuseIdentifier: detailIdentifier3)
 
         detailTableView.delegate = self
         detailTableView.dataSource = self
@@ -39,7 +44,29 @@ class BookDetailVC: UIViewController {
     }
 }
 
-extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
+extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1Delegate, detailCell3Delegate {
+    func clickImageButton1() {
+        let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func clickImageBUtton2() {
+        let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func selectBookButton() {
+        isClickBook = true
+        self.detailTableView.reloadData()
+    }
+
+    func selectActivityButton() {
+        isClickBook = false
+        self.detailTableView.reloadData()
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -48,7 +75,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return 1
+            return 3
         }
     }
 
@@ -56,13 +83,19 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             return 701
         } else {
-            return 100
+            if self.isClickBook {
+                return 450
+            } else {
+                return 350
+            }
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier1) as! detailCell1
+            cell.selectionStyle = .none
+            cell.delegate = self
 
             cell.bookstoreImageView.image = UIImage(named: "image1")
             cell.bossImageView.image = UIImage(named: "74966Cd691014Bbbf2E445Bbc67Cddbc")
@@ -93,12 +126,39 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource {
 
             cell.homeLabel.text = "공간 대여, 워크샵, 온라인 서점"
 
-            cell.activityUnderline.isHidden = true
+            if isClickBook {
+                cell.bookUnderline.isHidden = false
+                cell.activityUnderline.isHidden = true
+            } else {
+                cell.bookUnderline.isHidden = true
+                cell.activityUnderline.isHidden = false
+            }
 
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
-            return cell
+            if isClickBook {
+                let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
+                cell.selectionStyle = .none
+                cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
+                cell.selectionStyle = .none
+                cell.delegate = self
+
+                cell.imageButton1.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
+                cell.imageButton2.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
+                cell.nameLabel1.text = "책방 영화관"
+                cell.nameLabel2.text = "책방 영화관"
+                cell.descripLabel1.text = "대표 책방 영화관"
+                cell.descripLabel2.text = "대표 책방 영화관"
+                cell.daycntLabel1.text = "D-3"
+                cell.dayCntLabel2.text = "D-4"
+                cell.priceLabel1.text = "16,000 원"
+                cell.priceLabel2.text = "16,000 원"
+
+                return cell
+            }
         }
     }
 }

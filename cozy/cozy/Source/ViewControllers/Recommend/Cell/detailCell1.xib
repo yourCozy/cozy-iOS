@@ -159,6 +159,9 @@
                         <state key="normal" title="책방">
                             <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="selectBookButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OOI-0Y-fvO"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2we-ag-JDl">
                         <rect key="frame" x="241" y="635" width="30" height="28"/>
@@ -166,6 +169,9 @@
                         <state key="normal" title="활동">
                             <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="selectActivityButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Rs2-0d-7eh"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFd-cH-w1n">
                         <rect key="frame" x="50" y="660" width="28" height="2"/>

@@ -107,6 +107,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikb-Mh-zUE">
                                                     <rect key="frame" x="354" y="33" width="14" height="22"/>
                                                     <state key="normal" image="iconsavewhite"/>
+                                                    <connections>
+                                                        <action selector="clickBookmarkButton:" destination="Rt3-y6-dkZ" eventType="touchUpInside" id="gAR-u0-te6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
