@@ -18,6 +18,8 @@ class OnboardingIntroVC: UIViewController {
     private let identifier3: String = "onboardcell3"
     private let identifier4: String = "onboardcell4"
 
+    private var mysliderVal: Float = 25
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setSlider()
@@ -29,6 +31,14 @@ class OnboardingIntroVC: UIViewController {
     func setSlider() {
         onboardingSlider.setThumbImage(UIImage(), for: .normal)
         onboardingSlider.tintColor = .mango
+        UIView.animate( withDuration: 0.1, animations: {
+            self.onboardingSlider.setValue(0, animated: true)
+        }, completion: { _ in
+            UIView.animate(withDuration: 1.0, animations: {
+                self.mysliderVal = 25
+                self.onboardingSlider.setValue(self.mysliderVal, animated: true)
+            })
+        })
     }
 
     func setNib() {
@@ -46,6 +56,51 @@ class OnboardingIntroVC: UIViewController {
 
 extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let x = introCollectionView.contentOffset.x
+        let w = introCollectionView.bounds.size.width
+        let currentPage = Int(ceil(x/w))
+        print(currentPage)
+
+        if currentPage == 0 {
+            UIView.animate( withDuration: 0.1, animations: {
+                self.onboardingSlider.setValue(self.mysliderVal, animated: true)
+            }, completion: { _ in
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.mysliderVal = 25
+                    self.onboardingSlider.setValue(self.mysliderVal, animated: true)
+                })
+            })
+        } else if currentPage == 1 {
+            UIView.animate( withDuration: 0.1, animations: {
+                self.onboardingSlider.setValue(self.mysliderVal, animated: true)
+            }, completion: { _ in
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.mysliderVal = 50
+                    self.onboardingSlider.setValue(self.mysliderVal, animated: true)
+                })
+            })
+        } else if currentPage == 2 {
+            UIView.animate( withDuration: 0.1, animations: {
+                self.onboardingSlider.setValue(self.mysliderVal, animated: true)
+            }, completion: { _ in
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.mysliderVal = 75
+                    self.onboardingSlider.setValue(self.mysliderVal, animated: true)
+                })
+            })
+        } else if currentPage == 3 {
+            UIView.animate( withDuration: 0.1, animations: {
+                self.onboardingSlider.setValue(self.mysliderVal, animated: true)
+            }, completion: { _ in
+                UIView.animate(withDuration: 1.0, animations: {
+                    self.mysliderVal = 100
+                    self.onboardingSlider.setValue(self.mysliderVal, animated: true)
+                })
+            })
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
@@ -57,13 +112,7 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = introCollectionView.dequeueReusableCell(withReuseIdentifier: identifier1, for: indexPath) as! onboardcell1
-//            UIView.animate( withDuration: 0.1, animations: {
-//                self.aqiSlider.setValue(0, animated:true)
-//            }, completion: { _ in
-//                UIView.animate(withDuration: 2.0, animations: {
-//                    self.aqiSlider.setValue(25, animated: true)
-//                })
-//            })
+
             return cell
         } else if indexPath.row == 1 {
             let cell = introCollectionView.dequeueReusableCell(withReuseIdentifier: identifier2, for: indexPath) as! onboardcell2
