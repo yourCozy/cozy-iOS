@@ -6,13 +6,13 @@
       "filename" : "imageonboarding3.png"
     },
     {
-      "scale" : "2x",
       "idiom" : "universal",
+      "scale" : "2x",
       "filename" : "imageonboarding3@2x.png"
     },
     {
-      "scale" : "3x",
       "idiom" : "universal",
+      "scale" : "3x",
       "filename" : "imageonboarding3@3x.png"
     }
   ],
