@@ -33,4 +33,18 @@ extension UIButton {
         self.layer.borderColor = UIColor.veryLightPink.cgColor
         self.clipsToBounds = true
     }
+
+    func setOnboardStartButton() {
+        self.layer.cornerRadius = 25
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowOffset = .zero
+        self.layer.shadowRadius = 2
+    }
+
+    func setPassLoginButton() {
+        self.layer.cornerRadius = 17
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
+    }
 }

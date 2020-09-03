@@ -308,7 +308,7 @@
         <!--내정보-->
         <scene sceneID="hGS-0F-wTK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zo7-Px-Lje" customClass="MypageNavController" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zo7-Px-Lje" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="내정보" image="tapiconmyinfopressed" id="zcy-na-ARC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jht-eM-TYA">

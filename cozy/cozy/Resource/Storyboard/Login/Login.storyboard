@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cg4-XX-Yfw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareRoundL.ttf">
+            <string>NanumSquareRoundL</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="56W-0i-pmF">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="cg4-XX-Yfw" customClass="LoginVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HJm-US-jV5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgo-fZ-ecD">
+                                <rect key="frame" x="147" y="756" width="120" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="dP8-jn-XzM"/>
+                                    <constraint firstAttribute="height" constant="32" id="sfB-NC-KR1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundL" family="NanumSquareRound" pointSize="11"/>
+                                <state key="normal" title="한 번 둘러볼래요!">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickPassLoginButton:" destination="cg4-XX-Yfw" eventType="touchUpInside" id="q43-5w-718"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Xgo-fZ-ecD" firstAttribute="centerX" secondItem="HJm-US-jV5" secondAttribute="centerX" id="bfc-bg-hhD"/>
+                            <constraint firstItem="Qvo-Ss-ujQ" firstAttribute="bottom" secondItem="Xgo-fZ-ecD" secondAttribute="bottom" constant="74" id="d81-mc-btR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qvo-Ss-ujQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="passLoginButton" destination="Xgo-fZ-ecD" id="km9-ES-icp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHb-fF-fkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="159" y="-228"/>
+        </scene>
+    </scenes>
+</document>

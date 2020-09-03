@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareRoundB.ttf">
+            <string>NanumSquareRoundB</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Onboarding IntroVC-->
         <scene sceneID="1Xg-lG-dtn">
@@ -29,22 +34,40 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuX-N9-wIr">
+                                <rect key="frame" x="24" y="765" width="366" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="pIr-hj-67t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="16"/>
+                                <state key="normal" title="cozy 시작하기">
+                                    <color key="titleColor" red="0.99607843139999996" green="0.6588235294" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickStartCozyButton:" destination="1AR-JH-wIq" eventType="touchUpInside" id="kbP-ZW-9Pa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="48b-xr-PeX" firstAttribute="bottom" secondItem="PuX-N9-wIr" secondAttribute="bottom" constant="49" id="CyB-FF-tmk"/>
                             <constraint firstItem="Pes-jZ-cls" firstAttribute="leading" secondItem="48b-xr-PeX" secondAttribute="leading" id="EhV-C3-iY1"/>
                             <constraint firstItem="48b-xr-PeX" firstAttribute="trailing" secondItem="Pes-jZ-cls" secondAttribute="trailing" id="FEO-dJ-Rs0"/>
                             <constraint firstAttribute="bottom" secondItem="Pko-4K-O2p" secondAttribute="bottom" id="Mvq-Cu-7dO"/>
+                            <constraint firstItem="48b-xr-PeX" firstAttribute="trailing" secondItem="PuX-N9-wIr" secondAttribute="trailing" constant="24" id="Og5-Nj-NFP"/>
                             <constraint firstItem="Pko-4K-O2p" firstAttribute="top" secondItem="Pes-jZ-cls" secondAttribute="bottom" id="QGL-WE-BUD"/>
                             <constraint firstItem="Pes-jZ-cls" firstAttribute="top" secondItem="48b-xr-PeX" secondAttribute="top" id="iyN-cT-oi6"/>
                             <constraint firstItem="Pko-4K-O2p" firstAttribute="leading" secondItem="48b-xr-PeX" secondAttribute="leading" id="nT8-bp-mPq"/>
                             <constraint firstItem="48b-xr-PeX" firstAttribute="trailing" secondItem="Pko-4K-O2p" secondAttribute="trailing" id="sbS-2H-QUH"/>
+                            <constraint firstItem="PuX-N9-wIr" firstAttribute="leading" secondItem="48b-xr-PeX" secondAttribute="leading" constant="24" id="wm4-0N-tf5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="48b-xr-PeX"/>
                     </view>
                     <connections>
                         <outlet property="introCollectionView" destination="Pko-4K-O2p" id="eiT-qT-q52"/>
                         <outlet property="onboardingSlider" destination="Pes-jZ-cls" id="RLQ-0g-pQd"/>
+                        <outlet property="startButton" destination="PuX-N9-wIr" id="6O3-sm-IsL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zc3-Kx-Dax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

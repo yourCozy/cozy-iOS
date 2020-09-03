@@ -20,12 +20,23 @@ class OnboardingIntroVC: UIViewController {
 
     private var mysliderVal: Float = 25
 
+    @IBOutlet weak var startButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setSlider()
         setNib()
+        startButton.setOnboardStartButton()
+        startButton.isHidden = true
         introCollectionView.delegate = self
         introCollectionView.dataSource = self
+    }
+
+    @IBAction func clickStartCozyButton(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Login", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 
     func setSlider() {
@@ -46,7 +57,6 @@ class OnboardingIntroVC: UIViewController {
         let introNib2 = UINib(nibName: "onboardcell2", bundle: nil)
         let introNib3 = UINib(nibName: "onboardcell3", bundle: nil)
         let introNib4 = UINib(nibName: "onboardcell4", bundle: nil)
-
         introCollectionView.register(introNib1, forCellWithReuseIdentifier: identifier1)
         introCollectionView.register(introNib2, forCellWithReuseIdentifier: identifier2)
         introCollectionView.register(introNib3, forCellWithReuseIdentifier: identifier3)
@@ -60,9 +70,9 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
         let x = introCollectionView.contentOffset.x
         let w = introCollectionView.bounds.size.width
         let currentPage = Int(ceil(x/w))
-        print(currentPage)
 
         if currentPage == 0 {
+            self.startButton.isHidden = true
             UIView.animate( withDuration: 0.1, animations: {
                 self.onboardingSlider.setValue(self.mysliderVal, animated: true)
             }, completion: { _ in
@@ -72,6 +82,7 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
                 })
             })
         } else if currentPage == 1 {
+            self.startButton.isHidden = true
             UIView.animate( withDuration: 0.1, animations: {
                 self.onboardingSlider.setValue(self.mysliderVal, animated: true)
             }, completion: { _ in
@@ -81,6 +92,7 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
                 })
             })
         } else if currentPage == 2 {
+            self.startButton.isHidden = true
             UIView.animate( withDuration: 0.1, animations: {
                 self.onboardingSlider.setValue(self.mysliderVal, animated: true)
             }, completion: { _ in
@@ -90,6 +102,7 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
                 })
             })
         } else if currentPage == 3 {
+            self.startButton.isHidden = false
             UIView.animate( withDuration: 0.1, animations: {
                 self.onboardingSlider.setValue(self.mysliderVal, animated: true)
             }, completion: { _ in
@@ -112,7 +125,6 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             let cell = introCollectionView.dequeueReusableCell(withReuseIdentifier: identifier1, for: indexPath) as! onboardcell1
-
             return cell
         } else if indexPath.row == 1 {
             let cell = introCollectionView.dequeueReusableCell(withReuseIdentifier: identifier2, for: indexPath) as! onboardcell2
