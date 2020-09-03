@@ -12,9 +12,19 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var passLoginButton: UIButton!
 
+    @IBOutlet weak var kakaoView: UIView!
+    @IBOutlet weak var appleView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
+    }
+
+    func setUI() {
         passLoginButton.setPassLoginButton()
+        kakaoView.layer.backgroundColor = UIColor.sunshineYellow.cgColor
+        kakaoView.layer.cornerRadius = 25
+        appleView.layer.cornerRadius = 25
     }
 
     @IBAction func clickPassLoginButton(_ sender: UIButton) {
