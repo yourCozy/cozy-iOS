@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KakaoSDKAuth
 
 class LoginVC: UIViewController {
 
@@ -18,6 +19,8 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(clickKakaoSocialLogin(_:)))
+        kakaoView.addGestureRecognizer(gesture)
     }
 
     func setUI() {
@@ -32,6 +35,25 @@ class LoginVC: UIViewController {
         let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
+    }
+
+    @objc func clickKakaoSocialLogin(_ sender: UITapGestureRecognizer) {
+        print("click kakao")
+
+        // 카카오톡 설치 여부 확인
+        if AuthApi.isKakaoTalkLoginAvailable() {
+            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("loginWithKakaoTalk() success.")
+
+                    //do something
+                    _ = oauthToken
+                }
+            }
+        }
+
     }
 
 }
