@@ -1,5 +1,37 @@
 PODS:
-  - Alamofire (4.8.2)
+  - Alamofire (5.2.1)
+  - DynamicCodable (1.0)
+  - KakaoSDK (2.0.1):
+    - KakaoSDKAuth (= 2.0.1)
+    - KakaoSDKCommon (= 2.0.1)
+    - KakaoSDKLink (= 2.0.1)
+    - KakaoSDKNavi (= 2.0.1)
+    - KakaoSDKStory (= 2.0.1)
+    - KakaoSDKTalk (= 2.0.1)
+    - KakaoSDKTemplate (= 2.0.1)
+    - KakaoSDKUser (= 2.0.1)
+  - KakaoSDKAuth (2.0.1):
+    - KakaoSDKCommon (= 2.0.1)
+  - KakaoSDKCommon (2.0.1):
+    - Alamofire (~> 5.1)
+    - DynamicCodable (~> 1.0)
+  - KakaoSDKLink (2.0.1):
+    - KakaoSDKCommon (= 2.0.1)
+    - KakaoSDKTemplate (= 2.0.1)
+  - KakaoSDKNavi (2.0.1):
+    - KakaoSDKCommon (= 2.0.1)
+  - KakaoSDKStory (2.0.1):
+    - KakaoSDKAuth (= 2.0.1)
+    - KakaoSDKCommon (= 2.0.1)
+  - KakaoSDKTalk (2.0.1):
+    - KakaoSDKAuth (= 2.0.1)
+    - KakaoSDKCommon (= 2.0.1)
+    - KakaoSDKTemplate (= 2.0.1)
+  - KakaoSDKTemplate (2.0.1):
+    - KakaoSDKCommon (= 2.0.1)
+  - KakaoSDKUser (2.0.1):
+    - KakaoSDKAuth (= 2.0.1)
+    - KakaoSDKCommon (= 2.0.1)
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
@@ -7,7 +39,7 @@ PODS:
   - SwiftLint (0.40.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.8.2)
+  - KakaoSDK
   - Kingfisher (~> 5.0)
   - NMapsMap
   - SwiftLint
@@ -15,16 +47,36 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DynamicCodable
+    - KakaoSDK
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKNavi
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
     - Kingfisher
     - NMapsMap
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  DynamicCodable: 2cf558d057b3e6540552943254e1c9eeb706dde2
+  KakaoSDK: 000d22a13a32e25c31d36d42667640b9c21f48be
+  KakaoSDKAuth: b0164328e032efe30531050f1cbf383a8b15c177
+  KakaoSDKCommon: 2a0cddcf8e606a874c02fd212efd50ef06d6189d
+  KakaoSDKLink: 85d8366c473ced95943870f7078babe1c9c4dae5
+  KakaoSDKNavi: d4499d20dff37e86a56a1fb2a69d3453cb775d02
+  KakaoSDKStory: ed351ad079049c13a0e6e5434eece8369bd3e236
+  KakaoSDKTalk: 1c63b8e74b4069a9ebb692210e426fa9187fe51b
+  KakaoSDKTemplate: 1a8390dfeb57633acf12266662f132ff9d0a384a
+  KakaoSDKUser: 8bd45ea9da54ba877cf057589c4ef47f67773c53
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   NMapsMap: b3633ad688483a318be9293aeddd323a714fb08b
   SwiftLint: 4154893c73a4c52d6240195507eb7a3e3c64087e
 
-PODFILE CHECKSUM: 950809dc59d5ff9b97bd1c5875e46d527e5c129a
+PODFILE CHECKSUM: 0b96e83e406e79a687c6534c451df22ec05c7291
 
 COCOAPODS: 1.9.3

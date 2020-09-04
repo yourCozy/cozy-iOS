@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="488" y="992"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main TabVC-->
         <scene sceneID="0TF-Ej-Vsg">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FeC-BY-8o4" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabVC" automaticallyAdjustsScrollViewInsets="NO" id="FeC-BY-8o4" customClass="MainTabVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BZ6-hs-4qf">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

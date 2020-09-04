@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,7 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appearance.configureWithDefaultBackground()
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
 
+        // setting kakao initialize
+        KakaoSDKCommon.initSDK(appKey: "d7dd9441a92b6d9f5628dd2d0f625dcb")
+        
         return true
+    }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        if AuthApi.isKakaoTalkLoginUrl(url) {
+            return AuthController.handleOpenUrl(url: url)
+        }
+        return false
     }
 
     // MARK: UISceneSession Lifecycle
