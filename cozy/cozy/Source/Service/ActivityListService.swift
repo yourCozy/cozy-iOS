@@ -13,8 +13,8 @@ struct ActivityListService {
     static let shared = ActivityListService()
 
     func getActivityListData(categoryIdx: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        guard let token = UserDefaults.standard.string(forKey: "token") else {return}
-        let header: HTTPHeaders = ["Content-Type": "application/json", "token": token]
+//        guard let token = UserDefaults.standard.string(forKey: "token") else {return}
+        let header: HTTPHeaders = ["Content-Type": "application/json"]
 
         let dataRequest = AF.request(APIConstants.activityCatecoryLatestURL + String(categoryIdx), method: .get, encoding: JSONEncoding.default, headers: header)
 
@@ -23,7 +23,8 @@ struct ActivityListService {
             case .success:
                 guard let statusCode = dataResponse.response?.statusCode else { return }
                 guard let value = dataResponse.value else { return }
-
+                print("26th line\n")
+                print(value)
                 let networkResult = self.judge(by: statusCode, value)
 
                 completion(networkResult)
@@ -45,6 +46,7 @@ struct ActivityListService {
     private func isData(by data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(ActivityListModel.self, from: data) else { return .pathErr }
+        print("decodedData")
         print(decodedData)
         guard let activityData = decodedData.data else { return .requestErr(decodedData.message) }
 
