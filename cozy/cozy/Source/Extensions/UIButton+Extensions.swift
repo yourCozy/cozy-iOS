@@ -58,4 +58,11 @@ extension UIButton {
         self.layer.borderWidth = 1.0
         self.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
     }
+
+    func hasImage(named imageName: String, for state: UIControl.State) -> Bool {
+        guard let buttonImage = image(for: state), let namedImage = UIImage(named: imageName) else {
+            return false
+        }
+        return buttonImage.pngData() == namedImage.pngData()
+    }
 }

@@ -32,8 +32,8 @@ class RecommendVC: UIViewController {
 
 extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDelegate {
 
-    func clickBookmarkButton() {
-        // 북마크 버튼 클릭 이벤트
+    func clickBookmarkButton(index: Int) {
+        print("index:", index)
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -86,6 +86,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier2) as! bookstoreCell
             cell.selectionStyle = .none
+            cell.index = indexPath.row
             cell.delegate = self
 
             cell.bookstoreImageView.image = UIImage(named: "image1")
