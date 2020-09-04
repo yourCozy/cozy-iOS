@@ -20,6 +20,22 @@ class OnboardingVC: UIViewController {
         setBtn()
     }
 
+    @IBAction func changeButton(_ sender: Any) {
+         guard let button = sender as? UIButton else {
+             return
+         }
+         if button.tag == 1 {
+             if  button.backgroundColor == UIColor.realwhite {
+                button.setTasteButtonTapped()
+             } else if button.backgroundColor == UIColor.mango {
+                 button.setTasteButtonUntapped()
+             }
+         } else {
+             button.layer.backgroundColor = UIColor.mango.cgColor
+             // 추가: 화면 넘기기
+         }
+     }
+
     func setLabelLooksLike() {
 
         onboardingLabel.numberOfLines = 2
@@ -44,7 +60,7 @@ class OnboardingVC: UIViewController {
         for i in 0..<tastes.count {
         let _: UIButton = {
             let btn = tastes[i]
-            btn.setTasteButton()
+            btn.setTasteButtonUntapped()
 
     return btn
         }()
