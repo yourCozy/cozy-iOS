@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cg4-XX-Yfw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareRoundL.ttf">
+            <string>NanumSquareRoundL</string>
+        </array>
+        <array key="NanumSquareRoundR.ttf">
+            <string>NanumSquareRoundR</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="56W-0i-pmF">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="cg4-XX-Yfw" customClass="LoginVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HJm-US-jV5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgo-fZ-ecD">
+                                <rect key="frame" x="147" y="756" width="120" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="dP8-jn-XzM"/>
+                                    <constraint firstAttribute="height" constant="32" id="sfB-NC-KR1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundL" family="NanumSquareRound" pointSize="11"/>
+                                <state key="normal" title="한 번 둘러볼래요!">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickPassLoginButton:" destination="cg4-XX-Yfw" eventType="touchUpInside" id="q43-5w-718"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC9-Ga-ko5">
+                                <rect key="frame" x="24" y="678" width="366" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconapple20X24" translatesAutoresizingMaskIntoConstraints="NO" id="ww7-ef-FIe">
+                                        <rect key="frame" x="47" y="12" width="20" height="24"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="애플 계정으로 시작" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVE-Ch-Iks">
+                                        <rect key="frame" x="113" y="15" width="124.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="3Wy-cJ-cWc"/>
+                                    <constraint firstItem="ww7-ef-FIe" firstAttribute="leading" secondItem="rC9-Ga-ko5" secondAttribute="leading" constant="47" id="BZn-K0-we0"/>
+                                    <constraint firstItem="lVE-Ch-Iks" firstAttribute="centerY" secondItem="rC9-Ga-ko5" secondAttribute="centerY" id="ZsM-i3-n5q"/>
+                                    <constraint firstItem="lVE-Ch-Iks" firstAttribute="leading" secondItem="ww7-ef-FIe" secondAttribute="trailing" constant="46" id="qge-Ab-8BA"/>
+                                    <constraint firstItem="ww7-ef-FIe" firstAttribute="centerY" secondItem="rC9-Ga-ko5" secondAttribute="centerY" id="x0T-dM-pDM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRV-6Z-vh5">
+                                <rect key="frame" x="24" y="618" width="366" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconkakaotalk24X22" translatesAutoresizingMaskIntoConstraints="NO" id="SV8-3L-sov">
+                                        <rect key="frame" x="45" y="13" width="24" height="22"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오 계정으로 시작" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZg-QN-Lew">
+                                        <rect key="frame" x="106" y="15" width="139.5" height="18"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Ihh-LN-lEQ"/>
+                                    <constraint firstItem="GZg-QN-Lew" firstAttribute="centerY" secondItem="gRV-6Z-vh5" secondAttribute="centerY" id="Tfa-bC-sVL"/>
+                                    <constraint firstItem="GZg-QN-Lew" firstAttribute="leading" secondItem="SV8-3L-sov" secondAttribute="trailing" constant="37" id="ksv-1r-KAj"/>
+                                    <constraint firstItem="SV8-3L-sov" firstAttribute="leading" secondItem="gRV-6Z-vh5" secondAttribute="leading" constant="45" id="nDd-AE-onf"/>
+                                    <constraint firstItem="SV8-3L-sov" firstAttribute="centerY" secondItem="gRV-6Z-vh5" secondAttribute="centerY" id="wrE-hz-BfC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhQ-Oz-lgS">
+                                <rect key="frame" x="0.0" y="44" width="414" height="574"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compoundlogo100X146" translatesAutoresizingMaskIntoConstraints="NO" id="oEX-oO-fLs">
+                                        <rect key="frame" x="157" y="214" width="100" height="146"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="oEX-oO-fLs" firstAttribute="centerX" secondItem="jhQ-Oz-lgS" secondAttribute="centerX" id="KRO-DO-enE"/>
+                                    <constraint firstItem="oEX-oO-fLs" firstAttribute="centerY" secondItem="jhQ-Oz-lgS" secondAttribute="centerY" id="cV7-uf-6Kw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Qvo-Ss-ujQ" firstAttribute="trailing" secondItem="rC9-Ga-ko5" secondAttribute="trailing" constant="24" id="Fvu-L2-rK2"/>
+                            <constraint firstItem="Qvo-Ss-ujQ" firstAttribute="trailing" secondItem="jhQ-Oz-lgS" secondAttribute="trailing" id="HaE-eh-MLq"/>
+                            <constraint firstItem="jhQ-Oz-lgS" firstAttribute="top" secondItem="Qvo-Ss-ujQ" secondAttribute="top" id="Kec-dc-ZAf"/>
+                            <constraint firstItem="rC9-Ga-ko5" firstAttribute="leading" secondItem="Qvo-Ss-ujQ" secondAttribute="leading" constant="24" id="USi-Rq-KCk"/>
+                            <constraint firstItem="gRV-6Z-vh5" firstAttribute="top" secondItem="jhQ-Oz-lgS" secondAttribute="bottom" id="VT8-8F-GJL"/>
+                            <constraint firstItem="gRV-6Z-vh5" firstAttribute="leading" secondItem="Qvo-Ss-ujQ" secondAttribute="leading" constant="24" id="Vq5-o1-djR"/>
+                            <constraint firstItem="Xgo-fZ-ecD" firstAttribute="centerX" secondItem="HJm-US-jV5" secondAttribute="centerX" id="bfc-bg-hhD"/>
+                            <constraint firstItem="Qvo-Ss-ujQ" firstAttribute="bottom" secondItem="Xgo-fZ-ecD" secondAttribute="bottom" constant="74" id="d81-mc-btR"/>
+                            <constraint firstItem="jhQ-Oz-lgS" firstAttribute="leading" secondItem="Qvo-Ss-ujQ" secondAttribute="leading" id="m9P-za-FSM"/>
+                            <constraint firstItem="rC9-Ga-ko5" firstAttribute="top" secondItem="gRV-6Z-vh5" secondAttribute="bottom" constant="12" id="mFV-e8-nBW"/>
+                            <constraint firstItem="Qvo-Ss-ujQ" firstAttribute="trailing" secondItem="gRV-6Z-vh5" secondAttribute="trailing" constant="24" id="tR3-RC-uko"/>
+                            <constraint firstItem="Xgo-fZ-ecD" firstAttribute="top" secondItem="rC9-Ga-ko5" secondAttribute="bottom" constant="30" id="zhq-S6-5pg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qvo-Ss-ujQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="appleView" destination="rC9-Ga-ko5" id="Fky-sR-QbG"/>
+                        <outlet property="kakaoView" destination="gRV-6Z-vh5" id="PET-Lc-k3C"/>
+                        <outlet property="passLoginButton" destination="Xgo-fZ-ecD" id="km9-ES-icp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHb-fF-fkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="155.07246376811597" y="-228.34821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compoundlogo100X146" width="100" height="146"/>
+        <image name="iconapple20X24" width="20" height="24"/>
+        <image name="iconkakaotalk24X22" width="24" height="22"/>
+    </resources>
+</document>
