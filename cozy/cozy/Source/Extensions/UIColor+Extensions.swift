@@ -11,6 +11,10 @@ import UIKit
 
 extension UIColor {
 
+    @nonobjc class var realwhite: UIColor {
+        return UIColor(white: 255.0 / 255.0, alpha: 1.0)
+    }
+
     @nonobjc class var white: UIColor {
         return UIColor(white: 245.0 / 255.0, alpha: 1.0)
     }
