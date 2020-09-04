@@ -42,13 +42,6 @@ class bookstoreCell: UITableViewCell {
     }
 
     @IBAction func clickBookmarkButton(_ sender: UIButton) {
-
-        if bookmarkButton.hasImage(named: "iconsavewhite", for: .normal) {
-            bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
-        } else {
-            bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
-        }
-
         self.delegate?.clickBookmarkButton(index: index)
     }
 

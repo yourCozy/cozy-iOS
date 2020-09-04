@@ -33,7 +33,27 @@ class RecommendVC: UIViewController {
 extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDelegate {
 
     func clickBookmarkButton(index: Int) {
-        print("index:", index)
+        let indexPath = IndexPath(row: index, section: 1)
+        let cell = self.tableView.cellForRow(at: indexPath) as! bookstoreCell
+
+        if cell.bookmarkButton.hasImage(named: "iconsavewhite", for: .normal) {
+            cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
+            let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let cancelAlert = UIAlertController(title: "관심 책방에서 삭제하시겠어요?", message: "관심책방 등록을 삭제하시면, 관심책방에서 다시 볼 수 없어요.", preferredStyle: UIAlertController.Style.alert)
+
+            cancelAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (_: UIAlertAction!) in
+                cell.bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
+            }))
+
+            cancelAlert.addAction(UIAlertAction(title: "아니오", style: .cancel, handler: { (_: UIAlertAction!) in
+                cancelAlert.dismiss(animated: true, completion: nil)
+            }))
+
+            self.present(cancelAlert, animated: true, completion: nil)
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
