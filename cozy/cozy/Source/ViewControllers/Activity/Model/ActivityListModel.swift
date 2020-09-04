@@ -9,14 +9,16 @@
 import Foundation
 import UIKit
 
-struct BookStoreData {
+struct ActivityListModel {
     // bs = book store
+    var bsDday: String
     var bsImageName: String
     var bsContents: String
     var bsName: String
     var bsprice: String
 
-    init(imageName: String, contents: String, name: String, price: String) {
+    init(Dday: String, imageName: String, contents: String, name: String, price: String) {
+        bsDday = Dday
         bsImageName = imageName
         bsContents = contents
         bsName = name
