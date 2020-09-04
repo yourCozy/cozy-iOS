@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gKg-bJ-K6h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gKg-bJ-K6h">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -76,26 +76,35 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-kJ-B0N">
                                                         <rect key="frame" x="0.0" y="0.0" width="261" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFt-8u-NaN">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFt-8u-NaN">
                                                                 <rect key="frame" x="76" y="0.0" width="83" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="83" id="aDr-jV-HUL"/>
                                                                 </constraints>
                                                                 <state key="normal" title="빈티지"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="AIH-ws-ML3"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-rn-Zoj">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-rn-Zoj">
                                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="3wf-bq-SJ7"/>
                                                                 </constraints>
                                                                 <state key="normal" title="예술"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="Ysc-rW-sSq"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-0f-vFG">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-0f-vFG">
                                                                 <rect key="frame" x="165" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="rJK-eL-l0S"/>
                                                                 </constraints>
                                                                 <state key="normal" title="감성"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="byc-sE-IVg"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -114,26 +123,35 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILQ-rO-AXW">
                                                         <rect key="frame" x="0.0" y="46" width="261" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xil-oS-cTC">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xil-oS-cTC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="7hL-5Z-ekX"/>
                                                                 </constraints>
                                                                 <state key="normal" title="독립출판"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="U6d-i4-M6p"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A94-xy-K2c">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A94-xy-K2c">
                                                                 <rect key="frame" x="102" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="fnp-9y-MM1"/>
                                                                 </constraints>
                                                                 <state key="normal" title="맥주"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="ESj-pO-phl"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrK-JT-AyL">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrK-JT-AyL">
                                                                 <rect key="frame" x="178" y="0.0" width="83" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="83" id="6JZ-u5-bgw"/>
                                                                 </constraints>
                                                                 <state key="normal" title="소규모"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="9Ub-vf-h6I"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -152,26 +170,35 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BuO-Hb-PxV">
                                                         <rect key="frame" x="0.0" y="92" width="261" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukq-N9-pCA">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukq-N9-pCA">
                                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="rrB-yn-cjA"/>
                                                                 </constraints>
                                                                 <state key="normal" title="사진"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="NdT-nf-BJv"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgR-9d-2T6">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgR-9d-2T6">
                                                                 <rect key="frame" x="76" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="vtj-Ew-VH9"/>
                                                                 </constraints>
                                                                 <state key="normal" title="커피"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="kz3-ul-vdG"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqE-aI-U1s">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqE-aI-U1s">
                                                                 <rect key="frame" x="152" y="0.0" width="83" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="83" id="gWf-VF-Wn0"/>
                                                                 </constraints>
                                                                 <state key="normal" title="동화책"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="3en-bj-sBj"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -192,26 +219,35 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUz-8b-NKT">
                                                         <rect key="frame" x="0.0" y="138" width="261" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UG2-Hs-ni2">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UG2-Hs-ni2">
                                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="kFa-z4-LNf"/>
                                                                 </constraints>
                                                                 <state key="normal" title="문구"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="3eE-df-CXH"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-cz-0iT">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-cz-0iT">
                                                                 <rect key="frame" x="76" y="0.0" width="96" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="rcA-pz-gpj"/>
                                                                 </constraints>
                                                                 <state key="normal" title="큐레이션"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="kXP-rK-KP0"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-pi-eUg">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-pi-eUg">
                                                                 <rect key="frame" x="178" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="5h5-sq-1MI"/>
                                                                 </constraints>
                                                                 <state key="normal" title="잡지"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="irb-Pv-1ot"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -230,26 +266,35 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzF-PF-edG">
                                                         <rect key="frame" x="0.0" y="184" width="261" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrB-rS-l3K">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrB-rS-l3K">
                                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="cEY-iI-wYd"/>
                                                                 </constraints>
                                                                 <state key="normal" title="시집"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="UQl-eg-Qww"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yy3-7m-M9L">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yy3-7m-M9L">
                                                                 <rect key="frame" x="76" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="sL8-cu-Tcj"/>
                                                                 </constraints>
                                                                 <state key="normal" title="과학"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="hs3-Gx-Xv2"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie6-Gy-Tue">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie6-Gy-Tue">
                                                                 <rect key="frame" x="152" y="0.0" width="83" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="83" id="ODq-x6-wbb"/>
                                                                 </constraints>
                                                                 <state key="normal" title="아늑함"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="1cU-1x-Qjz"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -269,26 +314,35 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRq-z3-pb5">
                                                         <rect key="frame" x="0.0" y="230" width="261" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRm-F2-Irb">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRm-F2-Irb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="tpc-Br-d48"/>
                                                                 </constraints>
                                                                 <state key="normal" title="인문사회"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="uaN-gR-JW1"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whP-rh-tpN">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whP-rh-tpN">
                                                                 <rect key="frame" x="102" y="0.0" width="83" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="83" id="C7i-7c-Ywl"/>
                                                                 </constraints>
                                                                 <state key="normal" title="따뜻함"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="Oh2-uV-hxr"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOM-q6-kW1">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOM-q6-kW1">
                                                                 <rect key="frame" x="191" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="d3b-kJ-pLg"/>
                                                                 </constraints>
                                                                 <state key="normal" title="까페"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="DGP-He-FkI"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -316,26 +370,35 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nm2-7K-bfQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzP-kh-RJg">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzP-kh-RJg">
                                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="mKM-QN-JfA"/>
                                                                 </constraints>
                                                                 <state key="normal" title="독서모임"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="wI7-yZ-lHl"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSs-81-wsi">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSs-81-wsi">
                                                                 <rect key="frame" x="102" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="CKL-Yw-Pe2"/>
                                                                 </constraints>
                                                                 <state key="normal" title="워크숍"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="oZY-va-MFC"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzP-Fv-Dq6">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzP-Fv-Dq6">
                                                                 <rect key="frame" x="178" y="0.0" width="83" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="83" id="hpI-tJ-vud"/>
                                                                 </constraints>
                                                                 <state key="normal" title="만들기"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="Bel-hn-YP0"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -354,26 +417,35 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I97-qg-YX4">
                                                         <rect key="frame" x="0.0" y="46" width="290" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxm-hq-fbp">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxm-hq-fbp">
                                                                 <rect key="frame" x="0.0" y="0.0" width="96" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="nJW-Ji-wp7"/>
                                                                 </constraints>
                                                                 <state key="normal" title="영화상영"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="cZM-Qh-kEB"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJN-fJ-QKq">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJN-fJ-QKq">
                                                                 <rect key="frame" x="102" y="0.0" width="112" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="112" id="N2N-bx-qeh"/>
                                                                 </constraints>
                                                                 <state key="normal" title="글쓰기 모임"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="T5F-cG-UAH"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKQ-qF-he1">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKQ-qF-he1">
                                                                 <rect key="frame" x="220" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="q6d-Mg-b4B"/>
                                                                 </constraints>
                                                                 <state key="normal" title="강연"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="3BY-qz-Kvl"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -392,26 +464,35 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-5A-Lic">
                                                         <rect key="frame" x="0.0" y="92" width="290" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQc-0v-rCf">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQc-0v-rCf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="83" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="83" id="VXh-PJ-C9B"/>
                                                                 </constraints>
                                                                 <state key="normal" title="북토크"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="cTC-8Q-xgR"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhx-LE-CZp">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhx-LE-CZp">
                                                                 <rect key="frame" x="89" y="0.0" width="96" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="jnQ-3K-l4H"/>
                                                                 </constraints>
                                                                 <state key="normal" title="심야책방"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="G85-OU-qfL"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as2-Pp-nna">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as2-Pp-nna">
                                                                 <rect key="frame" x="191" y="0.0" width="96" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="96" id="vyW-Py-mbc"/>
                                                                 </constraints>
                                                                 <state key="normal" title="공간대여"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="neY-ho-dN6"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -430,12 +511,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UY3-bx-aBx">
                                                         <rect key="frame" x="0.0" y="138" width="290" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggi-Nu-McP">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggi-Nu-McP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="102" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="102" id="6C7-ZE-sMs"/>
                                                                 </constraints>
                                                                 <state key="normal" title="전시/공연"/>
+                                                                <connections>
+                                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="Fnq-4e-wDz"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -451,7 +535,7 @@
                                                     <constraint firstAttribute="height" constant="178" id="oiO-wB-o5f"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GE2-Og-9aw">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GE2-Og-9aw">
                                                 <rect key="frame" x="0.0" y="872.5" width="414" height="83"/>
                                                 <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -461,6 +545,9 @@
                                                 <state key="normal" title="시작하기">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="bIF-5y-zVg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -514,13 +601,6 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="onboardingLabel" destination="2gA-oT-Mr2" id="Mlu-ah-vWT"/>
-                        <outletCollection property="tastes" destination="xil-oS-cTC" collectionClass="NSMutableArray" id="XtR-Xa-xU0"/>
-                        <outletCollection property="tastes" destination="A94-xy-K2c" collectionClass="NSMutableArray" id="t48-bP-g2j"/>
-                        <outletCollection property="tastes" destination="ZrK-JT-AyL" collectionClass="NSMutableArray" id="lZr-jA-6La"/>
-                        <outletCollection property="tastes" destination="Ukq-N9-pCA" collectionClass="NSMutableArray" id="Ova-np-NQg"/>
-                        <outletCollection property="tastes" destination="sgR-9d-2T6" collectionClass="NSMutableArray" id="DY3-ke-GoB"/>
-                        <outletCollection property="tastes" destination="zqE-aI-U1s" collectionClass="NSMutableArray" id="CsM-wc-Nte"/>
-                        <outletCollection property="tastes" destination="UG2-Hs-ni2" collectionClass="NSMutableArray" id="KC8-sz-uP6"/>
                         <outletCollection property="tastes" destination="5S5-cz-0iT" collectionClass="NSMutableArray" id="q46-mM-Zp8"/>
                         <outletCollection property="tastes" destination="NFt-pi-eUg" collectionClass="NSMutableArray" id="l7a-1U-Z9k"/>
                         <outletCollection property="tastes" destination="mrB-rS-l3K" collectionClass="NSMutableArray" id="Aim-c5-0i7"/>
@@ -542,6 +622,13 @@
                         <outletCollection property="tastes" destination="P6H-0f-vFG" collectionClass="NSMutableArray" id="Bk8-B1-MoH"/>
                         <outletCollection property="tastes" destination="CFt-8u-NaN" collectionClass="NSMutableArray" id="NrX-UN-FF5"/>
                         <outletCollection property="tastes" destination="z2N-rn-Zoj" collectionClass="NSMutableArray" id="JGR-tJ-zu7"/>
+                        <outletCollection property="tastes" destination="UG2-Hs-ni2" collectionClass="NSMutableArray" id="4gc-9n-qrn"/>
+                        <outletCollection property="tastes" destination="zqE-aI-U1s" collectionClass="NSMutableArray" id="XSp-wr-RlA"/>
+                        <outletCollection property="tastes" destination="sgR-9d-2T6" collectionClass="NSMutableArray" id="MzR-0x-u3d"/>
+                        <outletCollection property="tastes" destination="Ukq-N9-pCA" collectionClass="NSMutableArray" id="UaL-fD-H97"/>
+                        <outletCollection property="tastes" destination="ZrK-JT-AyL" collectionClass="NSMutableArray" id="l21-e6-cel"/>
+                        <outletCollection property="tastes" destination="A94-xy-K2c" collectionClass="NSMutableArray" id="13E-NW-Cot"/>
+                        <outletCollection property="tastes" destination="xil-oS-cTC" collectionClass="NSMutableArray" id="cOl-pr-wkz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bg-F2-MKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
