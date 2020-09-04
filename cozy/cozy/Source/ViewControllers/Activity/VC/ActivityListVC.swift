@@ -11,7 +11,7 @@ import UIKit
 class ActivityListVC: UIViewController {
 
     var categoryIdx: Int = 0
-    private var bookStoreList: [BookStoreData] = []
+    private var activityList: [ActivityListData] = []
 
     @IBOutlet weak var activityTableView: UITableView!
 
@@ -24,13 +24,29 @@ class ActivityListVC: UIViewController {
     }
 
     private func setBookStoreData() {
-        let bs1 = BookStoreData(imageName: "ajeetMestryUBhpOiHnazMUnsplash", contents: "sample text~~~~~~", name: "홍철책방", price: "15,000원")
-        let bs2 = BookStoreData(imageName: "ajeetMestryUBhpOiHnazMUnsplash", contents: "sample text~~~~~~", name: "홍철책방", price: "15,000원")
-        let bs3 = BookStoreData(imageName: "ajeetMestryUBhpOiHnazMUnsplash", contents: "sample text~~~~~~", name: "홍철책방", price: "15,000원")
-        let bs4 = BookStoreData(imageName: "ajeetMestryUBhpOiHnazMUnsplash", contents: "sample text~~~~~~", name: "홍철책방", price: "15,000원")
-        let bs5 = BookStoreData(imageName: "ajeetMestryUBhpOiHnazMUnsplash", contents: "sample text~~~~~~", name: "홍철책방", price: "15,000원")
-
-        bookStoreList = [bs1, bs2, bs3, bs4, bs5]
+        ActivityListService.shared.getActivityListData(categoryIdx: categoryIdx) { NetworkResult in
+            switch NetworkResult {
+                case .success(let data):
+                    guard let data = data as? [ActivityListData] else {return print("error")}
+                    print("@@@@@@data@@@@@@")
+                    print(data)
+                    self.activityList.removeAll()
+                    for data in data {
+                        self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName, activityName: data.activityName, shortIntro: data.shortIntro, price: data.price, image: data.image, dday: data.dday))
+                    }
+                    DispatchQueue.main.async {
+                          self.activityTableView.reloadData()
+                    }
+                case .requestErr:
+                    print("Request error@@")
+                case .pathErr:
+                    print("path error")
+                case .serverErr:
+                    print("server error")
+                case .networkFail:
+                    print("network error")
+            }
+        }
     }
 
 }
@@ -43,15 +59,15 @@ extension ActivityListVC: UITableViewDelegate {
 
 extension ActivityListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bookStoreList.count
+        return activityList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let bookStoreCell = tableView.dequeueReusableCell(withIdentifier: ActivityTableViewCell.identifier, for:
+        guard let activityCell = tableView.dequeueReusableCell(withIdentifier: ActivityTableViewCell.identifier, for:
         indexPath) as? ActivityTableViewCell else { return UITableViewCell() }
 
-        bookStoreCell.setData(activityCellImageName: bookStoreList[indexPath.row].bsImageName, activityCellContents: bookStoreList[indexPath.row].bsContents, activityCellBookStoreName: bookStoreList[indexPath.row].bsName, activityCellPrice: bookStoreList[indexPath.row].bsprice)
+        activityCell.setData(lblDday: activityList[indexPath.row].dday, activityCellImageName: activityList[indexPath.row].image, activityCellContents: activityList[indexPath.row].shortIntro, activityCellBookStoreName: activityList[indexPath.row].bookstoreName, activityCellPrice: activityList[indexPath.row].price)
 
-        return bookStoreCell
+        return activityCell
     }
 }
