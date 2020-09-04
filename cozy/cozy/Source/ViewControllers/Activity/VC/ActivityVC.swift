@@ -20,20 +20,20 @@ class ActivityVC: UIViewController {
             button.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 14)
         }
 
+        // 버튼 tag 설정
+        var i = 1
+        for button in buttonActivityCollection {
+            button.tag = i
+            i += 1
+        }
     }
 
-    @IBAction func btnActivityAction(_ sender: Any) {
+    @IBAction func btnActivityAction(_ sender: UIButton) {
+
         let sb = UIStoryboard(name: "ActivityList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
+        vc.categoryIdx = sender.tag
 
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
-    @IBAction func testBtn(_ sender: Any) {
-        let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
-
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class ActivityListVC: UIViewController {
 
+    var categoryIdx: Int = 0
     private var bookStoreList: [BookStoreData] = []
 
     @IBOutlet weak var activityTableView: UITableView!
