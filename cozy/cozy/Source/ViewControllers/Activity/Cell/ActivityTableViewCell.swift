@@ -11,6 +11,7 @@ import UIKit
 class ActivityTableViewCell: UITableViewCell {
     static let identifier: String = "activityTableViewCell"
 
+    @IBOutlet weak var lblDday: UILabel!
     @IBOutlet weak var activityCellImageView: UIImageView!
     @IBOutlet weak var activityCellLabel: UILabel!
     @IBOutlet weak var activityPriceLabel: UILabel!
@@ -37,10 +38,11 @@ class ActivityTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setData(activityCellImageName: String, activityCellContents: String, activityCellBookStoreName: String, activityCellPrice: String) {
-        activityCellImageView.image = UIImage(named: activityCellImageName)
+    func setData(lblDday: Int, activityCellContents: String, activityCellBookStoreName: String, activityCellPrice: Int) {
+        self.lblDday.text = String(lblDday)
+//        activityCellImageView.image = UIImage(named: activityCellImageName)
         activityCellLabel.text = activityCellContents
         activityCellBookStoreNameLabel.text = activityCellBookStoreName
-        activityPriceLabel.text = activityCellPrice
+        activityPriceLabel.text = String(activityCellPrice)
     }
 }
