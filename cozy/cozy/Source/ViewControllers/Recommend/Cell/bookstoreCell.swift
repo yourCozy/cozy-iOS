@@ -13,7 +13,7 @@ protocol bookstoreDelegate: AnyObject {
 }
 
 class bookstoreCell: UITableViewCell {
-
+    
     weak var delegate: bookstoreDelegate?
 
     @IBOutlet weak var bookstoreImageView: UIImageView!
@@ -39,9 +39,9 @@ class bookstoreCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
     @IBAction func clickBookmarkButton(_ sender: UIButton) {
         self.delegate?.clickBookmarkButton()
     }
-
+    
 }
