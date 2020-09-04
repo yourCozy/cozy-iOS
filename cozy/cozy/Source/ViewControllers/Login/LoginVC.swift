@@ -41,16 +41,27 @@ class LoginVC: UIViewController {
         print("click kakao")
 
         // 카카오톡 설치 여부 확인
-        if AuthApi.isKakaoTalkLoginAvailable() {
-            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                } else {
-                    print("loginWithKakaoTalk() success.")
+//        if AuthApi.isKakaoTalkLoginAvailable() {
+//            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+//                if let error = error {
+//                    print(error)
+//                } else {
+//                    print("loginWithKakaoTalk() success.")
+//
+//                    //do something
+//                    _ = oauthToken
+//                }
+//            }
+//        }
 
-                    //do something
-                    _ = oauthToken
-                }
+        AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            } else {
+                print("loginWithKakaoAccount() success.")
+
+                //do something
+                _ = oauthToken
             }
         }
 

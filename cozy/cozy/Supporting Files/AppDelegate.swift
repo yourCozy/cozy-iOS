@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // setting kakao initialize
         KakaoSDKCommon.initSDK(appKey: "d7dd9441a92b6d9f5628dd2d0f625dcb")
-        
+
         return true
     }
 
