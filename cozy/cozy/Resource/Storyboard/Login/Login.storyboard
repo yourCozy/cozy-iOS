@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cg4-XX-Yfw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cg4-XX-Yfw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -122,8 +122,44 @@
             </objects>
             <point key="canvasLocation" x="155.07246376811597" y="-228.34821428571428"/>
         </scene>
+        <!--Kakao LoginVC-->
+        <scene sceneID="UY3-s8-tmT">
+            <objects>
+                <viewController storyboardIdentifier="KakaoLoginVC" id="1D3-2z-umD" customClass="KakaoLoginVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b96-xN-mUR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOA-tx-S1h">
+                                <rect key="frame" x="187" y="722" width="40" height="40"/>
+                                <state key="normal" image="buttonremove40"/>
+                                <connections>
+                                    <action selector="clickCloseButton:" destination="1D3-2z-umD" eventType="touchUpInside" id="c3Q-le-5bO"/>
+                                </connections>
+                            </button>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsO-M8-j67">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="qsO-M8-j67" firstAttribute="top" secondItem="b96-xN-mUR" secondAttribute="top" id="0NM-4b-o3h"/>
+                            <constraint firstItem="II5-7W-ZMk" firstAttribute="trailing" secondItem="qsO-M8-j67" secondAttribute="trailing" id="InV-md-ffb"/>
+                            <constraint firstItem="qsO-M8-j67" firstAttribute="leading" secondItem="II5-7W-ZMk" secondAttribute="leading" id="Tgl-to-v46"/>
+                            <constraint firstItem="oOA-tx-S1h" firstAttribute="centerX" secondItem="b96-xN-mUR" secondAttribute="centerX" id="ezf-ad-WE9"/>
+                            <constraint firstAttribute="bottom" secondItem="qsO-M8-j67" secondAttribute="bottom" id="t5U-4o-PGj"/>
+                            <constraint firstItem="II5-7W-ZMk" firstAttribute="bottom" secondItem="oOA-tx-S1h" secondAttribute="bottom" constant="100" id="x78-7C-idG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="II5-7W-ZMk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ip8-as-IeN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="-228"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="buttonremove40" width="40" height="40"/>
         <image name="compoundlogo100X146" width="100" height="146"/>
         <image name="iconapple20X24" width="20" height="24"/>
         <image name="iconkakaotalk24X22" width="24" height="22"/>

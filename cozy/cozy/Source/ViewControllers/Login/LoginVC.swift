@@ -21,6 +21,8 @@ class LoginVC: UIViewController {
         setUI()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(clickKakaoSocialLogin(_:)))
         kakaoView.addGestureRecognizer(gesture)
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(clickAppleLogin(_:)))
+        appleView.addGestureRecognizer(gesture2)
     }
 
     func setUI() {
@@ -37,8 +39,11 @@ class LoginVC: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
 
+    @objc func clickAppleLogin(_ sender: UITapGestureRecognizer) {
+        print("click apple login")
+    }
+
     @objc func clickKakaoSocialLogin(_ sender: UITapGestureRecognizer) {
-        print("click kakao")
 
         // 카카오톡 설치 여부 확인
 //        if AuthApi.isKakaoTalkLoginAvailable() {
@@ -54,6 +59,7 @@ class LoginVC: UIViewController {
 //            }
 //        }
 
+        // 웹 뷰로 카카오톡 로그인
         AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
                 print(error)
