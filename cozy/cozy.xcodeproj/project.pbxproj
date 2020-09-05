@@ -69,6 +69,7 @@
 		B6A487AE24F812F50058025C /* MapSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A487AD24F812F50058025C /* MapSelectCell.swift */; };
 		B6B1E1CA24FED56A00E60FB0 /* detailCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1E1C824FED56A00E60FB0 /* detailCell3.swift */; };
 		B6B1E1CB24FED56A00E60FB0 /* detailCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B1E1C924FED56A00E60FB0 /* detailCell3.xib */; };
+		B6C424AE2503CDDC00AAE393 /* KakaoLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424AD2503CDDC00AAE393 /* KakaoLoginVC.swift */; };
 		B6F4140A24F19B36009863D7 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */; };
 		B6F4140B24F19B36009863D7 /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */; };
 		B6F4140C24F19B36009863D7 /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140824F19B36009863D7 /* NanumSquareRoundR.ttf */; };
@@ -146,6 +147,7 @@
 		B6A487AD24F812F50058025C /* MapSelectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectCell.swift; sourceTree = "<group>"; };
 		B6B1E1C824FED56A00E60FB0 /* detailCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell3.swift; sourceTree = "<group>"; };
 		B6B1E1C924FED56A00E60FB0 /* detailCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailCell3.xib; sourceTree = "<group>"; };
+		B6C424AD2503CDDC00AAE393 /* KakaoLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginVC.swift; sourceTree = "<group>"; };
 		B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundL.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundL.ttf; sourceTree = "<group>"; };
 		B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundEB.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
 		B6F4140824F19B36009863D7 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundR.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundR.ttf; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				B658A3C7250168450076BCD4 /* LoginVC.swift */,
+				B6C424AD2503CDDC00AAE393 /* KakaoLoginVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
 				187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */,
 				B658A3AB250152DA0076BCD4 /* OnboardingIntroVC.swift in Sources */,
+				B6C424AE2503CDDC00AAE393 /* KakaoLoginVC.swift in Sources */,
 				187C1302250286C2004FD60B /* ActivityListService.swift in Sources */,
 				B64AF18F24FD5C100015F2A7 /* OnboardingVC.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
