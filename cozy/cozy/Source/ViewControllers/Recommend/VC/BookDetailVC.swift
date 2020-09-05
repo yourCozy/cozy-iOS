@@ -45,8 +45,12 @@ class BookDetailVC: UIViewController {
 }
 
 extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1Delegate, detailCell3Delegate {
+
     func selectCallButton() {
-        print("select call button")
+        if let url = URL(string: "tel://\(01045768209)"),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 
     func selectSaveButton() {
