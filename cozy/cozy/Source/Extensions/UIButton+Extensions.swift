@@ -25,6 +25,16 @@ extension UIButton {
         self.setTitleColor(UIColor.brownishGrey, for: .normal)
     }
 
+    func setMypageLoginButton() {
+        self.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 16)
+        self.setTitleColor( UIColor.realwhite, for: .normal)
+        self.layer.borderColor = UIColor.mango.cgColor
+        self.layer.backgroundColor = UIColor.mango.cgColor
+        self.layer.cornerRadius = 22
+        self.layer.borderWidth = 1
+        self.clipsToBounds = true
+    }
+
     func setTasteButtonUntapped() {
         self.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 14)
         self.setTitleColor(UIColor.brownishGrey, for: .normal)
