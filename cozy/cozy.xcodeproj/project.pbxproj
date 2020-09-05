@@ -78,6 +78,7 @@
 		B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */; };
 		CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05FEC224F5590F008747B6 /* recentCell.swift */; };
 		CC45999F25020ED700731018 /* NoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC45999E25020ED700731018 /* NoticeVC.swift */; };
+		CC7E50D92503C6C6001BA50C /* noticeTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E50D82503C6C6001BA50C /* noticeTitleCell.swift */; };
 		CCA0FB2824FE9A9E006B1F5B /* InterestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +158,7 @@
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
 		CC05FEC224F5590F008747B6 /* recentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentCell.swift; sourceTree = "<group>"; };
 		CC45999E25020ED700731018 /* NoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeVC.swift; sourceTree = "<group>"; };
+		CC7E50D82503C6C6001BA50C /* noticeTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeTitleCell.swift; sourceTree = "<group>"; };
 		CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -375,6 +377,7 @@
 				CC05FEC224F5590F008747B6 /* recentCell.swift */,
 				CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */,
 				CC45999E25020ED700731018 /* NoticeVC.swift */,
+				CC7E50D82503C6C6001BA50C /* noticeTitleCell.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
+				CC7E50D92503C6C6001BA50C /* noticeTitleCell.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,

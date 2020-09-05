@@ -15,12 +15,18 @@ class MypageVC: UIViewController {
     @IBOutlet weak var recentCollectionView: UICollectionView!
     private let collectionViewIdentifier: String = "recentCell"
 
+    @IBOutlet weak var beforeView: UIView!
+    @IBOutlet weak var beforeView2: UIView!
+    @IBOutlet weak var loginButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         emailLabel.textColor = UIColor.brownishGrey
 
         recentCollectionView.dataSource = self
+        setView()
+        loginButton.setMypageLoginButton()
     }
 
     @IBAction func goOnboarding(_ sender: UIButton) {
@@ -30,6 +36,10 @@ class MypageVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    private func setView() {
+        beforeView.isHidden =  false
+        //beforeView2.layer.zPosition = 1
+    }
 }
 
 extension MypageVC: UICollectionViewDataSource {
@@ -47,4 +57,8 @@ extension MypageVC: UICollectionViewDataSource {
 
         return cell
     }
+}
+
+extension UICollectionView {
+    
 }
