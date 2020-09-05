@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nxr-WG-s7n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nxr-WG-s7n">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -159,11 +159,7 @@
                         <viewLayoutGuide key="safeArea" id="WC0-U8-eaL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="jIe-R3-0fc"/>
-                    <navigationItem key="navigationItem" id="6jF-jZ-Msq">
-                        <barButtonItem key="rightBarButtonItem" image="iconsearch" id="5Z3-Hb-wi7">
-                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="6jF-jZ-Msq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="eNH-d6-ywN" id="DTg-eJ-dVm"/>
@@ -196,7 +192,6 @@
     <resources>
         <image name="iconplace" width="11" height="14"/>
         <image name="iconsavewhite" width="14" height="20"/>
-        <image name="iconsearch" width="22" height="22"/>
         <image name="tapiconrecommendpressed" width="23" height="22"/>
     </resources>
 </document>

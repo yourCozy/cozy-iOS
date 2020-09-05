@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NMapsMap
 
 class BookDetailVC: UIViewController {
 
@@ -78,7 +79,16 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
     }
 
     func selectMapButton() {
-        print("select map button")
+        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
+
+        // sample
+        let latitude: Double = Double(37.548718)
+        let longtitude: Double = Double(126.920829)
+
+        if let url = URL(string: "nmap://actionPath?parameter=value&appname=com.cozycorp.yourcozy.cozy"),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 
     func clickImageButton1() {
