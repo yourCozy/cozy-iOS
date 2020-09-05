@@ -11,6 +11,9 @@ import UIKit
 protocol detailCell1Delegate: AnyObject {
     func selectBookButton()
     func selectActivityButton()
+    func selectCallButton()
+    func selectSaveButton()
+    func selectMapButton()
 }
 
 class detailCell1: UITableViewCell {
@@ -64,6 +67,18 @@ class detailCell1: UITableViewCell {
 
     @IBAction func selectActivityButton(_ sender: UIButton) {
         self.delegate?.selectActivityButton()
+    }
+
+    @IBAction func selectCallButton(_ sender: UIButton) {
+        self.delegate?.selectCallButton()
+    }
+
+    @IBAction func selectSaveButton(_ sender: UIButton) {
+        self.delegate?.selectSaveButton()
+    }
+
+    @IBAction func selectMapButton(_ sender: UIButton) {
+        self.delegate?.selectMapButton()
     }
 
 }

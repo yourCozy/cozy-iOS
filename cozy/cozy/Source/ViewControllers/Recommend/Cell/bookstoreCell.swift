@@ -9,12 +9,13 @@
 import UIKit
 
 protocol bookstoreDelegate: AnyObject {
-    func clickBookmarkButton()
+    func clickBookmarkButton(index: Int)
 }
 
 class bookstoreCell: UITableViewCell {
 
     weak var delegate: bookstoreDelegate?
+    var index: Int = 0
 
     @IBOutlet weak var bookstoreImageView: UIImageView!
 
@@ -41,7 +42,7 @@ class bookstoreCell: UITableViewCell {
     }
 
     @IBAction func clickBookmarkButton(_ sender: UIButton) {
-        self.delegate?.clickBookmarkButton()
+        self.delegate?.clickBookmarkButton(index: index)
     }
 
 }

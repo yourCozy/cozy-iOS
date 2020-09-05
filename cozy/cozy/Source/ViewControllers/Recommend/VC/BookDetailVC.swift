@@ -45,6 +45,42 @@ class BookDetailVC: UIViewController {
 }
 
 extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1Delegate, detailCell3Delegate {
+
+    func selectCallButton() {
+        if let url = URL(string: "tel://\(01045768209)"),
+            UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+
+    func selectSaveButton() {
+        let indexPath = IndexPath(row: 0, section: 0)
+        let cell = self.detailTableView.cellForRow(at: indexPath) as! detailCell1
+
+        if cell.bookmarkButton1.hasImage(named: "iconsave", for: .normal) {
+            cell.bookmarkButton1.setImage(UIImage(named: "iconsavefull"), for: .normal)
+            let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let cancelAlert = UIAlertController(title: "관심 책방에서 삭제하시겠어요?", message: "관심책방 등록을 삭제하시면, 관심책방에서 다시 볼 수 없어요.", preferredStyle: UIAlertController.Style.alert)
+
+            cancelAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (_: UIAlertAction!) in
+                cell.bookmarkButton1.setImage(UIImage(named: "iconsave"), for: .normal)
+            }))
+
+            cancelAlert.addAction(UIAlertAction(title: "아니오", style: .cancel, handler: { (_: UIAlertAction!) in
+                cancelAlert.dismiss(animated: true, completion: nil)
+            }))
+
+            self.present(cancelAlert, animated: true, completion: nil)
+        }
+    }
+
+    func selectMapButton() {
+        print("select map button")
+    }
+
     func clickImageButton1() {
         let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
