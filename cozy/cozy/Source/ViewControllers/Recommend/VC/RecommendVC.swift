@@ -14,18 +14,44 @@ class RecommendVC: UIViewController {
     private let cellIdentifier1: String = "recommendCell"
     private let cellIdentifier2: String = "bookstoreCell"
 
-    let searchButton = UIButton()
+    private var recommendList: [RecommendListData] = []
+//    private var activityList: [ActivityListData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        getRecommendListData()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if let index = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
+        }
+    }
+
+    private func getRecommendListData() {
+        RecommendListService.shared.getRecommendListData { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [RecommendListData] else { return print("error")
+                }
+//                print("@@", data)
+                self.recommendList.removeAll()
+                for data in data {
+                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg, shortIntro1: data.shortIntro1, shortIntro2: data.shortIntro2, location: data.location, hashtag1: data.hashtag1, hashtag2: data.hashtag2, hashtag3: data.hashtag3, checked: data.checked))
+                }
+                print(data)
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
         }
     }
 }

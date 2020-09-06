@@ -70,6 +70,8 @@
 		B6B1E1CA24FED56A00E60FB0 /* detailCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1E1C824FED56A00E60FB0 /* detailCell3.swift */; };
 		B6B1E1CB24FED56A00E60FB0 /* detailCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B1E1C924FED56A00E60FB0 /* detailCell3.xib */; };
 		B6C424AE2503CDDC00AAE393 /* KakaoLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424AD2503CDDC00AAE393 /* KakaoLoginVC.swift */; };
+		B6C424B2250514F200AAE393 /* RecommendListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B1250514F200AAE393 /* RecommendListModel.swift */; };
+		B6C424B6250516E300AAE393 /* RecommendListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B5250516E300AAE393 /* RecommendListService.swift */; };
 		B6F4140A24F19B36009863D7 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */; };
 		B6F4140B24F19B36009863D7 /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */; };
 		B6F4140C24F19B36009863D7 /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140824F19B36009863D7 /* NanumSquareRoundR.ttf */; };
@@ -149,6 +151,8 @@
 		B6B1E1C824FED56A00E60FB0 /* detailCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell3.swift; sourceTree = "<group>"; };
 		B6B1E1C924FED56A00E60FB0 /* detailCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailCell3.xib; sourceTree = "<group>"; };
 		B6C424AD2503CDDC00AAE393 /* KakaoLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginVC.swift; sourceTree = "<group>"; };
+		B6C424B1250514F200AAE393 /* RecommendListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListModel.swift; sourceTree = "<group>"; };
+		B6C424B5250516E300AAE393 /* RecommendListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListService.swift; sourceTree = "<group>"; };
 		B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundL.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundL.ttf; sourceTree = "<group>"; };
 		B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundEB.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
 		B6F4140824F19B36009863D7 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundR.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundR.ttf; sourceTree = "<group>"; };
@@ -257,7 +261,7 @@
 		B646AF5E24EBFFC100AC96A9 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B646AF6624EC00BB00AC96A9 /* Service */,
+				B646AF6624EC00BB00AC96A9 /* API */,
 				B646AF6024EBFFDC00AC96A9 /* Extensions */,
 				B646AF5F24EBFFCE00AC96A9 /* ViewControllers */,
 			);
@@ -325,14 +329,13 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B646AF6624EC00BB00AC96A9 /* Service */ = {
+		B646AF6624EC00BB00AC96A9 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				B646AF6724EC00C800AC96A9 /* APIConstants.swift */,
-				B646AF6924EC00E900AC96A9 /* NetworkResult.swift */,
-				187C1301250286C2004FD60B /* ActivityListService.swift */,
+				B6C424B4250516A500AAE393 /* ResponseModel */,
+				B6C424B32505167400AAE393 /* Services */,
 			);
-			path = Service;
+			path = API;
 			sourceTree = "<group>";
 		};
 		B646AF6B24EC028F00AC96A9 /* Recommend */ = {
@@ -545,6 +548,25 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		B6C424B32505167400AAE393 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF6724EC00C800AC96A9 /* APIConstants.swift */,
+				B646AF6924EC00E900AC96A9 /* NetworkResult.swift */,
+				187C1301250286C2004FD60B /* ActivityListService.swift */,
+				B6C424B5250516E300AAE393 /* RecommendListService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B6C424B4250516A500AAE393 /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				B6C424B1250514F200AAE393 /* RecommendListModel.swift */,
+			);
+			path = ResponseModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -711,6 +733,7 @@
 				B649CCE724FAAEFE0032AF31 /* NSObject+Extensions.swift in Sources */,
 				B649CCEC24FAB1E20032AF31 /* BookListCell.swift in Sources */,
 				B6985F1624FAC682002A3E6B /* detailCell1.swift in Sources */,
+				B6C424B2250514F200AAE393 /* RecommendListModel.swift in Sources */,
 				B646AF8324EC03A500AC96A9 /* MypageVC.swift in Sources */,
 				B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */,
 				B658A3C1250157110076BCD4 /* onboardcell4.swift in Sources */,
@@ -744,6 +767,7 @@
 				187C1302250286C2004FD60B /* ActivityListService.swift in Sources */,
 				B64AF18F24FD5C100015F2A7 /* OnboardingVC.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
+				B6C424B6250516E300AAE393 /* RecommendListService.swift in Sources */,
 				18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */,
 				B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */,
 				B64940A724F186380052A21F /* MypageNavController.swift in Sources */,
