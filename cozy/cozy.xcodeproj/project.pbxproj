@@ -72,6 +72,8 @@
 		B6C424AE2503CDDC00AAE393 /* KakaoLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424AD2503CDDC00AAE393 /* KakaoLoginVC.swift */; };
 		B6C424B2250514F200AAE393 /* RecommendListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B1250514F200AAE393 /* RecommendListModel.swift */; };
 		B6C424B6250516E300AAE393 /* RecommendListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B5250516E300AAE393 /* RecommendListService.swift */; };
+		B6C424B825054CFF00AAE393 /* BookstoreDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */; };
+		B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */; };
 		B6F4140A24F19B36009863D7 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */; };
 		B6F4140B24F19B36009863D7 /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */; };
 		B6F4140C24F19B36009863D7 /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6F4140824F19B36009863D7 /* NanumSquareRoundR.ttf */; };
@@ -153,6 +155,8 @@
 		B6C424AD2503CDDC00AAE393 /* KakaoLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginVC.swift; sourceTree = "<group>"; };
 		B6C424B1250514F200AAE393 /* RecommendListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListModel.swift; sourceTree = "<group>"; };
 		B6C424B5250516E300AAE393 /* RecommendListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListService.swift; sourceTree = "<group>"; };
+		B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreDetailModel.swift; sourceTree = "<group>"; };
+		B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreDetailService.swift; sourceTree = "<group>"; };
 		B6F4140624F19B36009863D7 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundL.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundL.ttf; sourceTree = "<group>"; };
 		B6F4140724F19B36009863D7 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundEB.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
 		B6F4140824F19B36009863D7 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundR.ttf; path = ../../../../../../../../../../Library/Fonts/NanumSquareRoundR.ttf; sourceTree = "<group>"; };
@@ -201,14 +205,6 @@
 				18981F9624F90C4C00D6A921 /* ActivityListVC.swift */,
 			);
 			path = VC;
-			sourceTree = "<group>";
-		};
-		187FEEDA24FE3BDA00476D89 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				18981F9A24F9104900D6A921 /* ActivityListModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		32D7E29C1D6E872DB03CDCE2 /* Pods */ = {
@@ -388,7 +384,6 @@
 		B646AF7924EC033F00AC96A9 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				187FEEDA24FE3BDA00476D89 /* Model */,
 				187FEED924FE3BD500476D89 /* VC */,
 				187FEED824FE3BCA00476D89 /* Cell */,
 			);
@@ -555,6 +550,7 @@
 				B646AF6924EC00E900AC96A9 /* NetworkResult.swift */,
 				187C1301250286C2004FD60B /* ActivityListService.swift */,
 				B6C424B5250516E300AAE393 /* RecommendListService.swift */,
+				B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -562,7 +558,9 @@
 		B6C424B4250516A500AAE393 /* ResponseModel */ = {
 			isa = PBXGroup;
 			children = (
+				18981F9A24F9104900D6A921 /* ActivityListModel.swift */,
 				B6C424B1250514F200AAE393 /* RecommendListModel.swift */,
+				B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -744,6 +742,7 @@
 				B646AF6824EC00C800AC96A9 /* APIConstants.swift in Sources */,
 				B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */,
 				B658A3CA25016AF40076BCD4 /* MainTabVC.swift in Sources */,
+				B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */,
 				B658A3B52501568C0076BCD4 /* onboardcell2.swift in Sources */,
 				B658A3AD250154690076BCD4 /* OnboardingSlider.swift in Sources */,
 				B6B1E1CA24FED56A00E60FB0 /* detailCell3.swift in Sources */,
@@ -761,6 +760,7 @@
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
+				B6C424B825054CFF00AAE393 /* BookstoreDetailModel.swift in Sources */,
 				187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */,
 				B658A3AB250152DA0076BCD4 /* OnboardingIntroVC.swift in Sources */,
 				B6C424AE2503CDDC00AAE393 /* KakaoLoginVC.swift in Sources */,

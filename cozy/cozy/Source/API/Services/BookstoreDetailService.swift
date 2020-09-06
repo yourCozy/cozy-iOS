@@ -1,29 +1,28 @@
 //
-//  ActivityListService.swift
+//  BookstoreDetailService.swift
 //  cozy
 //
-//  Created by 양재욱 on 2020/09/04.
+//  Created by 최은지 on 2020/09/07.
 //  Copyright © 2020 최은지. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-struct RecommendListService {
-    static let shared = RecommendListService()
+struct BookstoreDetailService {
+    static let shared = BookstoreDetailService()
 
-    func getRecommendListData(completion: @escaping (NetworkResult<Any>) -> Void) {
-        let header: HTTPHeaders = [
-            "Content-Type": "application/json"
-        ]
+    func getBookstoreDetailData(bookstoreIdx: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let header: HTTPHeaders = ["Content-Type": "application/json"]
 
-        let dataRequest = AF.request(APIConstants.recommendURL, method: .get, encoding: JSONEncoding.default, headers: header)
+        let dataRequest = AF.request(APIConstants.recommendDetailURL + String(bookstoreIdx), method: .get, encoding: JSONEncoding.default, headers: header)
 
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {
             case .success:
                 guard let statusCode = dataResponse.response?.statusCode else { return }
                 guard let value = dataResponse.value else { return }
+                print(value)
                 let networkResult = self.judge(by: statusCode, value)
                 completion(networkResult)
             case .failure: completion(.networkFail)
@@ -42,11 +41,10 @@ struct RecommendListService {
 
     private func isData(by data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(RecommendListModel.self, from: data) else { return .pathErr }
+        guard let decodedData = try? decoder.decode(BookstoreDetailModel.self, from: data) else { return .pathErr }
         print("decodedData")
         print(decodedData)
-        print(decodedData.data as Any) // 여기서 decode 가 안 됨 머임??
-        guard let recommendData = decodedData.data else { return .requestErr(decodedData.message) }
-        return .success(recommendData)
+        guard let detailData = decodedData.data else { return .requestErr(decodedData.message) }
+        return .success(detailData)
     }
 }

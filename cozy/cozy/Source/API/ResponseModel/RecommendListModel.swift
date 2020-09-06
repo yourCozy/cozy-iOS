@@ -31,6 +31,19 @@ struct RecommendListModel: Codable {
     }
 }
 
+/*
+ "bookstoreIdx": 15,
+ "bookstoreName": "공상온도",
+ "mainImg": null,
+ "shortIntro1": null,
+ "shortIntro2": null,
+ "location": "서울특별시 마포구 동교로23길 40 (동교동) 지하1층",
+ "hashtag1": null,
+ "hashtag2": null,
+ "hashtag3": null,
+ "checked": 0
+ */
+
 struct RecommendListData: Codable {
     var bookstoreIdx: Int
     var bookstoreName: String

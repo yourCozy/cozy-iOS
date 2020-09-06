@@ -19,6 +19,8 @@ class BookDetailVC: UIViewController {
 
     var isClickBook: Bool = true
 
+    private var detailList: [BookDetailData] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setNav()
@@ -31,6 +33,8 @@ class BookDetailVC: UIViewController {
 
         detailTableView.delegate = self
         detailTableView.dataSource = self
+
+        setDetailData()
     }
 
     func setNav() {
@@ -42,6 +46,24 @@ class BookDetailVC: UIViewController {
 
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    func setDetailData() {
+        BookstoreDetailService.shared.getBookstoreDetailData(bookstoreIdx: 1) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [BookDetailData] else { return }
+                print(data)
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
     }
 }
 
@@ -79,11 +101,11 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
     }
 
     func selectMapButton() {
-        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
+//        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
 
         // sample
-        let latitude: Double = Double(37.548718)
-        let longtitude: Double = Double(126.920829)
+//        let latitude: Double = Double(37.548718)
+//        let longtitude: Double = Double(126.920829)
 
         if let url = URL(string: "nmap://actionPath?parameter=value&appname=com.cozycorp.yourcozy.cozy"),
             UIApplication.shared.canOpenURL(url) {
