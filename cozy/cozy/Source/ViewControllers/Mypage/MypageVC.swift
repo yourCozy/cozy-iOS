@@ -38,7 +38,8 @@ class MypageVC: UIViewController {
 
     private func setView() {
         beforeView.isHidden =  false
-        //beforeView2.layer.zPosition = 1
+        // 맨 앞으로 보내기
+        beforeView2.layer.zPosition = 1
     }
 }
 
@@ -60,5 +61,5 @@ extension MypageVC: UICollectionViewDataSource {
 }
 
 extension UICollectionView {
-    
+
 }
