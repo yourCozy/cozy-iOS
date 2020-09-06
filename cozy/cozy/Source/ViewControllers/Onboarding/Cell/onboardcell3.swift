@@ -10,9 +10,11 @@ import UIKit
 
 class onboardcell3: UICollectionViewCell {
 
+    @IBOutlet weak var uiview02: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        uiview02.layer.cornerRadius = 10
     }
 
 }
