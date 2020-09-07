@@ -15,6 +15,7 @@ class MapVC: UIViewController {
 
     @IBOutlet weak var mapTableView: UITableView!
 
+    private var selectIdx: Int = 1
     private var backView = UIView()
 
     private func addObserver() {
@@ -22,7 +23,9 @@ class MapVC: UIViewController {
     }
 
     @objc func selectEvent(_ notification: NSNotification) {
-//        let getIdx = notification.object as! Int
+        let getIdx = notification.object as! Int
+        self.selectIdx = getIdx
+        self.mapTableView.reloadData()
         self.backView.isHidden = true
     }
 
@@ -99,6 +102,24 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
             cell.selectionStyle = .none
             cell.selectRegionButton1.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
             cell.selectRegionButton2.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
+
+            switch self.selectIdx {
+            case 0:
+                cell.selectRegionButton1.setTitle("용산구", for: .normal)
+            case 1:
+                cell.selectRegionButton1.setTitle("마포구", for: .normal)
+            case 2 :
+                cell.selectRegionButton1.setTitle("관악구, 영등포구, 강서구", for: .normal)
+            case 3 :
+                cell.selectRegionButton1.setTitle("광진구, 노원구, 성북구", for: .normal)
+            case 4:
+                cell.selectRegionButton1.setTitle("서초구, 강남구, 송파구", for: .normal)
+            case 5:
+                cell.selectRegionButton1.setTitle("서대문구, 종로구", for: .normal)
+            default:
+                cell.selectRegionButton1.setTitle("마포구", for: .normal)
+            }
+
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier2) as! BookListCell

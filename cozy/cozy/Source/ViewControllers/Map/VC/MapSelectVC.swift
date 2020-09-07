@@ -24,7 +24,7 @@ class MapSelectVC: UIViewController {
     private var isSelectedRegion: Bool = false
 
     private var countList: [MapCountData] = []
-    //    private var feedList2: [RecommendActivityData] = []
+    private var selectIdx: Int = 0
 
     var location: [String] = ["용산구", "마포구", "관악구, 영등포구, 강서구", "광진구, 노원구, 성북구", "서초구, 강남구, 송파구", "서대문구, 종로구"]
 
@@ -47,7 +47,7 @@ class MapSelectVC: UIViewController {
     @IBAction func clickComplete(_ sender: UIButton) {
         if isSelectedRegion {
             self.dismiss(animated: true, completion: {
-                NotificationCenter.default.post(name: .dismissSlideView, object: sender.tag)
+                NotificationCenter.default.post(name: .dismissSlideView, object: self.selectIdx)
             })
         }
     }
@@ -89,6 +89,7 @@ extension MapSelectVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.isSelectedRegion = true
+        self.selectIdx = indexPath.row
         self.completeButton.backgroundColor = UIColor.mango
         self.completeButton.setTitleColor(.white, for: .normal)
 
