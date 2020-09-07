@@ -18,6 +18,8 @@ class MapVC: UIViewController {
     private var selectIdx: Int = 1
     private var backView = UIView()
 
+    private var mapList: [MapListData] = []
+
     private func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(selectEvent(_:)), name: .dismissSlideView, object: nil)
     }
@@ -37,6 +39,8 @@ class MapVC: UIViewController {
         mapTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)
         mapTableView.delegate = self
         mapTableView.dataSource = self
+
+        getMapListData()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -62,13 +66,32 @@ class MapVC: UIViewController {
         present(pvc, animated: true, completion: nil)
     }
 
+    private func getMapListData() {
+        MapListService.shared.getMapListData(mapIdx: self.selectIdx+1) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [MapListData] else { return }
+                
+                print(data)
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
+
 }
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
 
-     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-         return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
-     }
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
+    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
