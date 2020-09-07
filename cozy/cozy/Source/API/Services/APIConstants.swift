@@ -29,6 +29,8 @@ struct APIConstants {
     //Main - 지역
     // 지역별 책방 조회
     static let sectionURL = APIConstants.baseURL + "/bookstore/section/" // :sectionIdx
+    // 지역별 책방 갯수
+    static let countURL = APIConstants.baseURL + "/bookstore/count/section"
 
     //Main - 활동
     // 책방별 활동 조회

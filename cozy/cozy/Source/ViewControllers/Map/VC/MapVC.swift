@@ -63,7 +63,6 @@ class MapVC: UIViewController {
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
 
-    // present half
      func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
          return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
      }
@@ -124,7 +123,7 @@ class HalfSizePresentationController: UIPresentationController {
             guard let theView = containerView else {
                 return CGRect.zero
             }
-            return CGRect(x: 0, y: theView.bounds.height-568, width: theView.bounds.width, height: 568)
+            return CGRect(x: 0, y: theView.bounds.height-563, width: theView.bounds.width, height: 563)
         }
     }
 }
