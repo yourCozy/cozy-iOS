@@ -8,6 +8,7 @@
 
 import UIKit
 import NMapsMap
+import Kingfisher
 
 class BookDetailVC: UIViewController {
 
@@ -56,7 +57,7 @@ class BookDetailVC: UIViewController {
                 for data in data {
                     self.detailList.append(BookDetailData(bookstoreIdx: data.bookstoreIdx ?? 1, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "", profileImg: data.profileImg ?? "", notice: data.notice ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", tel: data.tel ?? "", location: data.location ?? "", latitude: data.latitude ?? 0, longitude: data.longitude ?? 0, businessHours: data.businessHours ?? "", dayoff: data.dayoff ?? "", activities: data.activities ?? "", checked: data.checked ?? 0))
                 }
-                print(data)
+                self.detailTableView.reloadData()
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -144,7 +145,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 1
+            return self.detailList.count
         } else {
             return 3
         }
@@ -170,7 +171,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
             cell.bookstoreImageView.image = UIImage(named: "image1")
             cell.bossImageView.image = UIImage(named: "74966Cd691014Bbbf2E445Bbc67Cddbc")
-            cell.nameLabel.text = "홍철책방"
+            cell.nameLabel.text = self.detailList[0].bookstoreName
 
             cell.tag1.setTitle("    #베이커리    ", for: .normal)
             cell.tag2.setTitle("    #심야책방    ", for: .normal)
@@ -185,17 +186,16 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             descripAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: descripAttr.length))
             cell.descriptionLabel.attributedText = descripAttr
 
-            cell.locationLabel.text = "서울특별시 용산구 한강대로 102길 57"
-            cell.timeLabel.text = "매일 13:00 ~ 19:00"
+            cell.locationLabel.text = self.detailList[0].location
+            cell.timeLabel.text = self.detailList[0].businessHours
 
             cell.restLabel.numberOfLines = 2
-            let restText = NSMutableAttributedString(string: "매월 첫째, 둘째 수요일 13:00 ~ 24:00\n공휴일, 일요일")
+            let restText = NSMutableAttributedString(string: "\(self.detailList[0].dayoff)\n공휴일, 일요일")
             let restAttr = NSMutableAttributedString()
             restAttr.append(restText)
             restAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: restAttr.length))
             cell.restLabel.attributedText = restAttr
-
-            cell.homeLabel.text = "공간 대여, 워크샵, 온라인 서점"
+            cell.homeLabel.text = self.detailList[0].activities
 
             if isClickBook {
                 cell.bookUnderline.isHidden = false
