@@ -15,14 +15,19 @@ class MapVC: UIViewController {
 
     @IBOutlet weak var mapTableView: UITableView!
 
+    private var selectIdx: Int = 1
     private var backView = UIView()
+
+    private var mapList: [MapListData] = []
 
     private func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(selectEvent(_:)), name: .dismissSlideView, object: nil)
     }
 
     @objc func selectEvent(_ notification: NSNotification) {
-//        let getIdx = notification.object as! Int
+        let getIdx = notification.object as! Int
+        self.selectIdx = getIdx
+        self.getMapListData()
         self.backView.isHidden = true
     }
 
@@ -34,6 +39,8 @@ class MapVC: UIViewController {
         mapTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)
         mapTableView.delegate = self
         mapTableView.dataSource = self
+
+        getMapListData()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -59,14 +66,34 @@ class MapVC: UIViewController {
         present(pvc, animated: true, completion: nil)
     }
 
+    private func getMapListData() {
+        MapListService.shared.getMapListData(mapIdx: self.selectIdx+1) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [MapListData] else { return }
+                self.mapList.removeAll()
+                for data in data {
+                    self.mapList.append(MapListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", mainImg: data.hashtag3 ?? "", checked: data.checked ?? 0))
+                }
+                self.mapTableView.reloadData()
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
 }
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
 
-    // present half
-     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-         return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
-     }
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
+    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
@@ -82,7 +109,7 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
         if section == 0 {
             return 1
         } else {
-            return 5
+            return self.mapList.count
         }
     }
 
@@ -100,14 +127,32 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
             cell.selectionStyle = .none
             cell.selectRegionButton1.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
             cell.selectRegionButton2.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
+
+            switch self.selectIdx {
+            case 0:
+                cell.selectRegionButton1.setTitle("용산구", for: .normal)
+            case 1:
+                cell.selectRegionButton1.setTitle("마포구", for: .normal)
+            case 2 :
+                cell.selectRegionButton1.setTitle("관악구, 영등포구, 강서구", for: .normal)
+            case 3 :
+                cell.selectRegionButton1.setTitle("광진구, 노원구, 성북구", for: .normal)
+            case 4:
+                cell.selectRegionButton1.setTitle("서초구, 강남구, 송파구", for: .normal)
+            case 5:
+                cell.selectRegionButton1.setTitle("서대문구, 종로구", for: .normal)
+            default:
+                cell.selectRegionButton1.setTitle("마포구", for: .normal)
+            }
+
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier2) as! BookListCell
             cell.selectionStyle = .none
 
             cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
-            cell.nameLabel.text = "코지서점"
-            cell.addressLabel.text = "서울특별시 용산구 한강대로 10길"
+            cell.nameLabel.text = self.mapList[indexPath.row].bookstoreName
+            cell.addressLabel.text = self.mapList[indexPath.row].location
 
             cell.tag1.setTitle("    #베이커리    ", for: .normal)
             cell.tag2.setTitle("    #심야책방    ", for: .normal)
@@ -124,7 +169,7 @@ class HalfSizePresentationController: UIPresentationController {
             guard let theView = containerView else {
                 return CGRect.zero
             }
-            return CGRect(x: 0, y: theView.bounds.height-568, width: theView.bounds.width, height: 568)
+            return CGRect(x: 0, y: theView.bounds.height-563, width: theView.bounds.width, height: 563)
         }
     }
 }

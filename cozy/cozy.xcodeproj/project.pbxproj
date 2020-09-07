@@ -21,6 +21,10 @@
 		18981F9D24FA4BD900D6A921 /* ActivityList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */; };
 		18981F9F24FA5CBD00D6A921 /* ActivityRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */; };
 		33B85403B84CB70CCCF3B7E8 /* Pods_cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693EA2F950DEF536626A6863 /* Pods_cozy.framework */; };
+		B6208C9E25066BA700185624 /* MapCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208C9D25066BA700185624 /* MapCountModel.swift */; };
+		B6208CA125066C2300185624 /* MapCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208CA025066C2300185624 /* MapCountService.swift */; };
+		B6208CA3250674E100185624 /* MapListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208CA2250674E100185624 /* MapListModel.swift */; };
+		B6208CA5250675BB00185624 /* MapListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208CA4250675BB00185624 /* MapListService.swift */; };
 		B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF4424EBFE4B00AC96A9 /* AppDelegate.swift */; };
 		B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF4624EBFE4B00AC96A9 /* SceneDelegate.swift */; };
 		B646AF4C24EBFE4B00AC96A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B646AF4A24EBFE4B00AC96A9 /* Main.storyboard */; };
@@ -106,6 +110,10 @@
 		18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityRecommend.storyboard; sourceTree = "<group>"; };
 		693EA2F950DEF536626A6863 /* Pods_cozy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cozy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EA692FCFEDD58231F78E42 /* Pods-cozy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.debug.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.debug.xcconfig"; sourceTree = "<group>"; };
+		B6208C9D25066BA700185624 /* MapCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCountModel.swift; sourceTree = "<group>"; };
+		B6208CA025066C2300185624 /* MapCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCountService.swift; sourceTree = "<group>"; };
+		B6208CA2250674E100185624 /* MapListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListModel.swift; sourceTree = "<group>"; };
+		B6208CA4250675BB00185624 /* MapListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListService.swift; sourceTree = "<group>"; };
 		B646AF4124EBFE4B00AC96A9 /* cozy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cozy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B646AF4424EBFE4B00AC96A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B646AF4624EBFE4B00AC96A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -561,6 +569,8 @@
 				B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */,
 				187C130325064F88004FD60B /* RecommendFeedService.swift */,
 				187C130925065E5D004FD60B /* RecommendActivityService.swift */,
+				B6208CA025066C2300185624 /* MapCountService.swift */,
+				B6208CA4250675BB00185624 /* MapListService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -573,6 +583,8 @@
 				B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */,
 				187C1305250650A0004FD60B /* RecommendFeedModel.swift */,
 				187C13072506559D004FD60B /* RecommendActivityModel.swift */,
+				B6208C9D25066BA700185624 /* MapCountModel.swift */,
+				B6208CA2250674E100185624 /* MapListModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -754,8 +766,11 @@
 				B646AF6824EC00C800AC96A9 /* APIConstants.swift in Sources */,
 				B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */,
 				B658A3CA25016AF40076BCD4 /* MainTabVC.swift in Sources */,
+				B6208CA3250674E100185624 /* MapListModel.swift in Sources */,
 				B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */,
+				B6208C9E25066BA700185624 /* MapCountModel.swift in Sources */,
 				B658A3B52501568C0076BCD4 /* onboardcell2.swift in Sources */,
+				B6208CA125066C2300185624 /* MapCountService.swift in Sources */,
 				B658A3AD250154690076BCD4 /* OnboardingSlider.swift in Sources */,
 				B6B1E1CA24FED56A00E60FB0 /* detailCell3.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
@@ -770,6 +785,7 @@
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
 				CC7E50D92503C6C6001BA50C /* noticeTitleCell.swift in Sources */,
+				B6208CA5250675BB00185624 /* MapListService.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
