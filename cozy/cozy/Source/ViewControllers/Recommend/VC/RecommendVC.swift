@@ -15,7 +15,6 @@ class RecommendVC: UIViewController {
     private let cellIdentifier2: String = "bookstoreCell"
 
     private var recommendList: [RecommendListData] = []
-//    private var activityList: [ActivityListData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +36,11 @@ class RecommendVC: UIViewController {
             case .success(let data):
                 guard let data = data as? [RecommendListData] else { return print("error")
                 }
-//                print("@@", data)
                 self.recommendList.removeAll()
                 for data in data {
-                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg, shortIntro1: data.shortIntro1, shortIntro2: data.shortIntro2, location: data.location, hashtag1: data.hashtag1, hashtag2: data.hashtag2, hashtag3: data.hashtag3, checked: data.checked))
+                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "null", shortIntro1: data.shortIntro1 ?? "null", shortIntro2: data.shortIntro2 ?? "null", location: data.location ?? "null", hashtag1: data.hashtag1 ?? "null", hashtag2: data.hashtag2 ?? "null", hashtag3: data.hashtag3 ?? "null", checked: data.checked ?? 0))
                 }
-                print(data)
+                self.tableView.reloadData()
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -96,7 +94,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         if section == 0 {
             return 1
         } else {
-            return 5
+            return self.recommendList.count
         }
     }
 
@@ -151,10 +149,8 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
 
             cell.descriptionLabel.attributedText = attrString
-
-            cell.nameLabel.text = "홍철책방"
-            cell.addressLabel.text = "서울특별시 용산구 한강대로 102길"
-
+            cell.nameLabel.text = self.recommendList[indexPath.row].bookstoreName
+            cell.addressLabel.text = self.recommendList[indexPath.row].location
             return cell
         }
     }
