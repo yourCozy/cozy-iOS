@@ -37,12 +37,10 @@ class RecommendVC: UIViewController {
             case .success(let data):
                 guard let data = data as? [RecommendListData] else { return print("error")
                 }
-//                print("@@", data)
                 self.recommendList.removeAll()
                 for data in data {
-                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg, shortIntro1: data.shortIntro1, shortIntro2: data.shortIntro2, location: data.location, hashtag1: data.hashtag1, hashtag2: data.hashtag2, hashtag3: data.hashtag3, checked: data.checked))
+                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "null", shortIntro1: data.shortIntro1 ?? "null", shortIntro2: data.shortIntro2 ?? "null", location: data.location ?? "null", hashtag1: data.hashtag1 ?? "null", hashtag2: data.hashtag2 ?? "null", hashtag3: data.hashtag3 ?? "null", checked: data.checked ?? 0))
                 }
-                print(data)
             case .requestErr:
                 print("Request error")
             case .pathErr:

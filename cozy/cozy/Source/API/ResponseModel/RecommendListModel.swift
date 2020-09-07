@@ -45,16 +45,16 @@ struct RecommendListModel: Codable {
  */
 
 struct RecommendListData: Codable {
-    var bookstoreIdx: Int
-    var bookstoreName: String
-    var mainImg: String
-    var shortIntro1: String
-    var shortIntro2: String
-    var location: String
-    var hashtag1: String
-    var hashtag2: String
-    var hashtag3: String
-    var checked: Int
+    var bookstoreIdx: Int?
+    var bookstoreName: String?
+    var mainImg: String?
+    var shortIntro1: String?
+    var shortIntro2: String?
+    var location: String?
+    var hashtag1: String?
+    var hashtag2: String?
+    var hashtag3: String?
+    var checked: Int?
 
     init(bookstoreIdx: Int, bookstoreName: String, mainImg: String, shortIntro1: String, shortIntro2: String, location: String, hashtag1: String, hashtag2: String, hashtag3: String, checked: Int) {
         self.bookstoreIdx = bookstoreIdx
