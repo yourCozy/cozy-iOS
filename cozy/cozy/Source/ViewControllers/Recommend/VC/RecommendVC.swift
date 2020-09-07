@@ -14,18 +14,42 @@ class RecommendVC: UIViewController {
     private let cellIdentifier1: String = "recommendCell"
     private let cellIdentifier2: String = "bookstoreCell"
 
-    let searchButton = UIButton()
+    private var recommendList: [RecommendListData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        getRecommendListData()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if let index = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
+        }
+    }
+
+    private func getRecommendListData() {
+        RecommendListService.shared.getRecommendListData { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [RecommendListData] else { return print("error")
+                }
+                self.recommendList.removeAll()
+                for data in data {
+                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "null", shortIntro1: data.shortIntro1 ?? "null", shortIntro2: data.shortIntro2 ?? "null", location: data.location ?? "null", hashtag1: data.hashtag1 ?? "null", hashtag2: data.hashtag2 ?? "null", hashtag3: data.hashtag3 ?? "null", checked: data.checked ?? 0))
+                }
+                self.tableView.reloadData()
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
         }
     }
 }
@@ -70,7 +94,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         if section == 0 {
             return 1
         } else {
-            return 5
+            return self.recommendList.count
         }
     }
 
@@ -125,10 +149,8 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
 
             cell.descriptionLabel.attributedText = attrString
-
-            cell.nameLabel.text = "홍철책방"
-            cell.addressLabel.text = "서울특별시 용산구 한강대로 102길"
-
+            cell.nameLabel.text = self.recommendList[indexPath.row].bookstoreName
+            cell.addressLabel.text = self.recommendList[indexPath.row].location
             return cell
         }
     }

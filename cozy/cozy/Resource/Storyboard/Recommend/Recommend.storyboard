@@ -159,7 +159,11 @@
                         <viewLayoutGuide key="safeArea" id="WC0-U8-eaL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="jIe-R3-0fc"/>
-                    <navigationItem key="navigationItem" id="6jF-jZ-Msq"/>
+                    <navigationItem key="navigationItem" id="6jF-jZ-Msq">
+                        <barButtonItem key="leftBarButtonItem" image="textLogo56X20" id="IeW-Fw-kiY">
+                            <color key="tintColor" red="0.99607843139999996" green="0.6588235294" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="eNH-d6-ywN" id="DTg-eJ-dVm"/>
@@ -193,5 +197,6 @@
         <image name="iconplace" width="11" height="14"/>
         <image name="iconsavewhite" width="14" height="20"/>
         <image name="tapiconrecommendpressed" width="23" height="22"/>
+        <image name="textLogo56X20" width="56" height="20"/>
     </resources>
 </document>

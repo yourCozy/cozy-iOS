@@ -79,7 +79,11 @@
                         <viewLayoutGuide key="safeArea" id="QEy-mm-DCY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="지도" image="tapiconmappressed" id="TvI-fG-ePF"/>
-                    <navigationItem key="navigationItem" id="5mR-Ch-kAL"/>
+                    <navigationItem key="navigationItem" id="5mR-Ch-kAL">
+                        <barButtonItem key="leftBarButtonItem" image="textLogo56X20" id="SWE-vU-UgW">
+                            <color key="tintColor" red="0.99607843139999996" green="0.6588235294" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapTableView" destination="Oag-FB-A59" id="a0F-8b-5hA"/>
@@ -87,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfG-4q-Jcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214.4927536231885" y="-200.22321428571428"/>
+            <point key="canvasLocation" x="1228" y="-200"/>
         </scene>
         <!--Map SelectVC-->
         <scene sceneID="KNQ-OJ-Kjt">
@@ -268,5 +272,6 @@
     <resources>
         <image name="iconmore" width="13.5" height="8"/>
         <image name="tapiconmappressed" width="17" height="22"/>
+        <image name="textLogo56X20" width="56" height="20"/>
     </resources>
 </document>
