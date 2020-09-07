@@ -64,13 +64,13 @@ class ActivityRecommendVC: UIViewController {
 
     //sample data
     func setDisplayDetailCellData() {
-        let data1 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
-        let data2 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
-        let data3 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
-        let data4 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
-        let data5 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
-        let data6 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
-        let data7 = DisplayDetailData(detailImgName: "raychanKJq6CDyodAmUnsplash")
+        let data1 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
+        let data2 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
+        let data3 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
+        let data4 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
+        let data5 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
+        let data6 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
+        let data7 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
 
         displayDetailList = [data1, data2, data3, data4, data5, data6, data7]
     }
@@ -139,6 +139,10 @@ extension ActivityRecommendVC: UICollectionViewDelegateFlowLayout {
 
         return 8
 
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        mainImgView.image = UIImage(named: displayDetailList[indexPath.row].detailImgName)
     }
 }
 

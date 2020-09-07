@@ -67,7 +67,7 @@ extension ActivityListVC: UITableViewDataSource {
         guard let activityCell = tableView.dequeueReusableCell(withIdentifier: ActivityTableViewCell.identifier, for:
         indexPath) as? ActivityTableViewCell else { return UITableViewCell() }
 
-        activityCell.setData(lblDday: activityList[indexPath.row].dday, activityCellContents: activityList[indexPath.row].shortIntro, activityCellBookStoreName: activityList[indexPath.row].bookstoreName, activityCellPrice: activityList[indexPath.row].price)
+        activityCell.setData(lblDday: activityList[indexPath.row].dday, activityCellContents: activityList[indexPath.row].activityName, activityCellBookStoreName: activityList[indexPath.row].bookstoreName, activityCellPrice: activityList[indexPath.row].price)
 
         return activityCell
     }
