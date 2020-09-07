@@ -29,6 +29,14 @@ struct RecommendActivityModel: Codable {
         data = (try? values.decode([RecommendActivityData].self, forKey: .data)) ?? nil
     }
 }
+/*
+ "activityIdx": 1,
+ "activityName": "하얀 어둠",
+ "shortIntro": "1번 책방에서 두 번째로 개최하는 전시회 하얀 어둠",
+ "image1": null,
+ "price": 5000,
+ "dday": 5
+ */
 
 struct RecommendActivityData: Codable {
     var activityIdx: Int

@@ -22,7 +22,7 @@ struct APIConstants {
     // 책방 상세
     static let recommendDetailURL = APIConstants.baseURL + "/bookstore/detail/" // :bookstoreIdx
     // 책방 상세_책방 피드
-    static let recommendFeedURL = APIConstants.baseURL + "/feed/" // :bookstoreIdx
+    static let recommendFeedURL = APIConstants.baseURL + "/bookstore/feed/" // :bookstoreIdx
     // 책방 상세_활동 피드
     static let recommendActivityURL = APIConstants.baseURL + "/activity/" // :bookstoreIdx
 

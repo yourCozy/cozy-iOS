@@ -21,6 +21,8 @@ class BookDetailVC: UIViewController {
     var isClickBook: Bool = true
 
     private var detailList: [BookDetailData] = []
+    private var feedList1: [RecommendFeedData] = []
+    private var feedList2: [RecommendActivityData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,8 @@ class BookDetailVC: UIViewController {
         detailTableView.dataSource = self
 
         setDetailData()
+        setfeedData()
+        setfeedData2()
     }
 
     func setNav() {
@@ -67,6 +71,45 @@ class BookDetailVC: UIViewController {
             case .networkFail:
                 print("network error")
             }
+        }
+    }
+
+    func setfeedData() {
+        RecommendFeedService.shared.getRecommendFeedData(bookstoreIdx: 1) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [RecommendFeedData] else { return }
+                print(data)
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
+
+    func setfeedData2() {
+        RecommendActivityService.shared.getRecommendActivityData(bookstoreIdx: 1) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data) :
+                guard let data = data as? [RecommendActivityData] else { return }
+                for data in data {
+                    self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx, activityName: data.activityName ?? "", shortIntro: data.shortIntro ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.activityIdx))
+                }
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+
         }
     }
 }
@@ -105,11 +148,11 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
     }
 
     func selectMapButton() {
-//        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
+        //        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
 
         // sample
-//        let latitude: Double = Double(37.548718)
-//        let longtitude: Double = Double(126.920829)
+        //        let latitude: Double = Double(37.548718)
+        //        let longtitude: Double = Double(126.920829)
 
         if let url = URL(string: "nmap://actionPath?parameter=value&appname=com.cozycorp.yourcozy.cozy"),
             UIApplication.shared.canOpenURL(url) {
@@ -147,7 +190,11 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         if section == 0 {
             return self.detailList.count
         } else {
-            return 3
+            if self.isClickBook {
+                return 3
+            } else {
+                return self.feedList2.count/2
+            }
         }
     }
 
@@ -207,26 +254,26 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
             return cell
         } else {
-            if isClickBook {
+            if isClickBook { // 책방 피드
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
                 cell.selectionStyle = .none
                 cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
                 return cell
-            } else {
+            } else { // 활동 피드
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
                 cell.selectionStyle = .none
                 cell.delegate = self
 
                 cell.imageButton1.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
                 cell.imageButton2.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
-                cell.nameLabel1.text = "책방 영화관"
-                cell.nameLabel2.text = "책방 영화관"
-                cell.descripLabel1.text = "대표 책방 영화관"
-                cell.descripLabel2.text = "대표 책방 영화관"
-                cell.daycntLabel1.text = "D-3"
-                cell.dayCntLabel2.text = "D-4"
-                cell.priceLabel1.text = "16,000 원"
-                cell.priceLabel2.text = "16,000 원"
+                cell.nameLabel1.text = self.feedList2[indexPath.row].activityName
+                cell.nameLabel2.text = self.feedList2[indexPath.row+1].activityName
+                cell.descripLabel1.text = self.feedList2[indexPath.row].shortIntro
+                cell.descripLabel2.text = self.feedList2[indexPath.row+1].shortIntro
+                cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)"
+                cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)"
+                cell.priceLabel1.text = "\(self.feedList2[indexPath.row].price!) 원"
+                cell.priceLabel2.text = "\(self.feedList2[indexPath.row+1].price!) 원"
 
                 return cell
             }
