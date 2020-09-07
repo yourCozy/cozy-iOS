@@ -43,9 +43,6 @@ struct RecommendListService {
     private func isData(by data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(RecommendListModel.self, from: data) else { return .pathErr }
-        print("decodedData")
-        print(decodedData)
-        print(decodedData.data as Any) // 여기서 decode 가 안 됨 머임??
         guard let recommendData = decodedData.data else { return .requestErr(decodedData.message) }
         return .success(recommendData)
     }

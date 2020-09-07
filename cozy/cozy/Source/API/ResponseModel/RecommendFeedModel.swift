@@ -30,6 +30,14 @@ struct RecommendFeedModel: Codable {
     }
 }
 
+/*
+ "bookstoreIdx": 1,
+ "image1": null,
+ "image2": null,
+ "image3": null,
+ "description": null
+ */
+
 struct RecommendFeedData: Codable {
     var bookstoreIdx: Int
     var image1: String?
