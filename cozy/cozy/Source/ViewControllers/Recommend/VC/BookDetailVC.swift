@@ -53,6 +53,9 @@ class BookDetailVC: UIViewController {
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [BookDetailData] else { return }
+                for data in data {
+                    self.detailList.append(BookDetailData(bookstoreIdx: data.bookstoreIdx ?? 1, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "", profileImg: data.profileImg ?? "", notice: data.notice ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", tel: data.tel ?? "", location: data.location ?? "", latitude: data.latitude ?? 0, longitude: data.longitude ?? 0, businessHours: data.businessHours ?? "", dayoff: data.dayoff ?? "", activities: data.activities ?? "", checked: data.checked ?? 0))
+                }
                 print(data)
             case .requestErr:
                 print("Request error")

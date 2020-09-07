@@ -51,22 +51,22 @@ struct BookstoreDetailModel: Codable {
 */
 
 struct BookDetailData: Codable {
-    var bookstoreIdx: Int
-    var bookstoreName: String
-    var mainImg: String
-    var profileImg: String
-    var notice: String
-    var hashtag1: String
-    var hashtag2: String
-    var hashtag3: String
-    var tel: String
-    var location: String
-    var latitude: Double
-    var longitude: Double
-    var businessHours: String
-    var dayoff: String
-    var activities: String
-    var checked: Int
+    var bookstoreIdx: Int?
+    var bookstoreName: String?
+    var mainImg: String?
+    var profileImg: String?
+    var notice: String?
+    var hashtag1: String?
+    var hashtag2: String?
+    var hashtag3: String?
+    var tel: String?
+    var location: String?
+    var latitude: Double?
+    var longitude: Double?
+    var businessHours: String?
+    var dayoff: String?
+    var activities: String?
+    var checked: Int?
 
     init(bookstoreIdx: Int, bookstoreName: String, mainImg: String, profileImg: String, notice: String, hashtag1: String, hashtag2: String, hashtag3: String, tel: String, location: String, latitude: Double, longitude: Double, businessHours: String, dayoff: String, activities: String, checked: Int) {
         self.bookstoreIdx = bookstoreIdx

@@ -15,7 +15,6 @@ class RecommendVC: UIViewController {
     private let cellIdentifier2: String = "bookstoreCell"
 
     private var recommendList: [RecommendListData] = []
-//    private var activityList: [ActivityListData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
