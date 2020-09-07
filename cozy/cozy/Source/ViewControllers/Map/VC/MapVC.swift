@@ -27,7 +27,7 @@ class MapVC: UIViewController {
     @objc func selectEvent(_ notification: NSNotification) {
         let getIdx = notification.object as! Int
         self.selectIdx = getIdx
-        self.mapTableView.reloadData()
+        self.getMapListData()
         self.backView.isHidden = true
     }
 
@@ -71,8 +71,11 @@ class MapVC: UIViewController {
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [MapListData] else { return }
-                
-                print(data)
+                self.mapList.removeAll()
+                for data in data {
+                    self.mapList.append(MapListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", mainImg: data.hashtag3 ?? "", checked: data.checked ?? 0))
+                }
+                self.mapTableView.reloadData()
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -84,7 +87,6 @@ class MapVC: UIViewController {
             }
         }
     }
-
 }
 
 extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
@@ -107,7 +109,7 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
         if section == 0 {
             return 1
         } else {
-            return 5
+            return self.mapList.count
         }
     }
 
@@ -149,8 +151,8 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
             cell.selectionStyle = .none
 
             cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
-            cell.nameLabel.text = "코지서점"
-            cell.addressLabel.text = "서울특별시 용산구 한강대로 10길"
+            cell.nameLabel.text = self.mapList[indexPath.row].bookstoreName
+            cell.addressLabel.text = self.mapList[indexPath.row].location
 
             cell.tag1.setTitle("    #베이커리    ", for: .normal)
             cell.tag2.setTitle("    #심야책방    ", for: .normal)
