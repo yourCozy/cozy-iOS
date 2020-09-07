@@ -11,6 +11,8 @@
 		187C1302250286C2004FD60B /* ActivityListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1301250286C2004FD60B /* ActivityListService.swift */; };
 		187C130425064F88004FD60B /* RecommendFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C130325064F88004FD60B /* RecommendFeedService.swift */; };
 		187C1306250650A0004FD60B /* RecommendFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1305250650A0004FD60B /* RecommendFeedModel.swift */; };
+		187C13082506559D004FD60B /* RecommendActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C13072506559D004FD60B /* RecommendActivityModel.swift */; };
+		187C130A25065E5D004FD60B /* RecommendActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C130925065E5D004FD60B /* RecommendActivityService.swift */; };
 		187FEED524FCD58600476D89 /* DisplayDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEED424FCD58600476D89 /* DisplayDetailData.swift */; };
 		187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */; };
 		18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9624F90C4C00D6A921 /* ActivityListVC.swift */; };
@@ -93,6 +95,8 @@
 		187C1301250286C2004FD60B /* ActivityListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListService.swift; sourceTree = "<group>"; };
 		187C130325064F88004FD60B /* RecommendFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFeedService.swift; sourceTree = "<group>"; };
 		187C1305250650A0004FD60B /* RecommendFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFeedModel.swift; sourceTree = "<group>"; };
+		187C13072506559D004FD60B /* RecommendActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendActivityModel.swift; sourceTree = "<group>"; };
+		187C130925065E5D004FD60B /* RecommendActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendActivityService.swift; sourceTree = "<group>"; };
 		187FEED424FCD58600476D89 /* DisplayDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailData.swift; sourceTree = "<group>"; };
 		187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailCell.swift; sourceTree = "<group>"; };
 		18981F9624F90C4C00D6A921 /* ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListVC.swift; sourceTree = "<group>"; };
@@ -556,6 +560,7 @@
 				B6C424B5250516E300AAE393 /* RecommendListService.swift */,
 				B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */,
 				187C130325064F88004FD60B /* RecommendFeedService.swift */,
+				187C130925065E5D004FD60B /* RecommendActivityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				B6C424B1250514F200AAE393 /* RecommendListModel.swift */,
 				B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */,
 				187C1305250650A0004FD60B /* RecommendFeedModel.swift */,
+				187C13072506559D004FD60B /* RecommendActivityModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -754,6 +760,7 @@
 				B6B1E1CA24FED56A00E60FB0 /* detailCell3.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
 				187FEED524FCD58600476D89 /* DisplayDetailData.swift in Sources */,
+				187C130A25065E5D004FD60B /* RecommendActivityService.swift in Sources */,
 				B646AF4F24EBFE4B00AC96A9 /* cozy.xcdatamodeld in Sources */,
 				18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
@@ -777,6 +784,7 @@
 				B6C424B6250516E300AAE393 /* RecommendListService.swift in Sources */,
 				18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */,
 				B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */,
+				187C13082506559D004FD60B /* RecommendActivityModel.swift in Sources */,
 				B64940A724F186380052A21F /* MypageNavController.swift in Sources */,
 				187C130425064F88004FD60B /* RecommendFeedService.swift in Sources */,
 			);

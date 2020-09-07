@@ -1,5 +1,5 @@
 //
-//  RecommendFeedModel.swift
+//  RecommendActivityModel.swift
 //  cozy
 //
 //  Created by 양재욱 on 2020/09/07.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct RecommendFeedModel: Codable {
+struct RecommendActivityModel: Codable {
     var status: Int
     var success: Bool
     var message: String
-    var data: [RecommendFeedData]?
+    var data: [RecommendActivityData]?
 
     enum CodingKeys: String, CodingKey {
         case status = "status"
@@ -26,22 +26,24 @@ struct RecommendFeedModel: Codable {
         status = (try? values.decode(Int.self, forKey: .status)) ?? -1
         success = (try? values.decode(Bool.self, forKey: .success)) ?? false
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        data = (try? values.decode([RecommendFeedData].self, forKey: .data)) ?? nil
+        data = (try? values.decode([RecommendActivityData].self, forKey: .data)) ?? nil
     }
 }
 
-struct RecommendFeedData: Codable {
-    var bookstoreIdx: Int
+struct RecommendActivityData: Codable {
+    var activityIdx: Int
+    var activityName: String?
+    var shortIntro: String?
     var image1: String?
-    var image2: String?
-    var image3: String?
-    var description: String?
+    var price: Int?
+    var dday: Int?
 
-    init(bookstoreIdx: Int, image1: String, image2: String, image3: String, description: String) {
-        self.bookstoreIdx = bookstoreIdx
+    init(activityIdx: Int, activityName: String, shortIntro: String, image1: String, price: Int, dday: Int) {
+        self.activityIdx = activityIdx
+        self.activityName = activityName
+        self.shortIntro = shortIntro
         self.image1 = image1
-        self.image2 = image2
-        self.image3 = image3
-        self.description = description
+        self.price = price
+        self.dday = dday
     }
 }
