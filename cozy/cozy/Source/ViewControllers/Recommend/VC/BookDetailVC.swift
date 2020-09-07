@@ -100,7 +100,6 @@ class BookDetailVC: UIViewController {
                 for data in data {
                     self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx, activityName: data.activityName ?? "", shortIntro: data.shortIntro ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.activityIdx))
                 }
-                print(self.feedList2)
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -194,7 +193,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             if self.isClickBook {
                 return 3
             } else {
-                return self.feedList2.count
+                return self.feedList2.count/2
             }
         }
     }
@@ -267,14 +266,14 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
                 cell.imageButton1.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
                 cell.imageButton2.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
-                cell.nameLabel1.text = "책방 영화관"
-                cell.nameLabel2.text = "책방 영화관"
-                cell.descripLabel1.text = "대표 책방 영화관"
-                cell.descripLabel2.text = "대표 책방 영화관"
-                cell.daycntLabel1.text = "D-3"
-                cell.dayCntLabel2.text = "D-4"
-                cell.priceLabel1.text = "16,000 원"
-                cell.priceLabel2.text = "16,000 원"
+                cell.nameLabel1.text = self.feedList2[indexPath.row].activityName
+                cell.nameLabel2.text = self.feedList2[indexPath.row+1].activityName
+                cell.descripLabel1.text = self.feedList2[indexPath.row].shortIntro
+                cell.descripLabel2.text = self.feedList2[indexPath.row+1].shortIntro
+                cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)"
+                cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)"
+                cell.priceLabel1.text = "\(self.feedList2[indexPath.row].price!) 원"
+                cell.priceLabel2.text = "\(self.feedList2[indexPath.row+1].price!) 원"
 
                 return cell
             }
