@@ -12,21 +12,21 @@ import Alamofire
 struct KakaoLoginService {
     static let shared = KakaoLoginService()
 
-    private func makeParameter(_ email: String, _ nickname: String, _ refreshToken: String) -> Parameters {
+    private func makeParameter(_ id: String, _ nickname: String, _ refreshToken: String) -> Parameters {
         return [
-            "email": email,
+            "id": id,
             "nickname": nickname,
             "refreshToken": refreshToken
         ]
     }
 
-    func getMapListData(email: String, nickname: String, refreshToken: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getMapListData(id: String, nickname: String, refreshToken: String, completion: @escaping (NetworkResult<Any>) -> Void) {
 
         let header: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
 
-        let dataRequest = AF.request(APIConstants.kakaoLoginURL, method: .post, parameters: makeParameter(email, nickname, refreshToken), encoding: JSONEncoding.default, headers: header)
+        let dataRequest = AF.request(APIConstants.kakaoLoginURL, method: .post, parameters: makeParameter(id, nickname, refreshToken), encoding: JSONEncoding.default, headers: header)
 
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {

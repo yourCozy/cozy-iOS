@@ -31,25 +31,17 @@ struct KakaoLoginModel: Codable {
     }
 }
 
-/*
- "userIdx": 11,
- "nickname": "최담",
- "email": "chej-_-@hanmail.net",
- "profile": "https://sopt-server-gain.s3.ap-northeast-2.amazonaws.com/1599127334006.png",
- "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4IjoxMSwiaWF0IjoxNTk5NTQ2Njk2LCJleHAiOjE1OTk1ODI2OTYsImlzcyI6Im91ci1zb3B0In0.2mVJf2OhZc33VohzJQonjEBGy4iXjHPeGQaX_2JuIo0"
- */
-
 struct KakaoLoginData: Codable {
     var userIdx: Int
     var nickname: String
-    var email: String
+    var id: String
     var profile: String
     var jwtToken: String
 
     init(userIdx: Int, nickname: String, email: String, profile: String, jwtToken: String) {
         self.userIdx = userIdx
         self.nickname = nickname
-        self.email = email
+        self.id = email
         self.profile = profile
         self.jwtToken = jwtToken
     }
