@@ -51,10 +51,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageonboarding1" translatesAutoresizingMaskIntoConstraints="NO" id="6ni-Y2-7R4">
-                        <rect key="frame" x="52" y="265" width="269" height="272"/>
+                        <rect key="frame" x="50" y="265" width="272" height="272"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqq-Te-kQo">
-                        <rect key="frame" x="51" y="577" width="275.5" height="71"/>
+                        <rect key="frame" x="48.5" y="577" width="275.5" height="71"/>
                         <string key="text">영화를 좋아하는 당신. 처음 방문한 서점이 
 영화를 상영하는 서점이라면 어떨까요?
 코지가 추천하는 취향저격 독립서점에서
@@ -67,15 +67,14 @@
             </view>
             <color key="backgroundColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="aqq-Te-kQo" firstAttribute="leading" secondItem="e2u-Gm-Lcf" secondAttribute="trailing" constant="30" id="3yJ-gC-3B7"/>
                 <constraint firstItem="mWz-Mo-TFA" firstAttribute="leading" secondItem="e2u-Gm-Lcf" secondAttribute="trailing" constant="29" id="5j5-ME-3eU"/>
                 <constraint firstItem="e2u-Gm-Lcf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EVf-6s-Cv2"/>
                 <constraint firstItem="IQr-1a-XHh" firstAttribute="top" secondItem="mWz-Mo-TFA" secondAttribute="bottom" id="Fxy-Ku-U05"/>
                 <constraint firstAttribute="bottom" secondItem="e2u-Gm-Lcf" secondAttribute="bottom" id="GAe-1G-IBn"/>
-                <constraint firstAttribute="trailing" secondItem="6ni-Y2-7R4" secondAttribute="trailing" constant="51" id="I1d-ht-2P7"/>
                 <constraint firstItem="e2u-Gm-Lcf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="XAA-D5-coo"/>
                 <constraint firstItem="aqq-Te-kQo" firstAttribute="top" secondItem="6ni-Y2-7R4" secondAttribute="bottom" constant="40" id="e1k-Jv-bhS"/>
-                <constraint firstItem="6ni-Y2-7R4" firstAttribute="leading" secondItem="e2u-Gm-Lcf" secondAttribute="trailing" constant="31" id="p6f-Hf-U7i"/>
+                <constraint firstItem="aqq-Te-kQo" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="lzC-XI-bh8"/>
+                <constraint firstItem="6ni-Y2-7R4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uMC-Rl-eLc"/>
                 <constraint firstItem="mWz-Mo-TFA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="60" id="v7q-X9-kU7"/>
                 <constraint firstItem="IQr-1a-XHh" firstAttribute="leading" secondItem="e2u-Gm-Lcf" secondAttribute="trailing" constant="29" id="yzP-VP-lHL"/>
                 <constraint firstItem="6ni-Y2-7R4" firstAttribute="top" secondItem="IQr-1a-XHh" secondAttribute="bottom" constant="36" id="zok-GL-L0d"/>

@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageonboarding3" translatesAutoresizingMaskIntoConstraints="NO" id="Y7a-1w-p0m">
-                        <rect key="frame" x="0.0" y="168" width="393" height="576"/>
+                        <rect key="frame" x="9" y="168" width="375" height="576"/>
                     </imageView>
                 </subviews>
             </view>
@@ -74,11 +74,10 @@
                 <constraint firstItem="1Y0-Nk-NP0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="A6E-i9-IJ9"/>
                 <constraint firstItem="Wwp-hm-O4P" firstAttribute="top" secondItem="pug-WX-yt3" secondAttribute="bottom" constant="10" id="Ath-2g-8N0"/>
                 <constraint firstItem="Wwp-hm-O4P" firstAttribute="leading" secondItem="1Y0-Nk-NP0" secondAttribute="trailing" constant="44" id="C3y-vq-sZW"/>
-                <constraint firstItem="Y7a-1w-p0m" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Fbs-j8-NuZ"/>
                 <constraint firstItem="pug-WX-yt3" firstAttribute="leading" secondItem="1Y0-Nk-NP0" secondAttribute="trailing" constant="44" id="MnX-m1-bef"/>
                 <constraint firstItem="1Y0-Nk-NP0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NPZ-GU-vBl"/>
+                <constraint firstItem="Y7a-1w-p0m" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="S4v-Hy-eA5"/>
                 <constraint firstItem="a4t-f7-J2O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="56" id="hFM-yS-2S9"/>
-                <constraint firstAttribute="trailing" secondItem="Y7a-1w-p0m" secondAttribute="trailing" id="kcU-Z0-NRl"/>
                 <constraint firstItem="pug-WX-yt3" firstAttribute="top" secondItem="a4t-f7-J2O" secondAttribute="bottom" constant="11" id="oGj-nP-SOZ"/>
                 <constraint firstAttribute="bottom" secondItem="1Y0-Nk-NP0" secondAttribute="bottom" id="orL-rr-2Dd"/>
                 <constraint firstItem="Y7a-1w-p0m" firstAttribute="top" secondItem="Wwp-hm-O4P" secondAttribute="bottom" constant="10" id="osz-nb-3FC"/>
