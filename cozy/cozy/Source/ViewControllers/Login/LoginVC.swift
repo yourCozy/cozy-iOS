@@ -112,5 +112,25 @@ class LoginVC: UIViewController {
             }
         }
     }
+}
+
+extension LoginVC: ASAuthorizationControllerDelegate {
+
+    // 성공 후 동작
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            let user = credential.user
+            print("user: ", user)
+            print("token: ", credential.identityToken)
+
+            guard let email = credential.email else { return }
+            print("email: ", email)
+        }
+    }
+
+    // 실패 후 동작
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("error")
+    }
 
 }
