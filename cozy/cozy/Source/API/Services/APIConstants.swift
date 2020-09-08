@@ -16,6 +16,9 @@ struct APIConstants {
     static let signinURL = APIConstants.baseURL + "/user/signin"
     static let signupURL = APIConstants.baseURL + "/user/signup"
 
+    // 소셜 로그인
+    static let kakaoLoginURL = APIConstants.baseURL + "/auth/social"
+
     //Main - 추천
     // 책방추천 8개
     static let recommendURL = APIConstants.baseURL + "/bookstore/recommendation"
