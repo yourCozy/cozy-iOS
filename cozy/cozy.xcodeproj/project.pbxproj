@@ -123,6 +123,7 @@
 		B6208CA4250675BB00185624 /* MapListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListService.swift; sourceTree = "<group>"; };
 		B631283325075C01003D33E3 /* KakaoLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginModel.swift; sourceTree = "<group>"; };
 		B631283525075D66003D33E3 /* KakaoLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginService.swift; sourceTree = "<group>"; };
+		B631283825077A7F003D33E3 /* cozy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = cozy.entitlements; sourceTree = "<group>"; };
 		B646AF4124EBFE4B00AC96A9 /* cozy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cozy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B646AF4424EBFE4B00AC96A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B646AF4624EBFE4B00AC96A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +277,7 @@
 		B646AF4324EBFE4B00AC96A9 /* cozy */ = {
 			isa = PBXGroup;
 			children = (
+				B631283825077A7F003D33E3 /* cozy.entitlements */,
 				B646AF5524EBFE4C00AC96A9 /* Info.plist */,
 				B646AF6524EC007400AC96A9 /* Supporting Files */,
 				B646AF5E24EBFFC100AC96A9 /* Source */,
@@ -975,6 +977,7 @@
 			baseConfigurationReference = 79EA692FCFEDD58231F78E42 /* Pods-cozy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cozy/cozy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = cozy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -993,6 +996,7 @@
 			baseConfigurationReference = CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cozy/cozy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = cozy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

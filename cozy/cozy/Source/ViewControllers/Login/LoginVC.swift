@@ -9,6 +9,7 @@
 import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
+import AuthenticationServices
 
 class LoginVC: UIViewController {
 
@@ -42,6 +43,14 @@ class LoginVC: UIViewController {
 
     @objc func clickAppleLogin(_ sender: UITapGestureRecognizer) {
         print("click apple login")
+
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+
+        controller.delegate = self as? ASAuthorizationControllerDelegate
+        controller.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
+        controller.performRequests()
     }
 
     @objc func clickKakaoSocialLogin(_ sender: UITapGestureRecognizer) {
