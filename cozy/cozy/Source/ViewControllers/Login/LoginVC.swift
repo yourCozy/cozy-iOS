@@ -8,6 +8,7 @@
 
 import UIKit
 import KakaoSDKAuth
+import KakaoSDKUser
 
 class LoginVC: UIViewController {
 
@@ -60,14 +61,24 @@ class LoginVC: UIViewController {
 //        }
 
         // 웹 뷰로 카카오톡 로그인
-        AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+        AuthApi.shared.loginWithKakaoAccount {(_, error) in
             if let error = error {
                 print(error)
             } else {
                 print("loginWithKakaoAccount() success.")
+                
+                // 로그인 성공시 유저 정보 가져오기 - 이메일, 닉네임
+                UserApi.shared.me { (user, error) in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        print("me() succeess")
 
-                //do something
-                _ = oauthToken
+                        print(user?.kakaoAccount?.email)
+                        print(user?.kakaoAccount?.profile?.nickname)
+                    }
+                }
+
             }
         }
 
