@@ -86,11 +86,12 @@ class LoginVC: UIViewController {
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? KakaoLoginData else { return }
+                UserDefaults.standard.set(data.jwtToken, forKey: "token")
 
-//                let sb = UIStoryboard(name: "Main", bundle: nil)
-//                let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
             case .requestErr:
                 print("Request error")
             case .pathErr:
