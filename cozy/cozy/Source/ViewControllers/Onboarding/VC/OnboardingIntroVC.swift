@@ -18,7 +18,7 @@ class OnboardingIntroVC: UIViewController {
     private let identifier3: String = "onboardcell3"
     private let identifier4: String = "onboardcell4"
 
-    private var mysliderVal: Float = 25
+    private var mysliderVal: Float = 0
 
     @IBOutlet weak var startButton: UIButton!
 
@@ -42,14 +42,7 @@ class OnboardingIntroVC: UIViewController {
     func setSlider() {
         onboardingSlider.setThumbImage(UIImage(), for: .normal)
         onboardingSlider.tintColor = .mango
-        UIView.animate( withDuration: 0.1, animations: {
-            self.onboardingSlider.setValue(0, animated: true)
-        }, completion: { _ in
-            UIView.animate(withDuration: 1.0, animations: {
-                self.mysliderVal = 25
-                self.onboardingSlider.setValue(self.mysliderVal, animated: true)
-            })
-        })
+        self.onboardingSlider.setValue(0, animated: false)
     }
 
     func setNib() {
@@ -76,8 +69,8 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
             UIView.animate( withDuration: 0.1, animations: {
                 self.onboardingSlider.setValue(self.mysliderVal, animated: true)
             }, completion: { _ in
-                UIView.animate(withDuration: 1.0, animations: {
-                    self.mysliderVal = 25
+                UIView.animate(withDuration: 0.6, animations: {
+                    self.mysliderVal = 0
                     self.onboardingSlider.setValue(self.mysliderVal, animated: true)
                 })
             })
@@ -86,8 +79,8 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
             UIView.animate( withDuration: 0.1, animations: {
                 self.onboardingSlider.setValue(self.mysliderVal, animated: true)
             }, completion: { _ in
-                UIView.animate(withDuration: 1.0, animations: {
-                    self.mysliderVal = 50
+                UIView.animate(withDuration: 0.6, animations: {
+                    self.mysliderVal = 33
                     self.onboardingSlider.setValue(self.mysliderVal, animated: true)
                 })
             })
@@ -96,8 +89,8 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
             UIView.animate( withDuration: 0.1, animations: {
                 self.onboardingSlider.setValue(self.mysliderVal, animated: true)
             }, completion: { _ in
-                UIView.animate(withDuration: 1.0, animations: {
-                    self.mysliderVal = 75
+                UIView.animate(withDuration: 0.6, animations: {
+                    self.mysliderVal = 66
                     self.onboardingSlider.setValue(self.mysliderVal, animated: true)
                 })
             })
@@ -106,7 +99,7 @@ extension OnboardingIntroVC: UICollectionViewDelegate, UICollectionViewDataSourc
             UIView.animate( withDuration: 0.1, animations: {
                 self.onboardingSlider.setValue(self.mysliderVal, animated: true)
             }, completion: { _ in
-                UIView.animate(withDuration: 1.0, animations: {
+                UIView.animate(withDuration: 0.6, animations: {
                     self.mysliderVal = 100
                     self.onboardingSlider.setValue(self.mysliderVal, animated: true)
                 })
