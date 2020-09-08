@@ -28,7 +28,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWz-Mo-TFA">
-                        <rect key="frame" x="50" y="60" width="117" height="133"/>
+                        <rect key="frame" x="50" y="40" width="117" height="133"/>
                         <string key="text">취향으로 
 찾고,
 공간으로 
@@ -45,16 +45,16 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COZY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQr-1a-XHh">
-                        <rect key="frame" x="50" y="193" width="85" height="36"/>
+                        <rect key="frame" x="50" y="173" width="85" height="36"/>
                         <fontDescription key="fontDescription" name="NanumSquareRoundEB" family="NanumSquareRound" pointSize="32"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageonboarding1" translatesAutoresizingMaskIntoConstraints="NO" id="6ni-Y2-7R4">
-                        <rect key="frame" x="50" y="265" width="272" height="272"/>
+                        <rect key="frame" x="50" y="239" width="272" height="272"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqq-Te-kQo">
-                        <rect key="frame" x="48.5" y="577" width="275.5" height="71"/>
+                        <rect key="frame" x="48.5" y="551" width="275.5" height="71"/>
                         <string key="text">영화를 좋아하는 당신. 처음 방문한 서점이 
 영화를 상영하는 서점이라면 어떨까요?
 코지가 추천하는 취향저격 독립서점에서
@@ -75,9 +75,9 @@
                 <constraint firstItem="aqq-Te-kQo" firstAttribute="top" secondItem="6ni-Y2-7R4" secondAttribute="bottom" constant="40" id="e1k-Jv-bhS"/>
                 <constraint firstItem="aqq-Te-kQo" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="lzC-XI-bh8"/>
                 <constraint firstItem="6ni-Y2-7R4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="uMC-Rl-eLc"/>
-                <constraint firstItem="mWz-Mo-TFA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="60" id="v7q-X9-kU7"/>
+                <constraint firstItem="mWz-Mo-TFA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="40" id="v7q-X9-kU7"/>
                 <constraint firstItem="IQr-1a-XHh" firstAttribute="leading" secondItem="e2u-Gm-Lcf" secondAttribute="trailing" constant="29" id="yzP-VP-lHL"/>
-                <constraint firstItem="6ni-Y2-7R4" firstAttribute="top" secondItem="IQr-1a-XHh" secondAttribute="bottom" constant="36" id="zok-GL-L0d"/>
+                <constraint firstItem="6ni-Y2-7R4" firstAttribute="top" secondItem="IQr-1a-XHh" secondAttribute="bottom" constant="30" id="zok-GL-L0d"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="372" height="693"/>
