@@ -27,6 +27,7 @@ class MypageVC: UIViewController {
         recentCollectionView.dataSource = self
         setView()
         loginButton.setMypageLoginButton()
+
     }
 
     @IBAction func goOnboarding(_ sender: UIButton) {
@@ -41,6 +42,19 @@ class MypageVC: UIViewController {
         // 맨 앞으로 보내기
         beforeView2.layer.zPosition = 1
     }
+
+    @IBAction func goNotice(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Mypage", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "NoticeVC") as! NoticeVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    @IBAction func goEvent(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Mypage", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "EventVC") as! EventVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 }
 
 extension MypageVC: UICollectionViewDataSource {

@@ -89,9 +89,14 @@
 		B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */; };
 		B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */; };
 		CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05FEC224F5590F008747B6 /* recentCell.swift */; };
-		CC45999F25020ED700731018 /* NoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC45999E25020ED700731018 /* NoticeVC.swift */; };
-		CC7E50D92503C6C6001BA50C /* noticeTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7E50D82503C6C6001BA50C /* noticeTitleCell.swift */; };
 		CCA0FB2824FE9A9E006B1F5B /* InterestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */; };
+		CCBBD2D525071BA3006A73FA /* NoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D425071BA3006A73FA /* NoticeVC.swift */; };
+		CCBBD2D725071C03006A73FA /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D625071C03006A73FA /* EventVC.swift */; };
+		CCBBD2D925072A5A006A73FA /* noticeTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D825072A5A006A73FA /* noticeTitleCell.swift */; };
+		CCBBD2DB25072A6F006A73FA /* noticeContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2DA25072A6F006A73FA /* noticeContentCell.swift */; };
+		CCBBD2DD25073FE4006A73FA /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */; };
+		CCBBD2E125074A9C006A73FA /* eventTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2E025074A9C006A73FA /* eventTitleCell.swift */; };
+		CCBBD2E325074B08006A73FA /* eventContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2E225074B08006A73FA /* eventContentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -181,9 +186,14 @@
 		B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
 		CC05FEC224F5590F008747B6 /* recentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentCell.swift; sourceTree = "<group>"; };
-		CC45999E25020ED700731018 /* NoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeVC.swift; sourceTree = "<group>"; };
-		CC7E50D82503C6C6001BA50C /* noticeTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeTitleCell.swift; sourceTree = "<group>"; };
 		CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestVC.swift; sourceTree = "<group>"; };
+		CCBBD2D425071BA3006A73FA /* NoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeVC.swift; sourceTree = "<group>"; };
+		CCBBD2D625071C03006A73FA /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
+		CCBBD2D825072A5A006A73FA /* noticeTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeTitleCell.swift; sourceTree = "<group>"; };
+		CCBBD2DA25072A6F006A73FA /* noticeContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeContentCell.swift; sourceTree = "<group>"; };
+		CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
+		CCBBD2E025074A9C006A73FA /* eventTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventTitleCell.swift; sourceTree = "<group>"; };
+		CCBBD2E225074B08006A73FA /* eventContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventContentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,8 +401,12 @@
 				B646AF8224EC03A500AC96A9 /* MypageVC.swift */,
 				CC05FEC224F5590F008747B6 /* recentCell.swift */,
 				CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */,
-				CC45999E25020ED700731018 /* NoticeVC.swift */,
-				CC7E50D82503C6C6001BA50C /* noticeTitleCell.swift */,
+				CCBBD2D425071BA3006A73FA /* NoticeVC.swift */,
+				CCBBD2D625071C03006A73FA /* EventVC.swift */,
+				CCBBD2D825072A5A006A73FA /* noticeTitleCell.swift */,
+				CCBBD2DA25072A6F006A73FA /* noticeContentCell.swift */,
+				CCBBD2E025074A9C006A73FA /* eventTitleCell.swift */,
+				CCBBD2E225074B08006A73FA /* eventContentCell.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -585,6 +599,7 @@
 				187C13072506559D004FD60B /* RecommendActivityModel.swift */,
 				B6208C9D25066BA700185624 /* MapCountModel.swift */,
 				B6208CA2250674E100185624 /* MapListModel.swift */,
+				CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -745,7 +760,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCBBD2D525071BA3006A73FA /* NoticeVC.swift in Sources */,
+				CCBBD2D925072A5A006A73FA /* noticeTitleCell.swift in Sources */,
 				18981F9B24F9104900D6A921 /* ActivityListModel.swift in Sources */,
+				CCBBD2E325074B08006A73FA /* eventContentCell.swift in Sources */,
 				B658A3C8250168450076BCD4 /* LoginVC.swift in Sources */,
 				B646AF8124EC039200AC96A9 /* ActivityVC.swift in Sources */,
 				B6A0BFB024FC26DD00D0083D /* RegionCell.swift in Sources */,
@@ -757,8 +775,10 @@
 				B6985F1624FAC682002A3E6B /* detailCell1.swift in Sources */,
 				B6C424B2250514F200AAE393 /* RecommendListModel.swift in Sources */,
 				B646AF8324EC03A500AC96A9 /* MypageVC.swift in Sources */,
+				CCBBD2DD25073FE4006A73FA /* NoticeModel.swift in Sources */,
 				B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */,
 				B658A3C1250157110076BCD4 /* onboardcell4.swift in Sources */,
+				CCBBD2D725071C03006A73FA /* EventVC.swift in Sources */,
 				B64940A524F1750E0052A21F /* MainNavController.swift in Sources */,
 				B658A3B9250156A50076BCD4 /* onboardcell3.swift in Sources */,
 				B6A487AE24F812F50058025C /* MapSelectCell.swift in Sources */,
@@ -772,6 +792,7 @@
 				B658A3B52501568C0076BCD4 /* onboardcell2.swift in Sources */,
 				B6208CA125066C2300185624 /* MapCountService.swift in Sources */,
 				B658A3AD250154690076BCD4 /* OnboardingSlider.swift in Sources */,
+				CCBBD2E125074A9C006A73FA /* eventTitleCell.swift in Sources */,
 				B6B1E1CA24FED56A00E60FB0 /* detailCell3.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
 				187FEED524FCD58600476D89 /* DisplayDetailData.swift in Sources */,
@@ -779,12 +800,11 @@
 				B646AF4F24EBFE4B00AC96A9 /* cozy.xcdatamodeld in Sources */,
 				18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
-				CC45999F25020ED700731018 /* NoticeVC.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
+				CCBBD2DB25072A6F006A73FA /* noticeContentCell.swift in Sources */,
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
-				CC7E50D92503C6C6001BA50C /* noticeTitleCell.swift in Sources */,
 				B6208CA5250675BB00185624 /* MapListService.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,

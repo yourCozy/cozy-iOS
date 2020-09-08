@@ -1,5 +1,5 @@
 //
-//  NoticeVC.swift
+//  EventVC.swift
 //  cozy
 //
 //  Created by 양지영 on 2020/09/08.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoticeVC: UIViewController {
+class EventVC: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     private var noticeData: [NoticeModel] = []
@@ -28,7 +28,7 @@ class NoticeVC: UIViewController {
 
 }
 
-extension NoticeVC: UITableViewDelegate, UITableViewDataSource {
+extension EventVC: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
          return noticeData.count
@@ -50,14 +50,14 @@ extension NoticeVC: UITableViewDelegate, UITableViewDataSource {
 
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          if indexPath.row == 0 {
-             let cell: noticeTitleCell = tableView.dequeueReusableCell(withIdentifier: "noticeTitleCell", for: indexPath) as! noticeTitleCell
+             let cell: eventTitleCell = tableView.dequeueReusableCell(withIdentifier: "eventTitleCell", for: indexPath) as! eventTitleCell
              cell.titleLabel.text = noticeData[indexPath.section].title
              cell.dateLabel.text = noticeData[indexPath.section].dateFormat()
              return cell
 
          } else {
              //클릭시 펼쳐질 셀
-             let cell: noticeContentCell = tableView.dequeueReusableCell(withIdentifier: "noticeContentCell", for: indexPath) as! noticeContentCell
+             let cell: eventContentCell = tableView.dequeueReusableCell(withIdentifier: "eventContentCell", for: indexPath) as! eventContentCell
              cell.contentTextView.text = noticeData[indexPath.section].content
              return cell
 
@@ -65,7 +65,7 @@ extension NoticeVC: UITableViewDelegate, UITableViewDataSource {
 
      }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         guard let cell = tableView.cellForRow(at: indexPath) as? noticeTitleCell
+         guard let cell = tableView.cellForRow(at: indexPath) as? eventTitleCell
              else {return}
          guard let index = tableView.indexPath(for: cell) else { return }
          if index.row == indexPath.row {
