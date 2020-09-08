@@ -19,6 +19,7 @@ class BookDetailVC: UIViewController {
     @IBOutlet weak var detailTableView: UITableView!
 
     var isClickBook: Bool = true
+    var bookstoreIdx: Int = 1
 
     private var detailList: [BookDetailData] = []
     private var feedList1: [RecommendFeedData] = []
@@ -37,6 +38,8 @@ class BookDetailVC: UIViewController {
         detailTableView.delegate = self
         detailTableView.dataSource = self
 
+        print("mydetailIdx: \(self.bookstoreIdx)")
+
         setDetailData()
         setfeedData()
         setfeedData2()
@@ -54,7 +57,7 @@ class BookDetailVC: UIViewController {
     }
 
     func setDetailData() {
-        BookstoreDetailService.shared.getBookstoreDetailData(bookstoreIdx: 1) { NetworkResult in
+        BookstoreDetailService.shared.getBookstoreDetailData(bookstoreIdx: self.bookstoreIdx) { NetworkResult in
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [BookDetailData] else { return }
@@ -75,7 +78,7 @@ class BookDetailVC: UIViewController {
     }
 
     func setfeedData() {
-        RecommendFeedService.shared.getRecommendFeedData(bookstoreIdx: 1) { NetworkResult in
+        RecommendFeedService.shared.getRecommendFeedData(bookstoreIdx: self.bookstoreIdx) { NetworkResult in
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [RecommendFeedData] else { return }
@@ -93,7 +96,7 @@ class BookDetailVC: UIViewController {
     }
 
     func setfeedData2() {
-        RecommendActivityService.shared.getRecommendActivityData(bookstoreIdx: 1) { NetworkResult in
+        RecommendActivityService.shared.getRecommendActivityData(bookstoreIdx: self.bookstoreIdx) { NetworkResult in
             switch NetworkResult {
             case .success(let data) :
                 guard let data = data as? [RecommendActivityData] else { return }

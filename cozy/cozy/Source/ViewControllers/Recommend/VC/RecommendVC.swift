@@ -83,6 +83,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        vc.bookstoreIdx = self.recommendList[indexPath.row].bookstoreIdx!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -151,6 +152,13 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             cell.descriptionLabel.attributedText = attrString
             cell.nameLabel.text = self.recommendList[indexPath.row].bookstoreName
             cell.addressLabel.text = self.recommendList[indexPath.row].location
+
+            if self.recommendList[indexPath.row].checked == 0 {
+                cell.bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
+            } else {
+                cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
+            }
+
             return cell
         }
     }

@@ -98,6 +98,7 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        vc.bookstoreIdx = self.mapList[indexPath.row].bookstoreIdx!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
