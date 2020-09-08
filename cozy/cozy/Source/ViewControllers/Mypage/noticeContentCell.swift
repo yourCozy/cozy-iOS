@@ -1,5 +1,5 @@
 //
-//  noticeTitleCell.swift
+//  noticeContentCell.swift
 //  cozy
 //
 //  Created by 양지영 on 2020/09/08.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class noticeTitleCell: UITableViewCell {
+class noticeContentCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var contentTextView: UILabel!
 
-    @IBOutlet weak var arrowImg: UIImageView!
+//    @IBOutlet var contentTextView: [UILabel]!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
