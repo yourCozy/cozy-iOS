@@ -61,27 +61,46 @@ class LoginVC: UIViewController {
 //        }
 
         // 웹 뷰로 카카오톡 로그인
-        AuthApi.shared.loginWithKakaoAccount {(_, error) in
+        AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
                 print(error)
             } else {
                 print("loginWithKakaoAccount() success.")
-                
+                let authToken = oauthToken
+
                 // 로그인 성공시 유저 정보 가져오기 - 이메일, 닉네임
                 UserApi.shared.me { (user, error) in
                     if let error = error {
                         print(error)
                     } else {
                         print("me() succeess")
-
-                        print(user?.kakaoAccount?.email)
-                        print(user?.kakaoAccount?.profile?.nickname)
+                        self.connectKakaoLogin(email: (user?.kakaoAccount?.email)!, nickname: (user?.kakaoAccount?.profile!.nickname)!, refreshToken: oauthToken!.refreshToken)
                     }
                 }
-
             }
         }
+    }
 
+    private func connectKakaoLogin(email: String, nickname: String, refreshToken: String) {
+        KakaoLoginService.shared.getMapListData(email: email, nickname: nickname, refreshToken: refreshToken) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? KakaoLoginData else { return }
+
+//                let sb = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: true, completion: nil)
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
     }
 
 }

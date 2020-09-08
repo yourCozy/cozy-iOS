@@ -25,6 +25,8 @@
 		B6208CA125066C2300185624 /* MapCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208CA025066C2300185624 /* MapCountService.swift */; };
 		B6208CA3250674E100185624 /* MapListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208CA2250674E100185624 /* MapListModel.swift */; };
 		B6208CA5250675BB00185624 /* MapListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208CA4250675BB00185624 /* MapListService.swift */; };
+		B631283425075C01003D33E3 /* KakaoLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631283325075C01003D33E3 /* KakaoLoginModel.swift */; };
+		B631283625075D66003D33E3 /* KakaoLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B631283525075D66003D33E3 /* KakaoLoginService.swift */; };
 		B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF4424EBFE4B00AC96A9 /* AppDelegate.swift */; };
 		B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646AF4624EBFE4B00AC96A9 /* SceneDelegate.swift */; };
 		B646AF4C24EBFE4B00AC96A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B646AF4A24EBFE4B00AC96A9 /* Main.storyboard */; };
@@ -119,6 +121,8 @@
 		B6208CA025066C2300185624 /* MapCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCountService.swift; sourceTree = "<group>"; };
 		B6208CA2250674E100185624 /* MapListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListModel.swift; sourceTree = "<group>"; };
 		B6208CA4250675BB00185624 /* MapListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListService.swift; sourceTree = "<group>"; };
+		B631283325075C01003D33E3 /* KakaoLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginModel.swift; sourceTree = "<group>"; };
+		B631283525075D66003D33E3 /* KakaoLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginService.swift; sourceTree = "<group>"; };
 		B646AF4124EBFE4B00AC96A9 /* cozy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cozy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B646AF4424EBFE4B00AC96A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B646AF4624EBFE4B00AC96A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -585,6 +589,7 @@
 				187C130925065E5D004FD60B /* RecommendActivityService.swift */,
 				B6208CA025066C2300185624 /* MapCountService.swift */,
 				B6208CA4250675BB00185624 /* MapListService.swift */,
+				B631283525075D66003D33E3 /* KakaoLoginService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -600,6 +605,7 @@
 				B6208C9D25066BA700185624 /* MapCountModel.swift */,
 				B6208CA2250674E100185624 /* MapListModel.swift */,
 				CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */,
+				B631283325075C01003D33E3 /* KakaoLoginModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -761,6 +767,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCBBD2D525071BA3006A73FA /* NoticeVC.swift in Sources */,
+				B631283425075C01003D33E3 /* KakaoLoginModel.swift in Sources */,
 				CCBBD2D925072A5A006A73FA /* noticeTitleCell.swift in Sources */,
 				18981F9B24F9104900D6A921 /* ActivityListModel.swift in Sources */,
 				CCBBD2E325074B08006A73FA /* eventContentCell.swift in Sources */,
@@ -804,6 +811,7 @@
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
 				CCBBD2DB25072A6F006A73FA /* noticeContentCell.swift in Sources */,
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
+				B631283625075D66003D33E3 /* KakaoLoginService.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
 				B6208CA5250675BB00185624 /* MapListService.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
