@@ -28,21 +28,25 @@ class BookDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNav()
-        let detailNib1 = UINib(nibName: "detailCell1", bundle: nil)
-        let detailNib2 = UINib(nibName: "detailCell2", bundle: nil)
-        let detailNib3 = UINib(nibName: "detailCell3", bundle: nil)
-        detailTableView.register(detailNib1, forCellReuseIdentifier: detailIdentifier1)
-        detailTableView.register(detailNib2, forCellReuseIdentifier: detailIdentifier2)
-        detailTableView.register(detailNib3, forCellReuseIdentifier: detailIdentifier3)
+        setTableView()
 
-        detailTableView.delegate = self
-        detailTableView.dataSource = self
+        if isUserLoggedIN() == true {
+            setDetailDataWithLogin()
+        } else {
+            setDetailData()
+        }
 
-        print("mydetailIdx: \(self.bookstoreIdx)")
-
-        setDetailData()
         setfeedData()
         setfeedData2()
+    }
+
+    func isUserLoggedIN() -> Bool {
+        let str = UserDefaults.standard.object(forKey: "token") as! String
+        if str.count > 0 {
+            return true
+        } else {
+            return false
+        }
     }
 
     func setNav() {
@@ -52,12 +56,45 @@ class BookDetailVC: UIViewController {
         self.navigationItem.leftBarButtonItem = backButton
     }
 
+    func setTableView() {
+        let detailNib1 = UINib(nibName: "detailCell1", bundle: nil)
+        let detailNib2 = UINib(nibName: "detailCell2", bundle: nil)
+        let detailNib3 = UINib(nibName: "detailCell3", bundle: nil)
+        detailTableView.register(detailNib1, forCellReuseIdentifier: detailIdentifier1)
+        detailTableView.register(detailNib2, forCellReuseIdentifier: detailIdentifier2)
+        detailTableView.register(detailNib3, forCellReuseIdentifier: detailIdentifier3)
+
+        detailTableView.delegate = self
+        detailTableView.dataSource = self
+    }
+
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
     }
 
     func setDetailData() {
         BookstoreDetailService.shared.getBookstoreDetailData(bookstoreIdx: self.bookstoreIdx) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [BookDetailData] else { return }
+                for data in data {
+                    self.detailList.append(BookDetailData(bookstoreIdx: data.bookstoreIdx ?? 1, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "", profileImg: data.profileImg ?? "", notice: data.notice ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", tel: data.tel ?? "", location: data.location ?? "", latitude: data.latitude ?? 0, longitude: data.longitude ?? 0, businessHours: data.businessHours ?? "", dayoff: data.dayoff ?? "", activities: data.activities ?? "", checked: data.checked ?? 0))
+                }
+                self.detailTableView.reloadData()
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
+
+    func setDetailDataWithLogin() {
+        BookstoreDetailService.shared.getBookstoreDetailDataWithLogin(bookstoreIdx: self.bookstoreIdx) { NetworkResult in
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [BookDetailData] else { return }
