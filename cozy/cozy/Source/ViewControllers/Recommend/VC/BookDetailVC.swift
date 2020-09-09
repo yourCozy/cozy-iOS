@@ -82,7 +82,10 @@ class BookDetailVC: UIViewController {
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [RecommendFeedData] else { return }
-                print(data)
+                for data in data {
+                    self.feedList1.append(RecommendFeedData(image: data.image ?? "", text: data.text ?? ""))
+                }
+                self.detailTableView.reloadData()
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -194,7 +197,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             return self.detailList.count
         } else {
             if self.isClickBook {
-                return 3
+                return self.feedList1.count
             } else {
                 return self.feedList2.count/2
             }
@@ -261,6 +264,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
                 cell.selectionStyle = .none
                 cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
+                cell.detailLabel.text = self.feedList1[indexPath.row].text
                 return cell
             } else { // 활동 피드
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3

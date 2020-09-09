@@ -72,16 +72,17 @@ class LoginVC: UIViewController {
         // 웹 뷰로 카카오톡 로그인
         AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
-                print(error)
+//                print(error)
             } else {
                 print("loginWithKakaoAccount() success.")
 
                 // 로그인 성공시 유저 정보 가져오기 - 이메일, 닉네임
                 UserApi.shared.me { (user, error) in
                     if let error = error {
-                        print(error)
+//                        print(error)
                     } else {
                         print("me() succeess")
+                        print(oauthToken!.refreshToken)
                         self.connectKakaoLogin(id: "\(user?.id)", nickname: (user?.kakaoAccount?.profile!.nickname)!, refreshToken: oauthToken!.refreshToken)
                     }
                 }
@@ -119,6 +120,7 @@ extension LoginVC: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
             let user = credential.user
+            print(credential.authorizationCode)
             print("user: ", user)
             print("token: ", credential.identityToken)
 
