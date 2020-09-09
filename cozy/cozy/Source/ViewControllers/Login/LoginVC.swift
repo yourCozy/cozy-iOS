@@ -122,13 +122,18 @@ extension LoginVC: ASAuthorizationControllerDelegate {
     // 성공 후 동작
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            let user = credential.user
-            print(credential.authorizationCode)
-            print("user: ", user)
-            print("token: ", credential.identityToken)
 
-            guard let email = credential.email else { return }
-            print("email: ", email)
+            let idToken = credential.identityToken!
+            let tokeStr = String(data: idToken, encoding: .utf8)
+            print(tokeStr)
+
+            guard let code = credential.authorizationCode else { return }
+            let codeStr = String(data: code, encoding: .utf8)
+            print(codeStr)
+
+            let user = credential.user
+            print(user)
+
         }
     }
 
