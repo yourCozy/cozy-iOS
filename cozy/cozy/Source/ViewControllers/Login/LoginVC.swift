@@ -75,7 +75,6 @@ class LoginVC: UIViewController {
                 print(error)
             } else {
                 print("loginWithKakaoAccount() success.")
-                let authToken = oauthToken
 
                 // 로그인 성공시 유저 정보 가져오기 - 이메일, 닉네임
                 UserApi.shared.me { (user, error) in
@@ -83,15 +82,15 @@ class LoginVC: UIViewController {
                         print(error)
                     } else {
                         print("me() succeess")
-                        self.connectKakaoLogin(email: (user?.kakaoAccount?.email)!, nickname: (user?.kakaoAccount?.profile!.nickname)!, refreshToken: oauthToken!.refreshToken)
+                        self.connectKakaoLogin(id: "\(user?.id)", nickname: (user?.kakaoAccount?.profile!.nickname)!, refreshToken: oauthToken!.refreshToken)
                     }
                 }
             }
         }
     }
 
-    private func connectKakaoLogin(email: String, nickname: String, refreshToken: String) {
-        KakaoLoginService.shared.getMapListData(email: email, nickname: nickname, refreshToken: refreshToken) { NetworkResult in
+    private func connectKakaoLogin(id: String, nickname: String, refreshToken: String) {
+        KakaoLoginService.shared.getMapListData(id: id, nickname: nickname, refreshToken: refreshToken) { NetworkResult in
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? KakaoLoginData else { return }

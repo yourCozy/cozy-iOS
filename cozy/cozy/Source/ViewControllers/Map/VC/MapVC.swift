@@ -98,6 +98,7 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        vc.bookstoreIdx = self.mapList[indexPath.row].bookstoreIdx!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -154,9 +155,15 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
             cell.nameLabel.text = self.mapList[indexPath.row].bookstoreName
             cell.addressLabel.text = self.mapList[indexPath.row].location
 
-            cell.tag1.setTitle("    #베이커리    ", for: .normal)
-            cell.tag2.setTitle("    #심야책방    ", for: .normal)
-            cell.tag3.setTitle("    #맥주    ", for: .normal)
+            cell.tag1.setTitle("    #\(self.mapList[indexPath.row].hashtag1  ?? "")    ", for: .normal)
+            cell.tag2.setTitle("    #\(self.mapList[indexPath.row].hashtag2 ?? "")    ", for: .normal)
+            cell.tag3.setTitle("    #\(self.mapList[indexPath.row].hashtag3 ?? "")    ", for: .normal)
+
+            if self.mapList[indexPath.row].checked == 0 {
+                cell.bookMarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
+            } else {
+                cell.bookMarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
+            }
 
             return cell
         }

@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageonboarding2" translatesAutoresizingMaskIntoConstraints="NO" id="DG3-zd-YYS">
-                        <rect key="frame" x="0.0" y="168" width="393" height="601"/>
+                        <rect key="frame" x="9" y="168" width="375" height="601"/>
                     </imageView>
                 </subviews>
             </view>
@@ -73,12 +73,11 @@
                 <constraint firstItem="Za7-RT-Ls7" firstAttribute="leading" secondItem="Peg-F4-U46" secondAttribute="trailing" constant="44" id="6jz-9L-QjX"/>
                 <constraint firstAttribute="bottom" secondItem="Peg-F4-U46" secondAttribute="bottom" id="9rP-wN-81H"/>
                 <constraint firstItem="jUN-2d-5K2" firstAttribute="leading" secondItem="Peg-F4-U46" secondAttribute="trailing" constant="44" id="Gi0-Yj-u9O"/>
+                <constraint firstItem="DG3-zd-YYS" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Qra-Ho-zOy"/>
                 <constraint firstItem="DG3-zd-YYS" firstAttribute="top" secondItem="AZF-GR-Eya" secondAttribute="bottom" constant="10" id="Y8W-th-DQS"/>
                 <constraint firstItem="Peg-F4-U46" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ylt-5N-9AF"/>
                 <constraint firstItem="Za7-RT-Ls7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="56" id="ZBS-qr-zAB"/>
                 <constraint firstItem="Peg-F4-U46" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="atd-3d-D8J"/>
-                <constraint firstAttribute="trailing" secondItem="DG3-zd-YYS" secondAttribute="trailing" id="k60-cH-Oaq"/>
-                <constraint firstItem="DG3-zd-YYS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="k8T-M1-HdI"/>
                 <constraint firstItem="AZF-GR-Eya" firstAttribute="leading" secondItem="Peg-F4-U46" secondAttribute="trailing" constant="44" id="mwu-70-uHh"/>
                 <constraint firstItem="AZF-GR-Eya" firstAttribute="top" secondItem="jUN-2d-5K2" secondAttribute="bottom" constant="10" id="v8a-AH-sZN"/>
                 <constraint firstItem="jUN-2d-5K2" firstAttribute="top" secondItem="Za7-RT-Ls7" secondAttribute="bottom" constant="11" id="vYb-Cj-Rgn"/>
