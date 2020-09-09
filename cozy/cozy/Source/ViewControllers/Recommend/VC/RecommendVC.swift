@@ -21,12 +21,22 @@ class RecommendVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         getRecommendListData()
+        isUserLoggedIN()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if let index = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
+        }
+    }
+
+    func isUserLoggedIN() {
+        let str = UserDefaults.standard.object(forKey: "token") as! String
+        if str.count > 0 {
+            print("login")
+        } else {
+            print("notlogin")
         }
     }
 
