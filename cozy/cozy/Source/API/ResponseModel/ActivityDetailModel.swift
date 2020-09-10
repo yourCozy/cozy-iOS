@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ActivityDetailModel{
+struct ActivityDetailModel {
     var status: Int
     var success: Bool
     var message: String
