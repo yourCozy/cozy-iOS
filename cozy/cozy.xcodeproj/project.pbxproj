@@ -56,6 +56,8 @@
 		B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649CCF324FAB6C80032AF31 /* BookDetailVC.swift */; };
 		B64AF18F24FD5C100015F2A7 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64AF18E24FD5C100015F2A7 /* OnboardingVC.swift */; };
 		B64AF19224FD5C270015F2A7 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64AF19124FD5C270015F2A7 /* Onboarding.storyboard */; };
+		B65058442507FB8F00D832E1 /* UpdateInterestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65058432507FB8F00D832E1 /* UpdateInterestModel.swift */; };
+		B65058462507FC1700D832E1 /* UpdateInterestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65058452507FC1700D832E1 /* UpdateInterestService.swift */; };
 		B658A3A9250152C40076BCD4 /* OnboardingIntro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B658A3A8250152C40076BCD4 /* OnboardingIntro.storyboard */; };
 		B658A3AB250152DA0076BCD4 /* OnboardingIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B658A3AA250152DA0076BCD4 /* OnboardingIntroVC.swift */; };
 		B658A3AD250154690076BCD4 /* OnboardingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B658A3AC250154690076BCD4 /* OnboardingSlider.swift */; };
@@ -155,6 +157,8 @@
 		B649CCF324FAB6C80032AF31 /* BookDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailVC.swift; sourceTree = "<group>"; };
 		B64AF18E24FD5C100015F2A7 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		B64AF19124FD5C270015F2A7 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		B65058432507FB8F00D832E1 /* UpdateInterestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInterestModel.swift; sourceTree = "<group>"; };
+		B65058452507FC1700D832E1 /* UpdateInterestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInterestService.swift; sourceTree = "<group>"; };
 		B658A3A8250152C40076BCD4 /* OnboardingIntro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingIntro.storyboard; sourceTree = "<group>"; };
 		B658A3AA250152DA0076BCD4 /* OnboardingIntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroVC.swift; sourceTree = "<group>"; };
 		B658A3AC250154690076BCD4 /* OnboardingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlider.swift; sourceTree = "<group>"; };
@@ -592,6 +596,7 @@
 				B6208CA025066C2300185624 /* MapCountService.swift */,
 				B6208CA4250675BB00185624 /* MapListService.swift */,
 				B631283525075D66003D33E3 /* KakaoLoginService.swift */,
+				B65058452507FC1700D832E1 /* UpdateInterestService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				B6208CA2250674E100185624 /* MapListModel.swift */,
 				CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */,
 				B631283325075C01003D33E3 /* KakaoLoginModel.swift */,
+				B65058432507FB8F00D832E1 /* UpdateInterestModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -811,6 +817,7 @@
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
+				B65058442507FB8F00D832E1 /* UpdateInterestModel.swift in Sources */,
 				CCBBD2DB25072A6F006A73FA /* noticeContentCell.swift in Sources */,
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
 				B631283625075D66003D33E3 /* KakaoLoginService.swift in Sources */,
@@ -833,6 +840,7 @@
 				187C13082506559D004FD60B /* RecommendActivityModel.swift in Sources */,
 				B64940A724F186380052A21F /* MypageNavController.swift in Sources */,
 				187C130425064F88004FD60B /* RecommendFeedService.swift in Sources */,
+				B65058462507FC1700D832E1 /* UpdateInterestService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

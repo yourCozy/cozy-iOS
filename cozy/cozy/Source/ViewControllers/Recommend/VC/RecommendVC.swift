@@ -52,6 +52,25 @@ class RecommendVC: UIViewController {
             }
         }
     }
+
+    private func updateInterest(bookstoreIdx: Int) {
+        UpdateInterestService.shared.getMapListData(bookstoreIdx: bookstoreIdx) { NetworkResult in
+            switch NetworkResult {
+            case.success(let data):
+                guard let data = data as? [UpdateInterestData] else { return }
+                print(data)
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
+
 }
 
 extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDelegate {
@@ -59,17 +78,20 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
     func clickBookmarkButton(index: Int) {
         let indexPath = IndexPath(row: index, section: 1)
         let cell = self.tableView.cellForRow(at: indexPath) as! bookstoreCell
+        let bookstoreIdx = self.recommendList[index].bookstoreIdx
 
         if cell.bookmarkButton.hasImage(named: "iconsavewhite", for: .normal) {
             cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
             let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            self.updateInterest(bookstoreIdx: bookstoreIdx!)
         } else {
             let cancelAlert = UIAlertController(title: "관심 책방에서 삭제하시겠어요?", message: "관심책방 등록을 삭제하시면, 관심책방에서 다시 볼 수 없어요.", preferredStyle: UIAlertController.Style.alert)
 
             cancelAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (_: UIAlertAction!) in
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
+                self.updateInterest(bookstoreIdx: bookstoreIdx!)
             }))
 
             cancelAlert.addAction(UIAlertAction(title: "아니오", style: .cancel, handler: { (_: UIAlertAction!) in

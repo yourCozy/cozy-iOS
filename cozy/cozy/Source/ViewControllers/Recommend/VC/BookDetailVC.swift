@@ -28,6 +28,35 @@ class BookDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNav()
+        setTableView()
+
+        if isUserLoggedIN() == true {
+            setDetailDataWithLogin()
+        } else {
+            setDetailData()
+        }
+
+        setfeedData()
+        setfeedData2()
+    }
+
+    func isUserLoggedIN() -> Bool {
+        let str = UserDefaults.standard.object(forKey: "token") as! String
+        if str.count > 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    func setNav() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+
+    func setTableView() {
         let detailNib1 = UINib(nibName: "detailCell1", bundle: nil)
         let detailNib2 = UINib(nibName: "detailCell2", bundle: nil)
         let detailNib3 = UINib(nibName: "detailCell3", bundle: nil)
@@ -37,19 +66,6 @@ class BookDetailVC: UIViewController {
 
         detailTableView.delegate = self
         detailTableView.dataSource = self
-
-        print("mydetailIdx: \(self.bookstoreIdx)")
-
-        setDetailData()
-        setfeedData()
-        setfeedData2()
-    }
-
-    func setNav() {
-        self.navigationItem.setHidesBackButton(true, animated: true)
-        self.navigationController?.navigationBar.tintColor = UIColor.gray
-        let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
-        self.navigationItem.leftBarButtonItem = backButton
     }
 
     @objc func goBack() {
@@ -77,12 +93,36 @@ class BookDetailVC: UIViewController {
         }
     }
 
+    func setDetailDataWithLogin() {
+        BookstoreDetailService.shared.getBookstoreDetailDataWithLogin(bookstoreIdx: self.bookstoreIdx) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [BookDetailData] else { return }
+                for data in data {
+                    self.detailList.append(BookDetailData(bookstoreIdx: data.bookstoreIdx ?? 1, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "", profileImg: data.profileImg ?? "", notice: data.notice ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", tel: data.tel ?? "", location: data.location ?? "", latitude: data.latitude ?? 0, longitude: data.longitude ?? 0, businessHours: data.businessHours ?? "", dayoff: data.dayoff ?? "", activities: data.activities ?? "", checked: data.checked ?? 0))
+                }
+                self.detailTableView.reloadData()
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
+
     func setfeedData() {
         RecommendFeedService.shared.getRecommendFeedData(bookstoreIdx: self.bookstoreIdx) { NetworkResult in
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [RecommendFeedData] else { return }
-                print(data)
+                for data in data {
+                    self.feedList1.append(RecommendFeedData(image: data.image ?? "", text: data.text ?? ""))
+                }
+                self.detailTableView.reloadData()
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -194,7 +234,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             return self.detailList.count
         } else {
             if self.isClickBook {
-                return 3
+                return self.feedList1.count
             } else {
                 return self.feedList2.count/2
             }
@@ -261,6 +301,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
                 cell.selectionStyle = .none
                 cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
+                cell.detailLabel.text = self.feedList1[indexPath.row].text
                 return cell
             } else { // 활동 피드
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3

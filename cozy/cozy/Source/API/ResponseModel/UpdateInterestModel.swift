@@ -1,18 +1,19 @@
 //
-//  RecommendFeedModel.swift
+//  AddInterestModel.swift
 //  cozy
 //
-//  Created by 양재욱 on 2020/09/07.
+//  Created by 최은지 on 2020/09/09.
 //  Copyright © 2020 최은지. All rights reserved.
 //
 
 import Foundation
+import UIKit
 
-struct RecommendFeedModel: Codable {
+struct UpdateInterestModel: Codable {
     var status: Int
     var success: Bool
     var message: String
-    var data: [RecommendFeedData]?
+    var data: UpdateInterestData?
 
     enum CodingKeys: String, CodingKey {
         case status = "status"
@@ -26,16 +27,14 @@ struct RecommendFeedModel: Codable {
         status = (try? values.decode(Int.self, forKey: .status)) ?? -1
         success = (try? values.decode(Bool.self, forKey: .success)) ?? false
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        data = (try? values.decode([RecommendFeedData].self, forKey: .data)) ?? nil
+        data = (try? values.decode(UpdateInterestData.self, forKey: .data)) ?? nil
     }
 }
 
-struct RecommendFeedData: Codable {
-    var image: String?
-    var text: String?
+struct UpdateInterestData: Codable {
+    var checked: Int
 
-    init(image: String, text: String) {
-        self.image = image
-        self.text = text
+    init(checked: Int) {
+        self.checked = checked
     }
 }

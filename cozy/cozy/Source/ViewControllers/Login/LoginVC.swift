@@ -21,10 +21,15 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        setUserDefaults()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(clickKakaoSocialLogin(_:)))
         kakaoView.addGestureRecognizer(gesture)
         let gesture2 = UITapGestureRecognizer(target: self, action: #selector(clickAppleLogin(_:)))
         appleView.addGestureRecognizer(gesture2)
+    }
+
+    func setUserDefaults() {
+        UserDefaults.standard.set("", forKey: "token")
     }
 
     func setUI() {
@@ -42,8 +47,6 @@ class LoginVC: UIViewController {
     }
 
     @objc func clickAppleLogin(_ sender: UITapGestureRecognizer) {
-        print("click apple login")
-
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
         let controller = ASAuthorizationController(authorizationRequests: [request])
@@ -56,18 +59,18 @@ class LoginVC: UIViewController {
     @objc func clickKakaoSocialLogin(_ sender: UITapGestureRecognizer) {
 
         // 카카오톡 설치 여부 확인
-//        if AuthApi.isKakaoTalkLoginAvailable() {
-//            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-//                if let error = error {
-//                    print(error)
-//                } else {
-//                    print("loginWithKakaoTalk() success.")
-//
-//                    //do something
-//                    _ = oauthToken
-//                }
-//            }
-//        }
+        //        if AuthApi.isKakaoTalkLoginAvailable() {
+        //            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+        //                if let error = error {
+        //                    print(error)
+        //                } else {
+        //                    print("loginWithKakaoTalk() success.")
+        //
+        //                    //do something
+        //                    _ = oauthToken
+        //                }
+        //            }
+        //        }
 
         // 웹 뷰로 카카오톡 로그인
         AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
@@ -82,7 +85,8 @@ class LoginVC: UIViewController {
                         print(error)
                     } else {
                         print("me() succeess")
-                        self.connectKakaoLogin(id: "\(user?.id)", nickname: (user?.kakaoAccount?.profile!.nickname)!, refreshToken: oauthToken!.refreshToken)
+                        print(oauthToken!.refreshToken)
+                        self.connectKakaoLogin(id: "\(user!.id)", nickname: (user?.kakaoAccount?.profile!.nickname)!, refreshToken: oauthToken!.refreshToken)
                     }
                 }
             }
@@ -118,12 +122,18 @@ extension LoginVC: ASAuthorizationControllerDelegate {
     // 성공 후 동작
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            let user = credential.user
-            print("user: ", user)
-            print("token: ", credential.identityToken)
 
-            guard let email = credential.email else { return }
-            print("email: ", email)
+            let idToken = credential.identityToken!
+            let tokeStr = String(data: idToken, encoding: .utf8)
+            print(tokeStr)
+
+            guard let code = credential.authorizationCode else { return }
+            let codeStr = String(data: code, encoding: .utf8)
+            print(codeStr)
+
+            let user = credential.user
+            print(user)
+
         }
     }
 
