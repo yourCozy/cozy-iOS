@@ -593,11 +593,29 @@
                         <outletCollection property="buttonActivityCollection" destination="lbh-bJ-eAJ" collectionClass="NSMutableArray" id="RJQ-4g-cNG"/>
                         <outletCollection property="buttonActivityCollection" destination="rxl-WQ-Pv5" collectionClass="NSMutableArray" id="kig-Oz-7b7"/>
                         <outletCollection property="buttonActivityCollection" destination="Qh9-ni-p62" collectionClass="NSMutableArray" id="ktd-LN-ZUj"/>
+                        <outletCollection property="myViews" destination="Qit-h5-keN" collectionClass="NSMutableArray" id="iI0-ee-ksK"/>
+                        <outletCollection property="myViews" destination="PJO-x4-E1j" collectionClass="NSMutableArray" id="108-cB-jXk"/>
+                        <outletCollection property="myViews" destination="U1n-h9-ZRv" collectionClass="NSMutableArray" id="H79-Jh-hrz"/>
+                        <outletCollection property="myViews" destination="H0P-FD-ygD" collectionClass="NSMutableArray" id="0AN-Ax-as3"/>
+                        <outletCollection property="myViews" destination="ckR-Cp-jlf" collectionClass="NSMutableArray" id="MVK-R1-3pL"/>
+                        <outletCollection property="myViews" destination="L8I-Ub-P6Y" collectionClass="NSMutableArray" id="8c4-RN-Xa7"/>
+                        <outletCollection property="myViews" destination="od7-7L-0gN" collectionClass="NSMutableArray" id="exh-1q-dYM"/>
+                        <outletCollection property="myViews" destination="iLk-Rr-jIr" collectionClass="NSMutableArray" id="m4e-fk-S5d"/>
+                        <outletCollection property="myViews" destination="xgE-XF-HXK" collectionClass="NSMutableArray" id="l0s-D4-gRf"/>
+                        <outletCollection property="myViews" destination="myf-Kh-0r1" collectionClass="NSMutableArray" id="WbB-yf-Szi"/>
+                        <outletCollection property="myViews" destination="dXV-aT-F1N" collectionClass="NSMutableArray" id="NVo-EE-E7I"/>
+                        <outletCollection property="myViews" destination="Fpw-Eg-vYX" collectionClass="NSMutableArray" id="GFp-8r-shw"/>
+                        <outletCollection property="myViews" destination="KzU-XG-BTz" collectionClass="NSMutableArray" id="AwS-iA-aYw"/>
+                        <outletCollection property="myViews" destination="dBx-6U-bga" collectionClass="NSMutableArray" id="k9t-1o-eaI"/>
+                        <outletCollection property="myViews" destination="juS-e8-y9e" collectionClass="NSMutableArray" id="1t3-dA-6Dl"/>
+                        <outletCollection property="myViews" destination="E4I-Ff-ydp" collectionClass="NSMutableArray" id="G0x-tJ-WPe"/>
+                        <outletCollection property="myViews" destination="Ylh-IC-iI7" collectionClass="NSMutableArray" id="vuK-7A-bPv"/>
+                        <outletCollection property="myViews" destination="hJD-gX-kJj" collectionClass="NSMutableArray" id="1d4-Eb-KN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oo7-cT-PUA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="-269"/>
+            <point key="canvasLocation" x="1180" y="-198"/>
         </scene>
         <!--활동-->
         <scene sceneID="YSO-IQ-Jd6">
