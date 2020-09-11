@@ -94,6 +94,8 @@
 		B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */; };
 		B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */; };
 		CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05FEC224F5590F008747B6 /* recentCell.swift */; };
+		CC772909250B8AF2001DB8FC /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC772908250B8AF2001DB8FC /* InfoModel.swift */; };
+		CC77290B250B8B0E001DB8FC /* InfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC77290A250B8B0E001DB8FC /* InfoService.swift */; };
 		CCA0FB2824FE9A9E006B1F5B /* InterestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */; };
 		CCBBD2D525071BA3006A73FA /* NoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D425071BA3006A73FA /* NoticeVC.swift */; };
 		CCBBD2D725071C03006A73FA /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D625071C03006A73FA /* EventVC.swift */; };
@@ -197,6 +199,8 @@
 		B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
 		CC05FEC224F5590F008747B6 /* recentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentCell.swift; sourceTree = "<group>"; };
+		CC772908250B8AF2001DB8FC /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
+		CC77290A250B8B0E001DB8FC /* InfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoService.swift; sourceTree = "<group>"; };
 		CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestVC.swift; sourceTree = "<group>"; };
 		CCBBD2D425071BA3006A73FA /* NoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeVC.swift; sourceTree = "<group>"; };
 		CCBBD2D625071C03006A73FA /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
@@ -409,15 +413,8 @@
 		B646AF7824EC033900AC96A9 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				B646AF8224EC03A500AC96A9 /* MypageVC.swift */,
-				CC05FEC224F5590F008747B6 /* recentCell.swift */,
-				CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */,
-				CCBBD2D425071BA3006A73FA /* NoticeVC.swift */,
-				CCBBD2D625071C03006A73FA /* EventVC.swift */,
-				CCBBD2D825072A5A006A73FA /* noticeTitleCell.swift */,
-				CCBBD2DA25072A6F006A73FA /* noticeContentCell.swift */,
-				CCBBD2E025074A9C006A73FA /* eventTitleCell.swift */,
-				CCBBD2E225074B08006A73FA /* eventContentCell.swift */,
+				CC772907250B8A61001DB8FC /* VC */,
+				CC772906250B8A4A001DB8FC /* Cell */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -599,6 +596,7 @@
 				B631283525075D66003D33E3 /* KakaoLoginService.swift */,
 				B65058452507FC1700D832E1 /* UpdateInterestService.swift */,
 				187C1314250B564A004FD60B /* ActivityDetailService.swift */,
+				CC77290A250B8B0E001DB8FC /* InfoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -617,8 +615,32 @@
 				B631283325075C01003D33E3 /* KakaoLoginModel.swift */,
 				B65058432507FB8F00D832E1 /* UpdateInterestModel.swift */,
 				187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */,
+				CC772908250B8AF2001DB8FC /* InfoModel.swift */,
 			);
 			path = ResponseModel;
+			sourceTree = "<group>";
+		};
+		CC772906250B8A4A001DB8FC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CCBBD2D825072A5A006A73FA /* noticeTitleCell.swift */,
+				CCBBD2DA25072A6F006A73FA /* noticeContentCell.swift */,
+				CCBBD2E025074A9C006A73FA /* eventTitleCell.swift */,
+				CCBBD2E225074B08006A73FA /* eventContentCell.swift */,
+				CC05FEC224F5590F008747B6 /* recentCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CC772907250B8A61001DB8FC /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				B646AF8224EC03A500AC96A9 /* MypageVC.swift */,
+				CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */,
+				CCBBD2D425071BA3006A73FA /* NoticeVC.swift */,
+				CCBBD2D625071C03006A73FA /* EventVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -806,6 +828,7 @@
 				B658A3CA25016AF40076BCD4 /* MainTabVC.swift in Sources */,
 				B6208CA3250674E100185624 /* MapListModel.swift in Sources */,
 				B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */,
+				CC77290B250B8B0E001DB8FC /* InfoService.swift in Sources */,
 				B6208C9E25066BA700185624 /* MapCountModel.swift in Sources */,
 				B658A3B52501568C0076BCD4 /* onboardcell2.swift in Sources */,
 				B6208CA125066C2300185624 /* MapCountService.swift in Sources */,
@@ -818,6 +841,7 @@
 				18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */,
 				187C1315250B564A004FD60B /* ActivityDetailService.swift in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
+				CC772909250B8AF2001DB8FC /* InfoModel.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
 				B65058442507FB8F00D832E1 /* UpdateInterestModel.swift in Sources */,
