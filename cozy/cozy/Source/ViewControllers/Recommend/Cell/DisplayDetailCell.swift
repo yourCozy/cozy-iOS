@@ -14,7 +14,7 @@ class DisplayDetailCell: UICollectionViewCell {
 
     @IBOutlet weak var imgView: UIImageView!
 
-    func set(_ displayDetailData: DisplayDetailData) {
-        self.imgView.image = UIImage(named: displayDetailData.detailImgName)
+    func set(_ detailImage: String) {
+        self.imgView.image = UIImage(named: detailImage)
     }
 }
