@@ -10,6 +10,8 @@ import UIKit
 
 class ActivityRecommendVC: UIViewController {
 
+    var activityIdx: Int = 0
+
     private var displayDetailList: [DisplayDetailData] = []
 
     @IBOutlet weak var mainImgView: UIImageView!

@@ -13,6 +13,7 @@
 		187C1306250650A0004FD60B /* RecommendFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1305250650A0004FD60B /* RecommendFeedModel.swift */; };
 		187C13082506559D004FD60B /* RecommendActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C13072506559D004FD60B /* RecommendActivityModel.swift */; };
 		187C130A25065E5D004FD60B /* RecommendActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C130925065E5D004FD60B /* RecommendActivityService.swift */; };
+		187C1313250A1A2B004FD60B /* ActivityDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */; };
 		187FEED524FCD58600476D89 /* DisplayDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEED424FCD58600476D89 /* DisplayDetailData.swift */; };
 		187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */; };
 		18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9624F90C4C00D6A921 /* ActivityListVC.swift */; };
@@ -110,6 +111,7 @@
 		187C1305250650A0004FD60B /* RecommendFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFeedModel.swift; sourceTree = "<group>"; };
 		187C13072506559D004FD60B /* RecommendActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendActivityModel.swift; sourceTree = "<group>"; };
 		187C130925065E5D004FD60B /* RecommendActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendActivityService.swift; sourceTree = "<group>"; };
+		187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailModel.swift; sourceTree = "<group>"; };
 		187FEED424FCD58600476D89 /* DisplayDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailData.swift; sourceTree = "<group>"; };
 		187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailCell.swift; sourceTree = "<group>"; };
 		18981F9624F90C4C00D6A921 /* ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListVC.swift; sourceTree = "<group>"; };
@@ -614,6 +616,7 @@
 				CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */,
 				B631283325075C01003D33E3 /* KakaoLoginModel.swift */,
 				B65058432507FB8F00D832E1 /* UpdateInterestModel.swift */,
+				187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
 				B6C424B825054CFF00AAE393 /* BookstoreDetailModel.swift in Sources */,
+				187C1313250A1A2B004FD60B /* ActivityDetailModel.swift in Sources */,
 				187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */,
 				B658A3AB250152DA0076BCD4 /* OnboardingIntroVC.swift in Sources */,
 				187C1306250650A0004FD60B /* RecommendFeedModel.swift in Sources */,

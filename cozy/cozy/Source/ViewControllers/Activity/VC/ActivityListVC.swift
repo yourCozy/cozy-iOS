@@ -56,6 +56,14 @@ extension ActivityListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 370
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+        vc.activityIdx = activityList[indexPath.row].activityIdx
+
+        self.navigationController?.pushViewController(vc, animated: true)
+
+    }
 }
 
 extension ActivityListVC: UITableViewDataSource {
