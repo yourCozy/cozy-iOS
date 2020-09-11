@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol BookListCellDelegate: AnyObject {
+    func addBookmark(index: Int)
+}
+
 class BookListCell: UITableViewCell {
+
+    weak var delegate: BookListCellDelegate?
+    var index: Int = 0
 
     @IBOutlet weak var wholeView: UIView!
     @IBOutlet weak var bookStoreImageView: UIImageView!
@@ -20,7 +27,6 @@ class BookListCell: UITableViewCell {
 
     @IBOutlet weak var tag1: UIButton!
     @IBOutlet weak var tag2: UIButton!
-
     @IBOutlet weak var tag3: UIButton!
 
     override func awakeFromNib() {
@@ -34,8 +40,10 @@ class BookListCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
 
-        // Configure the view for the selected state
+    @IBAction func addBookmark(_ sender: UIButton) {
+        self.delegate?.addBookmark(index: index)
     }
 
 }

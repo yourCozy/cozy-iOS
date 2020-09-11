@@ -81,7 +81,6 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         let bookstoreIdx = self.recommendList[index].bookstoreIdx
 
         let token = UserDefaults.standard.object(forKey: "token") as! String
-
         if token.count > 0 {
             if cell.bookmarkButton.hasImage(named: "iconsavewhite", for: .normal) {
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
