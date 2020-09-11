@@ -171,29 +171,26 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
 
             cell.bookstoreImageView.image = UIImage(named: "image1")
 
-            cell.tag1.setTitle("    #이국적인    ", for: .normal)
-            cell.tag2.setTitle("    #이국적    ", for: .normal)
-            cell.tag3.setTitle("    #이국적인    ", for: .normal)
+            cell.tag1.setTitle("    #\(self.recommendList[indexPath.row].hashtag1 ?? "")    ", for: .normal)
+            cell.tag2.setTitle("    #\(self.recommendList[indexPath.row].hashtag2 ?? "")    ", for: .normal)
+            cell.tag3.setTitle("    #\(self.recommendList[indexPath.row].hashtag3 ?? "")    ", for: .normal)
 
             cell.descriptionLabel.numberOfLines = 2
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 1.0
 
-            let descripText = NSAttributedString(string: "매일 쌔로 구운 빵과 함께하는 달콤한 책\n그리고 오늘, 봄날의 책방")
+            let descripText = NSAttributedString(string: "\(self.recommendList[indexPath.row].shortIntro1 ?? "")\n\(self.recommendList[indexPath.row].shortIntro2 ?? "")")
             let attrString = NSMutableAttributedString()
             attrString.append(descripText)
             attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
-
             cell.descriptionLabel.attributedText = attrString
             cell.nameLabel.text = self.recommendList[indexPath.row].bookstoreName
             cell.addressLabel.text = self.recommendList[indexPath.row].location
-
             if self.recommendList[indexPath.row].checked == 0 {
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
             } else {
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
             }
-
             return cell
         }
     }
