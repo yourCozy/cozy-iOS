@@ -14,7 +14,7 @@ struct UpdateInterestService {
 
     func getMapListData(bookstoreIdx: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
 
-        guard let token = UserDefaults.standard.string(forKey: "token") else {return}
+        guard let token = UserDefaults.standard.string(forKey: "token") else { return }
 
         let header: HTTPHeaders = [
             "Content-Type": "application/json",
@@ -48,6 +48,7 @@ struct UpdateInterestService {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(UpdateInterestModel.self, from: data) else { return .pathErr }
         guard let recommendData = decodedData.data else { return .requestErr(decodedData.message) }
+        print(recommendData)
         return .success(recommendData)
     }
 }

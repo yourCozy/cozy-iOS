@@ -32,7 +32,7 @@ struct UpdateInterestModel: Codable {
 }
 
 struct UpdateInterestData: Codable {
-    var checked: Int
+    var checked: Int?
 
     init(checked: Int) {
         self.checked = checked
