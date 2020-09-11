@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ActivityDetailModel {
+struct ActivityDetailModel: Codable {
     var status: Int
     var success: Bool
     var message: String
@@ -50,13 +50,13 @@ struct ActivityDetailData: Codable {
     var image10: String?
     var dday: Int?
     var deadline: String?
-    
+
     init(activityIdx: Int, activityName: String, categoryName: String, price: Int, limitation: String, introduction: String, period: String, image1: String, image2: String, image3: String, image4: String, image5: String, image6: String, image7: String, image8: String, image9: String, image10: String, dday: Int, deadline: String) {
         self.activityIdx = activityIdx
         self.activityName = activityName
         self.categoryName = categoryName
         self.price = price
-        self.limitaion = limitation
+        self.limitation = limitation
         self.introduction = introduction
         self.period = period
         self.image1 = image1
