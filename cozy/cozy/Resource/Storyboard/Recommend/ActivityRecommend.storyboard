@@ -181,25 +181,6 @@
                                                     <constraint firstItem="cXe-tG-Bio" firstAttribute="top" secondItem="6bk-mQ-03R" secondAttribute="top" constant="5" id="yqh-2l-IZl"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ScH-Hm-xKl">
-                                                <rect key="frame" x="94" y="363" width="62" height="22"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iv5-Ls-tiq">
-                                                        <rect key="frame" x="10" y="5" width="42" height="12"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="Iv5-Ls-tiq" secondAttribute="bottom" constant="5" id="6jy-r8-5BT"/>
-                                                    <constraint firstAttribute="height" constant="22" id="Fhx-tQ-qdT"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Iv5-Ls-tiq" secondAttribute="trailing" constant="10" id="GB9-D9-vJH"/>
-                                                    <constraint firstItem="Iv5-Ls-tiq" firstAttribute="top" secondItem="ScH-Hm-xKl" secondAttribute="top" constant="5" id="gLV-b6-cy7"/>
-                                                    <constraint firstItem="Iv5-Ls-tiq" firstAttribute="leading" secondItem="ScH-Hm-xKl" secondAttribute="leading" constant="10" id="zP8-xZ-8fl"/>
-                                                </constraints>
-                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sA-fg-hhu">
                                                 <rect key="frame" x="24" y="616" width="366" height="48"/>
                                                 <color key="backgroundColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
@@ -214,7 +195,6 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="ScH-Hm-xKl" firstAttribute="centerY" secondItem="6bk-mQ-03R" secondAttribute="centerY" id="0HS-fP-kYu"/>
                                             <constraint firstItem="puf-wM-PXT" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="0W8-hx-sMe"/>
                                             <constraint firstItem="9hJ-hL-hXx" firstAttribute="centerY" secondItem="CDt-1G-I2n" secondAttribute="centerY" id="1A7-CW-8Jz"/>
                                             <constraint firstItem="pBb-Lz-fOD" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="1lB-1R-bRM"/>
@@ -223,7 +203,6 @@
                                             <constraint firstItem="CDt-1G-I2n" firstAttribute="top" secondItem="6CF-xq-qUg" secondAttribute="bottom" constant="23" id="8zL-yE-tbT"/>
                                             <constraint firstItem="XRk-5L-Nv3" firstAttribute="leading" secondItem="gKO-gn-yls" secondAttribute="trailing" constant="34" id="ArK-LD-0BA"/>
                                             <constraint firstItem="gKO-gn-yls" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="BQI-WK-x3i"/>
-                                            <constraint firstItem="ScH-Hm-xKl" firstAttribute="leading" secondItem="6bk-mQ-03R" secondAttribute="trailing" constant="8" id="BSf-L3-3q8"/>
                                             <constraint firstItem="Hig-vk-6fy" firstAttribute="top" secondItem="CDt-1G-I2n" secondAttribute="bottom" constant="14" id="CK8-1q-25b"/>
                                             <constraint firstItem="XRk-5L-Nv3" firstAttribute="centerY" secondItem="gKO-gn-yls" secondAttribute="centerY" id="EsG-zd-Be5"/>
                                             <constraint firstItem="RGt-Ah-zCi" firstAttribute="top" secondItem="pXx-Cm-M1i" secondAttribute="top" id="F5y-6y-s1C"/>
@@ -283,13 +262,11 @@
                     <connections>
                         <outlet property="btnApply" destination="1sA-fg-hhu" id="dCM-sw-1Lf"/>
                         <outlet property="hashtagView" destination="6bk-mQ-03R" id="KlC-Xz-Vzo"/>
-                        <outlet property="hashtagView2" destination="ScH-Hm-xKl" id="ror-DZ-a0E"/>
                         <outlet property="lblActivityIntroduction" destination="NuN-Kz-aCx" id="EqE-fF-LTR"/>
                         <outlet property="lblDday" destination="r1b-FY-SYC" id="Lyz-Zt-OrR"/>
                         <outlet property="lblDeadline" destination="Cu9-fX-lIY" id="SOA-Vb-twO"/>
                         <outlet property="lblDisplayPeriod" destination="9hJ-hL-hXx" id="zuO-GE-Xwg"/>
                         <outlet property="lblHashtag" destination="cXe-tG-Bio" id="lng-oz-LKh"/>
-                        <outlet property="lblHashtag2" destination="Iv5-Ls-tiq" id="b7Z-uS-NAA"/>
                         <outlet property="lblNumOfPeople" destination="9il-n9-3Ez" id="wtN-UA-ErT"/>
                         <outlet property="lblPrice" destination="XRk-5L-Nv3" id="0s8-YZ-suy"/>
                         <outlet property="lblTitle" destination="pBb-Lz-fOD" id="pA0-yN-KYo"/>

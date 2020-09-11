@@ -10,6 +10,8 @@ import UIKit
 
 class ActivityVC: UIViewController {
 
+    @IBOutlet var myViews: [UIView]!
+
     @IBOutlet var buttonActivityCollection: [UIButton]!
 
     override func viewDidLoad() {
@@ -28,6 +30,7 @@ class ActivityVC: UIViewController {
         }
     }
 
+    
     @IBAction func btnActivityAction(_ sender: UIButton) {
 
         let sb = UIStoryboard(name: "ActivityList", bundle: nil)

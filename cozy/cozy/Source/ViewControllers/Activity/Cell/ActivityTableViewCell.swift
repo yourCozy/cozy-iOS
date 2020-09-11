@@ -39,10 +39,10 @@ class ActivityTableViewCell: UITableViewCell {
     }
 
     func setData(lblDday: Int, activityCellContents: String, activityCellBookStoreName: String, activityCellPrice: Int) {
-        self.lblDday.text = String(lblDday)
+        self.lblDday.text = "D-" + String(lblDday)
 //        activityCellImageView.image = UIImage(named: activityCellImageName)
         activityCellLabel.text = activityCellContents
         activityCellBookStoreNameLabel.text = activityCellBookStoreName
-        activityPriceLabel.text = String(activityCellPrice)
+        activityPriceLabel.text = String(activityCellPrice) + "원"
     }
 }

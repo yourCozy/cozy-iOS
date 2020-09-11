@@ -20,9 +20,9 @@ class ActivityRecommendVC: UIViewController {
     @IBOutlet weak var subImgCollectionView: UICollectionView!
 
     @IBOutlet weak var lblHashtag: UILabel!
-    @IBOutlet weak var lblHashtag2: UILabel!
+//    @IBOutlet weak var lblHashtag2: UILabel!
     @IBOutlet weak var hashtagView: UIView!
-    @IBOutlet weak var hashtagView2: UIView!
+//    @IBOutlet weak var hashtagView2: UIView!
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDday: UILabel!
@@ -63,16 +63,25 @@ class ActivityRecommendVC: UIViewController {
                 guard let data = data as? [ActivityDetailData] else { return print("data error") }
                 self.displayDetailList.removeAll()
 
-                self.detailData.append(ActivityDetailData(activityIdx: data[0].activityIdx, activityName: data[0].activityName ?? "", categoryName: data[0].categoryName ?? "", price: data[0].price ?? 0, limitation: data[0].limitation ?? "", introduction: data[0].introduction ?? "", period: data[0].period ?? "", image1: data[0].image1 ?? "", image2: data[0].image2 ?? "", image3: data[0].image3 ?? "", image4: data[0].image4 ?? "", image5: data[0].image5 ?? "", image6: data[0].image6 ?? "", image7: data[0].image7 ?? "", image8: data[0].image8 ?? "", image9: data[0].image9 ?? "", image10: data[0].image10 ?? "", dday: data[0].dday ?? 0, deadline: data[0].deadline ?? ""))
-
-                self.displayDetailList = [self.detailData[0].image2 ?? "", self.detailData[0].image3 ?? "", self.detailData[0].image4 ?? "", self.detailData[0].image5 ?? "", self.detailData[0].image6 ?? "", self.detailData[0].image7 ?? "", self.detailData[0].image8 ?? "", self.detailData[0].image9 ?? "", self.detailData[0].image10 ?? ""]
+//                self.detailData.append(ActivityDetailData(activityIdx: data[0].activityIdx, activityName: data[0].activityName ?? "", categoryName: data[0].categoryName ?? "", price: data[0].price ?? 0, limitation: data[0].limitation ?? "", introduction: data[0].introduction ?? "", period: data[0].period ?? "", image1: data[0].image1 ?? "", image2: data[0].image2 ?? "", image3: data[0].image3 ?? "", image4: data[0].image4 ?? "", image5: data[0].image5 ?? "", image6: data[0].image6 ?? "", image7: data[0].image7 ?? "", image8: data[0].image8 ?? "", image9: data[0].image9 ?? "", image10: data[0].image10 ?? "", dday: data[0].dday ?? 0, deadline: data[0].deadline ?? ""))
 
                 let url = URL(string: data[0].image1 ?? "")
                 self.mainImgView.kf.setImage(with: url)
 
+                self.displayDetailList = [data[0].image2 ?? "", data[0].image3 ?? "", data[0].image4 ?? "", data[0].image5 ?? "", data[0].image6 ?? "", data[0].image7 ?? "", data[0].image8 ?? "", data[0].image9 ?? "", data[0].image10 ?? ""]
+
                 self.displayDetailList = self.displayDetailList.filter {$0 != ""}
 
                 self.subImgCollectionView.reloadData()
+
+                self.lblHashtag.text = data[0].categoryName
+                self.lblTitle.text = data[0].activityName
+                self.lblDday.text = "D-" + String(data[0].dday ?? 0)
+                self.lblDisplayPeriod.text = data[0].period
+                self.lblDeadline.text = data[0].deadline
+                self.lblNumOfPeople.text = data[0].limitation
+                self.lblPrice.text = String(data[0].price ?? 0) + "원"
+                self.lblActivityIntroduction.text = data[0].introduction
 
             case .requestErr:
                 print("Request error")
@@ -102,14 +111,14 @@ class ActivityRecommendVC: UIViewController {
         hashtagView.layer.cornerRadius = 10
         hashtagView.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
 
-        hashtagView2.layer.borderWidth = 1
-        hashtagView2.layer.cornerRadius = 10
-        hashtagView2.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
+//        hashtagView2.layer.borderWidth = 1
+//        hashtagView2.layer.cornerRadius = 10
+//        hashtagView2.layer.borderColor = UIColor.veryLightPinkTwo.cgColor
 
         lblHashtag.font = UIFont(name: "NanumSquareRoundB", size: 12)
         lblHashtag.textColor = UIColor.brownishGrey
-        lblHashtag2.font = UIFont(name: "NanumSquareRoundB", size: 12)
-        lblHashtag2.textColor = UIColor.brownishGrey
+//        lblHashtag2.font = UIFont(name: "NanumSquareRoundB", size: 12)
+//        lblHashtag2.textColor = UIColor.brownishGrey
     }
 
     func setLabelStyle() {
@@ -132,14 +141,7 @@ class ActivityRecommendVC: UIViewController {
 
     // setting sample data
     func setLabelData() {
-        lblHashtag.text = "전시"
-        lblHashtag2.text = "대관"
-        lblTitle.text = "하얀 어둠"
-        lblDday.text = "D-3"
-        lblDisplayPeriod.text = "2020.08.20 - 2020.09.13"
-        lblDeadline.text = "2020.08.19"
-        lblNumOfPeople.text = "제한없음"
-        lblPrice.text = "18,000원"
+
     }
 
     func setButtonStyle() {

@@ -23,8 +23,7 @@ struct ActivityListService {
             case .success:
                 guard let statusCode = dataResponse.response?.statusCode else { return }
                 guard let value = dataResponse.value else { return }
-                print("26th line\n")
-                print(value)
+
                 let networkResult = self.judge(by: statusCode, value)
 
                 completion(networkResult)
