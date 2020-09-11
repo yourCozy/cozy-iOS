@@ -38,9 +38,14 @@ class ActivityTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setData(lblDday: Int, activityCellContents: String, activityCellBookStoreName: String, activityCellPrice: Int) {
-        self.lblDday.text = "D-" + String(lblDday)
-//        activityCellImageView.image = UIImage(named: activityCellImageName)
+    func setData(image: String, lblDday: Int, activityCellContents: String, activityCellBookStoreName: String, activityCellPrice: Int) {
+        if lblDday >= 0 {
+            self.lblDday.text = "D-" + String(lblDday)
+        } else {
+
+        }
+        let url = URL(string: image)
+        self.activityCellImageView.kf.setImage(with: url)
         activityCellLabel.text = activityCellContents
         activityCellBookStoreNameLabel.text = activityCellBookStoreName
         activityPriceLabel.text = String(activityCellPrice) + "원"
