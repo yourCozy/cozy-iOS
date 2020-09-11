@@ -37,12 +37,14 @@ struct KakaoLoginData: Codable {
     var id: String
     var profile: String
     var jwtToken: String
+    var is_logined: Int
 
-    init(userIdx: Int, nickname: String, email: String, profile: String, jwtToken: String) {
+    init(userIdx: Int, nickname: String, email: String, profile: String, jwtToken: String, is_logined: Int) {
         self.userIdx = userIdx
         self.nickname = nickname
         self.id = email
         self.profile = profile
         self.jwtToken = jwtToken
+        self.is_logined = is_logined
     }
 }

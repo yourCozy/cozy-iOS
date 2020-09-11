@@ -58,5 +58,5 @@ struct APIConstants {
     static let  mypageTasteURL = APIConstants.baseURL + "/mypage/recommendation?opt=%&opt=% ..."
     // 내정보 페이지 조회
     static let  mypageInfoURL = APIConstants.baseURL + "/mypage/myinfo"
-    
+
 }

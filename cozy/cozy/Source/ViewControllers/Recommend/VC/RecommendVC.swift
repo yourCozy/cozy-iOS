@@ -139,7 +139,15 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 2.0
 
-            let text1 = NSAttributedString(string: "지윤", attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])
+            let usernickname = UserDefaults.standard.object(forKey: "nickname") as! String
+            var text1 = NSAttributedString()
+
+            if usernickname.count > 0 {
+                text1 = NSAttributedString(string: usernickname, attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])
+            } else {
+                text1 = NSAttributedString(string: "코지", attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])
+            }
+
             let text2 = NSAttributedString(string: "님, \n오늘밤 책 한잔 어때요?", attributes: [.font: UIFont(name: "NanumSquareRoundL", size: 22)!])
 
             let attrString = NSMutableAttributedString()

@@ -30,6 +30,7 @@ class LoginVC: UIViewController {
 
     func setUserDefaults() {
         UserDefaults.standard.set("", forKey: "token")
+        UserDefaults.standard.set("", forKey: "nickname")
     }
 
     func setUI() {
@@ -99,11 +100,16 @@ class LoginVC: UIViewController {
             case .success(let data):
                 guard let data = data as? KakaoLoginData else { return }
                 UserDefaults.standard.set(data.jwtToken, forKey: "token")
+                UserDefaults.standard.set(data.nickname, forKey: "nickname")
 
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
+                if data.is_logined == 1 {
+                    let sb = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                } else {
+                    // 온보딩 취향선택 하기
+                }
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -123,6 +129,9 @@ extension LoginVC: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
 
+            print(credential.user)
+//            print(credential.fullName?.givenName)
+
             let idToken = credential.identityToken!
             let tokeStr = String(data: idToken, encoding: .utf8)
             print(tokeStr)
@@ -130,10 +139,8 @@ extension LoginVC: ASAuthorizationControllerDelegate {
             guard let code = credential.authorizationCode else { return }
             let codeStr = String(data: code, encoding: .utf8)
             print(codeStr)
-
             let user = credential.user
             print(user)
-
         }
     }
 
