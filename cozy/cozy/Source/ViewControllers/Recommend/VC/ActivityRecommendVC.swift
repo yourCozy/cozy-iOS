@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ActivityRecommendVC: UIViewController {
 
     var activityIdx: Int = 0
 
-    private var displayDetailList: [DisplayDetailData] = []
+    private var detailData: [ActivityDetailData] = []
+    private var displayDetailList: [String] = []
 
     @IBOutlet weak var mainImgView: UIImageView!
     @IBOutlet weak var subImgCollectionView: UICollectionView!
@@ -46,11 +48,42 @@ class ActivityRecommendVC: UIViewController {
         subImgCollectionView.delegate = self
         subImgCollectionView.dataSource = self
 
-        setDisplayDetailCellData()
+        getActivityDetailData()
+
         setHashtagStyle()
         setLabelStyle()
         setLabelData()
         setButtonStyle()
+    }
+
+    private func getActivityDetailData() {
+        ActivityDetailService.shared.getActivityDetailData(activityIdx: activityIdx) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [ActivityDetailData] else { return print("data error") }
+                self.displayDetailList.removeAll()
+
+                self.detailData.append(ActivityDetailData(activityIdx: data[0].activityIdx, activityName: data[0].activityName ?? "", categoryName: data[0].categoryName ?? "", price: data[0].price ?? 0, limitation: data[0].limitation ?? "", introduction: data[0].introduction ?? "", period: data[0].period ?? "", image1: data[0].image1 ?? "", image2: data[0].image2 ?? "", image3: data[0].image3 ?? "", image4: data[0].image4 ?? "", image5: data[0].image5 ?? "", image6: data[0].image6 ?? "", image7: data[0].image7 ?? "", image8: data[0].image8 ?? "", image9: data[0].image9 ?? "", image10: data[0].image10 ?? "", dday: data[0].dday ?? 0, deadline: data[0].deadline ?? ""))
+
+                self.displayDetailList = [self.detailData[0].image2 ?? "", self.detailData[0].image3 ?? "", self.detailData[0].image4 ?? "", self.detailData[0].image5 ?? "", self.detailData[0].image6 ?? "", self.detailData[0].image7 ?? "", self.detailData[0].image8 ?? "", self.detailData[0].image9 ?? "", self.detailData[0].image10 ?? ""]
+
+                let url = URL(string: data[0].image1 ?? "")
+                self.mainImgView.kf.setImage(with: url)
+
+                self.displayDetailList = self.displayDetailList.filter {$0 != ""}
+
+                self.subImgCollectionView.reloadData()
+
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
     }
 
     func setNav() {
@@ -62,19 +95,6 @@ class ActivityRecommendVC: UIViewController {
 
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
-    }
-
-    //sample data
-    func setDisplayDetailCellData() {
-        let data1 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
-        let data2 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
-        let data3 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
-        let data4 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
-        let data5 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
-        let data6 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
-        let data7 = DisplayDetailData(detailImgName: "ajeetMestryUBhpOiHnazMUnsplash")
-
-        displayDetailList = [data1, data2, data3, data4, data5, data6, data7]
     }
 
     func setHashtagStyle() {
@@ -144,7 +164,7 @@ extension ActivityRecommendVC: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        mainImgView.image = UIImage(named: displayDetailList[indexPath.row].detailImgName)
+//        mainImgView.image = UIImage(named: displayDetailList[indexPath.row].detailImgName)
     }
 }
 

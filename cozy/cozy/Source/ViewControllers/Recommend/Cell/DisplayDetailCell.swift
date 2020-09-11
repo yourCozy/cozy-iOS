@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DisplayDetailCell: UICollectionViewCell {
 
@@ -14,7 +15,8 @@ class DisplayDetailCell: UICollectionViewCell {
 
     @IBOutlet weak var imgView: UIImageView!
 
-    func set(_ displayDetailData: DisplayDetailData) {
-        self.imgView.image = UIImage(named: displayDetailData.detailImgName)
+    func set(_ detailImageURL: String) {
+        let url = URL(string: "detailImageURL")
+        imgView.kf.setImage(with: url)
     }
 }

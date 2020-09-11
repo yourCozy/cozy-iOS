@@ -28,9 +28,8 @@ class ActivityListVC: UIViewController {
         ActivityListService.shared.getActivityListData(categoryIdx: categoryIdx) { NetworkResult in
             switch NetworkResult {
                 case .success(let data):
-                    guard let data = data as? [ActivityListData] else {return print("error")}
-                    print("@@@@@@data@@@@@@")
-                    print(data)
+                    guard let data = data as? [ActivityListData] else {return print("activityList error")}
+
                     self.activityList.removeAll()
                     for data in data {
                         self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName, activityName: data.activityName, shortIntro: data.shortIntro, price: data.price, dday: data.dday))
