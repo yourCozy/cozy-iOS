@@ -30,7 +30,6 @@ class ActivityVC: UIViewController {
         }
     }
 
-    
     @IBAction func btnActivityAction(_ sender: UIButton) {
 
         let sb = UIStoryboard(name: "ActivityList", bundle: nil)
