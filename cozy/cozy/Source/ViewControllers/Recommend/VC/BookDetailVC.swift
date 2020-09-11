@@ -160,9 +160,15 @@ class BookDetailVC: UIViewController {
 extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1Delegate, detailCell3Delegate {
 
     func selectCallButton() {
-        if let url = URL(string: "tel://\(01045768209)"),
-            UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if self.detailList[0].tel == "" {
+            let noPhoneAlert = UIAlertController(title: "전화번호를 제공해 주지 않아요!", message: "빠른 시일 내로 구하겠습니다.", preferredStyle: UIAlertController.Style.alert)
+            noPhoneAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(noPhoneAlert, animated: true, completion: nil)
+        } else {
+            if let url = URL(string: "tel://\(self.detailList[0].tel ?? "02")"),
+                UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
         }
     }
 
@@ -263,9 +269,9 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             cell.bossImageView.image = UIImage(named: "74966Cd691014Bbbf2E445Bbc67Cddbc")
             cell.nameLabel.text = self.detailList[0].bookstoreName
 
-            cell.tag1.setTitle("    #베이커리    ", for: .normal)
-            cell.tag2.setTitle("    #심야책방    ", for: .normal)
-            cell.tag3.setTitle("    #맥주    ", for: .normal)
+            cell.tag1.setTitle("    #\(self.detailList[0].hashtag1 ?? "")    ", for: .normal)
+            cell.tag2.setTitle("    #\(self.detailList[0].hashtag2 ?? "")    ", for: .normal)
+            cell.tag3.setTitle("    #\(self.detailList[0].hashtag3 ?? "")    ", for: .normal)
 
             cell.descriptionLabel.numberOfLines = 2
             let style = NSMutableParagraphStyle()
@@ -280,7 +286,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             cell.timeLabel.text = self.detailList[0].businessHours
 
             cell.restLabel.numberOfLines = 2
-            let restText = NSMutableAttributedString(string: "\(self.detailList[0].dayoff)\n공휴일, 일요일")
+            let restText = NSMutableAttributedString(string: "\(self.detailList[0].dayoff ?? "")\n공휴일, 일요일")
             let restAttr = NSMutableAttributedString()
             restAttr.append(restText)
             restAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: restAttr.length))
