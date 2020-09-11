@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ActivityRecommendVC: UIViewController {
 
@@ -65,6 +66,9 @@ class ActivityRecommendVC: UIViewController {
                 self.detailData.append(ActivityDetailData(activityIdx: data[0].activityIdx, activityName: data[0].activityName ?? "", categoryName: data[0].categoryName ?? "", price: data[0].price ?? 0, limitation: data[0].limitation ?? "", introduction: data[0].introduction ?? "", period: data[0].period ?? "", image1: data[0].image1 ?? "", image2: data[0].image2 ?? "", image3: data[0].image3 ?? "", image4: data[0].image4 ?? "", image5: data[0].image5 ?? "", image6: data[0].image6 ?? "", image7: data[0].image7 ?? "", image8: data[0].image8 ?? "", image9: data[0].image9 ?? "", image10: data[0].image10 ?? "", dday: data[0].dday ?? 0, deadline: data[0].deadline ?? ""))
 
                 self.displayDetailList = [self.detailData[0].image2 ?? "", self.detailData[0].image3 ?? "", self.detailData[0].image4 ?? "", self.detailData[0].image5 ?? "", self.detailData[0].image6 ?? "", self.detailData[0].image7 ?? "", self.detailData[0].image8 ?? "", self.detailData[0].image9 ?? "", self.detailData[0].image10 ?? ""]
+
+                let url = URL(string: data[0].image1 ?? "")
+                self.mainImgView.kf.setImage(with: url)
 
                 self.displayDetailList = self.displayDetailList.filter {$0 != ""}
 
