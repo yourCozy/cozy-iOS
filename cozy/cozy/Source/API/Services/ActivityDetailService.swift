@@ -46,6 +46,7 @@ struct ActivityDetailService {
     private func isData(by data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(ActivityDetailModel.self, from: data) else { return .pathErr }
+        print("decodedData", decodedData)
         guard let recommendData = decodedData.data else { return .requestErr(decodedData.message) }
         return .success(recommendData)
     }
