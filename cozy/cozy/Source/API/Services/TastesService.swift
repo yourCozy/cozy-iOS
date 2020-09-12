@@ -20,9 +20,11 @@ struct TastesService {
 
     func postTasteData(tastes: [String], completion: @escaping (NetworkResult<Any>) -> Void) {
 
+        guard let token = UserDefaults.standard.string(forKey: "token") else {return print("TOKEN ERROR")}
+    
         let header: HTTPHeaders = [
             "Content-Type": "application/json",
-            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo2OCwiaWF0IjoxNTk5OTAxOTg5LCJleHAiOjE1OTk5Mzc5ODksImlzcyI6Im91ci1zb3B0In0.V0mD_JS-ejQRJ472GmNlATpjRuEStBq5iJSj_UgekWg"
+            "token": token
         ]
 
         let dataRequest = AF.request(APIConstants.mypageOnboardingURL, method: .post, parameters: makeParameter(tastes), encoding: URLEncoding(destination: .queryString), headers: header)
@@ -42,9 +44,10 @@ struct TastesService {
 
     func putTasteData(tastes: [String], completion: @escaping (NetworkResult<Any>) -> Void) {
 
+        guard let token = UserDefaults.standard.string(forKey: "token") else {return print("TOKEN ERROR")}
         let header: HTTPHeaders = [
             "Content-Type": "application/json",
-            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo2OCwiaWF0IjoxNTk5OTAxOTg5LCJleHAiOjE1OTk5Mzc5ODksImlzcyI6Im91ci1zb3B0In0.V0mD_JS-ejQRJ472GmNlATpjRuEStBq5iJSj_UgekWg"
+            "token": token
         ]
 
         let dataRequest = AF.request(APIConstants.mypageOnboardingURL, method: .put, parameters: makeParameter(tastes), encoding: URLEncoding(destination: .queryString), headers: header)
