@@ -53,7 +53,7 @@ struct APIConstants {
     // 프로필 사진 업데이트
     static let  mypageProfileURL = APIConstants.baseURL + "/user/profile"
     // 취향 등록(온보딩)
-    static let  mypageOnboardingURL = APIConstants.baseURL + "/mypage/recommendation?opt=%&opt=% ..."
+    static let  mypageOnboardingURL = APIConstants.baseURL + "/mypage/recommendation?opt="
     // 취향 수정
     static let  mypageTasteURL = APIConstants.baseURL + "/mypage/recommendation?opt=%&opt=% ..."
     // 내정보 페이지 조회

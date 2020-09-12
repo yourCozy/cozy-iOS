@@ -63,7 +63,8 @@ class ActivityRecommendVC: UIViewController {
 
                 self.displayDetailList.removeAll()
 
-                let url = URL(string: data[0].image1 ?? "")
+                // main image 없을 때: 분기처리
+                let url = URL(string: data[0].image1 ?? "raychanKJq6CDyodAmUnsplash")
                 self.mainImgView.kf.setImage(with: url)
 
                 self.displayDetailList = [data[0].image2 ?? "", data[0].image3 ?? "", data[0].image4 ?? "", data[0].image5 ?? "", data[0].image6 ?? "", data[0].image7 ?? "", data[0].image8 ?? "", data[0].image9 ?? "", data[0].image10 ?? ""]
@@ -72,6 +73,7 @@ class ActivityRecommendVC: UIViewController {
 
                 self.subImgCollectionView.reloadData()
 
+                // 텍스트 데이터 삽입
                 self.lblHashtag.text = data[0].categoryName ?? "행사"
                 self.lblTitle.text = data[0].activityName ?? ""
                 self.lblDday.text = "D-" + String(data[0].dday ?? 0)

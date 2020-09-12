@@ -32,11 +32,18 @@ class ActivityListVC: UIViewController {
 
                     self.activityList.removeAll()
                     for data in data {
-                        self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName, activityName: data.activityName, shortIntro: data.shortIntro, price: data.price, image1: data.image1 ?? "", dday: data.dday))
+                        // D-day 지난 데이터 제거
+                        if data.dday < 0 {
+                            continue
+                        } else {
+                            self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName, activityName: data.activityName, shortIntro: data.shortIntro, price: data.price, image1: data.image1 ?? "", dday: data.dday))
+                        }
                     }
+
                     DispatchQueue.main.async {
                           self.activityTableView.reloadData()
                     }
+
                 case .requestErr:
                     print("Request error@@")
                 case .pathErr:

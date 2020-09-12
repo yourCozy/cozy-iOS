@@ -15,6 +15,12 @@
 		187C130A25065E5D004FD60B /* RecommendActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C130925065E5D004FD60B /* RecommendActivityService.swift */; };
 		187C1313250A1A2B004FD60B /* ActivityDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */; };
 		187C1315250B564A004FD60B /* ActivityDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1314250B564A004FD60B /* ActivityDetailService.swift */; };
+		187C131D250CA710004FD60B /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 187C1319250CA710004FD60B /* NanumSquareRoundR.ttf */; };
+		187C131E250CA710004FD60B /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 187C131A250CA710004FD60B /* NanumSquareRoundL.ttf */; };
+		187C131F250CA710004FD60B /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 187C131B250CA710004FD60B /* NanumSquareRoundEB.ttf */; };
+		187C1320250CA710004FD60B /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 187C131C250CA710004FD60B /* NanumSquareRoundB.ttf */; };
+		187C1322250CB6F1004FD60B /* TastesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1321250CB6F1004FD60B /* TastesModel.swift */; };
+		187C1324250CBB4F004FD60B /* TastesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1323250CBB4F004FD60B /* TastesService.swift */; };
 		187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */; };
 		18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9624F90C4C00D6A921 /* ActivityListVC.swift */; };
 		18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */; };
@@ -73,10 +79,6 @@
 		B658A3C5250168240076BCD4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B658A3C4250168240076BCD4 /* Login.storyboard */; };
 		B658A3C8250168450076BCD4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B658A3C7250168450076BCD4 /* LoginVC.swift */; };
 		B658A3CA25016AF40076BCD4 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B658A3C925016AF40076BCD4 /* MainTabVC.swift */; };
-		B6845B20250B91600084B4F4 /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6845B1C250B91600084B4F4 /* NanumSquareRoundEB.ttf */; };
-		B6845B21250B91600084B4F4 /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6845B1D250B91600084B4F4 /* NanumSquareRoundB.ttf */; };
-		B6845B22250B91600084B4F4 /* NanumSquareRoundR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6845B1E250B91600084B4F4 /* NanumSquareRoundR.ttf */; };
-		B6845B23250B91600084B4F4 /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6845B1F250B91600084B4F4 /* NanumSquareRoundL.ttf */; };
 		B6985F1624FAC682002A3E6B /* detailCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6985F1424FAC682002A3E6B /* detailCell1.swift */; };
 		B6985F1724FAC682002A3E6B /* detailCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6985F1524FAC682002A3E6B /* detailCell1.xib */; };
 		B6985F1A24FAC81B002A3E6B /* detailCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6985F1824FAC81B002A3E6B /* detailCell2.swift */; };
@@ -115,6 +117,12 @@
 		187C130925065E5D004FD60B /* RecommendActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendActivityService.swift; sourceTree = "<group>"; };
 		187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailModel.swift; sourceTree = "<group>"; };
 		187C1314250B564A004FD60B /* ActivityDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailService.swift; sourceTree = "<group>"; };
+		187C1319250CA710004FD60B /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundR.ttf; sourceTree = "<group>"; };
+		187C131A250CA710004FD60B /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundL.ttf; sourceTree = "<group>"; };
+		187C131B250CA710004FD60B /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
+		187C131C250CA710004FD60B /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
+		187C1321250CB6F1004FD60B /* TastesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastesModel.swift; sourceTree = "<group>"; };
+		187C1323250CBB4F004FD60B /* TastesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastesService.swift; sourceTree = "<group>"; };
 		187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailCell.swift; sourceTree = "<group>"; };
 		18981F9624F90C4C00D6A921 /* ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListVC.swift; sourceTree = "<group>"; };
 		18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -177,10 +185,6 @@
 		B658A3C4250168240076BCD4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B658A3C7250168450076BCD4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B658A3C925016AF40076BCD4 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
-		B6845B1C250B91600084B4F4 /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundEB.ttf; path = "../../../../../../../../../../Volumes/나눔스퀘어라운드 맥용 TTF/NanumSquareRoundEB.ttf"; sourceTree = "<group>"; };
-		B6845B1D250B91600084B4F4 /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundB.ttf; path = "../../../../../../../../../../Volumes/나눔스퀘어라운드 맥용 TTF/NanumSquareRoundB.ttf"; sourceTree = "<group>"; };
-		B6845B1E250B91600084B4F4 /* NanumSquareRoundR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundR.ttf; path = "../../../../../../../../../../Volumes/나눔스퀘어라운드 맥용 TTF/NanumSquareRoundR.ttf"; sourceTree = "<group>"; };
-		B6845B1F250B91600084B4F4 /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumSquareRoundL.ttf; path = "../../../../../../../../../../Volumes/나눔스퀘어라운드 맥용 TTF/NanumSquareRoundL.ttf"; sourceTree = "<group>"; };
 		B6985F1424FAC682002A3E6B /* detailCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell1.swift; sourceTree = "<group>"; };
 		B6985F1524FAC682002A3E6B /* detailCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailCell1.xib; sourceTree = "<group>"; };
 		B6985F1824FAC81B002A3E6B /* detailCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell2.swift; sourceTree = "<group>"; };
@@ -223,6 +227,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		187C1318250CA522004FD60B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				187C131C250CA710004FD60B /* NanumSquareRoundB.ttf */,
+				187C131B250CA710004FD60B /* NanumSquareRoundEB.ttf */,
+				187C131A250CA710004FD60B /* NanumSquareRoundL.ttf */,
+				187C1319250CA710004FD60B /* NanumSquareRoundR.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		187FEED324FCD55F00476D89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,7 +349,7 @@
 		B646AF6324EC004700AC96A9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				B649409924F14EBA0052A21F /* Fonts */,
+				187C1318250CA522004FD60B /* Fonts */,
 				B646AF6424EC005000AC96A9 /* Storyboard */,
 				B646AF5024EBFE4C00AC96A9 /* Assets.xcassets */,
 				B646AF5224EBFE4C00AC96A9 /* LaunchScreen.storyboard */,
@@ -445,17 +460,6 @@
 				B649CCF024FAB64B0032AF31 /* Cell */,
 			);
 			path = Recommend;
-			sourceTree = "<group>";
-		};
-		B649409924F14EBA0052A21F /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				B6845B1D250B91600084B4F4 /* NanumSquareRoundB.ttf */,
-				B6845B1C250B91600084B4F4 /* NanumSquareRoundEB.ttf */,
-				B6845B1F250B91600084B4F4 /* NanumSquareRoundL.ttf */,
-				B6845B1E250B91600084B4F4 /* NanumSquareRoundR.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		B64940A324F174CF0052A21F /* NavBar */ = {
@@ -597,6 +601,7 @@
 				B65058452507FC1700D832E1 /* UpdateInterestService.swift */,
 				187C1314250B564A004FD60B /* ActivityDetailService.swift */,
 				CC77290A250B8B0E001DB8FC /* InfoService.swift */,
+				187C1323250CBB4F004FD60B /* TastesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -616,6 +621,7 @@
 				B65058432507FB8F00D832E1 /* UpdateInterestModel.swift */,
 				187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */,
 				CC772908250B8AF2001DB8FC /* InfoModel.swift */,
+				187C1321250CB6F1004FD60B /* TastesModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -706,18 +712,19 @@
 			files = (
 				18981F9F24FA5CBD00D6A921 /* ActivityRecommend.storyboard in Resources */,
 				B658A3BA250156A50076BCD4 /* onboardcell3.xib in Resources */,
-				B6845B22250B91600084B4F4 /* NanumSquareRoundR.ttf in Resources */,
 				B646AF5C24EBFED800AC96A9 /* .swiftlint.yml in Resources */,
+				187C131D250CA710004FD60B /* NanumSquareRoundR.ttf in Resources */,
 				B646AF7024EC02FB00AC96A9 /* Recommend.storyboard in Resources */,
+				187C131F250CA710004FD60B /* NanumSquareRoundEB.ttf in Resources */,
+				187C131E250CA710004FD60B /* NanumSquareRoundL.ttf in Resources */,
 				B6985F1B24FAC81B002A3E6B /* detailCell2.xib in Resources */,
 				B6985F1724FAC682002A3E6B /* detailCell1.xib in Resources */,
-				B6845B23250B91600084B4F4 /* NanumSquareRoundL.ttf in Resources */,
+				187C1320250CA710004FD60B /* NanumSquareRoundB.ttf in Resources */,
 				B646AF5424EBFE4C00AC96A9 /* LaunchScreen.storyboard in Resources */,
 				B646AF7724EC031F00AC96A9 /* Mypage.storyboard in Resources */,
 				B658A3B62501568C0076BCD4 /* onboardcell2.xib in Resources */,
 				18981F9D24FA4BD900D6A921 /* ActivityList.storyboard in Resources */,
 				B658A3B2250156780076BCD4 /* onboardcell1.xib in Resources */,
-				B6845B21250B91600084B4F4 /* NanumSquareRoundB.ttf in Resources */,
 				B658A3C5250168240076BCD4 /* Login.storyboard in Resources */,
 				B646AF5124EBFE4C00AC96A9 /* Assets.xcassets in Resources */,
 				B6B1E1CB24FED56A00E60FB0 /* detailCell3.xib in Resources */,
@@ -726,7 +733,6 @@
 				B646AF4C24EBFE4B00AC96A9 /* Main.storyboard in Resources */,
 				B649CCED24FAB1E20032AF31 /* BookListCell.xib in Resources */,
 				B64AF19224FD5C270015F2A7 /* Onboarding.storyboard in Resources */,
-				B6845B20250B91600084B4F4 /* NanumSquareRoundEB.ttf in Resources */,
 				B658A3A9250152C40076BCD4 /* OnboardingIntro.storyboard in Resources */,
 				B646AF7324EC030B00AC96A9 /* Map.storyboard in Resources */,
 				B658A3C2250157110076BCD4 /* onboardcell4.xib in Resources */,
@@ -842,6 +848,7 @@
 				187C1315250B564A004FD60B /* ActivityDetailService.swift in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
 				CC772909250B8AF2001DB8FC /* InfoModel.swift in Sources */,
+				187C1324250CBB4F004FD60B /* TastesService.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
 				B65058442507FB8F00D832E1 /* UpdateInterestModel.swift in Sources */,
@@ -850,6 +857,7 @@
 				B631283625075D66003D33E3 /* KakaoLoginService.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
 				B6208CA5250675BB00185624 /* MapListService.swift in Sources */,
+				187C1322250CB6F1004FD60B /* TastesModel.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,

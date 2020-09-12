@@ -76,7 +76,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ib-kJ-B0N">
                                                         <rect key="frame" x="0.0" y="0.0" width="261" height="40"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFt-8u-NaN">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFt-8u-NaN">
                                                                 <rect key="frame" x="76" y="0.0" width="83" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="83" id="aDr-jV-HUL"/>
@@ -96,7 +96,7 @@
                                                                     <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="Ysc-rW-sSq"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-0f-vFG">
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-0f-vFG">
                                                                 <rect key="frame" x="165" y="0.0" width="70" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="70" id="rJK-eL-l0S"/>
@@ -546,7 +546,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="changeButton:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="bIF-5y-zVg"/>
+                                                    <action selector="btnStart:" destination="gKg-bJ-K6h" eventType="touchUpInside" id="Rzk-9v-lXL"/>
                                                 </connections>
                                             </button>
                                         </subviews>
