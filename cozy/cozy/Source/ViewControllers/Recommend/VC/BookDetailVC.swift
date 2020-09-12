@@ -152,7 +152,6 @@ class BookDetailVC: UIViewController {
             case .networkFail:
                 print("network error")
             }
-
         }
     }
 }
@@ -284,6 +283,12 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
             cell.locationLabel.text = self.detailList[0].location
             cell.timeLabel.text = self.detailList[0].businessHours
+
+            if self.detailList[0].checked == 0 {
+                cell.bookmarkButton1.setImage(UIImage(named: "iconsave"), for: .normal)
+            } else {
+                cell.bookmarkButton1.setImage(UIImage(named: "iconsavefull"), for: .normal)
+            }
 
             cell.restLabel.numberOfLines = 2
             let restText = NSMutableAttributedString(string: "\(self.detailList[0].dayoff ?? "")\n공휴일, 일요일")

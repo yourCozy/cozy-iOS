@@ -34,11 +34,7 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addObserver()
-
-        let nibName = UINib(nibName: "BookListCell", bundle: nil)
-        mapTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)
-        mapTableView.delegate = self
-        mapTableView.dataSource = self
+        setMapTableView()
 
         if isUserLoggedIN() == true {
             getMapListDataWithLogin()
@@ -52,6 +48,13 @@ class MapVC: UIViewController {
         if let index = self.mapTableView.indexPathForSelectedRow {
             self.mapTableView.deselectRow(at: index, animated: true)
         }
+    }
+
+    func setMapTableView() {
+        let nibName = UINib(nibName: "BookListCell", bundle: nil)
+        mapTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)
+        mapTableView.delegate = self
+        mapTableView.dataSource = self
     }
 
     func isUserLoggedIN() -> Bool {
