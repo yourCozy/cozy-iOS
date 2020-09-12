@@ -79,14 +79,11 @@ class LoginVC: UIViewController {
                 print(error)
             } else {
                 print("loginWithKakaoAccount() success.")
-
                 // 로그인 성공시 유저 정보 가져오기 - 이메일, 닉네임
                 UserApi.shared.me { (user, error) in
                     if let error = error {
                         print(error)
                     } else {
-                        print("me() succeess")
-                        print(oauthToken!.refreshToken)
                         self.connectKakaoLogin(id: "\(user!.id)", nickname: (user?.kakaoAccount?.profile!.nickname)!, refreshToken: oauthToken!.refreshToken)
                     }
                 }
@@ -95,20 +92,22 @@ class LoginVC: UIViewController {
     }
 
     private func connectKakaoLogin(id: String, nickname: String, refreshToken: String) {
-        KakaoLoginService.shared.getMapListData(id: id, nickname: nickname, refreshToken: refreshToken) { NetworkResult in
+        KakaoLoginService.shared.getKakaoLoginData(id: id, nickname: nickname, refreshToken: refreshToken) { NetworkResult in
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? KakaoLoginData else { return }
                 UserDefaults.standard.set(data.jwtToken, forKey: "token")
                 UserDefaults.standard.set(data.nickname, forKey: "nickname")
-
                 if data.is_logined == 1 {
                     let sb = UIStoryboard(name: "Main", bundle: nil)
                     let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
                 } else {
-                    // 온보딩 취향선택 하기
+                    let sb = UIStoryboard(name: "Onboarding", bundle: nil)
+                    let vc = sb.instantiateViewController(identifier: "OnboardingVC") as! OnboardingVC
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
                 }
             case .requestErr:
                 print("Request error")
@@ -128,19 +127,48 @@ extension LoginVC: ASAuthorizationControllerDelegate {
     // 성공 후 동작
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            // user id
+            let uid = credential.user
 
-            print(credential.user)
-//            print(credential.fullName?.givenName)
+            // nickname
+            let nickname = "\(credential.fullName?.familyName ?? "코")\(credential.fullName?.givenName ?? "지")"
 
-            let idToken = credential.identityToken!
-            let tokeStr = String(data: idToken, encoding: .utf8)
-            print(tokeStr)
+            // refresh token
+            guard let refToken = credential.authorizationCode else { return }
+            let refreshTokenStr = String(data: refToken, encoding: .utf8)
 
-            guard let code = credential.authorizationCode else { return }
-            let codeStr = String(data: code, encoding: .utf8)
-            print(codeStr)
-            let user = credential.user
-            print(user)
+            // access token
+            let accToken = credential.identityToken!
+            let accTokenStr = String(data: accToken, encoding: .utf8)
+
+            AppleLoginService.shared.getAppleLoginData(id: uid, nickname: nickname, refreshToken: refreshTokenStr!, accessToken: accTokenStr!) { NetworkResult in
+                switch NetworkResult {
+                case .success(let data):
+                    guard let data = data as? AppleLoginData else { return }
+                    UserDefaults.standard.set(data.jwtToken, forKey: "token")
+                    UserDefaults.standard.set(data.nickname, forKey: "nickname")
+
+                    if data.is_logined == 1 {
+                        let sb = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true, completion: nil)
+                    } else {
+                        let sb = UIStoryboard(name: "Onboarding", bundle: nil)
+                        let vc = sb.instantiateViewController(identifier: "OnboardingVC") as! OnboardingVC
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                case .requestErr:
+                    print("Request error")
+                case .pathErr:
+                    print("path error")
+                case .serverErr:
+                    print("server error")
+                case .networkFail:
+                    print("network error")
+                }
+            }
         }
     }
 
