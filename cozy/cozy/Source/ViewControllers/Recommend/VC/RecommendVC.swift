@@ -95,8 +95,7 @@ class RecommendVC: UIViewController {
             switch NetworkResult {
             case.success(let data):
                 guard let data = data as? UpdateInterestData else { return }
-//                print(data)
-                self.getRecommendListData()
+                print(data)
             case .requestErr:
                 print("Request error")
             case .pathErr:
