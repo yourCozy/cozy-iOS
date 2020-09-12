@@ -40,13 +40,26 @@ class MapVC: UIViewController {
         mapTableView.delegate = self
         mapTableView.dataSource = self
 
-        getMapListData()
+        if isUserLoggedIN() == true {
+            getMapListDataWithLogin()
+        } else {
+            getMapListData()
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if let index = self.mapTableView.indexPathForSelectedRow {
             self.mapTableView.deselectRow(at: index, animated: true)
+        }
+    }
+
+    func isUserLoggedIN() -> Bool {
+        let str = UserDefaults.standard.object(forKey: "token") as! String
+        if str.count > 0 {
+            return true
+        } else {
+            return false
         }
     }
 
@@ -88,13 +101,34 @@ class MapVC: UIViewController {
         }
     }
 
+    private func getMapListDataWithLogin() {
+        MapListService.shared.getMapListDataWithLogin(mapIdx: self.selectIdx+1) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [MapListData] else { return }
+                self.mapList.removeAll()
+                for data in data {
+                    self.mapList.append(MapListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", mainImg: data.hashtag3 ?? "", checked: data.checked ?? 0))
+                }
+                self.mapTableView.reloadData()
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
+
     private func updateInterest(bookstoreIdx: Int) {
         UpdateInterestService.shared.getMapListData(bookstoreIdx: bookstoreIdx) { NetworkResult in
             switch NetworkResult {
             case.success(let data):
                 guard let data = data as? UpdateInterestData else { return }
                 print("Update Interest🌟")
-                print(data)
             case .requestErr:
                 print("Request error")
             case .pathErr:
