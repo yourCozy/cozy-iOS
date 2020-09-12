@@ -39,16 +39,16 @@ class ActivityTableViewCell: UITableViewCell {
     }
 
     func setData(image: String, lblDday: Int, activityCellContents: String, activityCellBookStoreName: String, activityCellPrice: Int) {
-       
+
         self.lblDday.text = "D-" + String(lblDday)
-        
+
         // load image, using Kingfisher
         let url = URL(string: image)
         self.activityCellImageView.kf.setImage(with: url)
-        
+
         activityCellLabel.text = activityCellContents
         activityCellBookStoreNameLabel.text = activityCellBookStoreName
         activityPriceLabel.text = String(activityCellPrice) + "원"
-        
+
     }
 }

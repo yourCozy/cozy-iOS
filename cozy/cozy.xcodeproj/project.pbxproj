@@ -19,6 +19,8 @@
 		187C131E250CA710004FD60B /* NanumSquareRoundL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 187C131A250CA710004FD60B /* NanumSquareRoundL.ttf */; };
 		187C131F250CA710004FD60B /* NanumSquareRoundEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 187C131B250CA710004FD60B /* NanumSquareRoundEB.ttf */; };
 		187C1320250CA710004FD60B /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 187C131C250CA710004FD60B /* NanumSquareRoundB.ttf */; };
+		187C1322250CB6F1004FD60B /* TastesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1321250CB6F1004FD60B /* TastesModel.swift */; };
+		187C1324250CBB4F004FD60B /* TastesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1323250CBB4F004FD60B /* TastesService.swift */; };
 		187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */; };
 		18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9624F90C4C00D6A921 /* ActivityListVC.swift */; };
 		18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */; };
@@ -119,6 +121,8 @@
 		187C131A250CA710004FD60B /* NanumSquareRoundL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundL.ttf; sourceTree = "<group>"; };
 		187C131B250CA710004FD60B /* NanumSquareRoundEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundEB.ttf; sourceTree = "<group>"; };
 		187C131C250CA710004FD60B /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
+		187C1321250CB6F1004FD60B /* TastesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastesModel.swift; sourceTree = "<group>"; };
+		187C1323250CBB4F004FD60B /* TastesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastesService.swift; sourceTree = "<group>"; };
 		187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailCell.swift; sourceTree = "<group>"; };
 		18981F9624F90C4C00D6A921 /* ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListVC.swift; sourceTree = "<group>"; };
 		18981F9824F90E4600D6A921 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -597,6 +601,7 @@
 				B65058452507FC1700D832E1 /* UpdateInterestService.swift */,
 				187C1314250B564A004FD60B /* ActivityDetailService.swift */,
 				CC77290A250B8B0E001DB8FC /* InfoService.swift */,
+				187C1323250CBB4F004FD60B /* TastesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -616,6 +621,7 @@
 				B65058432507FB8F00D832E1 /* UpdateInterestModel.swift */,
 				187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */,
 				CC772908250B8AF2001DB8FC /* InfoModel.swift */,
+				187C1321250CB6F1004FD60B /* TastesModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -842,6 +848,7 @@
 				187C1315250B564A004FD60B /* ActivityDetailService.swift in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
 				CC772909250B8AF2001DB8FC /* InfoModel.swift in Sources */,
+				187C1324250CBB4F004FD60B /* TastesService.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
 				B65058442507FB8F00D832E1 /* UpdateInterestModel.swift in Sources */,
@@ -850,6 +857,7 @@
 				B631283625075D66003D33E3 /* KakaoLoginService.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
 				B6208CA5250675BB00185624 /* MapListService.swift in Sources */,
+				187C1322250CB6F1004FD60B /* TastesModel.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,

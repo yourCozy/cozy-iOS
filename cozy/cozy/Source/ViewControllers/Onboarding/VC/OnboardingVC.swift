@@ -12,29 +12,60 @@ class OnboardingVC: UIViewController {
 
     @IBOutlet weak var onboardingLabel: UILabel!
     @IBOutlet var tastes: [UIButton]!
+    var buttonTitles: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setLabelLooksLike()
         setBtn()
+
     }
 
     @IBAction func changeButton(_ sender: Any) {
          guard let button = sender as? UIButton else {
              return
          }
-         if button.tag == 1 {
-             if  button.backgroundColor == UIColor.realwhite {
-                button.setTasteButtonTapped()
-             } else if button.backgroundColor == UIColor.mango {
-                 button.setTasteButtonUntapped()
-             }
-         } else {
-             button.layer.backgroundColor = UIColor.mango.cgColor
-             // 추가: 화면 넘기기
+
+         if  button.backgroundColor == UIColor.realwhite {
+            button.setTasteButtonTapped()
+         } else if button.backgroundColor == UIColor.mango {
+             button.setTasteButtonUntapped()
          }
+
+        buttonTitles.append(button.titleLabel?.text ?? "")
+
      }
+
+    @IBAction func btnStart(_ sender: UIButton) {
+        print("buttonTitles", buttonTitles)
+        postTasteData()
+
+//         view 전환
+//        let sb = UIStoryboard(name: "ActivityList", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
+//
+//        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func postTasteData() {
+        TastesService.shared.postTasteData(tastes: buttonTitles) { NetworkResult in
+            switch NetworkResult {
+                case .success(let data):
+                    guard let data = data as? TasteData else {return print("taste error")}
+                    print("success 취향등록", data)
+
+                case .requestErr:
+                    print("Request error@@")
+                case .pathErr:
+                    print("path error")
+                case .serverErr:
+                    print("server error")
+                case .networkFail:
+                    print("network error")
+            }
+        }
+    }
 
     func setLabelLooksLike() {
 
@@ -58,13 +89,11 @@ class OnboardingVC: UIViewController {
 
     func setBtn() {
         for i in 0..<tastes.count {
-        let _: UIButton = {
-            let btn = tastes[i]
-            btn.setTasteButtonUntapped()
-
-    return btn
-        }()
+            let _: UIButton = {
+                let btn = tastes[i]
+                btn.setTasteButtonUntapped()
+                return btn
+            }()
+        }
     }
-
-}
 }
