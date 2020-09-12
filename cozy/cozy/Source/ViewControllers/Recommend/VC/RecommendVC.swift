@@ -57,9 +57,8 @@ class RecommendVC: UIViewController {
         UpdateInterestService.shared.getMapListData(bookstoreIdx: bookstoreIdx) { NetworkResult in
             switch NetworkResult {
             case.success(let data):
-                guard let data = data as? [UpdateInterestData] else { return }
+                guard let data = data as? UpdateInterestData else { return }
                 print("Update Interest🌟")
-                print(data)
             case .requestErr:
                 print("Request error")
             case .pathErr:
