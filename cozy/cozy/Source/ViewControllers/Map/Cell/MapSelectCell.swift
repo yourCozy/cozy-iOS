@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol MapSelectCellDelegate: AnyObject {
+    func selectRegionButton()
+}
+
 class MapSelectCell: UITableViewCell {
+
+    weak var delegate: MapSelectCellDelegate?
 
     @IBOutlet weak var selectRegionButton1: UIButton!
     @IBOutlet weak var selectRegionButton2: UIButton!
@@ -21,4 +27,7 @@ class MapSelectCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
+    @IBAction func selectRegionButton(_ sender: UIButton) {
+        self.delegate?.selectRegionButton()
+    }
 }

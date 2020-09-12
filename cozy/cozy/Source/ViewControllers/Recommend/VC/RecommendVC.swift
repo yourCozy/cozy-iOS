@@ -58,6 +58,7 @@ class RecommendVC: UIViewController {
             switch NetworkResult {
             case.success(let data):
                 guard let data = data as? [UpdateInterestData] else { return }
+                print("Update Interest🌟")
                 print(data)
             case .requestErr:
                 print("Request error")
@@ -70,7 +71,6 @@ class RecommendVC: UIViewController {
             }
         }
     }
-
 }
 
 extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDelegate {
@@ -80,25 +80,29 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         let cell = self.tableView.cellForRow(at: indexPath) as! bookstoreCell
         let bookstoreIdx = self.recommendList[index].bookstoreIdx
 
-        if cell.bookmarkButton.hasImage(named: "iconsavewhite", for: .normal) {
-            cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
-            let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            self.updateInterest(bookstoreIdx: bookstoreIdx!)
-        } else {
-            let cancelAlert = UIAlertController(title: "관심 책방에서 삭제하시겠어요?", message: "관심책방 등록을 삭제하시면, 관심책방에서 다시 볼 수 없어요.", preferredStyle: UIAlertController.Style.alert)
-
-            cancelAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (_: UIAlertAction!) in
-                cell.bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
+        let token = UserDefaults.standard.object(forKey: "token") as! String
+        if token.count > 0 {
+            if cell.bookmarkButton.hasImage(named: "iconsavewhite", for: .normal) {
+                cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
+                let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
                 self.updateInterest(bookstoreIdx: bookstoreIdx!)
-            }))
-
-            cancelAlert.addAction(UIAlertAction(title: "아니오", style: .cancel, handler: { (_: UIAlertAction!) in
-                cancelAlert.dismiss(animated: true, completion: nil)
-            }))
-
-            self.present(cancelAlert, animated: true, completion: nil)
+            } else {
+                let cancelAlert = UIAlertController(title: "관심 책방에서 삭제하시겠어요?", message: "관심책방 등록을 삭제하시면, 관심책방에서 다시 볼 수 없어요.", preferredStyle: UIAlertController.Style.alert)
+                cancelAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (_: UIAlertAction!) in
+                    cell.bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
+                    self.updateInterest(bookstoreIdx: bookstoreIdx!)
+                }))
+                cancelAlert.addAction(UIAlertAction(title: "아니오", style: .cancel, handler: { (_: UIAlertAction!) in
+                    cancelAlert.dismiss(animated: true, completion: nil)
+                }))
+                self.present(cancelAlert, animated: true, completion: nil)
+            }
+        } else {
+            let needLoginAlert = UIAlertController(title: "로그인 한 회원만 이용할 수 있어요!", message: "내 정보 탭에 들어가서 로그인을 해주세요.", preferredStyle: UIAlertController.Style.alert)
+            needLoginAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(needLoginAlert, animated: true, completion: nil)
         }
     }
 
@@ -139,7 +143,15 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 2.0
 
-            let text1 = NSAttributedString(string: "지윤", attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])
+            let usernickname = UserDefaults.standard.object(forKey: "nickname") as! String
+            var text1 = NSAttributedString()
+
+            if usernickname.count > 0 {
+                text1 = NSAttributedString(string: usernickname, attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])
+            } else {
+                text1 = NSAttributedString(string: "코지", attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])
+            }
+
             let text2 = NSAttributedString(string: "님, \n오늘밤 책 한잔 어때요?", attributes: [.font: UIFont(name: "NanumSquareRoundL", size: 22)!])
 
             let attrString = NSMutableAttributedString()
@@ -158,29 +170,26 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
 
             cell.bookstoreImageView.image = UIImage(named: "image1")
 
-            cell.tag1.setTitle("    #이국적인    ", for: .normal)
-            cell.tag2.setTitle("    #이국적    ", for: .normal)
-            cell.tag3.setTitle("    #이국적인    ", for: .normal)
+            cell.tag1.setTitle("    #\(self.recommendList[indexPath.row].hashtag1 ?? "")    ", for: .normal)
+            cell.tag2.setTitle("    #\(self.recommendList[indexPath.row].hashtag2 ?? "")    ", for: .normal)
+            cell.tag3.setTitle("    #\(self.recommendList[indexPath.row].hashtag3 ?? "")    ", for: .normal)
 
             cell.descriptionLabel.numberOfLines = 2
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 1.0
 
-            let descripText = NSAttributedString(string: "매일 쌔로 구운 빵과 함께하는 달콤한 책\n그리고 오늘, 봄날의 책방")
+            let descripText = NSAttributedString(string: "\(self.recommendList[indexPath.row].shortIntro1 ?? "")\n\(self.recommendList[indexPath.row].shortIntro2 ?? "")")
             let attrString = NSMutableAttributedString()
             attrString.append(descripText)
             attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
-
             cell.descriptionLabel.attributedText = attrString
             cell.nameLabel.text = self.recommendList[indexPath.row].bookstoreName
             cell.addressLabel.text = self.recommendList[indexPath.row].location
-
             if self.recommendList[indexPath.row].checked == 0 {
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
             } else {
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
             }
-
             return cell
         }
     }

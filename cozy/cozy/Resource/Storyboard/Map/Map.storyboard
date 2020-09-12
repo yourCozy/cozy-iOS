@@ -46,10 +46,16 @@
                                                     <state key="normal" title="마포구">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="selectRegionButton:" destination="oFm-73-SUW" eventType="touchUpInside" id="asS-f2-4kt"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbr-Of-2ih">
                                                     <rect key="frame" x="96" y="69" width="14" height="22"/>
                                                     <state key="normal" image="iconmore"/>
+                                                    <connections>
+                                                        <action selector="selectRegionButton:" destination="oFm-73-SUW" eventType="touchUpInside" id="2zf-J1-PjA"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

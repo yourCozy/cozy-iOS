@@ -50,7 +50,7 @@ class MapVC: UIViewController {
         }
     }
 
-    @objc func selectRegionButton() {
+    @objc func selectButton() {
         let storybaord = UIStoryboard(name: "Map", bundle: nil)
         let pvc = storybaord.instantiateViewController(identifier: "MapSelectVC") as! MapSelectVC
 
@@ -87,9 +87,75 @@ class MapVC: UIViewController {
             }
         }
     }
+
+    private func updateInterest(bookstoreIdx: Int) {
+        UpdateInterestService.shared.getMapListData(bookstoreIdx: bookstoreIdx) { NetworkResult in
+            switch NetworkResult {
+            case.success(let data):
+                guard let data = data as? [UpdateInterestData] else { return }
+                print("Update Interest🌟")
+                print(data)
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
 }
 
-extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
+extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate, MapSelectCellDelegate, BookListCellDelegate {
+
+    func addBookmark(index: Int) {
+        let indexPath = IndexPath(row: index, section: 1)
+        let cell = self.mapTableView.cellForRow(at: indexPath) as! BookListCell
+        let bookstoreIdx = self.mapList[index].bookstoreIdx
+
+        let token = UserDefaults.standard.object(forKey: "token") as! String
+        if token.count > 0 {
+            if cell.bookMarkButton.hasImage(named: "iconsavewhite", for: .normal) {
+                cell.bookMarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
+                let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                self.updateInterest(bookstoreIdx: bookstoreIdx!)
+            } else {
+                let cancelAlert = UIAlertController(title: "관심 책방에서 삭제하시겠어요?", message: "관심책방 등록을 삭제하시면, 관심책방에서 다시 볼 수 없어요.", preferredStyle: UIAlertController.Style.alert)
+                cancelAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (_: UIAlertAction!) in
+                    cell.bookMarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
+                    self.updateInterest(bookstoreIdx: bookstoreIdx!)
+                }))
+                cancelAlert.addAction(UIAlertAction(title: "아니오", style: .cancel, handler: { (_: UIAlertAction!) in
+                    cancelAlert.dismiss(animated: true, completion: nil)
+                }))
+                self.present(cancelAlert, animated: true, completion: nil)
+            }
+        } else {
+            let needLoginAlert = UIAlertController(title: "로그인 한 회원만 이용할 수 있어요!", message: "내 정보 탭에 들어가서 로그인을 해주세요.", preferredStyle: UIAlertController.Style.alert)
+            needLoginAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(needLoginAlert, animated: true, completion: nil)
+        }
+    }
+
+    func selectRegionButton() {
+        let storybaord = UIStoryboard(name: "Map", bundle: nil)
+        let pvc = storybaord.instantiateViewController(identifier: "MapSelectVC") as! MapSelectVC
+
+        pvc.transitioningDelegate = self
+        pvc.modalPresentationStyle = .custom
+
+        self.backView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        self.backView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        window?.addSubview(backView)
+        self.backView.isHidden = false
+        present(pvc, animated: true, completion: nil)
+    }
 
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
@@ -126,8 +192,7 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier1) as! MapSelectCell
             cell.selectionStyle = .none
-            cell.selectRegionButton1.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
-            cell.selectRegionButton2.addTarget(self, action: #selector(selectRegionButton), for: .touchUpInside)
+            cell.delegate = self
 
             switch self.selectIdx {
             case 0:
@@ -150,6 +215,8 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier2) as! BookListCell
             cell.selectionStyle = .none
+            cell.index = indexPath.row
+            cell.delegate = self
 
             cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
             cell.nameLabel.text = self.mapList[indexPath.row].bookstoreName
