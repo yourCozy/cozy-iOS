@@ -20,13 +20,27 @@ class RecommendVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        getRecommendListData()
+
+        if isUserLoggedIN() == true {
+
+        } else {
+            getRecommendListData()
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if let index = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: index, animated: true)
+        }
+    }
+
+    func isUserLoggedIN() -> Bool {
+        let str = UserDefaults.standard.object(forKey: "token") as! String
+        if str.count > 0 {
+            return true
+        } else {
+            return false
         }
     }
 
@@ -53,12 +67,34 @@ class RecommendVC: UIViewController {
         }
     }
 
+    private func getRecommendListDataWithLogin() {
+        RecommendListService.shared.getRecommendListDataWithLogin { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [RecommendListData] else { return print("error")
+                }
+                self.recommendList.removeAll()
+                for data in data {
+                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "null", shortIntro1: data.shortIntro1 ?? "null", shortIntro2: data.shortIntro2 ?? "null", location: data.location ?? "null", hashtag1: data.hashtag1 ?? "null", hashtag2: data.hashtag2 ?? "null", hashtag3: data.hashtag3 ?? "null", checked: data.checked ?? 0))
+                }
+                self.tableView.reloadData()
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
+
     private func updateInterest(bookstoreIdx: Int) {
         UpdateInterestService.shared.getMapListData(bookstoreIdx: bookstoreIdx) { NetworkResult in
             switch NetworkResult {
             case.success(let data):
-                guard let data = data as? [UpdateInterestData] else { return }
-                print("Update Interest🌟")
+                guard let data = data as? UpdateInterestData else { return }
                 print(data)
             case .requestErr:
                 print("Request error")
@@ -185,6 +221,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             cell.descriptionLabel.attributedText = attrString
             cell.nameLabel.text = self.recommendList[indexPath.row].bookstoreName
             cell.addressLabel.text = self.recommendList[indexPath.row].location
+
             if self.recommendList[indexPath.row].checked == 0 {
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
             } else {

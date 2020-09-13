@@ -79,6 +79,10 @@
 		B658A3C5250168240076BCD4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B658A3C4250168240076BCD4 /* Login.storyboard */; };
 		B658A3C8250168450076BCD4 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B658A3C7250168450076BCD4 /* LoginVC.swift */; };
 		B658A3CA25016AF40076BCD4 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B658A3C925016AF40076BCD4 /* MainTabVC.swift */; };
+		B66A95CD250CCFBA0033E9F2 /* AppleLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A95CC250CCFBA0033E9F2 /* AppleLoginModel.swift */; };
+		B66A95CF250CCFF50033E9F2 /* AppleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A95CE250CCFF50033E9F2 /* AppleLoginService.swift */; };
+		B66A95D1250D4C410033E9F2 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66A95D0250D4C410033E9F2 /* Splash.storyboard */; };
+		B66A95D3250D4C8D0033E9F2 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A95D2250D4C8D0033E9F2 /* SplashVC.swift */; };
 		B6985F1624FAC682002A3E6B /* detailCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6985F1424FAC682002A3E6B /* detailCell1.swift */; };
 		B6985F1724FAC682002A3E6B /* detailCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6985F1524FAC682002A3E6B /* detailCell1.xib */; };
 		B6985F1A24FAC81B002A3E6B /* detailCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6985F1824FAC81B002A3E6B /* detailCell2.swift */; };
@@ -185,6 +189,10 @@
 		B658A3C4250168240076BCD4 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B658A3C7250168450076BCD4 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B658A3C925016AF40076BCD4 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
+		B66A95CC250CCFBA0033E9F2 /* AppleLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginModel.swift; sourceTree = "<group>"; };
+		B66A95CE250CCFF50033E9F2 /* AppleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginService.swift; sourceTree = "<group>"; };
+		B66A95D0250D4C410033E9F2 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		B66A95D2250D4C8D0033E9F2 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		B6985F1424FAC682002A3E6B /* detailCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell1.swift; sourceTree = "<group>"; };
 		B6985F1524FAC682002A3E6B /* detailCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailCell1.xib; sourceTree = "<group>"; };
 		B6985F1824FAC81B002A3E6B /* detailCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell2.swift; sourceTree = "<group>"; };
@@ -532,6 +540,7 @@
 			children = (
 				B658A3A8250152C40076BCD4 /* OnboardingIntro.storyboard */,
 				B64AF19124FD5C270015F2A7 /* Onboarding.storyboard */,
+				B66A95D0250D4C410033E9F2 /* Splash.storyboard */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -556,6 +565,7 @@
 			children = (
 				B658A3AA250152DA0076BCD4 /* OnboardingIntroVC.swift */,
 				B64AF18E24FD5C100015F2A7 /* OnboardingVC.swift */,
+				B66A95D2250D4C8D0033E9F2 /* SplashVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -602,6 +612,7 @@
 				187C1314250B564A004FD60B /* ActivityDetailService.swift */,
 				CC77290A250B8B0E001DB8FC /* InfoService.swift */,
 				187C1323250CBB4F004FD60B /* TastesService.swift */,
+				B66A95CE250CCFF50033E9F2 /* AppleLoginService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -622,6 +633,7 @@
 				187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */,
 				CC772908250B8AF2001DB8FC /* InfoModel.swift */,
 				187C1321250CB6F1004FD60B /* TastesModel.swift */,
+				B66A95CC250CCFBA0033E9F2 /* AppleLoginModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -715,6 +727,7 @@
 				B646AF5C24EBFED800AC96A9 /* .swiftlint.yml in Resources */,
 				187C131D250CA710004FD60B /* NanumSquareRoundR.ttf in Resources */,
 				B646AF7024EC02FB00AC96A9 /* Recommend.storyboard in Resources */,
+				B66A95D1250D4C410033E9F2 /* Splash.storyboard in Resources */,
 				187C131F250CA710004FD60B /* NanumSquareRoundEB.ttf in Resources */,
 				187C131E250CA710004FD60B /* NanumSquareRoundL.ttf in Resources */,
 				B6985F1B24FAC81B002A3E6B /* detailCell2.xib in Resources */,
@@ -815,6 +828,7 @@
 				B6A0BFB024FC26DD00D0083D /* RegionCell.swift in Sources */,
 				CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */,
 				185D45C824FA657D001860E7 /* ActivityRecommendVC.swift in Sources */,
+				B66A95CF250CCFF50033E9F2 /* AppleLoginService.swift in Sources */,
 				B6985F1A24FAC81B002A3E6B /* detailCell2.swift in Sources */,
 				B649CCE724FAAEFE0032AF31 /* NSObject+Extensions.swift in Sources */,
 				B649CCEC24FAB1E20032AF31 /* BookListCell.swift in Sources */,
@@ -860,11 +874,13 @@
 				187C1322250CB6F1004FD60B /* TastesModel.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
+				B66A95D3250D4C8D0033E9F2 /* SplashVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
 				B6C424B825054CFF00AAE393 /* BookstoreDetailModel.swift in Sources */,
 				187C1313250A1A2B004FD60B /* ActivityDetailModel.swift in Sources */,
 				187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */,
 				B658A3AB250152DA0076BCD4 /* OnboardingIntroVC.swift in Sources */,
+				B66A95CD250CCFBA0033E9F2 /* AppleLoginModel.swift in Sources */,
 				187C1306250650A0004FD60B /* RecommendFeedModel.swift in Sources */,
 				B6C424AE2503CDDC00AAE393 /* KakaoLoginVC.swift in Sources */,
 				187C1302250286C2004FD60B /* ActivityListService.swift in Sources */,

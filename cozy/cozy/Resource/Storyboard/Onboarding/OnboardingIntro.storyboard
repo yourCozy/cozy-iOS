@@ -15,7 +15,7 @@
         <!--Onboarding IntroVC-->
         <scene sceneID="1Xg-lG-dtn">
             <objects>
-                <viewController id="1AR-JH-wIq" customClass="OnboardingIntroVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingIntroVC" id="1AR-JH-wIq" customClass="OnboardingIntroVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PwK-9x-k4U">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
