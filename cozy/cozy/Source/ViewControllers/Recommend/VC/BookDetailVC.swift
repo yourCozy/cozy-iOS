@@ -152,7 +152,24 @@ class BookDetailVC: UIViewController {
             case .networkFail:
                 print("network error")
             }
+        }
+    }
 
+    private func updateInterest(bookstoreIdx: Int) {
+        UpdateInterestService.shared.getMapListData(bookstoreIdx: bookstoreIdx) { NetworkResult in
+            switch NetworkResult {
+            case.success(let data):
+                guard let data = data as? UpdateInterestData else { return }
+                print(data)
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
         }
     }
 }
@@ -177,6 +194,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         let cell = self.detailTableView.cellForRow(at: indexPath) as! detailCell1
 
         if cell.bookmarkButton1.hasImage(named: "iconsave", for: .normal) {
+            self.updateInterest(bookstoreIdx: self.bookstoreIdx)
             cell.bookmarkButton1.setImage(UIImage(named: "iconsavefull"), for: .normal)
             let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
@@ -185,6 +203,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             let cancelAlert = UIAlertController(title: "관심 책방에서 삭제하시겠어요?", message: "관심책방 등록을 삭제하시면, 관심책방에서 다시 볼 수 없어요.", preferredStyle: UIAlertController.Style.alert)
 
             cancelAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (_: UIAlertAction!) in
+                self.updateInterest(bookstoreIdx: self.bookstoreIdx)
                 cell.bookmarkButton1.setImage(UIImage(named: "iconsave"), for: .normal)
             }))
 
@@ -284,6 +303,12 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
             cell.locationLabel.text = self.detailList[0].location
             cell.timeLabel.text = self.detailList[0].businessHours
+
+            if self.detailList[0].checked == 0 {
+                cell.bookmarkButton1.setImage(UIImage(named: "iconsave"), for: .normal)
+            } else {
+                cell.bookmarkButton1.setImage(UIImage(named: "iconsavefull"), for: .normal)
+            }
 
             cell.restLabel.numberOfLines = 2
             let restText = NSMutableAttributedString(string: "\(self.detailList[0].dayoff ?? "")\n공휴일, 일요일")
