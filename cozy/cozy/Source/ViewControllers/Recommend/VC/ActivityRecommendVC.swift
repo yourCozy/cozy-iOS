@@ -14,6 +14,7 @@ class ActivityRecommendVC: UIViewController {
     var activityIdx: Int = 0
 
     private var displayDetailList: [String] = []
+    private var commentList: [CommentModel] = []
 
     @IBOutlet weak var mainImgView: UIImageView!
     @IBOutlet weak var subImgCollectionView: UICollectionView!
@@ -34,6 +35,9 @@ class ActivityRecommendVC: UIViewController {
     @IBOutlet weak var btnApply: UIButton!
 
     @IBOutlet weak var lblActivityIntroduction: UILabel!
+    
+    @IBOutlet weak var commentTableView: UITableView!
+    
 
     // outlet collection
     @IBOutlet var lblFixedCollection: [UILabel]!
@@ -46,6 +50,9 @@ class ActivityRecommendVC: UIViewController {
 
         subImgCollectionView.delegate = self
         subImgCollectionView.dataSource = self
+        commentTableView.delegate = self
+        commentTableView.dataSource = self
+        
 
         getActivityDetailData()
 
@@ -53,6 +60,8 @@ class ActivityRecommendVC: UIViewController {
         setLabelStyle()
         setLabelData()
         setButtonStyle()
+        
+        setCommentData()
     }
 
     private func getActivityDetailData() {
@@ -97,6 +106,14 @@ class ActivityRecommendVC: UIViewController {
                 print("network error")
             }
         }
+    }
+    
+    func setCommentData(){
+        let c1 = CommentModel(imageURL: "imageprofile", name: "재욱", time: "20.09.07", commnet: "이 활동은 홍철책방에 다시 찾아온 감각적인 전시입니다. 1만여 점의 작품 중 주목할 만한 작품을 올해 20주년을 맞아 전시를 진행하고 있습니다.")
+        let c2 = CommentModel(imageURL: "imageprofile", name: "재욱", time: "20.09.07", commnet: "이 활동은 홍철책방에 다시 찾아온 감각적인 전시입니다. 1만여 점의 작품 중 주목할 만한 작품을 올해 20주년을 맞아 전시를 진행하고 있습니다.")
+        let c3 = CommentModel(imageURL: "imageprofile", name: "재욱", time: "20.09.07", commnet: "이 활동은 홍철책방에 다시 찾아온 감각적인 전시입니다. 1만여 점의 작품 중 주목할 만한 작품을 올해 20주년을 맞아 전시를 진행하고 있습니다.")
+        
+        commentList = [c1, c2, c3]
     }
 
     func setNav() {
@@ -188,4 +205,12 @@ extension ActivityRecommendVC: UICollectionViewDataSource {
         return detailCell
     }
 
+}
+
+extension ActivityRecommendVC: UITableViewDelegate{
+    
+}
+
+extension ActivityRecommendVC: UITableViewDataSource{
+    
 }
