@@ -31,9 +31,6 @@ struct TasteModel: Codable {
 }
 
 struct TasteData: Codable {
-//    "tasteIdx": 13,
-//    "userIdx": 67,
-//    "tastes": "1,2,3"
     var tasteIdx: Int
     var userIdx: Int
     var tastes: String
