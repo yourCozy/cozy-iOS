@@ -20,18 +20,19 @@ class RecommendVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        addObserver()
+        getData()
+    }
 
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .dismissDetailVC, object: nil)
+    }
+
+    @objc func reloadData() {
         if isUserLoggedIN() == true {
             getRecommendListDataWithLogin()
         } else {
             getRecommendListData()
-        }
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        if let index = self.tableView.indexPathForSelectedRow {
-            self.tableView.deselectRow(at: index, animated: true)
         }
     }
 
@@ -41,6 +42,14 @@ class RecommendVC: UIViewController {
             return true
         } else {
             return false
+        }
+    }
+
+    private func getData() {
+        if isUserLoggedIN() == true {
+            getRecommendListDataWithLogin()
+        } else {
+            getRecommendListData()
         }
     }
 
@@ -71,8 +80,7 @@ class RecommendVC: UIViewController {
         RecommendListService.shared.getRecommendListDataWithLogin { NetworkResult in
             switch NetworkResult {
             case .success(let data):
-                guard let data = data as? [RecommendListData] else { return print("error")
-                }
+                guard let data = data as? [RecommendListData] else { return }
                 self.recommendList.removeAll()
                 for data in data {
                     self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "null", shortIntro1: data.shortIntro1 ?? "null", shortIntro2: data.shortIntro2 ?? "null", location: data.location ?? "null", hashtag1: data.hashtag1 ?? "null", hashtag2: data.hashtag2 ?? "null", hashtag3: data.hashtag3 ?? "null", checked: data.checked ?? 0))
