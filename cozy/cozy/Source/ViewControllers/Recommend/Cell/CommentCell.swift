@@ -9,12 +9,13 @@
 import UIKit
 
 class CommentCell: UITableViewCell {
-    
+
+    static let identifier: String = "CommentCell"
+
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblComment: UILabel!
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,8 +28,8 @@ class CommentCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func setDataOnCell(imageURL: String, name: String, time: String, comment: String){
+
+    func setDataOnCell(imageURL: String, name: String, time: String, comment: String) {
         profileImage.image = UIImage(named: imageURL)
         lblName.text = name
         lblTime.text = time

@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct CommentModel{
+struct CommentModel {
     var imageURL: String
     var name: String
     var time: String
     var comment: String
-    
+
     init(imageURL: String, name: String, time: String, commnet: String) {
         self.imageURL = imageURL
         self.name = name

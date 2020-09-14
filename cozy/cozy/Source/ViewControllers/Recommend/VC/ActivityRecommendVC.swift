@@ -35,9 +35,8 @@ class ActivityRecommendVC: UIViewController {
     @IBOutlet weak var btnApply: UIButton!
 
     @IBOutlet weak var lblActivityIntroduction: UILabel!
-    
+
     @IBOutlet weak var commentTableView: UITableView!
-    
 
     // outlet collection
     @IBOutlet var lblFixedCollection: [UILabel]!
@@ -52,7 +51,6 @@ class ActivityRecommendVC: UIViewController {
         subImgCollectionView.dataSource = self
         commentTableView.delegate = self
         commentTableView.dataSource = self
-        
 
         getActivityDetailData()
 
@@ -60,7 +58,7 @@ class ActivityRecommendVC: UIViewController {
         setLabelStyle()
         setLabelData()
         setButtonStyle()
-        
+
         setCommentData()
     }
 
@@ -107,12 +105,12 @@ class ActivityRecommendVC: UIViewController {
             }
         }
     }
-    
-    func setCommentData(){
+
+    func setCommentData() {
         let c1 = CommentModel(imageURL: "imageprofile", name: "재욱", time: "20.09.07", commnet: "이 활동은 홍철책방에 다시 찾아온 감각적인 전시입니다. 1만여 점의 작품 중 주목할 만한 작품을 올해 20주년을 맞아 전시를 진행하고 있습니다.")
         let c2 = CommentModel(imageURL: "imageprofile", name: "재욱", time: "20.09.07", commnet: "이 활동은 홍철책방에 다시 찾아온 감각적인 전시입니다. 1만여 점의 작품 중 주목할 만한 작품을 올해 20주년을 맞아 전시를 진행하고 있습니다.")
         let c3 = CommentModel(imageURL: "imageprofile", name: "재욱", time: "20.09.07", commnet: "이 활동은 홍철책방에 다시 찾아온 감각적인 전시입니다. 1만여 점의 작품 중 주목할 만한 작품을 올해 20주년을 맞아 전시를 진행하고 있습니다.")
-        
+
         commentList = [c1, c2, c3]
     }
 
@@ -207,10 +205,22 @@ extension ActivityRecommendVC: UICollectionViewDataSource {
 
 }
 
-extension ActivityRecommendVC: UITableViewDelegate{
-    
+extension ActivityRecommendVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
 }
 
-extension ActivityRecommendVC: UITableViewDataSource{
-    
+extension ActivityRecommendVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentList.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let commentCell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier, for: indexPath) as? CommentCell else { return UITableViewCell()}
+
+        commentCell.setDataOnCell(imageURL: commentList[indexPath.row].imageURL, name: commentList[indexPath.row].name, time: commentList[indexPath.row].time, comment: commentList[indexPath.row].comment)
+
+        return commentCell
+    }
 }
