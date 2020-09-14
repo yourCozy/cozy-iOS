@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MypageVC: UIViewController {
 
@@ -20,29 +21,13 @@ class MypageVC: UIViewController {
     @IBOutlet weak var beforeView2: UIView!
     @IBOutlet weak var loginButton: UIButton!
 
-    private let collectionViewIdentifier: String = "recentCell"
+    private let recentCVIdentifier: String = "recentCell"
     var recentList: [MypageRecentData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setImageRound(profileImage)
-
-        recentCollectionView.dataSource = self
-        recentCollectionView.delegate = self
-
-        beforeView.isHidden = true
-
-        loginButton.setMypageLoginButton()
-
-        if isUserLoggedIN() == true {
-            beforeView.isHidden = true
-            addInfoDataWithLogin()
-            addRecentData()
-        } else {
-            setView()
-            addInfoData()
-        }
+        setUI()
+        setRecentCollectionView()
     }
 
     func isUserLoggedIN() -> Bool {
@@ -52,6 +37,25 @@ class MypageVC: UIViewController {
         } else {
             return false
         }
+    }
+
+    func setUI() {
+        setImageRound(profileImage)
+        if isUserLoggedIN() == true {
+            beforeView.isHidden = true
+            addInfoDataWithLogin()
+            addRecentData()
+        } else {
+            setView()
+            addInfoData()
+        }
+        beforeView.isHidden = true
+        loginButton.setMypageLoginButton()
+    }
+
+    func setRecentCollectionView() {
+        recentCollectionView.dataSource = self
+        recentCollectionView.delegate = self
     }
 
     @IBAction func goOnboarding(_ sender: UIButton) {
@@ -83,8 +87,7 @@ class MypageVC: UIViewController {
         MypageInfoService.shared.getMypageInfoData { NetworkResult in
             switch NetworkResult {
             case .success(let data):
-                guard let data = data as? [MypageInfoData] else {return print("error")}
-                print(data)
+                guard let data = data as? [MypageInfoData] else { return }
                 self.setInfoData(profileImage: data[0].profileImg ?? "null", nameLabel: data[0].nickname )
             case .requestErr:
                 print("Request error")
@@ -102,8 +105,7 @@ class MypageVC: UIViewController {
         MypageInfoService.shared.getMypageInfoDataWithLogin { NetworkResult in
             switch NetworkResult {
             case .success(let data):
-                guard let data = data as? [MypageInfoData] else {return print("error")}
-                print(data)
+                guard let data = data as? [MypageInfoData] else { return }
                 self.setInfoData(profileImage: data[0].profileImg ?? "null", nameLabel: data[0].nickname )
             case .requestErr:
                 print("Request error")
@@ -121,11 +123,10 @@ class MypageVC: UIViewController {
         MypageRecentService.shared.getMypageRecentData { NetworkResult in
             switch NetworkResult {
             case .success(let data):
-                guard let data = data as? [MypageRecentData] else {return print("recenterror")}
-                print(data)
+                guard let data = data as? [MypageRecentData] else { return }
                 self.recentList.removeAll()
                 for data in data {
-                    self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg ?? "null"))
+                    self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg ?? ""))
                 }
                 self.recentCollectionView.reloadData()
             case .requestErr:
@@ -156,22 +157,20 @@ class MypageVC: UIViewController {
 
 extension MypageVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if recentList.count == 0 {
-            beforeView2.layer.zPosition = 1
-        } else {
-            recentCollectionView.layer.zPosition = 1
-        }
         return recentList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let recentCell = collectionView.dequeueReusableCell(withReuseIdentifier: recentCVIdentifier, for: indexPath) as! recentCell
 
-        guard let recentCell = collectionView.dequeueReusableCell(withReuseIdentifier: recentCell.identifier, for: indexPath) as?
-            recentCell else {return UICollectionViewCell() }
+        if self.recentList[indexPath.row].mainImg?.count == 0 {
+            recentCell.bookstoreImage.image = UIImage(named: "image1")
+        } else {
+            let imgurl = URL(string: self.recentList[indexPath.row].mainImg!)
+            recentCell.bookstoreImage.kf.setImage(with: imgurl)
+        }
 
-        recentCell.bookstoreImage.image = UIImage(named: "image1")
         recentCell.bookstoreLabel.text = self.recentList[indexPath.row].bookstoreName
-
         return recentCell
     }
 }
