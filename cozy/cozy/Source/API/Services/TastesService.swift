@@ -21,7 +21,7 @@ struct TastesService {
     func postTasteData(tastes: [String], completion: @escaping (NetworkResult<Any>) -> Void) {
 
         guard let token = UserDefaults.standard.string(forKey: "token") else {return print("TOKEN ERROR")}
-    
+
         let header: HTTPHeaders = [
             "Content-Type": "application/json",
             "token": token
