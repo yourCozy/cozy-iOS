@@ -14,18 +14,18 @@ class MypageVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
 
-    var recentList: [MypageRecentData] = []
     @IBOutlet weak var recentCollectionView: UICollectionView!
-    private let collectionViewIdentifier: String = "recentCell"
 
     @IBOutlet weak var beforeView: UIView!
     @IBOutlet weak var beforeView2: UIView!
     @IBOutlet weak var loginButton: UIButton!
 
+    private let collectionViewIdentifier: String = "recentCell"
+    var recentList: [MypageRecentData] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        emailLabel.textColor = UIColor.brownishGrey
         setImageRound(profileImage)
 
         recentCollectionView.dataSource = self
@@ -35,26 +35,15 @@ class MypageVC: UIViewController {
 
         loginButton.setMypageLoginButton()
 
-//        getRecentData()
-
         if isUserLoggedIN() == true {
             beforeView.isHidden = true
             addInfoDataWithLogin()
-            addRecentDataWithLogin()
+            addRecentData()
         } else {
-            // 비로그인 시
             setView()
             addInfoData()
-            addRecentData()
-            print("로그인 안했댕")
         }
     }
-
-    // 최근 본 책방 바로 보이게
-     override func viewWillAppear(_ animated: Bool) {
-         super.viewWillAppear(animated)
-         addRecentData()
-     }
 
     func isUserLoggedIN() -> Bool {
         let str = UserDefaults.standard.object(forKey: "token") as! String
@@ -66,7 +55,6 @@ class MypageVC: UIViewController {
     }
 
     @IBAction func goOnboarding(_ sender: UIButton) {
-
         let sb = UIStoryboard(name: "Onboarding", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "OnboardingVC") as! OnboardingVC
         self.navigationController?.pushViewController(vc, animated: true)
@@ -82,7 +70,6 @@ class MypageVC: UIViewController {
         image.layer.borderWidth = 1
         image.layer.borderColor = UIColor.clear.cgColor
         image.clipsToBounds = true
-
     }
 
     func setInfoData(profileImage: String, nameLabel: String) {
@@ -90,7 +77,6 @@ class MypageVC: UIViewController {
         guard let data = try? Data(contentsOf: url!) else {return}
         self.profileImage.image = UIImage(data: data)
         self.nameLabel.text = nameLabel
-
     }
 
     func addInfoData() {
@@ -100,7 +86,6 @@ class MypageVC: UIViewController {
                 guard let data = data as? [MypageInfoData] else {return print("error")}
                 print(data)
                 self.setInfoData(profileImage: data[0].profileImg ?? "null", nameLabel: data[0].nickname )
-
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -120,7 +105,6 @@ class MypageVC: UIViewController {
                 guard let data = data as? [MypageInfoData] else {return print("error")}
                 print(data)
                 self.setInfoData(profileImage: data[0].profileImg ?? "null", nameLabel: data[0].nickname )
-
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -139,17 +123,11 @@ class MypageVC: UIViewController {
             case .success(let data):
                 guard let data = data as? [MypageRecentData] else {return print("recenterror")}
                 print(data)
-
                 self.recentList.removeAll()
-
                 for data in data {
                     self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg ?? "null"))
                 }
-
-                DispatchQueue.main.async {
-                    self.recentCollectionView.reloadData()
-                }
-
+                self.recentCollectionView.reloadData()
             case .requestErr:
                 print("Recent Request error")
             case .pathErr:
@@ -162,34 +140,6 @@ class MypageVC: UIViewController {
         }
     }
 
-    func addRecentDataWithLogin() {
-        MypageRecentService.shared.getMypageRecentDataWithLogin { NetworkResult in
-            switch NetworkResult {
-            case .success(let data):
-                guard let data = data as? [MypageRecentData] else {return }
-                print(data)
-
-                self.recentList.removeAll()
-
-                for data in data {
-                    self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg ?? "null"))
-                }
-
-                DispatchQueue.main.async {
-                    self.recentCollectionView.reloadData()
-                }
-
-            case .requestErr:
-                print("Recent Request error")
-            case .pathErr:
-                print("recent path error")
-            case .serverErr:
-                print("recent server error")
-            case .networkFail:
-                print("recent network error")
-            }
-        }
-    }
     @IBAction func goNotice(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Mypage", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "NoticeVC") as! NoticeVC
@@ -217,7 +167,7 @@ extension MypageVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         guard let recentCell = collectionView.dequeueReusableCell(withReuseIdentifier: recentCell.identifier, for: indexPath) as?
-        recentCell else {return UICollectionViewCell() }
+            recentCell else {return UICollectionViewCell() }
 
         recentCell.bookstoreImage.image = UIImage(named: "image1")
         recentCell.bookstoreLabel.text = self.recentList[indexPath.row].bookstoreName
@@ -228,8 +178,6 @@ extension MypageVC: UICollectionViewDataSource {
 
 extension MypageVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-
         return 13
-
     }
 }

@@ -15,29 +15,27 @@ struct MypageInfoModel: Codable {
     var data: [MypageInfoData]?
 
     enum CodingKeys: String, CodingKey {
-            case status = "status"
-            case success = "success"
-            case message = "message"
-            case data = "data"
-        }
-
-        init(from decoder: Decoder) throws {
-            let values = try decoder.container(keyedBy: CodingKeys.self)
-            status = (try? values.decode(Int.self, forKey: .status)) ?? -1
-            success = (try? values.decode(Bool.self, forKey: .success)) ?? false
-            message = (try? values.decode(String.self, forKey: .message)) ?? ""
-            data = (try? values.decode([MypageInfoData].self, forKey: .data)) ?? nil
-        }
+        case status = "status"
+        case success = "success"
+        case message = "message"
+        case data = "data"
     }
 
-// 받아온 객체 디코딩
-struct MypageInfoData: Codable {
-    // API랑 변수명 같아야함
-        var nickname: String
-        var profileImg: String?
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        status = (try? values.decode(Int.self, forKey: .status)) ?? -1
+        success = (try? values.decode(Bool.self, forKey: .success)) ?? false
+        message = (try? values.decode(String.self, forKey: .message)) ?? ""
+        data = (try? values.decode([MypageInfoData].self, forKey: .data)) ?? nil
+    }
+}
 
-        init(nickname: String, profileImg: String) {
-            self.nickname = nickname
-            self.profileImg = profileImg
-        }
+struct MypageInfoData: Codable {
+    var nickname: String
+    var profileImg: String?
+
+    init(nickname: String, profileImg: String) {
+        self.nickname = nickname
+        self.profileImg = profileImg
+    }
 }
