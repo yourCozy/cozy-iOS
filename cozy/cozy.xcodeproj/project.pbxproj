@@ -100,8 +100,10 @@
 		B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */; };
 		B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */; };
 		CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05FEC224F5590F008747B6 /* recentCell.swift */; };
-		CC772909250B8AF2001DB8FC /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC772908250B8AF2001DB8FC /* InfoModel.swift */; };
-		CC77290B250B8B0E001DB8FC /* InfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC77290A250B8B0E001DB8FC /* InfoService.swift */; };
+		CC263CFC250DFD90001F6BF5 /* MypageRecentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC263CFB250DFD90001F6BF5 /* MypageRecentService.swift */; };
+		CC263CFE250DFDAA001F6BF5 /* MypageInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC263CFD250DFDAA001F6BF5 /* MypageInfoService.swift */; };
+		CC263D00250DFDE6001F6BF5 /* MypageInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC263CFF250DFDE6001F6BF5 /* MypageInfoModel.swift */; };
+		CC263D02250DFE41001F6BF5 /* MypageRecentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC263D01250DFE41001F6BF5 /* MypageRecentModel.swift */; };
 		CCA0FB2824FE9A9E006B1F5B /* InterestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */; };
 		CCBBD2D525071BA3006A73FA /* NoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D425071BA3006A73FA /* NoticeVC.swift */; };
 		CCBBD2D725071C03006A73FA /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D625071C03006A73FA /* EventVC.swift */; };
@@ -211,8 +213,10 @@
 		B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
 		CC05FEC224F5590F008747B6 /* recentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recentCell.swift; sourceTree = "<group>"; };
-		CC772908250B8AF2001DB8FC /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
-		CC77290A250B8B0E001DB8FC /* InfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoService.swift; sourceTree = "<group>"; };
+		CC263CFB250DFD90001F6BF5 /* MypageRecentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageRecentService.swift; sourceTree = "<group>"; };
+		CC263CFD250DFDAA001F6BF5 /* MypageInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInfoService.swift; sourceTree = "<group>"; };
+		CC263CFF250DFDE6001F6BF5 /* MypageInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInfoModel.swift; sourceTree = "<group>"; };
+		CC263D01250DFE41001F6BF5 /* MypageRecentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageRecentModel.swift; sourceTree = "<group>"; };
 		CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestVC.swift; sourceTree = "<group>"; };
 		CCBBD2D425071BA3006A73FA /* NoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeVC.swift; sourceTree = "<group>"; };
 		CCBBD2D625071C03006A73FA /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
@@ -610,9 +614,10 @@
 				B631283525075D66003D33E3 /* KakaoLoginService.swift */,
 				B65058452507FC1700D832E1 /* UpdateInterestService.swift */,
 				187C1314250B564A004FD60B /* ActivityDetailService.swift */,
-				CC77290A250B8B0E001DB8FC /* InfoService.swift */,
 				187C1323250CBB4F004FD60B /* TastesService.swift */,
 				B66A95CE250CCFF50033E9F2 /* AppleLoginService.swift */,
+				CC263CFB250DFD90001F6BF5 /* MypageRecentService.swift */,
+				CC263CFD250DFDAA001F6BF5 /* MypageInfoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -631,9 +636,10 @@
 				B631283325075C01003D33E3 /* KakaoLoginModel.swift */,
 				B65058432507FB8F00D832E1 /* UpdateInterestModel.swift */,
 				187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */,
-				CC772908250B8AF2001DB8FC /* InfoModel.swift */,
 				187C1321250CB6F1004FD60B /* TastesModel.swift */,
 				B66A95CC250CCFBA0033E9F2 /* AppleLoginModel.swift */,
+				CC263CFF250DFDE6001F6BF5 /* MypageInfoModel.swift */,
+				CC263D01250DFE41001F6BF5 /* MypageRecentModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -835,7 +841,9 @@
 				B6985F1624FAC682002A3E6B /* detailCell1.swift in Sources */,
 				B6C424B2250514F200AAE393 /* RecommendListModel.swift in Sources */,
 				B646AF8324EC03A500AC96A9 /* MypageVC.swift in Sources */,
+				CC263CFC250DFD90001F6BF5 /* MypageRecentService.swift in Sources */,
 				CCBBD2DD25073FE4006A73FA /* NoticeModel.swift in Sources */,
+				CC263CFE250DFDAA001F6BF5 /* MypageInfoService.swift in Sources */,
 				B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */,
 				B658A3C1250157110076BCD4 /* onboardcell4.swift in Sources */,
 				CCBBD2D725071C03006A73FA /* EventVC.swift in Sources */,
@@ -848,7 +856,6 @@
 				B658A3CA25016AF40076BCD4 /* MainTabVC.swift in Sources */,
 				B6208CA3250674E100185624 /* MapListModel.swift in Sources */,
 				B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */,
-				CC77290B250B8B0E001DB8FC /* InfoService.swift in Sources */,
 				B6208C9E25066BA700185624 /* MapCountModel.swift in Sources */,
 				B658A3B52501568C0076BCD4 /* onboardcell2.swift in Sources */,
 				B6208CA125066C2300185624 /* MapCountService.swift in Sources */,
@@ -861,7 +868,6 @@
 				18981F9924F90E4600D6A921 /* ActivityTableViewCell.swift in Sources */,
 				187C1315250B564A004FD60B /* ActivityDetailService.swift in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
-				CC772909250B8AF2001DB8FC /* InfoModel.swift in Sources */,
 				187C1324250CBB4F004FD60B /* TastesService.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
@@ -874,6 +880,7 @@
 				187C1322250CB6F1004FD60B /* TastesModel.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
+				CC263D00250DFDE6001F6BF5 /* MypageInfoModel.swift in Sources */,
 				B66A95D3250D4C8D0033E9F2 /* SplashVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
 				B6C424B825054CFF00AAE393 /* BookstoreDetailModel.swift in Sources */,
@@ -886,6 +893,7 @@
 				187C1302250286C2004FD60B /* ActivityListService.swift in Sources */,
 				B64AF18F24FD5C100015F2A7 /* OnboardingVC.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
+				CC263D02250DFE41001F6BF5 /* MypageRecentModel.swift in Sources */,
 				B6C424B6250516E300AAE393 /* RecommendListService.swift in Sources */,
 				18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */,
 				B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */,
