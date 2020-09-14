@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import Kingfisher
 
 class InterestVC: UIViewController {
 
     private let interestIdentifier: String = "bookListCell"
+
     @IBOutlet weak var interestTableView: UITableView!
+    var interestList: [MypageInterestData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setInterestTableView()
+        getInterestData()
     }
 
     func setInterestTableView() {
@@ -25,6 +29,27 @@ class InterestVC: UIViewController {
         interestTableView.dataSource = self
     }
 
+    func getInterestData() {
+        MypageInterestService.shared.getMypageInterestData { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [MypageInterestData] else { return }
+                self.interestList.removeAll()
+                for data in data {
+                    self.interestList.append(MypageInterestData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", location: data.location ?? "", shortIntro1: data.shortIntro1 ?? "", shortIntro2: data.shortIntro2 ?? ""))
+                }
+                self.interestTableView.reloadData()
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
+    }
 }
 
 extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
@@ -36,7 +61,7 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.interestList.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -47,14 +72,18 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
         let cell = tableView.dequeueReusableCell(withIdentifier: interestIdentifier) as! BookListCell
         cell.selectionStyle = .none
 
-        cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
-        cell.nameLabel.text = "코지서점"
-        cell.addressLabel.text = "서울특별시 용산구 한강대로 10길"
+        if self.interestList[indexPath.row].mainImg?.count == 0 {
+            cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
+        } else {
+            let url = URL(string: self.interestList[indexPath.row].mainImg!)
+            cell.bookStoreImageView.kf.setImage(with: url)
+        }
 
-        cell.tag1.setTitle("    #베이커리    ", for: .normal)
-        cell.tag2.setTitle("    #심야책방    ", for: .normal)
-        cell.tag3.setTitle("    #맥주    ", for: .normal)
-
+        cell.nameLabel.text = self.interestList[indexPath.row].bookstoreName
+        cell.addressLabel.text = self.interestList[indexPath.row].location
+        cell.tag1.setTitle("    #\(self.interestList[indexPath.row].hashtag1 ?? "")    ", for: .normal)
+        cell.tag2.setTitle("    #\(self.interestList[indexPath.row].hashtag2 ?? "")    ", for: .normal)
+        cell.tag3.setTitle("    #\(self.interestList[indexPath.row].hashtag3 ?? "")    ", for: .normal)
         return cell
     }
 }

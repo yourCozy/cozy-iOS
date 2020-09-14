@@ -100,6 +100,8 @@
 		B6C424B825054CFF00AAE393 /* BookstoreDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */; };
 		B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */; };
 		B6F3CE02250FF70700B0A7CD /* NSNotification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3CE01250FF70700B0A7CD /* NSNotification+Extensions.swift */; };
+		B6F3CE04251005C500B0A7CD /* MypageInterestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3CE03251005C500B0A7CD /* MypageInterestModel.swift */; };
+		B6F3CE06251006DD00B0A7CD /* MypageInterestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3CE05251006DD00B0A7CD /* MypageInterestService.swift */; };
 		B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */; };
 		B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */; };
 		CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05FEC224F5590F008747B6 /* recentCell.swift */; };
@@ -215,6 +217,8 @@
 		B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreDetailModel.swift; sourceTree = "<group>"; };
 		B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreDetailService.swift; sourceTree = "<group>"; };
 		B6F3CE01250FF70700B0A7CD /* NSNotification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extensions.swift"; sourceTree = "<group>"; };
+		B6F3CE03251005C500B0A7CD /* MypageInterestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInterestModel.swift; sourceTree = "<group>"; };
+		B6F3CE05251006DD00B0A7CD /* MypageInterestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInterestService.swift; sourceTree = "<group>"; };
 		B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
@@ -626,6 +630,7 @@
 				B66A95CE250CCFF50033E9F2 /* AppleLoginService.swift */,
 				CC263CFB250DFD90001F6BF5 /* MypageRecentService.swift */,
 				CC263CFD250DFDAA001F6BF5 /* MypageInfoService.swift */,
+				B6F3CE05251006DD00B0A7CD /* MypageInterestService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -649,6 +654,7 @@
 				CC263CFF250DFDE6001F6BF5 /* MypageInfoModel.swift */,
 				CC263D01250DFE41001F6BF5 /* MypageRecentModel.swift */,
 				187C1327250FD212004FD60B /* CommentModel.swift */,
+				B6F3CE03251005C500B0A7CD /* MypageInterestModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -860,6 +866,7 @@
 				B658A3B9250156A50076BCD4 /* onboardcell3.swift in Sources */,
 				B6A487AE24F812F50058025C /* MapSelectCell.swift in Sources */,
 				CCA0FB2824FE9A9E006B1F5B /* InterestVC.swift in Sources */,
+				B6F3CE04251005C500B0A7CD /* MypageInterestModel.swift in Sources */,
 				B646AF6824EC00C800AC96A9 /* APIConstants.swift in Sources */,
 				B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */,
 				B658A3CA25016AF40076BCD4 /* MainTabVC.swift in Sources */,
@@ -886,6 +893,7 @@
 				B631283625075D66003D33E3 /* KakaoLoginService.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,
 				B6208CA5250675BB00185624 /* MapListService.swift in Sources */,
+				B6F3CE06251006DD00B0A7CD /* MypageInterestService.swift in Sources */,
 				187C1322250CB6F1004FD60B /* TastesModel.swift in Sources */,
 				B6A0BFAE24FC1EAF00D0083D /* MapSelectVC.swift in Sources */,
 				B649CCF424FAB6C80032AF31 /* BookDetailVC.swift in Sources */,
