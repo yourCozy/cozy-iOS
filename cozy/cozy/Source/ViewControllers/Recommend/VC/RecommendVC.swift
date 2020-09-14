@@ -22,7 +22,7 @@ class RecommendVC: UIViewController {
         tableView.dataSource = self
 
         if isUserLoggedIN() == true {
-
+            getRecommendListDataWithLogin()
         } else {
             getRecommendListData()
         }

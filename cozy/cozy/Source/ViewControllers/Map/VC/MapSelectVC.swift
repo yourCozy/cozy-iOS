@@ -8,11 +8,6 @@
 
 import UIKit
 
-// notification 등록
-extension NSNotification.Name {
-    static let dismissSlideView = NSNotification.Name("dismissSlideView")
-}
-
 class MapSelectVC: UIViewController {
 
     @IBOutlet weak var headerView: UIView!

@@ -99,6 +99,7 @@
 		B6C424B6250516E300AAE393 /* RecommendListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B5250516E300AAE393 /* RecommendListService.swift */; };
 		B6C424B825054CFF00AAE393 /* BookstoreDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */; };
 		B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */; };
+		B6F3CE02250FF70700B0A7CD /* NSNotification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3CE01250FF70700B0A7CD /* NSNotification+Extensions.swift */; };
 		B6F4140F24F1A09B009863D7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */; };
 		B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */; };
 		CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC05FEC224F5590F008747B6 /* recentCell.swift */; };
@@ -213,6 +214,7 @@
 		B6C424B5250516E300AAE393 /* RecommendListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListService.swift; sourceTree = "<group>"; };
 		B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreDetailModel.swift; sourceTree = "<group>"; };
 		B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreDetailService.swift; sourceTree = "<group>"; };
+		B6F3CE01250FF70700B0A7CD /* NSNotification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extensions.swift"; sourceTree = "<group>"; };
 		B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		CA7DFC0B5E1415E78B0B9654 /* Pods-cozy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.release.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.release.xcconfig"; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				B6F4140E24F1A09B009863D7 /* UIView+Extensions.swift */,
 				B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */,
 				B649CCE624FAAEFE0032AF31 /* NSObject+Extensions.swift */,
+				B6F3CE01250FF70700B0A7CD /* NSNotification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 				187C13082506559D004FD60B /* RecommendActivityModel.swift in Sources */,
 				B64940A724F186380052A21F /* MypageNavController.swift in Sources */,
 				187C130425064F88004FD60B /* RecommendFeedService.swift in Sources */,
+				B6F3CE02250FF70700B0A7CD /* NSNotification+Extensions.swift in Sources */,
 				B65058462507FC1700D832E1 /* UpdateInterestService.swift in Sources */,
 				187C1328250FD212004FD60B /* CommentModel.swift in Sources */,
 			);

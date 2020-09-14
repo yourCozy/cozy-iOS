@@ -40,6 +40,11 @@ class BookDetailVC: UIViewController {
         setfeedData2()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: .dismissDetailVC, object: nil)
+    }
+
     func isUserLoggedIN() -> Bool {
         let str = UserDefaults.standard.object(forKey: "token") as! String
         if str.count > 0 {
@@ -70,6 +75,7 @@ class BookDetailVC: UIViewController {
 
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
+        print("goBack")
     }
 
     func setDetailData() {
