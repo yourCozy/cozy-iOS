@@ -1,19 +1,18 @@
 //
-//  MapListModel.swift
+//  MypageInterestModel.swift
 //  cozy
 //
-//  Created by 최은지 on 2020/09/07.
+//  Created by 최은지 on 2020/09/15.
 //  Copyright © 2020 최은지. All rights reserved.
 //
-
 import Foundation
 import UIKit
 
-struct MapListModel: Codable {
+struct MypageInterestModel: Codable {
     var status: Int
     var success: Bool
     var message: String
-    var data: [MapListData]?
+    var data: [MypageInterestData]?
 
     enum CodingKeys: String, CodingKey {
         case status = "status"
@@ -27,28 +26,42 @@ struct MapListModel: Codable {
         status = (try? values.decode(Int.self, forKey: .status)) ?? -1
         success = (try? values.decode(Bool.self, forKey: .success)) ?? false
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
-        data = (try? values.decode([MapListData].self, forKey: .data)) ?? nil
+        data = (try? values.decode([MypageInterestData].self, forKey: .data)) ?? nil
     }
 }
 
-struct MapListData: Codable {
+/*
+ "bookstoreIdx": 7,
+ "bookstoreName": "안도북스",
+ "mainImg": null,
+ "hashtag1": null,
+ "hashtag2": null,
+ "hashtag3": null,
+ "location": "서울특별시 마포구 성미산로 6길 21",
+ "shortIntro1": null,
+ "shortIntro2": null
+ */
+
+struct MypageInterestData: Codable {
     var bookstoreIdx: Int?
     var bookstoreName: String?
-    var location: String?
+    var mainImg: String?
     var hashtag1: String?
     var hashtag2: String?
     var hashtag3: String?
-    var mainImg: String?
-    var checked: Int?
+    var location: String?
+    var shortIntro1: String?
+    var shortIntro2: String?
 
-    init(bookstoreIdx: Int, bookstoreName: String, location: String, hashtag1: String, hashtag2: String, hashtag3: String, mainImg: String, checked: Int) {
+    init(bookstoreIdx: Int, bookstoreName: String, mainImg: String, hashtag1: String, hashtag2: String, hashtag3: String, location: String, shortIntro1: String, shortIntro2: String) {
         self.bookstoreIdx = bookstoreIdx
         self.bookstoreName = bookstoreName
-        self.location = location
+        self.mainImg = mainImg
         self.hashtag1 = hashtag1
         self.hashtag2 = hashtag2
         self.hashtag3 = hashtag3
-        self.mainImg = mainImg
-        self.checked = checked
+        self.location = location
+        self.shortIntro1 = shortIntro1
+        self.shortIntro2 = shortIntro2
     }
 }

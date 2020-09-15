@@ -20,27 +20,11 @@ class MapVC: UIViewController {
 
     private var mapList: [MapListData] = []
 
-    private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(selectEvent(_:)), name: .dismissSlideView, object: nil)
-    }
-
-    @objc func selectEvent(_ notification: NSNotification) {
-        let getIdx = notification.object as! Int
-        self.selectIdx = getIdx
-        self.getMapListData()
-        self.backView.isHidden = true
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         addObserver()
         setMapTableView()
-
-        if isUserLoggedIN() == true {
-            getMapListDataWithLogin()
-        } else {
-            getMapListData()
-        }
+        getMapData()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -48,6 +32,30 @@ class MapVC: UIViewController {
         if let index = self.mapTableView.indexPathForSelectedRow {
             self.mapTableView.deselectRow(at: index, animated: true)
         }
+    }
+
+    private func getMapData() {
+        if isUserLoggedIN() == true {
+            getMapListDataWithLogin()
+        } else {
+            getMapListData()
+        }
+    }
+
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(selectEvent(_:)), name: .dismissSlideView, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getRefreshData), name: .dismissDetailVC, object: nil)
+    }
+
+    @objc func selectEvent(_ notification: NSNotification) {
+        let getIdx = notification.object as! Int
+        self.selectIdx = getIdx
+        self.backView.isHidden = true
+        getMapData()
+    }
+
+    @objc func getRefreshData() {
+        getMapData()
     }
 
     func setMapTableView() {

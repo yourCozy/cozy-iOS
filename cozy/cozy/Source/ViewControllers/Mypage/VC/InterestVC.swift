@@ -7,41 +7,52 @@
 //
 
 import UIKit
+import Kingfisher
 
 class InterestVC: UIViewController {
 
-    private let mapIdentifier2: String = "bookListCell"
+    private let interestIdentifier: String = "bookListCell"
 
     @IBOutlet weak var interestTableView: UITableView!
+    var interestList: [MypageInterestData] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setInterestTableView()
+        getInterestData()
+    }
 
-        // Do any additional setup after loading the view.
+    func setInterestTableView() {
         let nibName = UINib(nibName: "BookListCell", bundle: nil)
-        interestTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)
+        interestTableView.register(nibName, forCellReuseIdentifier: interestIdentifier)
         interestTableView.delegate = self
         interestTableView.dataSource = self
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getInterestData() {
+        MypageInterestService.shared.getMypageInterestData { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [MypageInterestData] else { return }
+                self.interestList.removeAll()
+                for data in data {
+                    self.interestList.append(MypageInterestData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", location: data.location ?? "", shortIntro1: data.shortIntro1 ?? "", shortIntro2: data.shortIntro2 ?? ""))
+                }
+                self.interestTableView.reloadData()
+            case .requestErr:
+                print("Request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
     }
-    */
-
 }
 
 extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
-
-    // present half
-     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-         return HalfSizePresentationController(presentedViewController: presented, presenting: presenting)
-     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
@@ -49,12 +60,8 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.interestList.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -62,17 +69,21 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: mapIdentifier2) as! BookListCell
-            cell.selectionStyle = .none
+        let cell = tableView.dequeueReusableCell(withIdentifier: interestIdentifier) as! BookListCell
+        cell.selectionStyle = .none
 
+        if self.interestList[indexPath.row].mainImg?.count == 0 {
             cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
-            cell.nameLabel.text = "코지서점"
-            cell.addressLabel.text = "서울특별시 용산구 한강대로 10길"
+        } else {
+            let url = URL(string: self.interestList[indexPath.row].mainImg!)
+            cell.bookStoreImageView.kf.setImage(with: url)
+        }
 
-            cell.tag1.setTitle("    #베이커리    ", for: .normal)
-            cell.tag2.setTitle("    #심야책방    ", for: .normal)
-            cell.tag3.setTitle("    #맥주    ", for: .normal)
-
-            return cell
+        cell.nameLabel.text = self.interestList[indexPath.row].bookstoreName
+        cell.addressLabel.text = self.interestList[indexPath.row].location
+        cell.tag1.setTitle("    #\(self.interestList[indexPath.row].hashtag1 ?? "")    ", for: .normal)
+        cell.tag2.setTitle("    #\(self.interestList[indexPath.row].hashtag2 ?? "")    ", for: .normal)
+        cell.tag3.setTitle("    #\(self.interestList[indexPath.row].hashtag3 ?? "")    ", for: .normal)
+        return cell
     }
 }

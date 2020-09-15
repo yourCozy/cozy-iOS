@@ -1,18 +1,20 @@
 //
-//  MypageRecentService.swift
+//  MypageInterestService.swift
 //  cozy
 //
-//  Created by 양지영 on 2020/09/13.
+//  Created by 최은지 on 2020/09/15.
 //  Copyright © 2020 최은지. All rights reserved.
 //
 
 import Foundation
+import UIKit
 import Alamofire
 
-struct MypageRecentService {
-    static let shared = MypageRecentService()
+struct MypageInterestService {
 
-    func getMypageRecentData(completion: @escaping(NetworkResult<Any>) -> Void) {
+    static let shared = MypageInterestService()
+
+    func getMypageInterestData(completion: @escaping (NetworkResult<Any>) -> Void) {
 
         guard let token = UserDefaults.standard.string(forKey: "token") else { return }
 
@@ -21,7 +23,7 @@ struct MypageRecentService {
             "token": token
         ]
 
-        let dataRequest = AF.request(APIConstants.mypageRecentURL, method: .get, encoding: JSONEncoding.default, headers: header)
+        let dataRequest = AF.request(APIConstants.recommendURL, method: .get, encoding: JSONEncoding.default, headers: header)
 
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {
@@ -46,8 +48,8 @@ struct MypageRecentService {
 
     private func isData(by data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(MypageRecentModel.self, from: data) else { return .pathErr }
-        guard let recentData = decodedData.data else { return .requestErr(decodedData.message) }
-        return .success(recentData)
+        guard let decodedData = try? decoder.decode(MypageInterestModel.self, from: data) else { return .pathErr }
+        guard let interestData = decodedData.data else { return .requestErr(decodedData.message) }
+        return .success(interestData)
     }
 }
