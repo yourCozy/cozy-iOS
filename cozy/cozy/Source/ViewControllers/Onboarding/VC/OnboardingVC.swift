@@ -13,6 +13,8 @@ class OnboardingVC: UIViewController {
     @IBOutlet weak var onboardingLabel: UILabel!
     @IBOutlet var tastes: [UIButton]!
     var buttonTitles: [String] = []
+    var btnTag1Count: [UIButton] = []
+    var btnTag2Count: [UIButton] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,46 +25,80 @@ class OnboardingVC: UIViewController {
     }
 
     @IBAction func changeButton(_ sender: Any) {
-         guard let button = sender as? UIButton else {
-             return
-         }
+        guard let button = sender as? UIButton else {
+            return
+        }
 
-         if  button.backgroundColor == UIColor.realwhite {
-            button.setTasteButtonTapped()
-         } else if button.backgroundColor == UIColor.mango {
-             button.setTasteButtonUntapped()
-         }
+        if button.tag == 1 {
+            if btnTag1Count.count < 3 {
+                if  button.backgroundColor == UIColor.realwhite {
+                    button.setTasteButtonTapped()
+                    btnTag1Count.append(button)
+                    buttonTitles.append(button.titleLabel?.text ?? "")
+                } else if button.backgroundColor == UIColor.mango {
+                    button.setTasteButtonUntapped()
+                    btnTag1Count = btnTag1Count.filter { $0 != button }
+                    buttonTitles = buttonTitles.filter { $0 != button.titleLabel?.text ?? "" }
+                }
+            } else {
+                if button.backgroundColor == UIColor.mango {
+                    button.setTasteButtonUntapped()
+                    btnTag1Count = btnTag1Count.filter { $0 != button }
+                    buttonTitles = buttonTitles.filter { $0 != button.titleLabel?.text ?? "" }
+                }
+            }
+        }
 
-        buttonTitles.append(button.titleLabel?.text ?? "")
+        print(buttonTitles)
 
-     }
+        if button.tag == 2 {
+            if btnTag2Count.count < 3 {
+                if  button.backgroundColor == UIColor.realwhite {
+                    button.setTasteButtonTapped()
+                    btnTag2Count.append(button)
+                    buttonTitles.append(button.titleLabel?.text ?? "")
+                } else if button.backgroundColor == UIColor.mango {
+                    button.setTasteButtonUntapped()
+                    btnTag2Count = btnTag2Count.filter { $0 != button }
+                    buttonTitles = buttonTitles.filter { $0 != button.titleLabel?.text ?? "" }
+                }
+            } else {
+                if button.backgroundColor == UIColor.mango {
+                    button.setTasteButtonUntapped()
+                    btnTag2Count = btnTag2Count.filter { $0 != button }
+                    buttonTitles = buttonTitles.filter { $0 != button.titleLabel?.text ?? "" }
+                }
+            }
+        }
+
+    }
 
     @IBAction func btnStart(_ sender: UIButton) {
         print("buttonTitles", buttonTitles)
-        postTasteData()
+        //        postTasteData()
 
-//         view 전환
-//        let sb = UIStoryboard(name: "ActivityList", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
-//
-//        self.navigationController?.pushViewController(vc, animated: true)
+        //         view 전환
+        //        let sb = UIStoryboard(name: "ActivityList", bundle: nil)
+        //        let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
+        //
+        //        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     func postTasteData() {
         TastesService.shared.postTasteData(tastes: buttonTitles) { NetworkResult in
             switch NetworkResult {
-                case .success(let data):
-                    guard let data = data as? TasteData else {return print("taste error")}
-                    print("success 취향등록", data)
+            case .success(let data):
+                guard let data = data as? TasteData else {return print("taste error")}
+                print("success 취향등록", data)
 
-                case .requestErr:
-                    print("Request error@@")
-                case .pathErr:
-                    print("path error")
-                case .serverErr:
-                    print("server error")
-                case .networkFail:
-                    print("network error")
+            case .requestErr:
+                print("Request error@@")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
             }
         }
     }
