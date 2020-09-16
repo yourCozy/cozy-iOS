@@ -53,8 +53,21 @@ class OnboardingVC: UIViewController {
 
         if button.tag == 2 {
             if btnTag2Count.count < 3 {
-                btnTag2Count.append(button)
-                buttonTitles.append(button.titleLabel?.text ?? "")
+                if  button.backgroundColor == UIColor.realwhite {
+                    button.setTasteButtonTapped()
+                    btnTag2Count.append(button)
+                    buttonTitles.append(button.titleLabel?.text ?? "")
+                } else if button.backgroundColor == UIColor.mango {
+                    button.setTasteButtonUntapped()
+                    btnTag2Count = btnTag2Count.filter { $0 != button }
+                    buttonTitles = buttonTitles.filter { $0 != button.titleLabel?.text ?? "" }
+                }
+            } else {
+                if button.backgroundColor == UIColor.mango {
+                    button.setTasteButtonUntapped()
+                    btnTag2Count = btnTag2Count.filter { $0 != button }
+                    buttonTitles = buttonTitles.filter { $0 != button.titleLabel?.text ?? "" }
+                }
             }
         }
 
