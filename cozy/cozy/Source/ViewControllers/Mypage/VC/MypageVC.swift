@@ -58,12 +58,6 @@ class MypageVC: UIViewController {
         recentCollectionView.delegate = self
     }
 
-    @IBAction func goOnboarding(_ sender: UIButton) {
-        let sb = UIStoryboard(name: "Onboarding", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "OnboardingVC") as! OnboardingVC
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
     private func setView() {
         beforeView.isHidden =  false
         beforeView2.layer.zPosition = 1
@@ -74,6 +68,19 @@ class MypageVC: UIViewController {
         image.layer.borderWidth = 1
         image.layer.borderColor = UIColor.clear.cgColor
         image.clipsToBounds = true
+    }
+
+    @IBAction func goInterestVC(_ sender: UIButton) {
+
+        if self.isUserLoggedIN() == true {
+            let sb = UIStoryboard(name: "Mypage", bundle: nil)
+            let vc = sb.instantiateViewController(identifier: "InterestVC") as! InterestVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let needLoginAlert = UIAlertController(title: "로그인 한 회원만 이용할 수 있어요!", message: "로그인을 해주세요.", preferredStyle: UIAlertController.Style.alert)
+            needLoginAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(needLoginAlert, animated: true, completion: nil)
+        }
     }
 
     func setInfoData(profileImage: String, nameLabel: String) {
@@ -172,6 +179,13 @@ extension MypageVC: UICollectionViewDataSource {
 
         recentCell.bookstoreLabel.text = self.recentList[indexPath.row].bookstoreName
         return recentCell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "BookDetail", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        vc.bookstoreIdx = self.recentList[indexPath.row].bookstoreIdx
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

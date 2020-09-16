@@ -75,7 +75,6 @@ class BookDetailVC: UIViewController {
 
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
-        print("goBack")
     }
 
     func setDetailData() {

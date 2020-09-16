@@ -18,6 +18,7 @@ class InterestVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNav()
         setInterestTableView()
         getInterestData()
     }
@@ -27,6 +28,17 @@ class InterestVC: UIViewController {
         interestTableView.register(nibName, forCellReuseIdentifier: interestIdentifier)
         interestTableView.delegate = self
         interestTableView.dataSource = self
+    }
+
+    func setNav() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+
+    @objc func goBack() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     func getInterestData() {
@@ -84,6 +96,9 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
         cell.tag1.setTitle("    #\(self.interestList[indexPath.row].hashtag1 ?? "")    ", for: .normal)
         cell.tag2.setTitle("    #\(self.interestList[indexPath.row].hashtag2 ?? "")    ", for: .normal)
         cell.tag3.setTitle("    #\(self.interestList[indexPath.row].hashtag3 ?? "")    ", for: .normal)
+
+        cell.bookMarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
+
         return cell
     }
 }
