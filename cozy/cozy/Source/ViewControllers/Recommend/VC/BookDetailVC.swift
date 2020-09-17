@@ -29,13 +29,7 @@ class BookDetailVC: UIViewController {
         super.viewDidLoad()
         setNav()
         setTableView()
-
-        if isUserLoggedIN() == true {
-            setDetailDataWithLogin()
-        } else {
-            setDetailData()
-        }
-
+        setDetailUI()
         setfeedData()
         setfeedData2()
     }
@@ -77,13 +71,21 @@ class BookDetailVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
+    func setDetailUI() {
+        if isUserLoggedIN() == true {
+            setDetailDataWithLogin()
+        } else {
+            setDetailData()
+        }
+    }
+
     func setDetailData() {
         BookstoreDetailService.shared.getBookstoreDetailData(bookstoreIdx: self.bookstoreIdx) { NetworkResult in
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [BookDetailData] else { return }
                 for data in data {
-                    self.detailList.append(BookDetailData(bookstoreIdx: data.bookstoreIdx ?? 1, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "", profileImg: data.profileImg ?? "", notice: data.notice ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", tel: data.tel ?? "", location: data.location ?? "", latitude: data.latitude ?? 0, longitude: data.longitude ?? 0, businessHours: data.businessHours ?? "", dayoff: data.dayoff ?? "", activities: data.activities ?? "", checked: data.checked ?? 0))
+                    self.detailList.append(BookDetailData(bookstoreIdx: data.bookstoreIdx ?? 1, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", profileImg: data.profileImg ?? "", notice: data.notice ?? "책방 이야기가 준비중입니다 :) \n조금만 기다려주세요!", hashtag1: data.hashtag1 ?? "코지와", hashtag2: data.hashtag2 ?? "함께하는", hashtag3: data.hashtag3 ?? "책방", tel: data.tel ?? "", location: data.location ?? "", latitude: data.latitude ?? 0, longitude: data.longitude ?? 0, businessHours: data.businessHours ?? "", dayoff: data.dayoff ?? "", activities: data.activities ?? "", checked: data.checked ?? 0))
                 }
                 self.detailTableView.reloadData()
             case .requestErr:
@@ -104,7 +106,7 @@ class BookDetailVC: UIViewController {
             case .success(let data):
                 guard let data = data as? [BookDetailData] else { return }
                 for data in data {
-                    self.detailList.append(BookDetailData(bookstoreIdx: data.bookstoreIdx ?? 1, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "", profileImg: data.profileImg ?? "", notice: data.notice ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", tel: data.tel ?? "", location: data.location ?? "", latitude: data.latitude ?? 0, longitude: data.longitude ?? 0, businessHours: data.businessHours ?? "", dayoff: data.dayoff ?? "", activities: data.activities ?? "", checked: data.checked ?? 0))
+                    self.detailList.append(BookDetailData(bookstoreIdx: data.bookstoreIdx ?? 1, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", profileImg: data.profileImg ?? "", notice: data.notice ?? "책방 이야기가 준비중입니다 :) \n조금만 기다려주세요!", hashtag1: data.hashtag1 ?? "코지와", hashtag2: data.hashtag2 ?? "함께하는", hashtag3: data.hashtag3 ?? "책방", tel: data.tel ?? "", location: data.location ?? "", latitude: data.latitude ?? 0, longitude: data.longitude ?? 0, businessHours: data.businessHours ?? "", dayoff: data.dayoff ?? "", activities: data.activities ?? "", checked: data.checked ?? 0))
                 }
                 self.detailTableView.reloadData()
             case .requestErr:
@@ -289,18 +291,31 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             cell.selectionStyle = .none
             cell.delegate = self
 
-            cell.bookstoreImageView.image = UIImage(named: "image1")
-            cell.bossImageView.image = UIImage(named: "74966Cd691014Bbbf2E445Bbc67Cddbc")
+            if self.detailList[0].mainImg?.count == 0 {
+                cell.bookstoreImageView.image = UIImage(named: "image1")
+            } else {
+                let bookstoreURL = URL(string: self.detailList[0].mainImg!)
+                cell.bookstoreImageView.kf.setImage(with: bookstoreURL)
+            }
+
+            if self.detailList[0].profileImg?.count == 0 {
+                cell.bossImageView.image = UIImage(named: "74966Cd691014Bbbf2E445Bbc67Cddbc")
+            } else {
+                let profileURL = URL(string: self.detailList[0].profileImg!)
+                cell.bossImageView.kf.setImage(with: profileURL)
+            }
+
             cell.nameLabel.text = self.detailList[0].bookstoreName
 
-            cell.tag1.setTitle("    #\(self.detailList[0].hashtag1 ?? "")    ", for: .normal)
-            cell.tag2.setTitle("    #\(self.detailList[0].hashtag2 ?? "")    ", for: .normal)
-            cell.tag3.setTitle("    #\(self.detailList[0].hashtag3 ?? "")    ", for: .normal)
+            cell.tag1.setTitle("    #\(self.detailList[0].hashtag1!)    ", for: .normal)
+            cell.tag2.setTitle("    #\(self.detailList[0].hashtag2!)    ", for: .normal)
+            cell.tag3.setTitle("    #\(self.detailList[0].hashtag3!)    ", for: .normal)
 
             cell.descriptionLabel.numberOfLines = 2
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 5.0
-            let descripText = NSAttributedString(string: "우연히 만난 옛 친구같은 따뜻한 이야기가 머무는 책방을 꿈꿉니다. 이것은 무의미한 텍스트 입니다.")
+
+            let descripText = NSAttributedString(string: self.detailList[0].notice ?? "")
             let descripAttr = NSMutableAttributedString()
             descripAttr.append(descripText)
             descripAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: descripAttr.length))

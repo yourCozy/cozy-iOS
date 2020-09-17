@@ -85,6 +85,7 @@
 		B66A95CF250CCFF50033E9F2 /* AppleLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A95CE250CCFF50033E9F2 /* AppleLoginService.swift */; };
 		B66A95D1250D4C410033E9F2 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B66A95D0250D4C410033E9F2 /* Splash.storyboard */; };
 		B66A95D3250D4C8D0033E9F2 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66A95D2250D4C8D0033E9F2 /* SplashVC.swift */; };
+		B66E0A802513C50B00C4BAFF /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E0A7F2513C50B00C4BAFF /* UIImageView+Extensions.swift */; };
 		B6985F1624FAC682002A3E6B /* detailCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6985F1424FAC682002A3E6B /* detailCell1.swift */; };
 		B6985F1724FAC682002A3E6B /* detailCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6985F1524FAC682002A3E6B /* detailCell1.xib */; };
 		B6985F1A24FAC81B002A3E6B /* detailCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6985F1824FAC81B002A3E6B /* detailCell2.swift */; };
@@ -202,6 +203,7 @@
 		B66A95CE250CCFF50033E9F2 /* AppleLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginService.swift; sourceTree = "<group>"; };
 		B66A95D0250D4C410033E9F2 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		B66A95D2250D4C8D0033E9F2 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		B66E0A7F2513C50B00C4BAFF /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		B6985F1424FAC682002A3E6B /* detailCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell1.swift; sourceTree = "<group>"; };
 		B6985F1524FAC682002A3E6B /* detailCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = detailCell1.xib; sourceTree = "<group>"; };
 		B6985F1824FAC81B002A3E6B /* detailCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCell2.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				B6F4141024F1A256009863D7 /* UIButton+Extensions.swift */,
 				B649CCE624FAAEFE0032AF31 /* NSObject+Extensions.swift */,
 				B6F3CE01250FF70700B0A7CD /* NSNotification+Extensions.swift */,
+				B66E0A7F2513C50B00C4BAFF /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -914,6 +917,7 @@
 				CC263D02250DFE41001F6BF5 /* MypageRecentModel.swift in Sources */,
 				B6C424B6250516E300AAE393 /* RecommendListService.swift in Sources */,
 				18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */,
+				B66E0A802513C50B00C4BAFF /* UIImageView+Extensions.swift in Sources */,
 				B646AF7D24EC037000AC96A9 /* RecommendVC.swift in Sources */,
 				187C13082506559D004FD60B /* RecommendActivityModel.swift in Sources */,
 				B64940A724F186380052A21F /* MypageNavController.swift in Sources */,
