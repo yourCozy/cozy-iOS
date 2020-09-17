@@ -40,17 +40,18 @@ class MypageVC: UIViewController {
     }
 
     func setUI() {
-        setImageRound(profileImage)
+        profileImage.setProfileImage()
+        loginButton.setMypageLoginButton()
+        self.emailLabel.isHidden =  true
+
         if isUserLoggedIN() == true {
             beforeView.isHidden = true
+            beforeView2.isHidden = true
             addInfoDataWithLogin()
             addRecentData()
         } else {
-            setView()
-            addInfoData()
+            beforeView2.layer.zPosition = 1
         }
-        beforeView.isHidden = true
-        loginButton.setMypageLoginButton()
     }
 
     func setRecentCollectionView() {
@@ -58,20 +59,7 @@ class MypageVC: UIViewController {
         recentCollectionView.delegate = self
     }
 
-    private func setView() {
-        beforeView.isHidden =  false
-        beforeView2.layer.zPosition = 1
-    }
-
-    func setImageRound(_ image: UIImageView) {
-        image.layer.cornerRadius = 38
-        image.layer.borderWidth = 1
-        image.layer.borderColor = UIColor.clear.cgColor
-        image.clipsToBounds = true
-    }
-
     @IBAction func goInterestVC(_ sender: UIButton) {
-
         if self.isUserLoggedIN() == true {
             let sb = UIStoryboard(name: "Mypage", bundle: nil)
             let vc = sb.instantiateViewController(identifier: "InterestVC") as! InterestVC
@@ -90,30 +78,12 @@ class MypageVC: UIViewController {
         self.nameLabel.text = nameLabel
     }
 
-    func addInfoData() {
-        MypageInfoService.shared.getMypageInfoData { NetworkResult in
-            switch NetworkResult {
-            case .success(let data):
-                guard let data = data as? [MypageInfoData] else { return }
-                self.setInfoData(profileImage: data[0].profileImg ?? "null", nameLabel: data[0].nickname )
-            case .requestErr:
-                print("Request error")
-            case .pathErr:
-                print("path error")
-            case .serverErr:
-                print("server error")
-            case .networkFail:
-                print("network error")
-            }
-        }
-    }
-
     func addInfoDataWithLogin() {
         MypageInfoService.shared.getMypageInfoDataWithLogin { NetworkResult in
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [MypageInfoData] else { return }
-                self.setInfoData(profileImage: data[0].profileImg ?? "null", nameLabel: data[0].nickname )
+                self.setInfoData(profileImage: data[0].profileImg ?? "", nameLabel: data[0].nickname )
             case .requestErr:
                 print("Request error")
             case .pathErr:
@@ -135,6 +105,7 @@ class MypageVC: UIViewController {
                 for data in data {
                     self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg ?? ""))
                 }
+                print(data)
                 self.recentCollectionView.reloadData()
             case .requestErr:
                 print("Recent Request error")
