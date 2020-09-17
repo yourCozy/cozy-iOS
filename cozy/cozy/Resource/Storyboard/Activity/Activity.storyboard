@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWu-TS-TR3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWu-TS-TR3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,7 +32,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="Zgs-Xg-DoC"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nZ-aT-cEz">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nZ-aT-cEz">
                                                         <rect key="frame" x="43" y="55" width="52" height="30"/>
                                                         <state key="normal" title="영화상영">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -40,7 +42,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="4nZ-aT-cEz" firstAttribute="top" secondItem="EM6-YD-UsT" secondAttribute="bottom" constant="5" id="B8Q-RV-WHi"/>
                                                     <constraint firstItem="EM6-YD-UsT" firstAttribute="centerX" secondItem="Qit-h5-keN" secondAttribute="centerX" id="M0J-aP-bRo"/>
@@ -57,7 +59,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="LQs-y9-cJs"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX7-3o-r8j">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TX7-3o-r8j">
                                                         <rect key="frame" x="34.5" y="55" width="69" height="30"/>
                                                         <state key="normal" title="글쓰기 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,7 +69,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="TX7-3o-r8j" firstAttribute="centerX" secondItem="PJO-x4-E1j" secondAttribute="centerX" id="KOJ-tL-JR9"/>
                                                     <constraint firstItem="TX7-3o-r8j" firstAttribute="top" secondItem="NF6-Zf-i8Z" secondAttribute="bottom" constant="5" id="Uff-vk-9jn"/>
@@ -84,7 +86,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="4Ca-UZ-bzZ"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-nK-BS7">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-nK-BS7">
                                                         <rect key="frame" x="43" y="55" width="52" height="30"/>
                                                         <state key="normal" title="공간대여">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,7 +96,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="90Z-fE-NRf" firstAttribute="top" secondItem="U1n-h9-ZRv" secondAttribute="top" constant="20" id="2j9-sh-NMV"/>
                                                     <constraint firstItem="NDi-nK-BS7" firstAttribute="top" secondItem="90Z-fE-NRf" secondAttribute="bottom" constant="5" id="Mq5-ff-45j"/>
@@ -116,7 +118,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="61a-0i-zj6"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9W-Sz-aTH">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9W-Sz-aTH">
                                                         <rect key="frame" x="41" y="55" width="56" height="30"/>
                                                         <state key="normal" title="독서 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,7 +128,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="z7D-IU-pwM" firstAttribute="centerX" secondItem="H0P-FD-ygD" secondAttribute="centerX" id="ABa-yu-eNm"/>
                                                     <constraint firstItem="F9W-Sz-aTH" firstAttribute="top" secondItem="z7D-IU-pwM" secondAttribute="bottom" constant="5" id="CCz-cw-8Wf"/>
@@ -143,7 +145,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="bnR-zc-6ER"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdz-cA-KZe">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdz-cA-KZe">
                                                         <rect key="frame" x="41" y="55" width="56" height="30"/>
                                                         <state key="normal" title="심야 책방">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,7 +155,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="pNE-Jd-3yV" firstAttribute="top" secondItem="ckR-Cp-jlf" secondAttribute="top" constant="20" id="8ny-1V-iJc"/>
                                                     <constraint firstItem="pNE-Jd-3yV" firstAttribute="centerX" secondItem="ckR-Cp-jlf" secondAttribute="centerX" id="Sjs-gg-UX7"/>
@@ -170,7 +172,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="eWK-Hs-8xx"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x21-cJ-jwi">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x21-cJ-jwi">
                                                         <rect key="frame" x="38.5" y="55" width="61" height="30"/>
                                                         <state key="normal" title="전시, 공연">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -180,7 +182,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="x21-cJ-jwi" firstAttribute="top" secondItem="6Nt-sR-KvZ" secondAttribute="bottom" constant="5" id="2Ch-Pq-R55"/>
                                                     <constraint firstItem="x21-cJ-jwi" firstAttribute="centerX" secondItem="L8I-Ub-P6Y" secondAttribute="centerX" id="6cJ-Vg-Kpv"/>
@@ -202,7 +204,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="wTn-0A-WzH"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qee-oG-ruV">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qee-oG-ruV">
                                                         <rect key="frame" x="47.5" y="55" width="43" height="30"/>
                                                         <state key="normal" title="책 추천">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -228,7 +230,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="uc6-fK-UOq"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSw-tr-vdU">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSw-tr-vdU">
                                                         <rect key="frame" x="49.5" y="55" width="39" height="30"/>
                                                         <state key="normal" title="워크숍">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -238,7 +240,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="fSw-tr-vdU" firstAttribute="centerX" secondItem="iLk-Rr-jIr" secondAttribute="centerX" id="HCe-Oa-fqg"/>
                                                     <constraint firstItem="fSw-tr-vdU" firstAttribute="top" secondItem="e9V-p5-Kh2" secondAttribute="bottom" constant="5" id="Pjf-Pa-LaK"/>
@@ -255,7 +257,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="ecm-ub-KU7"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLe-F9-07V">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLe-F9-07V">
                                                         <rect key="frame" x="49.5" y="55" width="39" height="30"/>
                                                         <state key="normal" title="북토크">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -265,7 +267,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="TLe-F9-07V" firstAttribute="top" secondItem="ReM-o9-62J" secondAttribute="bottom" constant="5" id="0MT-Ly-rjI"/>
                                                     <constraint firstItem="ReM-o9-62J" firstAttribute="centerX" secondItem="xgE-XF-HXK" secondAttribute="centerX" id="2SN-WT-VJ7"/>
@@ -287,7 +289,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="Rno-ed-SZr"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5l-Ip-eyd">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5l-Ip-eyd">
                                                         <rect key="frame" x="41" y="55" width="56" height="30"/>
                                                         <state key="normal" title="음악 감상">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -297,7 +299,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="g5l-Ip-eyd" firstAttribute="centerX" secondItem="myf-Kh-0r1" secondAttribute="centerX" id="9rc-Sg-nrp"/>
                                                     <constraint firstItem="g5l-Ip-eyd" firstAttribute="top" secondItem="OBp-5f-XSR" secondAttribute="bottom" constant="5" id="E8m-Ui-5oN"/>
@@ -314,7 +316,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="3yD-zJ-bZP"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdr-oy-Dgc">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdr-oy-Dgc">
                                                         <rect key="frame" x="41" y="55" width="56" height="30"/>
                                                         <state key="normal" title="낭독 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -324,7 +326,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="qdr-oy-Dgc" firstAttribute="top" secondItem="RQz-Ya-Hn0" secondAttribute="bottom" constant="5" id="Jip-Ir-jhF"/>
                                                     <constraint firstItem="RQz-Ya-Hn0" firstAttribute="top" secondItem="dXV-aT-F1N" secondAttribute="top" constant="20" id="OQ7-d1-2Qc"/>
@@ -341,7 +343,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="VUz-P8-JAw"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAJ-eX-u4g">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAJ-eX-u4g">
                                                         <rect key="frame" x="41" y="55" width="56" height="30"/>
                                                         <state key="normal" title="묵독 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -351,7 +353,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="MRk-Oe-cyx" firstAttribute="top" secondItem="Fpw-Eg-vYX" secondAttribute="top" constant="20" id="1GK-OL-Wec"/>
                                                     <constraint firstItem="MRk-Oe-cyx" firstAttribute="centerX" secondItem="Fpw-Eg-vYX" secondAttribute="centerX" id="4nd-yp-9PF"/>
@@ -373,7 +375,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="M8b-nQ-Xrj"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epr-lt-IbV">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Epr-lt-IbV">
                                                         <rect key="frame" x="41" y="55" width="56" height="30"/>
                                                         <state key="normal" title="필사 모임">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -383,7 +385,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="Epr-lt-IbV" firstAttribute="centerX" secondItem="KzU-XG-BTz" secondAttribute="centerX" id="1Za-8q-5ML"/>
                                                     <constraint firstItem="GHn-9b-4UD" firstAttribute="top" secondItem="KzU-XG-BTz" secondAttribute="top" constant="20" id="2Fr-tQ-2eC"/>
@@ -400,7 +402,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="Ls5-gk-gLo"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFY-yJ-rNf">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFY-yJ-rNf">
                                                         <rect key="frame" x="54" y="55" width="30" height="30"/>
                                                         <state key="normal" title="숙박">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -410,7 +412,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="LFY-yJ-rNf" firstAttribute="top" secondItem="e4n-7O-m0k" secondAttribute="bottom" constant="5" id="FSO-LQ-dSv"/>
                                                     <constraint firstItem="e4n-7O-m0k" firstAttribute="top" secondItem="dBx-6U-bga" secondAttribute="top" constant="20" id="IEF-cQ-iMn"/>
@@ -427,7 +429,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="g9H-59-fZp"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-Kq-GNV">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIu-Kq-GNV">
                                                         <rect key="frame" x="49.5" y="55" width="39" height="30"/>
                                                         <state key="normal" title="만들기">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -437,7 +439,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="wIu-Kq-GNV" firstAttribute="centerX" secondItem="juS-e8-y9e" secondAttribute="centerX" id="1Xl-gY-YkE"/>
                                                     <constraint firstItem="wIu-Kq-GNV" firstAttribute="top" secondItem="1Ze-ru-N1j" secondAttribute="bottom" constant="5" id="Tbo-Qk-1ET"/>
@@ -459,7 +461,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="xY8-6j-kOn"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbh-bJ-eAJ">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbh-bJ-eAJ">
                                                         <rect key="frame" x="36.5" y="55" width="65" height="30"/>
                                                         <state key="normal" title="정기간행물">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -469,7 +471,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="lCb-Op-GtZ" firstAttribute="centerX" secondItem="E4I-Ff-ydp" secondAttribute="centerX" id="CZq-IC-nmg"/>
                                                     <constraint firstItem="lbh-bJ-eAJ" firstAttribute="centerX" secondItem="E4I-Ff-ydp" secondAttribute="centerX" id="HQc-Eg-f21"/>
@@ -486,7 +488,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="Z7D-dB-79Z"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxl-WQ-Pv5">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxl-WQ-Pv5">
                                                         <rect key="frame" x="54" y="55" width="30" height="30"/>
                                                         <state key="normal" title="강연">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -496,7 +498,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="rxl-WQ-Pv5" firstAttribute="top" secondItem="IZL-Si-ECZ" secondAttribute="bottom" constant="5" id="5K2-Mc-GsV"/>
                                                     <constraint firstItem="IZL-Si-ECZ" firstAttribute="top" secondItem="Ylh-IC-iI7" secondAttribute="top" constant="20" id="dx7-R7-ldh"/>
@@ -513,7 +515,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="5fE-RO-ihc"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh9-ni-p62">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh9-ni-p62">
                                                         <rect key="frame" x="54" y="55" width="30" height="30"/>
                                                         <state key="normal" title="마켓">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -523,7 +525,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="Kco-P3-6jU" firstAttribute="centerX" secondItem="hJD-gX-kJj" secondAttribute="centerX" id="HFL-Cw-pvM"/>
                                                     <constraint firstItem="Qh9-ni-p62" firstAttribute="centerX" secondItem="hJD-gX-kJj" secondAttribute="centerX" id="ibO-Er-WW6"/>
@@ -562,17 +564,21 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="grH-NH-Rgc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7gd-Cc-Lwc" firstAttribute="leading" secondItem="grH-NH-Rgc" secondAttribute="leading" id="TAY-Y8-1Ny"/>
                             <constraint firstItem="grH-NH-Rgc" firstAttribute="trailing" secondItem="7gd-Cc-Lwc" secondAttribute="trailing" id="kgw-W2-EmA"/>
                             <constraint firstItem="7gd-Cc-Lwc" firstAttribute="top" secondItem="grH-NH-Rgc" secondAttribute="top" id="mfd-x0-hIJ"/>
                             <constraint firstItem="grH-NH-Rgc" firstAttribute="bottom" secondItem="7gd-Cc-Lwc" secondAttribute="bottom" id="tO7-0X-Qdy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="grH-NH-Rgc"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="활동" image="tapiconactivitypressed" id="tYN-aa-us8"/>
-                    <navigationItem key="navigationItem" id="0RZ-VK-VbL"/>
+                    <navigationItem key="navigationItem" id="0RZ-VK-VbL">
+                        <barButtonItem key="leftBarButtonItem" image="textLogo56X20" id="CUI-Xg-1gF">
+                            <color key="tintColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outletCollection property="buttonActivityCollection" destination="4nZ-aT-cEz" collectionClass="NSMutableArray" id="oQv-eW-n4J"/>
@@ -657,5 +663,9 @@
         <image name="iconworkshop" width="21" height="30"/>
         <image name="iconwriting" width="30" height="30"/>
         <image name="tapiconactivitypressed" width="22" height="22"/>
+        <image name="textLogo56X20" width="56" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -600,6 +600,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="btnStart" destination="GE2-Og-9aw" id="bUi-7I-SHI"/>
                         <outlet property="onboardingLabel" destination="2gA-oT-Mr2" id="Mlu-ah-vWT"/>
                         <outletCollection property="tastes" destination="5S5-cz-0iT" collectionClass="NSMutableArray" id="q46-mM-Zp8"/>
                         <outletCollection property="tastes" destination="NFt-pi-eUg" collectionClass="NSMutableArray" id="l7a-1U-Z9k"/>

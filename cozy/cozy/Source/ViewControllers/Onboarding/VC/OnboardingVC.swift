@@ -16,6 +16,8 @@ class OnboardingVC: UIViewController {
     var btnTag1Count: [UIButton] = []
     var btnTag2Count: [UIButton] = []
 
+    @IBOutlet weak var btnStart: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -71,17 +73,24 @@ class OnboardingVC: UIViewController {
             }
         }
 
+        if btnTag1Count.count > 0 || btnTag2Count.count > 0 {
+            btnStart.backgroundColor = UIColor.mango
+        } else {
+            btnStart.backgroundColor = UIColor.brownishGrey
+        }
+
     }
 
     @IBAction func btnStart(_ sender: UIButton) {
         print("buttonTitles", buttonTitles)
-        //        postTasteData()
 
-        //         view 전환
-        //        let sb = UIStoryboard(name: "ActivityList", bundle: nil)
-        //        let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
-        //
-        //        self.navigationController?.pushViewController(vc, animated: true)
+        postTasteData()
+
+//        view 전환
+        let sb = UIStoryboard(name: "Recommend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "RecommendVC") as! RecommendVC
+
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     func postTasteData() {
