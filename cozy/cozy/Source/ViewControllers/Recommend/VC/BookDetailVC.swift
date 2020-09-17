@@ -131,7 +131,8 @@ class BookDetailVC: UIViewController {
                 }
                 self.detailTableView.reloadData()
             case .requestErr:
-                print("Request error")
+                self.feedList1.removeAll()
+                self.detailTableView.reloadData()
             case .pathErr:
                 print("path error")
             case .serverErr:
@@ -151,7 +152,8 @@ class BookDetailVC: UIViewController {
                     self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx, activityName: data.activityName ?? "", shortIntro: data.shortIntro ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.activityIdx))
                 }
             case .requestErr:
-                print("Request error")
+                self.feedList2.removeAll()
+                self.detailTableView.reloadData()
             case .pathErr:
                 print("path error")
             case .serverErr:
@@ -351,7 +353,14 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             if isClickBook { // 책방 피드
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
                 cell.selectionStyle = .none
-                cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
+
+                if self.feedList1[indexPath.row].image?.count == 0 {
+                    cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
+                } else {
+                    let feedimgurl = URL(string: self.feedList1[indexPath.row].image!)
+                    cell.detailImageView.kf.setImage(with: feedimgurl)
+                }
+
                 cell.detailLabel.text = self.feedList1[indexPath.row].text
                 return cell
             } else { // 활동 피드
@@ -359,10 +368,23 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 cell.selectionStyle = .none
                 cell.delegate = self
 
-                cell.imageButton1.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
-                cell.imageButton2.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
+                if self.feedList2[indexPath.row].image1?.count == 0 {
+                    cell.imageButton1.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
+                } else {
+                    let feed2url1 = URL(string: self.feedList2[indexPath.row].image1!)
+                    cell.imageButton1.kf.setImage(with: feed2url1, for: .normal)
+                }
+
+                if self.feedList2[indexPath.row+1].image1?.count == 0 {
+                    cell.imageButton2.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
+                } else {
+                    let feed2url2 = URL(string: self.feedList2[indexPath.row+1].image1!)
+                    cell.imageButton2.kf.setImage(with: feed2url2, for: .normal)
+                }
+
                 cell.nameLabel1.text = self.feedList2[indexPath.row].activityName
                 cell.nameLabel2.text = self.feedList2[indexPath.row+1].activityName
+
                 cell.descripLabel1.text = self.feedList2[indexPath.row].shortIntro
                 cell.descripLabel2.text = self.feedList2[indexPath.row+1].shortIntro
                 cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)"
