@@ -11,79 +11,85 @@ import UIKit
 class EventVC: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    private var noticeData: [NoticeModel] = []
-    private func setNoticeData() {
-        let notice1 = NoticeModel(date: "20-00-08", title: "업데이트 권장", content: "s")
-        let notice2 = NoticeModel(date: "s", title: "s", content: "s")
-
-        noticeData = [notice1, notice2]
-    }
+    private var eventData: [EventModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         setNoticeData()
+        setNav()
     }
 
+    func setNav() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+
+    @objc func goBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    private func setNoticeData() {
+        let event1 = EventModel(date: "20-09-18", title: "이벤트 공지사항", content: "코지 첫 런칭 이벤트가 준비중입니다. 조금만 기다려 주세요 :) ")
+        eventData = [event1]
+    }
 }
 
 extension EventVC: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-         return noticeData.count
-     }
-
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         if noticeData[section].open == true {
-             return 1 + 1
-         } else { return 1 }
-
-     }
-
-     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 67
-        } else { return 136 }
-
+        return eventData.count
     }
 
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         if indexPath.row == 0 {
-             let cell: eventTitleCell = tableView.dequeueReusableCell(withIdentifier: "eventTitleCell", for: indexPath) as! eventTitleCell
-             cell.titleLabel.text = noticeData[indexPath.section].title
-             cell.dateLabel.text = noticeData[indexPath.section].dateFormat()
-             return cell
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if eventData[section].open == true {
+            return 1 + 1
+        } else {
+            return 1
+        }
+    }
 
-         } else {
-             //클릭시 펼쳐질 셀
-             let cell: eventContentCell = tableView.dequeueReusableCell(withIdentifier: "eventContentCell", for: indexPath) as! eventContentCell
-             cell.contentTextView.text = noticeData[indexPath.section].content
-             return cell
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 67
+        } else {
+            return 120
+        }
+    }
 
-         }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell: eventTitleCell = tableView.dequeueReusableCell(withIdentifier: "eventTitleCell", for: indexPath) as! eventTitleCell
+            cell.titleLabel.text = eventData[indexPath.section].title
+            cell.dateLabel.text = eventData[indexPath.section].dateFormat()
+            return cell
 
-     }
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         guard let cell = tableView.cellForRow(at: indexPath) as? eventTitleCell
-             else {return}
-         guard let index = tableView.indexPath(for: cell) else { return }
-         if index.row == indexPath.row {
-             if index.row == 0 {
-                 if noticeData[indexPath.section].open == true {
-                     noticeData[indexPath.section].open = false
+        } else {
+            let cell: eventContentCell = tableView.dequeueReusableCell(withIdentifier: "eventContentCell", for: indexPath) as! eventContentCell
+            cell.contentTextView.text = eventData[indexPath.section].content
+            return cell
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? eventTitleCell else { return }
+        guard let index = tableView.indexPath(for: cell) else { return }
+        if index.row == indexPath.row {
+            if index.row == 0 {
+                if eventData[indexPath.section].open == true {
+                    eventData[indexPath.section].open = false
                     cell.arrowImg.image = UIImage(named: "iconfold8X14")
-                     let section = IndexSet.init(integer: indexPath.section)
-
-                     tableView.reloadSections(section, with: .fade)
-
-                 } else { noticeData[indexPath.section].open = true
+                    let section = IndexSet.init(integer: indexPath.section)
+                    tableView.reloadSections(section, with: .fade)
+                } else {
+                    eventData[indexPath.section].open = true
                     cell.arrowImg.image = UIImage(named: "iconmore8X14")
-                     let section = IndexSet.init(integer: indexPath.section)
-                     tableView.reloadSections(section, with: .fade) }
-
-             }
-
-         }
-     }
+                    let section = IndexSet.init(integer: indexPath.section)
+                    tableView.reloadSections(section, with: .fade) }
+            }
+        }
+    }
 }
