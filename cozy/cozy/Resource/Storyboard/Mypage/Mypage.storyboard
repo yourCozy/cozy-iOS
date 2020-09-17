@@ -259,6 +259,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="16"/>
                                                         <state key="normal" title="로그인 하러 가기"/>
+                                                        <connections>
+                                                            <action selector="goLogin:" destination="GuZ-H9-OMw" eventType="touchUpInside" id="d6v-AA-opl"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
