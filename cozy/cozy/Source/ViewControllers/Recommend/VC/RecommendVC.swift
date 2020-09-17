@@ -61,7 +61,7 @@ class RecommendVC: UIViewController {
                 }
                 self.recommendList.removeAll()
                 for data in data {
-                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "null", shortIntro1: data.shortIntro1 ?? "null", shortIntro2: data.shortIntro2 ?? "null", location: data.location ?? "null", hashtag1: data.hashtag1 ?? "null", hashtag2: data.hashtag2 ?? "null", hashtag3: data.hashtag3 ?? "null", checked: data.checked ?? 0))
+                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", shortIntro1: data.shortIntro1 ?? "", shortIntro2: data.shortIntro2 ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", checked: data.checked ?? 0))
                 }
                 self.tableView.reloadData()
             case .requestErr:
@@ -83,7 +83,7 @@ class RecommendVC: UIViewController {
                 guard let data = data as? [RecommendListData] else { return }
                 self.recommendList.removeAll()
                 for data in data {
-                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "null", mainImg: data.mainImg ?? "null", shortIntro1: data.shortIntro1 ?? "null", shortIntro2: data.shortIntro2 ?? "null", location: data.location ?? "null", hashtag1: data.hashtag1 ?? "null", hashtag2: data.hashtag2 ?? "null", hashtag3: data.hashtag3 ?? "null", checked: data.checked ?? 0))
+                    self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", shortIntro1: data.shortIntro1 ?? "", shortIntro2: data.shortIntro2 ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", checked: data.checked ?? 0))
                 }
                 self.tableView.reloadData()
             case .requestErr:
@@ -212,7 +212,12 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             cell.index = indexPath.row
             cell.delegate = self
 
-            cell.bookstoreImageView.image = UIImage(named: "image1")
+            if self.recommendList[indexPath.row].mainImg?.count == 0 {
+                cell.bookstoreImageView.image = UIImage(named: "image1")
+            } else {
+                let url = URL(string: self.recommendList[indexPath.row].mainImg!)
+                cell.bookstoreImageView.kf.setImage(with: url)
+            }
 
             cell.tag1.setTitle("    #\(self.recommendList[indexPath.row].hashtag1 ?? "")    ", for: .normal)
             cell.tag2.setTitle("    #\(self.recommendList[indexPath.row].hashtag2 ?? "")    ", for: .normal)
@@ -223,6 +228,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             style.lineSpacing = 1.0
 
             let descripText = NSAttributedString(string: "\(self.recommendList[indexPath.row].shortIntro1 ?? "")\n\(self.recommendList[indexPath.row].shortIntro2 ?? "")")
+//            let descripText = NSAttributedString(string: "매일 새로 구운 빵과 함께 하는 새로운 책빵\n그리고 오늘, 봄날의 책빵")
             let attrString = NSMutableAttributedString()
             attrString.append(descripText)
             attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
