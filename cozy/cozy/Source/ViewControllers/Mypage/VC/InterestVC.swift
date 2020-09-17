@@ -18,8 +18,10 @@ class InterestVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNav()
         setInterestTableView()
         getInterestData()
+        addObserver()
     }
 
     func setInterestTableView() {
@@ -27,6 +29,25 @@ class InterestVC: UIViewController {
         interestTableView.register(nibName, forCellReuseIdentifier: interestIdentifier)
         interestTableView.delegate = self
         interestTableView.dataSource = self
+    }
+
+    func setNav() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
+        self.navigationItem.leftBarButtonItem = backButton
+    }
+
+    @objc func goBack() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .dismissDetailVC, object: nil)
+    }
+
+    @objc func reloadData() {
+        getInterestData()
     }
 
     func getInterestData() {
@@ -38,6 +59,7 @@ class InterestVC: UIViewController {
                 for data in data {
                     self.interestList.append(MypageInterestData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", location: data.location ?? "", shortIntro1: data.shortIntro1 ?? "", shortIntro2: data.shortIntro2 ?? ""))
                 }
+                print(data)
                 self.interestTableView.reloadData()
             case .requestErr:
                 print("Request error")
@@ -57,6 +79,7 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        vc.bookstoreIdx = self.interestList[indexPath.row].bookstoreIdx!
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -84,6 +107,9 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
         cell.tag1.setTitle("    #\(self.interestList[indexPath.row].hashtag1 ?? "")    ", for: .normal)
         cell.tag2.setTitle("    #\(self.interestList[indexPath.row].hashtag2 ?? "")    ", for: .normal)
         cell.tag3.setTitle("    #\(self.interestList[indexPath.row].hashtag3 ?? "")    ", for: .normal)
+
+        cell.bookMarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
+
         return cell
     }
 }
