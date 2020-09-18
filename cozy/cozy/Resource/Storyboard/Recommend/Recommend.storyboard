@@ -162,7 +162,7 @@
                     <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="jIe-R3-0fc"/>
                     <navigationItem key="navigationItem" id="6jF-jZ-Msq">
                         <barButtonItem key="leftBarButtonItem" image="textLogo56X20" id="IeW-Fw-kiY">
-                            <color key="tintColor" red="0.99607843139999996" green="0.6588235294" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.99215686274509807" green="0.72156862745098038" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
