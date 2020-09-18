@@ -47,7 +47,9 @@ struct MypageRecentService {
     private func isData(by data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(MypageRecentModel.self, from: data) else { return .pathErr }
+        print(decodedData)
         guard let recentData = decodedData.data else { return .requestErr(decodedData.message) }
+        print(recentData)
         return .success(recentData)
     }
 }

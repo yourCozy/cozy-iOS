@@ -103,7 +103,7 @@ class MypageVC: UIViewController {
                 guard let data = data as? [MypageRecentData] else { return }
                 self.recentList.removeAll()
                 for data in data {
-                    self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg ?? ""))
+                    self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? ""))
                 }
                 self.recentCollectionView.reloadData()
             case .requestErr:
@@ -156,7 +156,7 @@ extension MypageVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
-        vc.bookstoreIdx = self.recentList[indexPath.row].bookstoreIdx
+        vc.bookstoreIdx = self.recentList[indexPath.row].bookstoreIdx ?? 1
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -32,8 +32,8 @@ struct MypageRecentModel: Codable {
 
 struct MypageRecentData: Codable {
 
-    var bookstoreIdx: Int
-    var bookstoreName: String
+    var bookstoreIdx: Int?
+    var bookstoreName: String?
     var mainImg: String?
 
     init(bookstoreIdx: Int, bookstoreName: String, mainImg: String) {
