@@ -126,6 +126,9 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
 
         let token = UserDefaults.standard.object(forKey: "token") as! String
         if token.count > 0 {
+
+            NotificationCenter.default.post(name: .updateBookmark, object: nil)
+
             if cell.bookmarkButton.hasImage(named: "iconsavewhite", for: .normal) {
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
                 let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
