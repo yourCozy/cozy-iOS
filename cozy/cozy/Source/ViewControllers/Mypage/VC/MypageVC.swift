@@ -26,6 +26,7 @@ class MypageVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addObserver()
         setUI()
         setRecentCollectionView()
     }
@@ -57,6 +58,14 @@ class MypageVC: UIViewController {
     func setRecentCollectionView() {
         recentCollectionView.dataSource = self
         recentCollectionView.delegate = self
+    }
+
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .dismissDetailVC, object: nil)
+    }
+
+    @objc func reloadData() {
+        addRecentData()
     }
 
     @IBAction func goInterestVC(_ sender: UIButton) {
