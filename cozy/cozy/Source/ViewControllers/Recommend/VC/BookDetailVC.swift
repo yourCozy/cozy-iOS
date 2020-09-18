@@ -293,16 +293,12 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             cell.selectionStyle = .none
             cell.delegate = self
 
-            if self.detailList[0].mainImg?.count == 0 {
-                cell.bookstoreImageView.image = UIImage(named: "image1")
-            } else {
+            if self.detailList[0].mainImg?.count != 0 {
                 let bookstoreURL = URL(string: self.detailList[0].mainImg!)
                 cell.bookstoreImageView.kf.setImage(with: bookstoreURL)
             }
 
-            if self.detailList[0].profileImg?.count == 0 {
-                cell.bossImageView.image = UIImage(named: "74966Cd691014Bbbf2E445Bbc67Cddbc")
-            } else {
+            if self.detailList[0].profileImg?.count != 0 {
                 let profileURL = URL(string: self.detailList[0].profileImg!)
                 cell.bossImageView.kf.setImage(with: profileURL)
             }
@@ -350,34 +346,28 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
             return cell
         } else {
-            if isClickBook { // 책방 피드
+            if isClickBook {
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
                 cell.selectionStyle = .none
 
-                if self.feedList1[indexPath.row].image?.count == 0 {
-                    cell.detailImageView.image = UIImage(named: "tuBongHKmBzQDkvgIUnsplash")
-                } else {
+                if self.feedList1[indexPath.row].image?.count != 0 {
                     let feedimgurl = URL(string: self.feedList1[indexPath.row].image!)
                     cell.detailImageView.kf.setImage(with: feedimgurl)
                 }
 
                 cell.detailLabel.text = self.feedList1[indexPath.row].text
                 return cell
-            } else { // 활동 피드
+            } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
                 cell.selectionStyle = .none
                 cell.delegate = self
 
-                if self.feedList2[indexPath.row].image1?.count == 0 {
-                    cell.imageButton1.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
-                } else {
+                if self.feedList2[indexPath.row].image1?.count != 0 {
                     let feed2url1 = URL(string: self.feedList2[indexPath.row].image1!)
                     cell.imageButton1.kf.setImage(with: feed2url1, for: .normal)
                 }
 
-                if self.feedList2[indexPath.row+1].image1?.count == 0 {
-                    cell.imageButton2.setBackgroundImage(UIImage(named: "ajeetMestryUBhpOiHnazMUnsplash"), for: .normal)
-                } else {
+                if self.feedList2[indexPath.row+1].image1?.count != 0 {
                     let feed2url2 = URL(string: self.feedList2[indexPath.row+1].image1!)
                     cell.imageButton2.kf.setImage(with: feed2url2, for: .normal)
                 }
