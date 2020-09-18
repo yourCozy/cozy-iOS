@@ -131,6 +131,10 @@ class MypageVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    @IBAction func goLogin(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
 }
 
 extension MypageVC: UICollectionViewDataSource {

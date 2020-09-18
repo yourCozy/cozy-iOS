@@ -100,6 +100,7 @@
 		B6C424B6250516E300AAE393 /* RecommendListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B5250516E300AAE393 /* RecommendListService.swift */; };
 		B6C424B825054CFF00AAE393 /* BookstoreDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */; };
 		B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */; };
+		B6F2EE8E2514032B005CCF4C /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F2EE8D2514032B005CCF4C /* EventModel.swift */; };
 		B6F3CE02250FF70700B0A7CD /* NSNotification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3CE01250FF70700B0A7CD /* NSNotification+Extensions.swift */; };
 		B6F3CE04251005C500B0A7CD /* MypageInterestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3CE03251005C500B0A7CD /* MypageInterestModel.swift */; };
 		B6F3CE06251006DD00B0A7CD /* MypageInterestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F3CE05251006DD00B0A7CD /* MypageInterestService.swift */; };
@@ -218,6 +219,7 @@
 		B6C424B5250516E300AAE393 /* RecommendListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendListService.swift; sourceTree = "<group>"; };
 		B6C424B725054CFF00AAE393 /* BookstoreDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreDetailModel.swift; sourceTree = "<group>"; };
 		B6C424B925054DD500AAE393 /* BookstoreDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookstoreDetailService.swift; sourceTree = "<group>"; };
+		B6F2EE8D2514032B005CCF4C /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		B6F3CE01250FF70700B0A7CD /* NSNotification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extensions.swift"; sourceTree = "<group>"; };
 		B6F3CE03251005C500B0A7CD /* MypageInterestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInterestModel.swift; sourceTree = "<group>"; };
 		B6F3CE05251006DD00B0A7CD /* MypageInterestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInterestService.swift; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 		B646AF7824EC033900AC96A9 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
+				B6F2EE8C251402D1005CCF4C /* Model */,
 				CC772907250B8A61001DB8FC /* VC */,
 				CC772906250B8A4A001DB8FC /* Cell */,
 			);
@@ -648,7 +651,6 @@
 				187C13072506559D004FD60B /* RecommendActivityModel.swift */,
 				B6208C9D25066BA700185624 /* MapCountModel.swift */,
 				B6208CA2250674E100185624 /* MapListModel.swift */,
-				CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */,
 				B631283325075C01003D33E3 /* KakaoLoginModel.swift */,
 				B65058432507FB8F00D832E1 /* UpdateInterestModel.swift */,
 				187C1312250A1A2B004FD60B /* ActivityDetailModel.swift */,
@@ -660,6 +662,15 @@
 				B6F3CE03251005C500B0A7CD /* MypageInterestModel.swift */,
 			);
 			path = ResponseModel;
+			sourceTree = "<group>";
+		};
+		B6F2EE8C251402D1005CCF4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */,
+				B6F2EE8D2514032B005CCF4C /* EventModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CC772906250B8A4A001DB8FC /* Cell */ = {
@@ -888,6 +899,7 @@
 				187C1315250B564A004FD60B /* ActivityDetailService.swift in Sources */,
 				B646AF4724EBFE4B00AC96A9 /* SceneDelegate.swift in Sources */,
 				187C1324250CBB4F004FD60B /* TastesService.swift in Sources */,
+				B6F2EE8E2514032B005CCF4C /* EventModel.swift in Sources */,
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
 				B65058442507FB8F00D832E1 /* UpdateInterestModel.swift in Sources */,

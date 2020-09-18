@@ -13,14 +13,9 @@ struct NoticeModel {
     var date: String
     var title: String
     var content: String
-
-//    let date: String
-//    let title: String
-//    let content: String
     var open = false
-    mutating func dateFormat() -> String { guard let s = self.date.split(separator: " ").first else {return "??"}
+
+    mutating func dateFormat() -> String { guard let s = self.date.split(separator: " ").first else { return "??" }
         return String(s)
-
     }
-
 }

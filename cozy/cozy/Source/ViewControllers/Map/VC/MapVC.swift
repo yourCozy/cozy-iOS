@@ -101,7 +101,8 @@ class MapVC: UIViewController {
                 }
                 self.mapTableView.reloadData()
             case .requestErr:
-                print("Request error")
+                self.mapList.removeAll()
+                self.mapTableView.reloadData()
             case .pathErr:
                 print("path error")
             case .serverErr:
@@ -123,7 +124,8 @@ class MapVC: UIViewController {
                 }
                 self.mapTableView.reloadData()
             case .requestErr:
-                print("Request error")
+                self.mapList.removeAll()
+                self.mapTableView.reloadData()
             case .pathErr:
                 print("path error")
             case .serverErr:
@@ -139,7 +141,7 @@ class MapVC: UIViewController {
             switch NetworkResult {
             case.success(let data):
                 guard let data = data as? UpdateInterestData else { return }
-                print("Update Interest🌟")
+                print(data)
             case .requestErr:
                 print("Request error")
             case .pathErr:
