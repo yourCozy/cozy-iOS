@@ -14,9 +14,8 @@ import AuthenticationServices
 class LoginVC: UIViewController {
 
     @IBOutlet weak var passLoginButton: UIButton!
-
     @IBOutlet weak var kakaoView: UIView!
-    @IBOutlet weak var appleView: UIView!
+    @IBOutlet weak var appleStackView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +23,10 @@ class LoginVC: UIViewController {
         setUserDefaults()
         let gesture = UITapGestureRecognizer(target: self, action: #selector(clickKakaoSocialLogin(_:)))
         kakaoView.addGestureRecognizer(gesture)
-        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(clickAppleLogin(_:)))
-        appleView.addGestureRecognizer(gesture2)
+
+        let authorizationButton = ASAuthorizationAppleIDButton()
+        authorizationButton.addTarget(self, action: #selector(clickAppleLogin), for: .touchUpInside)
+        self.appleStackView.addArrangedSubview(authorizationButton)
     }
 
     func setUserDefaults() {
@@ -36,8 +37,7 @@ class LoginVC: UIViewController {
     func setUI() {
         passLoginButton.setPassLoginButton()
         kakaoView.layer.backgroundColor = UIColor.sunshineYellow.cgColor
-        kakaoView.layer.cornerRadius = 25
-        appleView.layer.cornerRadius = 25
+        kakaoView.layer.cornerRadius = 7
     }
 
     @IBAction func clickPassLoginButton(_ sender: UIButton) {
