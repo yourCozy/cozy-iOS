@@ -233,16 +233,23 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
     }
 
     func selectMapButton() {
-        //        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
+        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
 
-        // sample
-        //        let latitude: Double = Double(37.548718)
-        //        let longtitude: Double = Double(126.920829)
-
-        if let url = URL(string: "nmap://actionPath?parameter=value&appname=com.cozycorp.yourcozy.cozy"),
-            UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        let latitude: Double = Double(self.detailList[0].latitude!)
+        let longitude: Double = Double(self.detailList[0].longitude!)
+        let bookstoreName: String = self.detailList[0].bookstoreName ?? ""
+        let nameEncode = self.makeStringKoreanEncoded(bookstoreName)
+        let mapURL = URL(string: "nmap://place?lat=\(latitude)&lng=\(longitude)&name=\(nameEncode)&appname=com.cozycorp.yourcozy")!
+        
+        if UIApplication.shared.canOpenURL(mapURL) {
+          UIApplication.shared.open(mapURL)
+        } else {
+          UIApplication.shared.open(appStoreURL)
         }
+    }
+    
+    func makeStringKoreanEncoded(_ string: String) -> String {
+        return string.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? string
     }
 
     func clickImageButton1(index: Int) {
