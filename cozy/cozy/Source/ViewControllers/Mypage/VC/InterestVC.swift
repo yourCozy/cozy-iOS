@@ -59,7 +59,6 @@ class InterestVC: UIViewController {
                 for data in data {
                     self.interestList.append(MypageInterestData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", location: data.location ?? "", shortIntro1: data.shortIntro1 ?? "", shortIntro2: data.shortIntro2 ?? ""))
                 }
-                print(data)
                 self.interestTableView.reloadData()
             case .requestErr:
                 print("Request error")
@@ -95,9 +94,7 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
         let cell = tableView.dequeueReusableCell(withIdentifier: interestIdentifier) as! BookListCell
         cell.selectionStyle = .none
 
-        if self.interestList[indexPath.row].mainImg?.count == 0 {
-            cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
-        } else {
+        if self.interestList[indexPath.row].mainImg?.count != 0 {
             let url = URL(string: self.interestList[indexPath.row].mainImg!)
             cell.bookStoreImageView.kf.setImage(with: url)
         }
