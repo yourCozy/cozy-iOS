@@ -66,6 +66,7 @@ class ActivityRecommendVC: UIViewController {
         ActivityDetailService.shared.getActivityDetailData(activityIdx: activityIdx) { NetworkResult in
             switch NetworkResult {
             case .success(let data):
+                print("success")
                 guard let data = data as? [ActivityDetailData] else { return print("data error") }
 
                 self.displayDetailList.removeAll()

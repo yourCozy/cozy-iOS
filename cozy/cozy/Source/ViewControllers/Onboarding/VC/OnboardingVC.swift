@@ -87,8 +87,8 @@ class OnboardingVC: UIViewController {
         postTasteData()
 
 //        view 전환
-        let sb = UIStoryboard(name: "Recommend", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "RecommendVC") as! RecommendVC
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MainTapVC") as! MainTabVC
 
         self.navigationController?.pushViewController(vc, animated: true)
     }

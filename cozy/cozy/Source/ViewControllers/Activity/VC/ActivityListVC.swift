@@ -19,9 +19,22 @@ class ActivityListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setNav()
+
         setBookStoreData()
         activityTableView.delegate = self
         activityTableView.dataSource = self
+    }
+
+    func setNav() {
+            self.navigationItem.setHidesBackButton(true, animated: true)
+            self.navigationController?.navigationBar.tintColor = UIColor.gray
+            let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
+            self.navigationItem.leftBarButtonItem = backButton
+        }
+
+    @objc func goBack() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     private func setBookStoreData() {
