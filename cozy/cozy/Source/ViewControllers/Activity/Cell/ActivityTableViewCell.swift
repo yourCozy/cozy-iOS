@@ -42,9 +42,15 @@ class ActivityTableViewCell: UITableViewCell {
 
         self.lblDday.text = "D-" + String(lblDday)
 
-        // load image, using Kingfisher
-        let url = URL(string: image)
-        self.activityCellImageView.kf.setImage(with: url)
+        print(image)
+
+        if image == "" {
+            activityCellImageView.image = UIImage(named: "imageNull")
+        } else {
+            // load image, using Kingfisher
+            let url = URL(string: image)
+            self.activityCellImageView.kf.setImage(with: url)
+        }
 
         activityCellLabel.text = activityCellContents
         activityCellBookStoreNameLabel.text = activityCellBookStoreName

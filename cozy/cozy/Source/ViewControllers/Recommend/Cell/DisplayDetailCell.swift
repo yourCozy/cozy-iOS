@@ -16,7 +16,11 @@ class DisplayDetailCell: UICollectionViewCell {
     @IBOutlet weak var imgView: UIImageView!
 
     func set(_ detailImageURL: String) {
-        let url = URL(string: "detailImageURL")
-        imgView.kf.setImage(with: url)
+        if detailImageURL == "imageNull" {
+            imgView.image = UIImage(named: "imageNull")
+        } else {
+            let url = URL(string: "detailImageURL")
+            imgView.kf.setImage(with: url)
+        }
     }
 }

@@ -35,7 +35,7 @@ struct ActivityDetailData: Codable {
     var activityName: String?
     var categoryName: String?
     var price: Int?
-    var limitation: String?
+    var limitation: Int?
     var introduction: String?
     var period: String?
     var image1: String?
@@ -51,7 +51,7 @@ struct ActivityDetailData: Codable {
     var dday: Int?
     var deadline: String?
 
-    init(activityIdx: Int, activityName: String, categoryName: String, price: Int, limitation: String, introduction: String, period: String, image1: String, image2: String, image3: String, image4: String, image5: String, image6: String, image7: String, image8: String, image9: String, image10: String, dday: Int, deadline: String) {
+    init(activityIdx: Int, activityName: String, categoryName: String, price: Int, limitation: Int, introduction: String, period: String, image1: String, image2: String, image3: String, image4: String, image5: String, image6: String, image7: String, image8: String, image9: String, image10: String, dday: Int, deadline: String) {
         self.activityIdx = activityIdx
         self.activityName = activityName
         self.categoryName = categoryName

@@ -46,10 +46,10 @@ class ActivityListVC: UIViewController {
                     self.activityList.removeAll()
                     for data in data {
                         // D-day 지난 데이터 제거
-                        if data.dday < 0 {
+                        if data.dday ?? -1 < 0 {
                             continue
                         } else {
-                            self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName, activityName: data.activityName, shortIntro: data.shortIntro, price: data.price, image1: data.image1 ?? "", dday: data.dday))
+                            self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName ?? "미정", activityName: data.activityName ?? "미정", shortIntro: data.shortIntro ?? "미정", price: data.price ?? 0, image1: data.image1 ?? "", dday: data.dday ?? 0))
                         }
                     }
 
@@ -94,7 +94,7 @@ extension ActivityListVC: UITableViewDataSource {
         guard let activityCell = tableView.dequeueReusableCell(withIdentifier: ActivityTableViewCell.identifier, for:
         indexPath) as? ActivityTableViewCell else { return UITableViewCell() }
 
-        activityCell.setData(image: activityList[indexPath.row].image1 ?? "", lblDday: activityList[indexPath.row].dday, activityCellContents: activityList[indexPath.row].activityName, activityCellBookStoreName: activityList[indexPath.row].bookstoreName, activityCellPrice: activityList[indexPath.row].price)
+        activityCell.setData(image: activityList[indexPath.row].image1 ?? "", lblDday: activityList[indexPath.row].dday ?? 0, activityCellContents: activityList[indexPath.row].activityName ?? "", activityCellBookStoreName: activityList[indexPath.row].bookstoreName ?? "", activityCellPrice: activityList[indexPath.row].price ?? 0)
 
         return activityCell
     }
