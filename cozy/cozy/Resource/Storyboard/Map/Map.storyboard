@@ -78,7 +78,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이터 준비중입니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJu-pk-4H0">
-                                <rect key="frame" x="146" y="440.5" width="122.5" height="15.5"/>
+                                <rect key="frame" x="146" y="546.5" width="122.5" height="15.5"/>
                                 <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                             <constraint firstItem="Oag-FB-A59" firstAttribute="top" secondItem="QEy-mm-DCY" secondAttribute="top" id="17e-W3-NJ3"/>
                             <constraint firstItem="QEy-mm-DCY" firstAttribute="trailing" secondItem="Oag-FB-A59" secondAttribute="trailing" id="5Q2-hV-5LZ"/>
                             <constraint firstItem="QEy-mm-DCY" firstAttribute="bottom" secondItem="Oag-FB-A59" secondAttribute="bottom" id="8PG-8X-af9"/>
-                            <constraint firstItem="aJu-pk-4H0" firstAttribute="centerY" secondItem="hUD-ki-6hK" secondAttribute="centerY" id="IIk-CX-IlA"/>
+                            <constraint firstItem="aJu-pk-4H0" firstAttribute="centerY" secondItem="hUD-ki-6hK" secondAttribute="centerY" constant="106" id="IIk-CX-IlA"/>
                             <constraint firstItem="Oag-FB-A59" firstAttribute="leading" secondItem="QEy-mm-DCY" secondAttribute="leading" id="U9p-zk-uyC"/>
                             <constraint firstItem="aJu-pk-4H0" firstAttribute="centerX" secondItem="hUD-ki-6hK" secondAttribute="centerX" id="b60-Br-p9h"/>
                         </constraints>

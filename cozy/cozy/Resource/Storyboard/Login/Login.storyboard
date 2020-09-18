@@ -40,23 +40,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRV-6Z-vh5">
                                 <rect key="frame" x="24" y="618" width="366" height="48"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconkakaotalk24X22" translatesAutoresizingMaskIntoConstraints="NO" id="SV8-3L-sov">
-                                        <rect key="frame" x="45" y="13" width="24" height="22"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오 계정으로 시작" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZg-QN-Lew">
-                                        <rect key="frame" x="106" y="15" width="139.5" height="18"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with kakao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZg-QN-Lew">
+                                        <rect key="frame" x="119" y="14" width="152" height="20"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconkakaotalk24X22" translatesAutoresizingMaskIntoConstraints="NO" id="fLn-nw-9Dk">
+                                        <rect key="frame" x="93" y="16.5" width="24" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="opU-cb-t4N"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="GZg-QN-Lew" firstAttribute="centerX" secondItem="gRV-6Z-vh5" secondAttribute="centerX" constant="12" id="5c9-YC-tEe"/>
+                                    <constraint firstItem="GZg-QN-Lew" firstAttribute="leading" secondItem="fLn-nw-9Dk" secondAttribute="trailing" constant="2" id="6eX-FF-Rbg"/>
                                     <constraint firstAttribute="height" constant="48" id="Ihh-LN-lEQ"/>
                                     <constraint firstItem="GZg-QN-Lew" firstAttribute="centerY" secondItem="gRV-6Z-vh5" secondAttribute="centerY" id="Tfa-bC-sVL"/>
-                                    <constraint firstItem="GZg-QN-Lew" firstAttribute="leading" secondItem="SV8-3L-sov" secondAttribute="trailing" constant="37" id="ksv-1r-KAj"/>
-                                    <constraint firstItem="SV8-3L-sov" firstAttribute="leading" secondItem="gRV-6Z-vh5" secondAttribute="leading" constant="45" id="nDd-AE-onf"/>
-                                    <constraint firstItem="SV8-3L-sov" firstAttribute="centerY" secondItem="gRV-6Z-vh5" secondAttribute="centerY" id="wrE-hz-BfC"/>
+                                    <constraint firstItem="fLn-nw-9Dk" firstAttribute="centerY" secondItem="gRV-6Z-vh5" secondAttribute="centerY" id="l9F-QJ-QSL"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhQ-Oz-lgS">

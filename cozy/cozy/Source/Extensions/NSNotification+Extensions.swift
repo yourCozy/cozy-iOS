@@ -11,4 +11,5 @@ import Foundation
 extension NSNotification.Name {
     static let dismissSlideView = NSNotification.Name("dismissSlideView")
     static let dismissDetailVC = NSNotification.Name("dismissDetailVC")
+    static let updateBookmark = NSNotification.Name("updateBookmark")
 }

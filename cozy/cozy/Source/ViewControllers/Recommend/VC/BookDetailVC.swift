@@ -202,50 +202,67 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         let indexPath = IndexPath(row: 0, section: 0)
         let cell = self.detailTableView.cellForRow(at: indexPath) as! detailCell1
 
-        if cell.bookmarkButton1.hasImage(named: "iconsave", for: .normal) {
-            self.updateInterest(bookstoreIdx: self.bookstoreIdx)
-            cell.bookmarkButton1.setImage(UIImage(named: "iconsavefull"), for: .normal)
-            let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            let cancelAlert = UIAlertController(title: "관심 책방에서 삭제하시겠어요?", message: "관심책방 등록을 삭제하시면, 관심책방에서 다시 볼 수 없어요.", preferredStyle: UIAlertController.Style.alert)
+        let token = UserDefaults.standard.object(forKey: "token") as! String
+        if token.count > 0 {
 
-            cancelAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (_: UIAlertAction!) in
+            NotificationCenter.default.post(name: .updateBookmark, object: nil)
+
+            if cell.bookmarkButton1.hasImage(named: "iconsave", for: .normal) {
                 self.updateInterest(bookstoreIdx: self.bookstoreIdx)
-                cell.bookmarkButton1.setImage(UIImage(named: "iconsave"), for: .normal)
-            }))
-
-            cancelAlert.addAction(UIAlertAction(title: "아니오", style: .cancel, handler: { (_: UIAlertAction!) in
-                cancelAlert.dismiss(animated: true, completion: nil)
-            }))
-
-            self.present(cancelAlert, animated: true, completion: nil)
+                cell.bookmarkButton1.setImage(UIImage(named: "iconsavefull"), for: .normal)
+                let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                let cancelAlert = UIAlertController(title: "관심 책방에서 삭제하시겠어요?", message: "관심책방 등록을 삭제하시면, 관심책방에서 다시 볼 수 없어요.", preferredStyle: UIAlertController.Style.alert)
+                cancelAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (_: UIAlertAction!) in
+                    self.updateInterest(bookstoreIdx: self.bookstoreIdx)
+                    cell.bookmarkButton1.setImage(UIImage(named: "iconsave"), for: .normal)
+                }))
+                cancelAlert.addAction(UIAlertAction(title: "아니오", style: .cancel, handler: { (_: UIAlertAction!) in
+                    cancelAlert.dismiss(animated: true, completion: nil)
+                }))
+                self.present(cancelAlert, animated: true, completion: nil)
+            }
+        } else {
+            let needLoginAlert = UIAlertController(title: "로그인 한 회원만 이용할 수 있어요!", message: "내 정보 탭에 들어가서 로그인을 해주세요.", preferredStyle: UIAlertController.Style.alert)
+            needLoginAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(needLoginAlert, animated: true, completion: nil)
         }
+
     }
 
     func selectMapButton() {
-        //        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
+        let appStoreURL = URL(string: "http://itunes.apple.com/app/id311867728?mt=8")!
 
-        // sample
-        //        let latitude: Double = Double(37.548718)
-        //        let longtitude: Double = Double(126.920829)
+        let latitude: Double = Double(self.detailList[0].latitude!)
+        let longitude: Double = Double(self.detailList[0].longitude!)
+        let bookstoreName: String = self.detailList[0].bookstoreName ?? ""
+        let nameEncode = self.makeStringKoreanEncoded(bookstoreName)
+        let mapURL = URL(string: "nmap://place?lat=\(latitude)&lng=\(longitude)&name=\(nameEncode)&appname=com.cozycorp.yourcozy")!
 
-        if let url = URL(string: "nmap://actionPath?parameter=value&appname=com.cozycorp.yourcozy.cozy"),
-            UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if UIApplication.shared.canOpenURL(mapURL) {
+          UIApplication.shared.open(mapURL)
+        } else {
+          UIApplication.shared.open(appStoreURL)
         }
     }
 
-    func clickImageButton1() {
+    func makeStringKoreanEncoded(_ string: String) -> String {
+        return string.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? string
+    }
+
+    func clickImageButton1(index: Int) {
         let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+        vc.activityIdx = self.feedList2[index].activityIdx
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    func clickImageBUtton2() {
+    func clickImageBUtton2(index: Int) {
         let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+        vc.activityIdx = self.feedList2[index+1].activityIdx
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -361,6 +378,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
                 cell.selectionStyle = .none
                 cell.delegate = self
+                cell.index = indexPath.row
 
                 if self.feedList2[indexPath.row].image1?.count != 0 {
                     let feed2url1 = URL(string: self.feedList2[indexPath.row].image1!)

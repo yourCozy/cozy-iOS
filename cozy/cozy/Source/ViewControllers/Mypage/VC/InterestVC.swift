@@ -43,10 +43,11 @@ class InterestVC: UIViewController {
     }
 
     private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .dismissDetailVC, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .updateBookmark, object: nil)
     }
 
     @objc func reloadData() {
+        print("reload interest data")
         getInterestData()
     }
 
@@ -74,13 +75,6 @@ class InterestVC: UIViewController {
 }
 
 extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "BookDetail", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
-        vc.bookstoreIdx = self.interestList[indexPath.row].bookstoreIdx!
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.interestList.count

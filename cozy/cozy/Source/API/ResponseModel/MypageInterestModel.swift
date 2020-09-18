@@ -30,18 +30,6 @@ struct MypageInterestModel: Codable {
     }
 }
 
-/*
- "bookstoreIdx": 7,
- "bookstoreName": "안도북스",
- "mainImg": null,
- "hashtag1": null,
- "hashtag2": null,
- "hashtag3": null,
- "location": "서울특별시 마포구 성미산로 6길 21",
- "shortIntro1": null,
- "shortIntro2": null
- */
-
 struct MypageInterestData: Codable {
     var bookstoreIdx: Int?
     var bookstoreName: String?

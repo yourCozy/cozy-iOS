@@ -9,8 +9,8 @@
 import UIKit
 
 protocol detailCell3Delegate: AnyObject {
-    func clickImageButton1()
-    func clickImageBUtton2()
+    func clickImageButton1(index: Int)
+    func clickImageBUtton2(index: Int)
 }
 
 class detailCell3: UITableViewCell {
@@ -32,6 +32,8 @@ class detailCell3: UITableViewCell {
     @IBOutlet weak var priceLabel1: UILabel!
     @IBOutlet weak var priceLabel2: UILabel!
 
+    var index: Int = 0
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -41,11 +43,11 @@ class detailCell3: UITableViewCell {
     }
 
     @IBAction func clickImageButton1(_ sender: UIButton) {
-        self.delegate?.clickImageButton1()
+        self.delegate?.clickImageButton1(index: index)
     }
 
     @IBAction func clickImageButton2(_ sender: UIButton) {
-        self.delegate?.clickImageBUtton2()
+        self.delegate?.clickImageBUtton2(index: index)
     }
 
 }
