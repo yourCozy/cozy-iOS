@@ -17,6 +17,7 @@ class MapVC: UIViewController {
 
     private var selectIdx: Int = 1
     private var backView = UIView()
+    @IBOutlet weak var readyLabel: UILabel!
 
     private var mapList: [MapListData] = []
 
@@ -25,13 +26,6 @@ class MapVC: UIViewController {
         addObserver()
         setMapTableView()
         getMapData()
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        if let index = self.mapTableView.indexPathForSelectedRow {
-            self.mapTableView.deselectRow(at: index, animated: true)
-        }
     }
 
     private func getMapData() {
@@ -59,6 +53,7 @@ class MapVC: UIViewController {
     }
 
     func setMapTableView() {
+        readyLabel.isHidden = true
         let nibName = UINib(nibName: "BookListCell", bundle: nil)
         mapTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)
         mapTableView.delegate = self
@@ -97,12 +92,14 @@ class MapVC: UIViewController {
                 guard let data = data as? [MapListData] else { return }
                 self.mapList.removeAll()
                 for data in data {
-                    self.mapList.append(MapListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", mainImg: data.hashtag3 ?? "", checked: data.checked ?? 0))
+                    self.mapList.append(MapListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "코지와", hashtag2: data.hashtag2 ?? "함께하는", hashtag3: data.hashtag3 ?? "책방", mainImg: data.mainImg ?? "", checked: data.checked ?? 0))
                 }
                 self.mapTableView.reloadData()
+                self.readyLabel.isHidden = true
             case .requestErr:
                 self.mapList.removeAll()
                 self.mapTableView.reloadData()
+                self.readyLabel.isHidden = false
             case .pathErr:
                 print("path error")
             case .serverErr:
@@ -120,12 +117,14 @@ class MapVC: UIViewController {
                 guard let data = data as? [MapListData] else { return }
                 self.mapList.removeAll()
                 for data in data {
-                    self.mapList.append(MapListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "", hashtag2: data.hashtag2 ?? "", hashtag3: data.hashtag3 ?? "", mainImg: data.hashtag3 ?? "", checked: data.checked ?? 0))
+                    self.mapList.append(MapListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "코지와", hashtag2: data.hashtag2 ?? "함께하는", hashtag3: data.hashtag3 ?? "책방", mainImg: data.hashtag3 ?? "", checked: data.checked ?? 0))
                 }
                 self.mapTableView.reloadData()
+                self.readyLabel.isHidden = true
             case .requestErr:
                 self.mapList.removeAll()
                 self.mapTableView.reloadData()
+                self.readyLabel.isHidden = false
             case .pathErr:
                 print("path error")
             case .serverErr:
@@ -265,7 +264,11 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
             cell.index = indexPath.row
             cell.delegate = self
 
-            cell.bookStoreImageView.image = UIImage(named: "asdfdghfgjhj")
+            if self.mapList[indexPath.row].mainImg?.count != 0 {
+                let imgurl = URL(string: self.mapList[indexPath.row].mainImg!)
+                cell.bookStoreImageView.kf.setImage(with: imgurl)
+            }
+
             cell.nameLabel.text = self.mapList[indexPath.row].bookstoreName
             cell.addressLabel.text = self.mapList[indexPath.row].location
 

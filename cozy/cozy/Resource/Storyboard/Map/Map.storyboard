@@ -13,6 +13,9 @@
         <array key="NanumSquareRoundL.ttf">
             <string>NanumSquareRoundL</string>
         </array>
+        <array key="NanumSquareRoundR.ttf">
+            <string>NanumSquareRoundR</string>
+        </array>
     </customFonts>
     <scenes>
         <!--지도-->
@@ -74,25 +77,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이터 준비중입니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJu-pk-4H0">
+                                <rect key="frame" x="146" y="440.5" width="122.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Oag-FB-A59" firstAttribute="top" secondItem="QEy-mm-DCY" secondAttribute="top" id="17e-W3-NJ3"/>
                             <constraint firstItem="QEy-mm-DCY" firstAttribute="trailing" secondItem="Oag-FB-A59" secondAttribute="trailing" id="5Q2-hV-5LZ"/>
                             <constraint firstItem="QEy-mm-DCY" firstAttribute="bottom" secondItem="Oag-FB-A59" secondAttribute="bottom" id="8PG-8X-af9"/>
+                            <constraint firstItem="aJu-pk-4H0" firstAttribute="centerY" secondItem="hUD-ki-6hK" secondAttribute="centerY" id="IIk-CX-IlA"/>
                             <constraint firstItem="Oag-FB-A59" firstAttribute="leading" secondItem="QEy-mm-DCY" secondAttribute="leading" id="U9p-zk-uyC"/>
+                            <constraint firstItem="aJu-pk-4H0" firstAttribute="centerX" secondItem="hUD-ki-6hK" secondAttribute="centerX" id="b60-Br-p9h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QEy-mm-DCY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="지도" image="tapiconmappressed" id="TvI-fG-ePF"/>
                     <navigationItem key="navigationItem" id="5mR-Ch-kAL">
                         <barButtonItem key="leftBarButtonItem" image="textLogo56X20" id="SWE-vU-UgW">
-                            <color key="tintColor" red="0.99607843139999996" green="0.6588235294" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.99215686274509807" green="0.72156862745098038" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapTableView" destination="Oag-FB-A59" id="a0F-8b-5hA"/>
+                        <outlet property="readyLabel" destination="aJu-pk-4H0" id="PMk-SG-HhC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfG-4q-Jcz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -212,9 +212,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             cell.index = indexPath.row
             cell.delegate = self
 
-            if self.recommendList[indexPath.row].mainImg?.count == 0 {
-                cell.bookstoreImageView.image = UIImage(named: "image1")
-            } else {
+            if self.recommendList[indexPath.row].mainImg?.count != 0 {
                 let url = URL(string: self.recommendList[indexPath.row].mainImg!)
                 cell.bookstoreImageView.kf.setImage(with: url)
             }
@@ -228,7 +226,6 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             style.lineSpacing = 1.0
 
             let descripText = NSAttributedString(string: "\(self.recommendList[indexPath.row].shortIntro1 ?? "")\n\(self.recommendList[indexPath.row].shortIntro2 ?? "")")
-//            let descripText = NSAttributedString(string: "매일 새로 구운 빵과 함께 하는 새로운 책빵\n그리고 오늘, 봄날의 책빵")
             let attrString = NSMutableAttributedString()
             attrString.append(descripText)
             attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))

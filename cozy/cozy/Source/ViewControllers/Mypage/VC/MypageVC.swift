@@ -26,6 +26,7 @@ class MypageVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addObserver()
         setUI()
         setRecentCollectionView()
     }
@@ -57,6 +58,14 @@ class MypageVC: UIViewController {
     func setRecentCollectionView() {
         recentCollectionView.dataSource = self
         recentCollectionView.delegate = self
+    }
+
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .dismissDetailVC, object: nil)
+    }
+
+    @objc func reloadData() {
+        addRecentData()
     }
 
     @IBAction func goInterestVC(_ sender: UIButton) {
@@ -103,9 +112,8 @@ class MypageVC: UIViewController {
                 guard let data = data as? [MypageRecentData] else { return }
                 self.recentList.removeAll()
                 for data in data {
-                    self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg ?? ""))
+                    self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? ""))
                 }
-                print(data)
                 self.recentCollectionView.reloadData()
             case .requestErr:
                 print("Recent Request error")
@@ -145,9 +153,7 @@ extension MypageVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let recentCell = collectionView.dequeueReusableCell(withReuseIdentifier: recentCVIdentifier, for: indexPath) as! recentCell
 
-        if self.recentList[indexPath.row].mainImg?.count == 0 {
-            recentCell.bookstoreImage.image = UIImage(named: "image1")
-        } else {
+        if self.recentList[indexPath.row].mainImg?.count != 0 {
             let imgurl = URL(string: self.recentList[indexPath.row].mainImg!)
             recentCell.bookstoreImage.kf.setImage(with: imgurl)
         }
@@ -159,7 +165,7 @@ extension MypageVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "BookDetail", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
-        vc.bookstoreIdx = self.recentList[indexPath.row].bookstoreIdx
+        vc.bookstoreIdx = self.recentList[indexPath.row].bookstoreIdx ?? 1
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

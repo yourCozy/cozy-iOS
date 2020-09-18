@@ -50,7 +50,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xt-Xd-Qys">
                                         <rect key="frame" x="24" y="0.0" width="126" height="126"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8xt-Xd-Qys" secondAttribute="height" id="RJH-dg-Q8F"/>
                                         </constraints>
@@ -109,7 +109,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1n-wQ-hJw">
                                         <rect key="frame" x="10" y="0.0" width="126" height="126"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="s1n-wQ-hJw" secondAttribute="height" multiplier="1:1" id="5fq-h5-6Qd"/>
                                         </constraints>
