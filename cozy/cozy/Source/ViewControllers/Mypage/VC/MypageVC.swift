@@ -105,7 +105,6 @@ class MypageVC: UIViewController {
                 for data in data {
                     self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx, bookstoreName: data.bookstoreName, mainImg: data.mainImg ?? ""))
                 }
-                print(data)
                 self.recentCollectionView.reloadData()
             case .requestErr:
                 print("Recent Request error")
@@ -145,9 +144,7 @@ extension MypageVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let recentCell = collectionView.dequeueReusableCell(withReuseIdentifier: recentCVIdentifier, for: indexPath) as! recentCell
 
-        if self.recentList[indexPath.row].mainImg?.count == 0 {
-            recentCell.bookstoreImage.image = UIImage(named: "image1")
-        } else {
+        if self.recentList[indexPath.row].mainImg?.count != 0 {
             let imgurl = URL(string: self.recentList[indexPath.row].mainImg!)
             recentCell.bookstoreImage.kf.setImage(with: imgurl)
         }
