@@ -21,7 +21,6 @@
 		187C1320250CA710004FD60B /* NanumSquareRoundB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 187C131C250CA710004FD60B /* NanumSquareRoundB.ttf */; };
 		187C1322250CB6F1004FD60B /* TastesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1321250CB6F1004FD60B /* TastesModel.swift */; };
 		187C1324250CBB4F004FD60B /* TastesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1323250CBB4F004FD60B /* TastesService.swift */; };
-		187C1326250FCDF7004FD60B /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1325250FCDF7004FD60B /* CommentCell.swift */; };
 		187C1328250FD212004FD60B /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1327250FD212004FD60B /* CommentModel.swift */; };
 		187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */; };
 		18981F9724F90C4C00D6A921 /* ActivityListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9624F90C4C00D6A921 /* ActivityListVC.swift */; };
@@ -135,7 +134,6 @@
 		187C131C250CA710004FD60B /* NanumSquareRoundB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareRoundB.ttf; sourceTree = "<group>"; };
 		187C1321250CB6F1004FD60B /* TastesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastesModel.swift; sourceTree = "<group>"; };
 		187C1323250CBB4F004FD60B /* TastesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TastesService.swift; sourceTree = "<group>"; };
-		187C1325250FCDF7004FD60B /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		187C1327250FD212004FD60B /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDetailCell.swift; sourceTree = "<group>"; };
 		18981F9624F90C4C00D6A921 /* ActivityListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListVC.swift; sourceTree = "<group>"; };
@@ -540,7 +538,6 @@
 				187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */,
 				B6B1E1C824FED56A00E60FB0 /* detailCell3.swift */,
 				B6B1E1C924FED56A00E60FB0 /* detailCell3.xib */,
-				187C1325250FCDF7004FD60B /* CommentCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -918,7 +915,6 @@
 				B658A3AB250152DA0076BCD4 /* OnboardingIntroVC.swift in Sources */,
 				B66A95CD250CCFBA0033E9F2 /* AppleLoginModel.swift in Sources */,
 				187C1306250650A0004FD60B /* RecommendFeedModel.swift in Sources */,
-				187C1326250FCDF7004FD60B /* CommentCell.swift in Sources */,
 				187C1302250286C2004FD60B /* ActivityListService.swift in Sources */,
 				B64AF18F24FD5C100015F2A7 /* OnboardingVC.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
