@@ -245,15 +245,17 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         }
     }
 
-    func clickImageButton1() {
+    func clickImageButton1(index: Int) {
         let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+        vc.activityIdx = self.feedList2[index].activityIdx
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    func clickImageBUtton2() {
+    func clickImageBUtton2(index: Int) {
         let sb = UIStoryboard(name: "ActivityRecommend", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityRecommendVC") as! ActivityRecommendVC
+        vc.activityIdx = self.feedList2[index+1].activityIdx
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -369,6 +371,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
                 cell.selectionStyle = .none
                 cell.delegate = self
+                cell.index = indexPath.row
 
                 if self.feedList2[indexPath.row].image1?.count != 0 {
                     let feed2url1 = URL(string: self.feedList2[indexPath.row].image1!)

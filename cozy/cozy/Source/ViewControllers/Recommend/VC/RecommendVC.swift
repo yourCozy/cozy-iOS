@@ -25,7 +25,7 @@ class RecommendVC: UIViewController {
     }
 
     private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .dismissDetailVC, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .updateBookmark, object: nil)
     }
 
     @objc func reloadData() {
