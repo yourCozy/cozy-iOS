@@ -51,35 +51,17 @@ class LoginVC: UIViewController {
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.fullName, .email]
         let controller = ASAuthorizationController(authorizationRequests: [request])
-
         controller.delegate = self as? ASAuthorizationControllerDelegate
         controller.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
         controller.performRequests()
     }
 
     @objc func clickKakaoSocialLogin(_ sender: UITapGestureRecognizer) {
-
-        // 카카오톡 설치 여부 확인
-        //        if AuthApi.isKakaoTalkLoginAvailable() {
-        //            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-        //                if let error = error {
-        //                    print(error)
-        //                } else {
-        //                    print("loginWithKakaoTalk() success.")
-        //
-        //                    //do something
-        //                    _ = oauthToken
-        //                }
-        //            }
-        //        }
-
-        // 웹 뷰로 카카오톡 로그인
         AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
                 print(error)
             } else {
                 print("loginWithKakaoAccount() success.")
-                // 로그인 성공시 유저 정보 가져오기 - 이메일, 닉네임
                 UserApi.shared.me { (user, error) in
                     if let error = error {
                         print(error)
@@ -124,20 +106,15 @@ class LoginVC: UIViewController {
 
 extension LoginVC: ASAuthorizationControllerDelegate {
 
-    // 성공 후 동작
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            // user id
             let uid = credential.user
 
-            // nickname
             let nickname = "\(credential.fullName?.familyName ?? "코")\(credential.fullName?.givenName ?? "지")"
 
-            // refresh token
             guard let refToken = credential.authorizationCode else { return }
             let refreshTokenStr = String(data: refToken, encoding: .utf8)
 
-            // access token
             let accToken = credential.identityToken!
             let accTokenStr = String(data: accToken, encoding: .utf8)
 
@@ -172,9 +149,8 @@ extension LoginVC: ASAuthorizationControllerDelegate {
         }
     }
 
-    // 실패 후 동작
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print("error")
+        print("apple login error")
     }
 
 }
