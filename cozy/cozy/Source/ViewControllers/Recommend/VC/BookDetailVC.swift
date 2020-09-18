@@ -240,14 +240,14 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         let bookstoreName: String = self.detailList[0].bookstoreName ?? ""
         let nameEncode = self.makeStringKoreanEncoded(bookstoreName)
         let mapURL = URL(string: "nmap://place?lat=\(latitude)&lng=\(longitude)&name=\(nameEncode)&appname=com.cozycorp.yourcozy")!
-        
+
         if UIApplication.shared.canOpenURL(mapURL) {
           UIApplication.shared.open(mapURL)
         } else {
           UIApplication.shared.open(appStoreURL)
         }
     }
-    
+
     func makeStringKoreanEncoded(_ string: String) -> String {
         return string.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? string
     }
