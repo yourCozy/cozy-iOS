@@ -21,23 +21,23 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         setUI()
         setUserDefaults()
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(clickKakaoSocialLogin(_:)))
-        kakaoView.addGestureRecognizer(gesture)
-
-        let authorizationButton = ASAuthorizationAppleIDButton()
-        authorizationButton.addTarget(self, action: #selector(clickAppleLogin), for: .touchUpInside)
-        self.appleStackView.addArrangedSubview(authorizationButton)
     }
 
     func setUserDefaults() {
         UserDefaults.standard.set("", forKey: "token")
         UserDefaults.standard.set("", forKey: "nickname")
+        UserDefaults.standard.set("", forKey: "firstTime")
     }
 
     func setUI() {
         passLoginButton.setPassLoginButton()
         kakaoView.layer.backgroundColor = UIColor.sunshineYellow.cgColor
         kakaoView.layer.cornerRadius = 7
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(clickKakaoSocialLogin(_:)))
+        kakaoView.addGestureRecognizer(gesture)
+        let authorizationButton = ASAuthorizationAppleIDButton()
+        authorizationButton.addTarget(self, action: #selector(clickAppleLogin), for: .touchUpInside)
+        self.appleStackView.addArrangedSubview(authorizationButton)
     }
 
     @IBAction func clickPassLoginButton(_ sender: UIButton) {
