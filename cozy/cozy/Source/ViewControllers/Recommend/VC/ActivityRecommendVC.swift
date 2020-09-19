@@ -68,7 +68,7 @@ class ActivityRecommendVC: UIViewController {
                 // main image 없을 때: 분기처리
                 let image1 = data[0].image1 ?? ""
                 if image1 == "" {
-                    self.mainImgView.image = UIImage(named: "imageNull")
+//                    self.mainImgView.image = UIImage(named: "imageNull")
                 } else {
                     let url = URL(string: image1)
                     self.mainImgView.kf.setImage(with: url)
@@ -78,7 +78,7 @@ class ActivityRecommendVC: UIViewController {
 
                 self.displayDetailList = self.displayDetailList.filter {$0 != ""}
                 if self.displayDetailList.count == 0 {
-                    self.displayDetailList = ["imageNull"]
+//                    self.displayDetailList = ["imageNull"]
                 }
 
                 self.subImgCollectionView.reloadData()
@@ -99,8 +99,8 @@ class ActivityRecommendVC: UIViewController {
 
             case .requestErr:
                 print("Request error")
-                self.mainImgView.image = UIImage(named: "imageNull")
-                self.displayDetailList = ["imageNull"]
+//                self.mainImgView.image = UIImage(named: "imageNull")
+//                self.displayDetailList = ["imageNull"]
                 // 텍스트 데이터 삽입
                 self.lblHashtag.text = "미정"
                 self.lblTitle.text = "미정"
