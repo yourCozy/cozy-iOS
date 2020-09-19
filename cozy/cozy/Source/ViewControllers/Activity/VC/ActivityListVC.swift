@@ -53,7 +53,7 @@ class ActivityListVC: UIViewController {
                         if data.dday ?? -1 < 0 {
                             continue
                         } else {
-                            self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName ?? "미정", activityName: data.activityName ?? "미정", shortIntro: data.shortIntro ?? "미정", price: data.price ?? 0, image1: data.image1 ?? "", dday: data.dday ?? 0))
+                            self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName ?? "미정", activityName: data.activityName ?? "미정", price: data.price ?? 0, image1: data.image1 ?? "", dday: data.dday ?? 0))
                         }
                     }
 
