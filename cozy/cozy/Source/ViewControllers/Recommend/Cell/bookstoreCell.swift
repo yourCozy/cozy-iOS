@@ -17,6 +17,7 @@ class bookstoreCell: UITableViewCell {
     weak var delegate: bookstoreDelegate?
     var index: Int = 0
 
+    @IBOutlet weak var readyLabel: UILabel!
     @IBOutlet weak var bookstoreImageView: UIImageView!
 
     @IBOutlet weak var tag1: UIButton!

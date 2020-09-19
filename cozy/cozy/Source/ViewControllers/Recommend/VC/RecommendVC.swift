@@ -85,6 +85,7 @@ class RecommendVC: UIViewController {
                 for data in data {
                     self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", shortIntro1: data.shortIntro1 ?? "", shortIntro2: data.shortIntro2 ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "코지와", hashtag2: data.hashtag2 ?? "함께하는", hashtag3: data.hashtag3 ?? "책방", checked: data.checked ?? 0))
                 }
+                print(data)
                 self.tableView.reloadData()
             case .requestErr:
                 print("Request error")
@@ -218,6 +219,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             if self.recommendList[indexPath.row].mainImg?.count != 0 {
                 let url = URL(string: self.recommendList[indexPath.row].mainImg!)
                 cell.bookstoreImageView.kf.setImage(with: url)
+                cell.readyLabel.isHidden = true
             }
 
             cell.tag1.setTitle("    #\(self.recommendList[indexPath.row].hashtag1 ?? "")    ", for: .normal)

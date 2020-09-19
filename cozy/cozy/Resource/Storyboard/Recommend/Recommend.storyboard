@@ -21,7 +21,7 @@
         <!--추천-->
         <scene sceneID="PdP-ji-3rF">
             <objects>
-                <viewController id="zWb-Pl-UVL" customClass="RecommendVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecommendVC" id="zWb-Pl-UVL" customClass="RecommendVC" customModule="cozy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1T7-x3-U0E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,7 +64,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pqc-OR-odi">
                                                     <rect key="frame" x="24" y="10" width="366" height="326"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="326" id="s7B-Vv-cPK"/>
                                                     </constraints>
@@ -112,10 +112,17 @@
                                                         <action selector="clickBookmarkButton:" destination="Rt3-y6-dkZ" eventType="touchUpInside" id="gAR-u0-te6"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미지 준비중입니다 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2E-DW-5mB">
+                                                    <rect key="frame" x="123" y="161" width="168.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="18"/>
+                                                    <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BkU-4S-5C2" firstAttribute="leading" secondItem="VUt-f6-Epe" secondAttribute="trailing" constant="4" id="2EI-IC-v3w"/>
                                                 <constraint firstItem="pqc-OR-odi" firstAttribute="leading" secondItem="5qE-eP-WG3" secondAttribute="leading" constant="24" id="6wB-5F-ECr"/>
+                                                <constraint firstItem="v2E-DW-5mB" firstAttribute="centerY" secondItem="5qE-eP-WG3" secondAttribute="centerY" id="6wI-0a-dCi"/>
                                                 <constraint firstItem="ZY1-BX-4T8" firstAttribute="top" secondItem="tmx-Zi-X4t" secondAttribute="bottom" constant="7" id="8Hm-0h-V80"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="XN2-Om-Zc5" secondAttribute="bottom" constant="22" id="Dho-d4-zu5"/>
                                                 <constraint firstItem="Eg4-UT-9HP" firstAttribute="top" secondItem="5qE-eP-WG3" secondAttribute="topMargin" constant="22" id="JFy-5e-XpH"/>
@@ -126,6 +133,7 @@
                                                 <constraint firstItem="VUt-f6-Epe" firstAttribute="top" secondItem="5qE-eP-WG3" secondAttribute="topMargin" constant="22" id="NbL-Bd-YzB"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tmx-Zi-X4t" secondAttribute="trailing" constant="44" id="O3W-2A-9K3"/>
                                                 <constraint firstItem="XN2-Om-Zc5" firstAttribute="leading" secondItem="5qE-eP-WG3" secondAttribute="leadingMargin" constant="20" id="Sir-fY-vCA"/>
+                                                <constraint firstItem="v2E-DW-5mB" firstAttribute="centerX" secondItem="5qE-eP-WG3" secondAttribute="centerX" id="V9V-iA-2J8"/>
                                                 <constraint firstItem="Ikb-Mh-zUE" firstAttribute="top" secondItem="5qE-eP-WG3" secondAttribute="topMargin" constant="22" id="YZY-m9-dbN"/>
                                                 <constraint firstItem="XN2-Om-Zc5" firstAttribute="top" secondItem="Zey-cz-nEk" secondAttribute="bottom" constant="6" id="cyi-ZH-C9v"/>
                                                 <constraint firstItem="pqc-OR-odi" firstAttribute="top" secondItem="5qE-eP-WG3" secondAttribute="top" constant="10" id="dAF-sD-dFI"/>
@@ -142,6 +150,7 @@
                                             <outlet property="bookstoreImageView" destination="pqc-OR-odi" id="7s1-4i-KOb"/>
                                             <outlet property="descriptionLabel" destination="tmx-Zi-X4t" id="dfW-Rk-W1Q"/>
                                             <outlet property="nameLabel" destination="Zey-cz-nEk" id="Iu4-ng-iSj"/>
+                                            <outlet property="readyLabel" destination="v2E-DW-5mB" id="Ygy-PJ-igI"/>
                                             <outlet property="tag1" destination="Eg4-UT-9HP" id="Jmr-0p-JfN"/>
                                             <outlet property="tag2" destination="VUt-f6-Epe" id="OaY-VE-vE3"/>
                                             <outlet property="tag3" destination="BkU-4S-5C2" id="2mU-AW-TQU"/>

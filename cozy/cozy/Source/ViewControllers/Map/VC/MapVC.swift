@@ -117,7 +117,7 @@ class MapVC: UIViewController {
                 guard let data = data as? [MapListData] else { return }
                 self.mapList.removeAll()
                 for data in data {
-                    self.mapList.append(MapListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "코지와", hashtag2: data.hashtag2 ?? "함께하는", hashtag3: data.hashtag3 ?? "책방", mainImg: data.hashtag3 ?? "", checked: data.checked ?? 0))
+                    self.mapList.append(MapListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "코지와", hashtag2: data.hashtag2 ?? "함께하는", hashtag3: data.hashtag3 ?? "책방", mainImg: data.mainImg ?? "", checked: data.checked ?? 0))
                 }
                 self.mapTableView.reloadData()
                 self.readyLabel.isHidden = true
@@ -265,8 +265,9 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
             cell.delegate = self
 
             if self.mapList[indexPath.row].mainImg?.count != 0 {
-                let imgurl = URL(string: self.mapList[indexPath.row].mainImg!)
+                let imgurl = URL(string: self.mapList[indexPath.row].mainImg ?? "")
                 cell.bookStoreImageView.kf.setImage(with: imgurl)
+                cell.readyLabel.isHidden = true
             }
 
             cell.nameLabel.text = self.mapList[indexPath.row].bookstoreName

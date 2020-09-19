@@ -17,6 +17,7 @@ class BookListCell: UITableViewCell {
     weak var delegate: BookListCellDelegate?
     var index: Int = 0
 
+    @IBOutlet weak var readyLabel: UILabel!
     @IBOutlet weak var wholeView: UIView!
     @IBOutlet weak var bookStoreImageView: UIImageView!
 

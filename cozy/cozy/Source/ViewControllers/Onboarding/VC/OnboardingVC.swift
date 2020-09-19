@@ -82,15 +82,11 @@ class OnboardingVC: UIViewController {
     }
 
     @IBAction func btnStart(_ sender: UIButton) {
-        print("buttonTitles", buttonTitles)
-
         postTasteData()
-
-//        view 전환
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "MainTapVC") as! MainTabVC
-
-        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 
     func postTasteData() {

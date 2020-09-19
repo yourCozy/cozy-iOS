@@ -32,7 +32,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iEH-A7-hLU">
                                 <rect key="frame" x="0.0" y="0.0" width="272" height="216"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="gOu-1z-r7d"/>
                                 </constraints>
@@ -78,6 +78,12 @@
                                 <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="12"/>
                                 <state key="normal" title="#tag3"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미지 준비중입니다 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFw-Iy-WSb">
+                                <rect key="frame" x="61.5" y="99" width="149" height="18"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="16"/>
+                                <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -90,7 +96,9 @@
                             <constraint firstItem="vKk-yC-HgA" firstAttribute="leading" secondItem="iEH-A7-hLU" secondAttribute="trailing" constant="-32" id="YRc-4s-DHI"/>
                             <constraint firstItem="iEH-A7-hLU" firstAttribute="leading" secondItem="yAt-Ae-TzM" secondAttribute="leading" id="c5L-ir-jLy"/>
                             <constraint firstItem="iEH-A7-hLU" firstAttribute="top" secondItem="yAt-Ae-TzM" secondAttribute="top" id="d7u-h4-wAP"/>
+                            <constraint firstItem="HFw-Iy-WSb" firstAttribute="centerX" secondItem="yAt-Ae-TzM" secondAttribute="centerX" id="ifj-fB-KFE"/>
                             <constraint firstItem="O3E-qI-euO" firstAttribute="leading" secondItem="yAt-Ae-TzM" secondAttribute="leading" constant="16" id="mOr-uv-xYO"/>
+                            <constraint firstItem="HFw-Iy-WSb" firstAttribute="top" secondItem="yAt-Ae-TzM" secondAttribute="top" constant="99" id="mPW-1Y-sZC"/>
                             <constraint firstItem="2UQ-4N-SvG" firstAttribute="leading" secondItem="yAt-Ae-TzM" secondAttribute="leading" constant="16" id="mfn-Fr-1bF"/>
                             <constraint firstItem="85d-ap-7oT" firstAttribute="centerY" secondItem="Cwj-PV-e0o" secondAttribute="centerY" id="n0y-2p-n6V"/>
                             <constraint firstItem="zox-yw-mJ4" firstAttribute="top" secondItem="iEH-A7-hLU" secondAttribute="bottom" constant="18" id="ofG-7r-ljw"/>
@@ -114,6 +122,7 @@
                 <outlet property="bookMarkButton" destination="vKk-yC-HgA" id="JrR-cx-C7V"/>
                 <outlet property="bookStoreImageView" destination="iEH-A7-hLU" id="HeC-m5-YKz"/>
                 <outlet property="nameLabel" destination="zox-yw-mJ4" id="3qR-AE-m0z"/>
+                <outlet property="readyLabel" destination="HFw-Iy-WSb" id="e1g-XK-jOR"/>
                 <outlet property="tag1" destination="2UQ-4N-SvG" id="635-IB-BgJ"/>
                 <outlet property="tag2" destination="Cwj-PV-e0o" id="Eb7-6y-bsc"/>
                 <outlet property="tag3" destination="85d-ap-7oT" id="DTL-86-KKw"/>
