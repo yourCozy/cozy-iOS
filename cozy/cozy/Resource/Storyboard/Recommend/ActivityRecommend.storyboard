@@ -267,7 +267,7 @@
                     <navigationItem key="navigationItem" id="yuh-to-Qr8"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="btnApply" destination="1sA-fg-hhu" id="dCM-sw-1Lf"/>
+                        <outlet property="btnApply" destination="1sA-fg-hhu" id="6L1-tQ-Et5"/>
                         <outlet property="hashtagView" destination="6bk-mQ-03R" id="KlC-Xz-Vzo"/>
                         <outlet property="lblActivityIntroduction" destination="NuN-Kz-aCx" id="EqE-fF-LTR"/>
                         <outlet property="lblDday" destination="r1b-FY-SYC" id="Lyz-Zt-OrR"/>
