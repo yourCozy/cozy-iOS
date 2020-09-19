@@ -45,7 +45,7 @@ class ActivityTableViewCell: UITableViewCell {
         print(image)
 
         if image == "" {
-            activityCellImageView.image = UIImage(named: "imageNull")
+//            activityCellImageView.image = UIImage(named: "imageNull")
         } else {
             // load image, using Kingfisher
             let url = URL(string: image)
