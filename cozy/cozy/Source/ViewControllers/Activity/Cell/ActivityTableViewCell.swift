@@ -42,8 +42,6 @@ class ActivityTableViewCell: UITableViewCell {
 
         self.lblDday.text = "D-" + String(lblDday)
 
-        print(image)
-
         if image == "" {
 //            activityCellImageView.image = UIImage(named: "imageNull")
         } else {

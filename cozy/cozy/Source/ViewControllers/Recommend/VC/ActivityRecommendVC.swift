@@ -53,7 +53,7 @@ class ActivityRecommendVC: UIViewController {
     }
 
     private func getActivityDetailData() {
-        print("activityIdx@@@@ : ", activityIdx)
+
         ActivityDetailService.shared.getActivityDetailData(activityIdx: activityIdx) { NetworkResult in
             switch NetworkResult {
             case .success(let data):
@@ -73,6 +73,8 @@ class ActivityRecommendVC: UIViewController {
                 self.displayDetailList = [data[0].image2 ?? "", data[0].image3 ?? "", data[0].image4 ?? "", data[0].image5 ?? "", data[0].image6 ?? "", data[0].image7 ?? "", data[0].image8 ?? "", data[0].image9 ?? "", data[0].image10 ?? ""]
 
                 self.displayDetailList = self.displayDetailList.filter {$0 == ""}
+                self.displayDetailList.append(image1)
+
                 if self.displayDetailList.count == 0 {
 //                    self.displayDetailList = ["imageNull"]
                 }
