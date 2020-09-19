@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="878"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXx-Cm-M1i">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="917"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="822"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RGt-Ah-zCi">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -141,30 +141,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuN-Kz-aCx">
-                                                <rect key="frame" x="24" y="765" width="366" height="122"/>
-                                                <string key="text">홍철책방에 다시 찾아온 감각적인 전시를 소개합니
-다. 올해로 벌써 두번째로 전시를 함께 진행하게된 주
-목받는 디자이너 무라카미 다카시의 개인전으로 평
-소 저희 책방 능히 넣는 싹이 청춘의 하는 생생하며, 
-못할 아니다. 품에 것이 밥을 우리의 그러므로 아름답
-고 힘차게 광야에서 것은 뿐이다.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line375X8Lightgray" translatesAutoresizingMaskIntoConstraints="NO" id="uKi-n1-ASH">
-                                                <rect key="frame" x="0.0" y="697" width="414" height="8"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="8" id="emQ-z9-MG8"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="활동소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puf-wM-PXT">
-                                                <rect key="frame" x="24" y="733" width="58.5" height="18"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBb-Lz-fOD">
                                                 <rect key="frame" x="24" y="410" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -190,26 +166,41 @@
                                                     <constraint firstItem="cXe-tG-Bio" firstAttribute="top" secondItem="6bk-mQ-03R" secondAttribute="top" constant="5" id="yqh-2l-IZl"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sA-fg-hhu">
-                                                <rect key="frame" x="24" y="616" width="366" height="48"/>
-                                                <color key="backgroundColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuN-Kz-aCx">
+                                                <rect key="frame" x="24" y="670" width="366" height="122"/>
+                                                <string key="text">홍철책방에 다시 찾아온 감각적인 전시를 소개합니
+다. 올해로 벌써 두번째로 전시를 함께 진행하게된 주
+목받는 디자이너 무라카미 다카시의 개인전으로 평
+소 저희 책방 능히 넣는 싹이 청춘의 하는 생생하며, 
+못할 아니다. 품에 것이 밥을 우리의 그러므로 아름답
+고 힘차게 광야에서 것은 뿐이다.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line375X8Lightgray" translatesAutoresizingMaskIntoConstraints="NO" id="uKi-n1-ASH">
+                                                <rect key="frame" x="0.0" y="602" width="414" height="8"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="HvA-s1-pp3"/>
-                                                    <constraint firstAttribute="height" constant="48" id="Odd-NC-9vt"/>
+                                                    <constraint firstAttribute="height" constant="8" id="emQ-z9-MG8"/>
                                                 </constraints>
-                                                <state key="normal" title="신청하기">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="활동소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puf-wM-PXT">
+                                                <rect key="frame" x="24" y="638" width="58.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="puf-wM-PXT" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="0W8-hx-sMe"/>
                                             <constraint firstItem="9hJ-hL-hXx" firstAttribute="centerY" secondItem="CDt-1G-I2n" secondAttribute="centerY" id="1A7-CW-8Jz"/>
                                             <constraint firstItem="pBb-Lz-fOD" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="1lB-1R-bRM"/>
+                                            <constraint firstAttribute="bottom" secondItem="NuN-Kz-aCx" secondAttribute="bottom" constant="30" id="3Vm-W4-SXA"/>
                                             <constraint firstItem="9il-n9-3Ez" firstAttribute="centerY" secondItem="LeW-Fk-Tpx" secondAttribute="centerY" id="4oq-29-L5m"/>
                                             <constraint firstItem="6CF-xq-qUg" firstAttribute="leading" secondItem="pBb-Lz-fOD" secondAttribute="trailing" constant="12" id="7tW-X5-H0Q"/>
                                             <constraint firstItem="CDt-1G-I2n" firstAttribute="top" secondItem="6CF-xq-qUg" secondAttribute="bottom" constant="23" id="8zL-yE-tbT"/>
+                                            <constraint firstItem="uKi-n1-ASH" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" id="A9X-Qc-iR4"/>
                                             <constraint firstItem="XRk-5L-Nv3" firstAttribute="leading" secondItem="gKO-gn-yls" secondAttribute="trailing" constant="34" id="ArK-LD-0BA"/>
                                             <constraint firstItem="gKO-gn-yls" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="BQI-WK-x3i"/>
                                             <constraint firstItem="Hig-vk-6fy" firstAttribute="top" secondItem="CDt-1G-I2n" secondAttribute="bottom" constant="14" id="CK8-1q-25b"/>
@@ -220,25 +211,20 @@
                                             <constraint firstItem="pBb-Lz-fOD" firstAttribute="top" secondItem="6bk-mQ-03R" secondAttribute="bottom" constant="25" id="Jvd-Wk-cX5"/>
                                             <constraint firstAttribute="trailing" secondItem="NuN-Kz-aCx" secondAttribute="trailing" constant="24" id="KwM-px-dLU"/>
                                             <constraint firstItem="puf-wM-PXT" firstAttribute="top" secondItem="uKi-n1-ASH" secondAttribute="bottom" constant="28" id="NhY-VL-fFl"/>
-                                            <constraint firstAttribute="trailing" secondItem="1sA-fg-hhu" secondAttribute="trailing" constant="24" id="Npf-Mx-vUS"/>
                                             <constraint firstItem="h8a-Iw-USE" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="Rla-hj-Hcb"/>
                                             <constraint firstItem="Hig-vk-6fy" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="SqV-4j-Q1Y"/>
+                                            <constraint firstItem="uKi-n1-ASH" firstAttribute="top" secondItem="XRk-5L-Nv3" secondAttribute="bottom" constant="20" id="SxP-WK-h2R"/>
                                             <constraint firstAttribute="trailing" secondItem="uKi-n1-ASH" secondAttribute="trailing" id="Xst-NT-ZDj"/>
                                             <constraint firstItem="LeW-Fk-Tpx" firstAttribute="top" secondItem="Hig-vk-6fy" secondAttribute="bottom" constant="14" id="YUY-4w-dps"/>
                                             <constraint firstItem="Cu9-fX-lIY" firstAttribute="centerY" secondItem="Hig-vk-6fy" secondAttribute="centerY" id="Yeh-xX-oQE"/>
-                                            <constraint firstItem="1sA-fg-hhu" firstAttribute="top" secondItem="XRk-5L-Nv3" secondAttribute="bottom" constant="34" id="Yih-lZ-o8p"/>
                                             <constraint firstItem="6CF-xq-qUg" firstAttribute="centerY" secondItem="pBb-Lz-fOD" secondAttribute="centerY" id="bW5-Pc-XB1"/>
                                             <constraint firstAttribute="trailing" secondItem="h8a-Iw-USE" secondAttribute="trailing" id="fiV-A2-5c8"/>
-                                            <constraint firstAttribute="bottom" secondItem="NuN-Kz-aCx" secondAttribute="bottom" constant="30" id="grn-3h-YBq"/>
                                             <constraint firstItem="9il-n9-3Ez" firstAttribute="leading" secondItem="LeW-Fk-Tpx" secondAttribute="trailing" constant="20" id="kPh-Nl-4TS"/>
                                             <constraint firstItem="gKO-gn-yls" firstAttribute="top" secondItem="LeW-Fk-Tpx" secondAttribute="bottom" constant="14" id="kd0-lq-oSn"/>
-                                            <constraint firstItem="1sA-fg-hhu" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="kkz-AO-7AZ"/>
                                             <constraint firstAttribute="trailing" secondItem="RGt-Ah-zCi" secondAttribute="trailing" id="l37-lg-SVH"/>
                                             <constraint firstItem="RGt-Ah-zCi" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" id="oTy-CO-CFV"/>
                                             <constraint firstItem="Cu9-fX-lIY" firstAttribute="leading" secondItem="Hig-vk-6fy" secondAttribute="trailing" constant="20" id="og9-7o-QYP"/>
-                                            <constraint firstItem="uKi-n1-ASH" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" id="pZy-fq-gCj"/>
                                             <constraint firstItem="h8a-Iw-USE" firstAttribute="top" secondItem="RGt-Ah-zCi" secondAttribute="bottom" constant="8" id="qxV-9L-3Rg"/>
-                                            <constraint firstItem="uKi-n1-ASH" firstAttribute="top" secondItem="1sA-fg-hhu" secondAttribute="bottom" constant="33" id="r0c-D9-cYh"/>
                                             <constraint firstItem="NuN-Kz-aCx" firstAttribute="top" secondItem="puf-wM-PXT" secondAttribute="bottom" constant="14" id="syL-gT-TMo"/>
                                             <constraint firstItem="CDt-1G-I2n" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="toa-qs-93o"/>
                                             <constraint firstItem="6bk-mQ-03R" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="upo-Cx-3mV"/>
@@ -269,7 +255,6 @@
                     <navigationItem key="navigationItem" id="yuh-to-Qr8"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="btnApply" destination="1sA-fg-hhu" id="6L1-tQ-Et5"/>
                         <outlet property="hashtagView" destination="6bk-mQ-03R" id="KlC-Xz-Vzo"/>
                         <outlet property="lblActivityIntroduction" destination="NuN-Kz-aCx" id="EqE-fF-LTR"/>
                         <outlet property="lblDday" destination="r1b-FY-SYC" id="Lyz-Zt-OrR"/>
