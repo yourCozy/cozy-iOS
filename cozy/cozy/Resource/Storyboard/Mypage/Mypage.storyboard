@@ -543,11 +543,19 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 책방이 없습니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hZ-KC-6mP">
+                                <rect key="frame" x="144" y="440.5" width="126" height="15.5"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="7hZ-KC-6mP" firstAttribute="centerX" secondItem="aSV-1p-Hxx" secondAttribute="centerX" id="184-4V-x9b"/>
                             <constraint firstItem="hbp-6N-mG2" firstAttribute="trailing" secondItem="F8U-gK-4iw" secondAttribute="trailing" id="D9x-qy-wV2"/>
                             <constraint firstItem="F8U-gK-4iw" firstAttribute="top" secondItem="hbp-6N-mG2" secondAttribute="top" id="FWk-2f-4nG"/>
+                            <constraint firstItem="7hZ-KC-6mP" firstAttribute="centerY" secondItem="aSV-1p-Hxx" secondAttribute="centerY" id="XzY-wQ-y6x"/>
                             <constraint firstItem="hbp-6N-mG2" firstAttribute="bottom" secondItem="F8U-gK-4iw" secondAttribute="bottom" id="afn-NI-CV8"/>
                             <constraint firstItem="F8U-gK-4iw" firstAttribute="leading" secondItem="hbp-6N-mG2" secondAttribute="leading" id="fQh-og-GSV"/>
                         </constraints>
@@ -556,6 +564,7 @@
                     <navigationItem key="navigationItem" id="o4F-np-GZh"/>
                     <connections>
                         <outlet property="interestTableView" destination="F8U-gK-4iw" id="OGP-Hg-AV6"/>
+                        <outlet property="readyLabel" destination="7hZ-KC-6mP" id="8yC-G6-fKG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzm-Fq-Izk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
