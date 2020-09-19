@@ -31,8 +31,6 @@ class ActivityRecommendVC: UIViewController {
     @IBOutlet weak var lblNumOfPeople: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
 
-    @IBOutlet weak var btnApply: UIButton!
-
     @IBOutlet weak var lblActivityIntroduction: UILabel!
 
     // outlet collection
@@ -42,7 +40,6 @@ class ActivityRecommendVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        btnApply.isHidden = true
         setNav()
 
         subImgCollectionView.delegate = self
@@ -52,7 +49,6 @@ class ActivityRecommendVC: UIViewController {
 
         setHashtagStyle()
         setLabelStyle()
-        setButtonStyle()
 
     }
 
@@ -76,7 +72,7 @@ class ActivityRecommendVC: UIViewController {
 
                 self.displayDetailList = [data[0].image2 ?? "", data[0].image3 ?? "", data[0].image4 ?? "", data[0].image5 ?? "", data[0].image6 ?? "", data[0].image7 ?? "", data[0].image8 ?? "", data[0].image9 ?? "", data[0].image10 ?? ""]
 
-                self.displayDetailList = self.displayDetailList.filter {$0 != ""}
+                self.displayDetailList = self.displayDetailList.filter {$0 == ""}
                 if self.displayDetailList.count == 0 {
 //                    self.displayDetailList = ["imageNull"]
                 }
@@ -89,7 +85,7 @@ class ActivityRecommendVC: UIViewController {
                 self.lblDday.text = "D-" + String(data[0].dday ?? 0)
                 self.lblDisplayPeriod.text = data[0].period
                 self.lblDeadline.text = data[0].deadline
-                self.lblNumOfPeople.text = String(data[0].limitation ?? 0)
+                self.lblNumOfPeople.text = String(data[0].limitation ?? 0) + "명"
                 if data[0].price == 0 {
                     self.lblPrice.text = "무료"
                 } else {
@@ -163,11 +159,6 @@ class ActivityRecommendVC: UIViewController {
 
         lblActivityIntroduction.font = UIFont(name: "NanumSquareRoundB", size: 16)
         lblActivityIntroduction.textColor = UIColor.brownishGrey
-    }
-
-    func setButtonStyle() {
-        btnApply.layer.cornerRadius = 20
-        btnApply.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 16)
     }
 
 }
