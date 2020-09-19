@@ -42,6 +42,7 @@ class ActivityRecommendVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        btnApply.isHidden = true
         setNav()
 
         subImgCollectionView.delegate = self

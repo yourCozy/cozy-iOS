@@ -11,6 +11,8 @@ import Alamofire
 
 class ActivityListVC: UIViewController {
 
+    @IBOutlet weak var lblNoData: UILabel!
+
     var categoryIdx: Int = 0
     private var activityList: [ActivityListData] = []
 
@@ -43,6 +45,8 @@ class ActivityListVC: UIViewController {
                 case .success(let data):
                     guard let data = data as? [ActivityListData] else {return print("activityList error")}
 
+                    self.lblNoData.isHidden = true
+
                     self.activityList.removeAll()
                     for data in data {
                         // D-day 지난 데이터 제거
@@ -58,7 +62,8 @@ class ActivityListVC: UIViewController {
                     }
 
                 case .requestErr:
-                    print("Request error@@")
+                    print("Request error")
+                    self.lblNoData.isHidden = false
                 case .pathErr:
                     print("path error")
                 case .serverErr:
