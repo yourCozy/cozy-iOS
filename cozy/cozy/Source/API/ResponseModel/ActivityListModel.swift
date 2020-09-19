@@ -35,16 +35,14 @@ struct ActivityListData: Codable {
     var activityIdx: Int
     var bookstoreName: String?
     var activityName: String?
-    var shortIntro: String?
     var price: Int?
     var image1: String?
     var dday: Int?
 
-    init(activityIdx: Int, bookstoreName: String, activityName: String, shortIntro: String, price: Int, image1: String, dday: Int) {
+    init(activityIdx: Int, bookstoreName: String, activityName: String, price: Int, image1: String, dday: Int) {
         self.activityIdx = activityIdx
         self.bookstoreName = bookstoreName
         self.activityName = activityName
-        self.shortIntro = shortIntro
         self.price = price
         self.image1 = image1
         self.dday = dday
