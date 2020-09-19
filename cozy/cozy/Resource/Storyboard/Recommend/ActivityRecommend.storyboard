@@ -31,11 +31,17 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RGt-Ah-zCi">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="mYp-xX-vPN"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미지 준비중입니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsL-HZ-K1B">
+                                                <rect key="frame" x="128.5" y="115" width="157.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="18"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="h8a-Iw-USE">
                                                 <rect key="frame" x="24" y="258" width="390" height="80"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,19 +64,28 @@
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OhV-TP-irJ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="122" height="79"/>
-                                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                                 </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미지 준비중입니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZO-Yp-R39">
+                                                                    <rect key="frame" x="17.5" y="34" width="87.5" height="11.5"/>
+                                                                    <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="10"/>
+                                                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="OhV-TP-irJ" firstAttribute="leading" secondItem="1SA-8w-uHy" secondAttribute="leading" id="4gO-vi-baT"/>
                                                                 <constraint firstItem="OhV-TP-irJ" firstAttribute="top" secondItem="1SA-8w-uHy" secondAttribute="top" id="Cb8-X5-Zyn"/>
+                                                                <constraint firstItem="YZO-Yp-R39" firstAttribute="centerX" secondItem="OhV-TP-irJ" secondAttribute="centerX" id="Px1-Ju-jua"/>
                                                                 <constraint firstAttribute="trailing" secondItem="OhV-TP-irJ" secondAttribute="trailing" id="Rgo-0v-rmr"/>
                                                                 <constraint firstAttribute="bottom" secondItem="OhV-TP-irJ" secondAttribute="bottom" id="UUT-Kd-eL2"/>
+                                                                <constraint firstItem="YZO-Yp-R39" firstAttribute="centerY" secondItem="OhV-TP-irJ" secondAttribute="centerY" id="kX5-a5-P5e"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="122" height="79"/>
                                                         <connections>
                                                             <outlet property="imgView" destination="OhV-TP-irJ" id="npc-Cw-h4R"/>
+                                                            <outlet property="lblNoImage" destination="YZO-Yp-R39" id="90K-MW-8B0"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -210,6 +225,7 @@
                                             <constraint firstItem="6bk-mQ-03R" firstAttribute="top" secondItem="h8a-Iw-USE" secondAttribute="bottom" constant="25" id="IQ5-ss-W1e"/>
                                             <constraint firstItem="pBb-Lz-fOD" firstAttribute="top" secondItem="6bk-mQ-03R" secondAttribute="bottom" constant="25" id="Jvd-Wk-cX5"/>
                                             <constraint firstAttribute="trailing" secondItem="NuN-Kz-aCx" secondAttribute="trailing" constant="24" id="KwM-px-dLU"/>
+                                            <constraint firstItem="RsL-HZ-K1B" firstAttribute="centerY" secondItem="RGt-Ah-zCi" secondAttribute="centerY" id="M7h-YN-Dno"/>
                                             <constraint firstItem="puf-wM-PXT" firstAttribute="top" secondItem="uKi-n1-ASH" secondAttribute="bottom" constant="28" id="NhY-VL-fFl"/>
                                             <constraint firstItem="h8a-Iw-USE" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="Rla-hj-Hcb"/>
                                             <constraint firstItem="Hig-vk-6fy" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="SqV-4j-Q1Y"/>
@@ -218,6 +234,7 @@
                                             <constraint firstItem="LeW-Fk-Tpx" firstAttribute="top" secondItem="Hig-vk-6fy" secondAttribute="bottom" constant="14" id="YUY-4w-dps"/>
                                             <constraint firstItem="Cu9-fX-lIY" firstAttribute="centerY" secondItem="Hig-vk-6fy" secondAttribute="centerY" id="Yeh-xX-oQE"/>
                                             <constraint firstItem="6CF-xq-qUg" firstAttribute="centerY" secondItem="pBb-Lz-fOD" secondAttribute="centerY" id="bW5-Pc-XB1"/>
+                                            <constraint firstItem="RsL-HZ-K1B" firstAttribute="centerX" secondItem="RGt-Ah-zCi" secondAttribute="centerX" id="fdE-x5-Njs"/>
                                             <constraint firstAttribute="trailing" secondItem="h8a-Iw-USE" secondAttribute="trailing" id="fiV-A2-5c8"/>
                                             <constraint firstItem="9il-n9-3Ez" firstAttribute="leading" secondItem="LeW-Fk-Tpx" secondAttribute="trailing" constant="20" id="kPh-Nl-4TS"/>
                                             <constraint firstItem="gKO-gn-yls" firstAttribute="top" secondItem="LeW-Fk-Tpx" secondAttribute="bottom" constant="14" id="kd0-lq-oSn"/>
@@ -261,6 +278,7 @@
                         <outlet property="lblDeadline" destination="Cu9-fX-lIY" id="SOA-Vb-twO"/>
                         <outlet property="lblDisplayPeriod" destination="9hJ-hL-hXx" id="zuO-GE-Xwg"/>
                         <outlet property="lblHashtag" destination="cXe-tG-Bio" id="lng-oz-LKh"/>
+                        <outlet property="lblNoImage" destination="RsL-HZ-K1B" id="N28-NB-N2V"/>
                         <outlet property="lblNumOfPeople" destination="9il-n9-3Ez" id="wtN-UA-ErT"/>
                         <outlet property="lblPrice" destination="XRk-5L-Nv3" id="0s8-YZ-suy"/>
                         <outlet property="lblTitle" destination="pBb-Lz-fOD" id="pA0-yN-KYo"/>
@@ -303,6 +321,12 @@
         <image name="line375X8Lightgray" width="375" height="8"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

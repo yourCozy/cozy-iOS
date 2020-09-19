@@ -11,6 +11,8 @@ import UIKit
 class ActivityTableViewCell: UITableViewCell {
     static let identifier: String = "activityTableViewCell"
 
+    @IBOutlet weak var lblNoImage: UILabel!
+
     @IBOutlet weak var lblDday: UILabel!
     @IBOutlet weak var activityCellImageView: UIImageView!
     @IBOutlet weak var activityCellLabel: UILabel!
@@ -43,8 +45,10 @@ class ActivityTableViewCell: UITableViewCell {
         self.lblDday.text = "D-" + String(lblDday)
 
         if image == "" {
+            lblNoImage.isHidden = false
 //            activityCellImageView.image = UIImage(named: "imageNull")
         } else {
+            lblNoImage.isHidden = true
             // load image, using Kingfisher
             let url = URL(string: image)
             self.activityCellImageView.kf.setImage(with: url)

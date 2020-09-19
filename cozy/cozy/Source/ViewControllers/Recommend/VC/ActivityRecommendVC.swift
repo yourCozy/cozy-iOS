@@ -16,6 +16,9 @@ class ActivityRecommendVC: UIViewController {
     private var displayDetailList: [String] = []
 
     @IBOutlet weak var mainImgView: UIImageView!
+
+    @IBOutlet weak var lblNoImage: UILabel!
+
     @IBOutlet weak var subImgCollectionView: UICollectionView!
 
     @IBOutlet weak var lblHashtag: UILabel!
@@ -64,8 +67,10 @@ class ActivityRecommendVC: UIViewController {
                 // main image 없을 때: 분기처리
                 let image1 = data[0].image1 ?? ""
                 if image1 == "" {
+                    self.lblNoImage.isHidden = false
 //                    self.mainImgView.image = UIImage(named: "imageNull")
                 } else {
+                    self.lblNoImage.isHidden = true
                     let url = URL(string: image1)
                     self.mainImgView.kf.setImage(with: url)
                 }
