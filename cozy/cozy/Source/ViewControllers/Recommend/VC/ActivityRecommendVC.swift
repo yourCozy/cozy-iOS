@@ -72,7 +72,8 @@ class ActivityRecommendVC: UIViewController {
 
                 self.displayDetailList = [data[0].image2 ?? "", data[0].image3 ?? "", data[0].image4 ?? "", data[0].image5 ?? "", data[0].image6 ?? "", data[0].image7 ?? "", data[0].image8 ?? "", data[0].image9 ?? "", data[0].image10 ?? ""]
 
-                self.displayDetailList = self.displayDetailList.filter {$0 == ""}
+                self.displayDetailList = self.displayDetailList.filter {$0 != ""}
+
                 self.displayDetailList.append(image1)
 
                 if self.displayDetailList.count == 0 {
@@ -96,7 +97,7 @@ class ActivityRecommendVC: UIViewController {
                 self.lblActivityIntroduction.text = data[0].introduction ?? ""
 
             case .requestErr:
-                print("Request error")
+//                print("Request error")
 //                self.mainImgView.image = UIImage(named: "imageNull")
 //                self.displayDetailList = ["imageNull"]
                 // 텍스트 데이터 삽입
@@ -180,7 +181,8 @@ extension ActivityRecommendVC: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        mainImgView.image = UIImage(named: displayDetailList[indexPath.row].detailImgName)
+        let url = URL(string: displayDetailList[indexPath.row])
+        self.mainImgView.kf.setImage(with: url)
     }
 }
 

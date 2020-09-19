@@ -62,7 +62,7 @@ class ActivityListVC: UIViewController {
                     }
 
                 case .requestErr:
-                    print("Request error")
+//                    print("Request error")
                     self.lblNoData.isHidden = false
                 case .pathErr:
                     print("path error")
