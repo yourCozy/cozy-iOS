@@ -94,6 +94,7 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
         if self.interestList[indexPath.row].mainImg?.count != 0 {
             let url = URL(string: self.interestList[indexPath.row].mainImg!)
             cell.bookStoreImageView.kf.setImage(with: url)
+            cell.readyLabel.isHidden = true
         }
 
         cell.nameLabel.text = self.interestList[indexPath.row].bookstoreName
