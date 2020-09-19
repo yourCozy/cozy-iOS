@@ -13,6 +13,8 @@ class InterestVC: UIViewController {
 
     private let interestIdentifier: String = "bookListCell"
 
+    @IBOutlet weak var readyLabel: UILabel!
+
     @IBOutlet weak var interestTableView: UITableView!
     var interestList: [MypageInterestData] = []
 
@@ -47,7 +49,6 @@ class InterestVC: UIViewController {
     }
 
     @objc func reloadData() {
-        print("reload interest data")
         getInterestData()
     }
 
@@ -55,6 +56,7 @@ class InterestVC: UIViewController {
         MypageInterestService.shared.getMypageInterestData { NetworkResult in
             switch NetworkResult {
             case .success(let data):
+                self.readyLabel.isHidden = true
                 guard let data = data as? [MypageInterestData] else { return }
                 self.interestList.removeAll()
                 for data in data {
@@ -62,6 +64,7 @@ class InterestVC: UIViewController {
                 }
                 self.interestTableView.reloadData()
             case .requestErr:
+                self.readyLabel.isHidden = false
                 print("Request error")
             case .pathErr:
                 print("path error")
@@ -102,5 +105,12 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
         cell.bookMarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "BookDetail", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        vc.bookstoreIdx = self.interestList[indexPath.row].bookstoreIdx!
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -23,7 +23,7 @@ struct MypageInterestService {
             "token": token
         ]
 
-        let dataRequest = AF.request(APIConstants.recommendURL, method: .get, encoding: JSONEncoding.default, headers: header)
+        let dataRequest = AF.request(APIConstants.mypageInterestBookstoreURL, method: .get, encoding: JSONEncoding.default, headers: header)
 
         dataRequest.responseData { dataResponse in
             switch dataResponse.result {
