@@ -29,27 +29,18 @@ struct RecommendActivityModel: Codable {
         data = (try? values.decode([RecommendActivityData].self, forKey: .data)) ?? nil
     }
 }
-/*
- "activityIdx": 1,
- "activityName": "하얀 어둠",
- "shortIntro": "1번 책방에서 두 번째로 개최하는 전시회 하얀 어둠",
- "image1": null,
- "price": 5000,
- "dday": 5
- */
 
 struct RecommendActivityData: Codable {
     var activityIdx: Int
     var activityName: String?
-    var shortIntro: String?
     var image1: String?
     var price: Int?
+    var introduction: String?
     var dday: Int?
 
-    init(activityIdx: Int, activityName: String, shortIntro: String, image1: String, price: Int, dday: Int) {
+    init(activityIdx: Int, activityName: String, image1: String, price: Int, dday: Int) {
         self.activityIdx = activityIdx
         self.activityName = activityName
-        self.shortIntro = shortIntro
         self.image1 = image1
         self.price = price
         self.dday = dday

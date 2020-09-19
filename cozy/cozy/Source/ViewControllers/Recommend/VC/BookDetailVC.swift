@@ -149,8 +149,9 @@ class BookDetailVC: UIViewController {
             case .success(let data) :
                 guard let data = data as? [RecommendActivityData] else { return }
                 for data in data {
-                    self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx, activityName: data.activityName ?? "", shortIntro: data.shortIntro ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.activityIdx))
+                    self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx ?? 0, activityName: data.activityName ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.dday ?? 0))
                 }
+                self.detailTableView.reloadData()
             case .requestErr:
                 self.feedList2.removeAll()
                 self.detailTableView.reloadData()
@@ -381,24 +382,32 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 cell.index = indexPath.row
 
                 if self.feedList2[indexPath.row].image1?.count != 0 {
-                    let feed2url1 = URL(string: self.feedList2[indexPath.row].image1!)
-                    cell.imageButton1.kf.setImage(with: feed2url1, for: .normal)
+                    let imgurl = URL(string: self.feedList2[indexPath.row].image1!)
+                    cell.imageButton1.kf.setImage(with: imgurl, for: .normal)
                 }
 
-                if self.feedList2[indexPath.row+1].image1?.count != 0 {
-                    let feed2url2 = URL(string: self.feedList2[indexPath.row+1].image1!)
-                    cell.imageButton2.kf.setImage(with: feed2url2, for: .normal)
-                }
-
+                cell.descripLabel1.text = self.feedList2[indexPath.row].introduction
                 cell.nameLabel1.text = self.feedList2[indexPath.row].activityName
-                cell.nameLabel2.text = self.feedList2[indexPath.row+1].activityName
-
-                cell.descripLabel1.text = self.feedList2[indexPath.row].shortIntro
-                cell.descripLabel2.text = self.feedList2[indexPath.row+1].shortIntro
                 cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)"
-                cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)"
                 cell.priceLabel1.text = "\(self.feedList2[indexPath.row].price!) 원"
-                cell.priceLabel2.text = "\(self.feedList2[indexPath.row+1].price!) 원"
+
+                if indexPath.row + 1 > self.feedList2.count {
+                    cell.descripLabel2.isHidden = true
+                    cell.nameLabel2.isHidden = true
+                    cell.dayCntLabel2.isHidden = true
+                    cell.priceLabel2.isHidden = true
+                } else {
+
+                    if self.feedList2[indexPath.row + 1].image1?.count == 0 {
+                        let imgurl2 = URL(string: self.feedList2[indexPath.row+1].image1!)
+                        cell.imageButton2.kf.setImage(with: imgurl2, for: .normal)
+                    }
+
+                    cell.descripLabel2.text = self.feedList2[indexPath.row+1].introduction
+                    cell.nameLabel2.text = self.feedList2[indexPath.row+1].activityName
+                    cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)"
+                    cell.priceLabel2.text = "\(self.feedList2[indexPath.row+1].price!)원"
+                }
 
                 return cell
             }
