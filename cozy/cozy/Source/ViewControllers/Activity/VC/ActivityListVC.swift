@@ -56,10 +56,7 @@ class ActivityListVC: UIViewController {
                             self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName ?? "미정", activityName: data.activityName ?? "미정", price: data.price ?? 0, image1: data.image1 ?? "", dday: data.dday ?? 0))
                         }
                     }
-
-                    DispatchQueue.main.async {
-                          self.activityTableView.reloadData()
-                    }
+                    self.activityTableView.reloadData()
 
                 case .requestErr:
                     print("Request error")
