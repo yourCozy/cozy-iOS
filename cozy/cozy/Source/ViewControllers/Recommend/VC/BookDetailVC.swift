@@ -149,7 +149,7 @@ class BookDetailVC: UIViewController {
             case .success(let data) :
                 guard let data = data as? [RecommendActivityData] else { return }
                 for data in data {
-                    self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx ?? 0, activityName: data.activityName ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.dday ?? 0))
+                    self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx, activityName: data.activityName ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.dday ?? 0))
                 }
                 self.detailTableView.reloadData()
             case .requestErr:

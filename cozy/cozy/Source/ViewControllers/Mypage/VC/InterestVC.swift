@@ -49,6 +49,7 @@ class InterestVC: UIViewController {
     }
 
     @objc func reloadData() {
+        print("🌟🌟🌟🌟🌟reload interest data")
         getInterestData()
     }
 

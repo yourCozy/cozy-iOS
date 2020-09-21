@@ -29,11 +29,8 @@ class RecommendVC: UIViewController {
     }
 
     @objc func reloadData() {
-        if isUserLoggedIN() == true {
-            getRecommendListDataWithLogin()
-        } else {
-            getRecommendListData()
-        }
+        print("🔥reload recommendVC")
+        getData()
     }
 
     func isUserLoggedIN() -> Bool {
@@ -57,8 +54,7 @@ class RecommendVC: UIViewController {
         RecommendListService.shared.getRecommendListData { NetworkResult in
             switch NetworkResult {
             case .success(let data):
-                guard let data = data as? [RecommendListData] else { return print("error")
-                }
+                guard let data = data as? [RecommendListData] else { return }
                 self.recommendList.removeAll()
                 for data in data {
                     self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", shortIntro1: data.shortIntro1 ?? "", shortIntro2: data.shortIntro2 ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "코지와", hashtag2: data.hashtag2 ?? "함께하는", hashtag3: data.hashtag3 ?? "책방", checked: data.checked ?? 0))
@@ -85,7 +81,6 @@ class RecommendVC: UIViewController {
                 for data in data {
                     self.recommendList.append(RecommendListData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? "", shortIntro1: data.shortIntro1 ?? "", shortIntro2: data.shortIntro2 ?? "", location: data.location ?? "", hashtag1: data.hashtag1 ?? "코지와", hashtag2: data.hashtag2 ?? "함께하는", hashtag3: data.hashtag3 ?? "책방", checked: data.checked ?? 0))
                 }
-                print(data)
                 self.tableView.reloadData()
             case .requestErr:
                 print("Request error")
