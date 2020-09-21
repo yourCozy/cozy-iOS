@@ -124,6 +124,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         if token.count > 0 {
 
             NotificationCenter.default.post(name: .updateBookmark, object: nil)
+            NotificationCenter.default.post(name: .updateMyBookmark, object: nil)
 
             if cell.bookmarkButton.hasImage(named: "iconsavewhite", for: .normal) {
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)

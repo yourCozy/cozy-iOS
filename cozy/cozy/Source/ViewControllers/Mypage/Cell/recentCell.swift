@@ -22,6 +22,5 @@ class recentCell: UICollectionViewCell {
         let url = URL(string: mainImg)
         self.bookstoreImage.kf.setImage(with: url)
         self.bookstoreLabel.text = bookstoreName
-
     }
 }

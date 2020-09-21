@@ -207,6 +207,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         if token.count > 0 {
 
             NotificationCenter.default.post(name: .updateBookmark, object: nil)
+            NotificationCenter.default.post(name: .updateMyBookmark, object: nil)
 
             if cell.bookmarkButton1.hasImage(named: "iconsave", for: .normal) {
                 self.updateInterest(bookstoreIdx: self.bookstoreIdx)
