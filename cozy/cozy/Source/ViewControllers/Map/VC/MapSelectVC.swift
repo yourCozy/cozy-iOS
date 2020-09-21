@@ -88,13 +88,17 @@ extension MapSelectVC: UITableViewDelegate, UITableViewDataSource {
         self.completeButton.backgroundColor = UIColor.mango
         self.completeButton.setTitleColor(.white, for: .normal)
 
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.contentView.backgroundColor = .mango
+        let cell = tableView.cellForRow(at: indexPath) as! RegionCell
+        cell.regionLabel.textColor = .white
+        cell.countLabel.textColor = .white
+        cell.contentView.backgroundColor = .mango
     }
 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.contentView.backgroundColor = .white
+        let cell = tableView.cellForRow(at: indexPath) as! RegionCell
+        cell.regionLabel.textColor = .black
+        cell.countLabel.textColor = .mango
+        cell.contentView.backgroundColor = .clear
     }
 
 }
