@@ -384,8 +384,9 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 cell.index = indexPath.row
 
                 if self.feedList2[indexPath.row].image1?.count != 0 {
+                    let modifier = AnyImageModifier { return $0.withRenderingMode(.alwaysOriginal) }
                     let imgurl = URL(string: self.feedList2[indexPath.row].image1!)
-                    cell.imageButton1.kf.setImage(with: imgurl, for: .normal)
+                    cell.imageButton1.kf.setImage(with: imgurl, for: .normal, options: [.imageModifier(modifier)])
                 }
 
                 cell.descripLabel1.text = self.feedList2[indexPath.row].introduction
@@ -402,8 +403,9 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 } else {
 
                     if self.feedList2[indexPath.row + 1].image1?.count != 0 {
+                        let modifier = AnyImageModifier { return $0.withRenderingMode(.alwaysOriginal) }
                         let imgurl2 = URL(string: self.feedList2[indexPath.row+1].image1!)
-                        cell.imageButton2.kf.setImage(with: imgurl2, for: .normal)
+                        cell.imageButton2.kf.setImage(with: imgurl2, for: .normal, options: [.imageModifier(modifier)])
                     }
 
                     cell.descripLabel2.text = self.feedList2[indexPath.row+1].introduction
