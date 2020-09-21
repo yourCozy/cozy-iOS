@@ -22,7 +22,6 @@ struct BookstoreDetailService {
             case .success:
                 guard let statusCode = dataResponse.response?.statusCode else { return }
                 guard let value = dataResponse.value else { return }
-                print(value)
                 let networkResult = self.judge(by: statusCode, value)
                 completion(networkResult)
             case .failure: completion(.networkFail)
@@ -45,7 +44,6 @@ struct BookstoreDetailService {
             case .success:
                 guard let statusCode = dataResponse.response?.statusCode else { return }
                 guard let value = dataResponse.value else { return }
-                print(value)
                 let networkResult = self.judge(by: statusCode, value)
                 completion(networkResult)
             case .failure: completion(.networkFail)

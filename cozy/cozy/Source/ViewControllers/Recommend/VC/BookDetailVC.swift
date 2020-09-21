@@ -149,8 +149,9 @@ class BookDetailVC: UIViewController {
             case .success(let data) :
                 guard let data = data as? [RecommendActivityData] else { return }
                 for data in data {
-                    self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx ?? 0, activityName: data.activityName ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.dday ?? 0))
+                    self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx, activityName: data.activityName ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.dday ?? 0))
                 }
+                print(data)
                 self.detailTableView.reloadData()
             case .requestErr:
                 self.feedList2.removeAll()
@@ -207,6 +208,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         if token.count > 0 {
 
             NotificationCenter.default.post(name: .updateBookmark, object: nil)
+            NotificationCenter.default.post(name: .updateMyBookmark, object: nil)
 
             if cell.bookmarkButton1.hasImage(named: "iconsave", for: .normal) {
                 self.updateInterest(bookstoreIdx: self.bookstoreIdx)
@@ -288,7 +290,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             if self.isClickBook {
                 return self.feedList1.count
             } else {
-                return self.feedList2.count/2
+                if self.feedList2.count%2 == 0 { return self.feedList2.count/2 } else { return self.feedList2.count/2 + 1 }
             }
         }
     }
@@ -382,8 +384,9 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 cell.index = indexPath.row
 
                 if self.feedList2[indexPath.row].image1?.count != 0 {
+                    let modifier = AnyImageModifier { return $0.withRenderingMode(.alwaysOriginal) }
                     let imgurl = URL(string: self.feedList2[indexPath.row].image1!)
-                    cell.imageButton1.kf.setImage(with: imgurl, for: .normal)
+                    cell.imageButton1.kf.setImage(with: imgurl, for: .normal, options: [.imageModifier(modifier)])
                 }
 
                 cell.descripLabel1.text = self.feedList2[indexPath.row].introduction
@@ -391,16 +394,18 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)"
                 cell.priceLabel1.text = "\(self.feedList2[indexPath.row].price!) 원"
 
-                if indexPath.row + 1 > self.feedList2.count {
+                if indexPath.row + 1 >= self.feedList2.count {
+                    cell.imageButton2.isHidden = true
                     cell.descripLabel2.isHidden = true
                     cell.nameLabel2.isHidden = true
                     cell.dayCntLabel2.isHidden = true
                     cell.priceLabel2.isHidden = true
                 } else {
 
-                    if self.feedList2[indexPath.row + 1].image1?.count == 0 {
+                    if self.feedList2[indexPath.row + 1].image1?.count != 0 {
+                        let modifier = AnyImageModifier { return $0.withRenderingMode(.alwaysOriginal) }
                         let imgurl2 = URL(string: self.feedList2[indexPath.row+1].image1!)
-                        cell.imageButton2.kf.setImage(with: imgurl2, for: .normal)
+                        cell.imageButton2.kf.setImage(with: imgurl2, for: .normal, options: [.imageModifier(modifier)])
                     }
 
                     cell.descripLabel2.text = self.feedList2[indexPath.row+1].introduction
