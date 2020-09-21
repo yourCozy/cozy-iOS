@@ -9,19 +9,19 @@
 import UIKit
 
 class ActivityVC: UIViewController {
-
+    
     @IBOutlet var myViews: [UIView]!
-
+    
     @IBOutlet var buttonActivityCollection: [UIButton]!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // 버튼 폰트 설정
         for button in buttonActivityCollection {
             button.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 14)
         }
-
+        
         // uiview뷰 tag 설정 + add GestureRecognizer
         var j = 1
         for view in myViews {
@@ -38,23 +38,23 @@ class ActivityVC: UIViewController {
             i += 1
         }
     }
-
+    
     @objc func viewTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedView = tapGestureRecognizer.view!
-
+        
         let sb = UIStoryboard(name: "ActivityList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
         vc.categoryIdx = tappedView.tag
-
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     @IBAction func btnActivityAction(_ sender: UIButton) {
-
+        
         let sb = UIStoryboard(name: "ActivityList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
         vc.categoryIdx = sender.tag
-
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
