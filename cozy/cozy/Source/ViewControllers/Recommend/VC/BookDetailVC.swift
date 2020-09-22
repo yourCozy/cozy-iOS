@@ -388,8 +388,6 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                     cell.imageButton1.kf.setImage(with: imgurl, for: .normal, options: [.imageModifier(modifier)])
                 }
 
-                print(self.feedList2[indexPath.row].introduction)
-
                 cell.descripLabel1.text = self.feedList2[indexPath.row].introduction
                 cell.nameLabel1.text = self.feedList2[indexPath.row].activityName
                 cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)    "

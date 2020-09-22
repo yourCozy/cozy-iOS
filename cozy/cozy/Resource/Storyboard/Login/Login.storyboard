@@ -10,9 +10,6 @@
         <array key="NanumSquareRoundL.ttf">
             <string>NanumSquareRoundL</string>
         </array>
-        <array key="NanumSquareRoundR.ttf">
-            <string>NanumSquareRoundR</string>
-        </array>
     </customFonts>
     <scenes>
         <!--LoginVC-->
@@ -41,13 +38,13 @@
                                 <rect key="frame" x="24" y="618" width="366" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with kakao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZg-QN-Lew">
-                                        <rect key="frame" x="119" y="14" width="152" height="20"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="18"/>
+                                        <rect key="frame" x="122.5" y="13.5" width="145" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconkakaotalk24X22" translatesAutoresizingMaskIntoConstraints="NO" id="fLn-nw-9Dk">
-                                        <rect key="frame" x="93" y="16.5" width="24" height="15"/>
+                                        <rect key="frame" x="96.5" y="16.5" width="24" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="opU-cb-t4N"/>
                                         </constraints>
