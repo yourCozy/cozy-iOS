@@ -14,7 +14,6 @@ class MypageVC: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var readyLabel: UILabel!
 
     @IBOutlet weak var recentCollectionView: UICollectionView!
 
@@ -64,8 +63,6 @@ class MypageVC: UIViewController {
     }
 
     @objc func reloadData() {
-        self.readyLabel.isHidden = true
-
         if isUserLoggedIN() == true {
             addRecentDataWithLogin()
         } else {
@@ -96,12 +93,11 @@ class MypageVC: UIViewController {
         MypageInfoService.shared.getMypageInfoDataWithLogin { NetworkResult in
             switch NetworkResult {
             case .success(let data):
-                self.readyLabel.isHidden = true
                 guard let data = data as? [MypageInfoData] else { return }
                 self.setInfoData(profileImage: data[0].profileImg ?? "", nameLabel: data[0].nickname )
             case .requestErr:
-                self.readyLabel.isHidden = false
-                print("Request error")
+                self.recentList.removeAll()
+                self.recentCollectionView.reloadData()
             case .pathErr:
                 print("path error")
             case .serverErr:
@@ -116,7 +112,6 @@ class MypageVC: UIViewController {
         MypageRecentService.shared.getMypageRecentData { NetworkResult in
             switch NetworkResult {
             case .success(let data):
-                self.readyLabel.isHidden = true
                 guard let data = data as? [MypageRecentData] else { return }
                 self.recentList.removeAll()
                 for data in data {
@@ -124,8 +119,8 @@ class MypageVC: UIViewController {
                 }
                 self.recentCollectionView.reloadData()
             case .requestErr:
-                self.readyLabel.isHidden = false
-                print("Recent Request error")
+                self.recentList.removeAll()
+                self.recentCollectionView.reloadData()
             case .pathErr:
                 print("recent path error")
             case .serverErr:
