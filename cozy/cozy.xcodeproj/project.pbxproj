@@ -1052,7 +1052,7 @@
 				CODE_SIGN_ENTITLEMENTS = cozy/cozy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Q74Q7X9BL9;
 				INFOPLIST_FILE = cozy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1074,7 +1074,7 @@
 				CODE_SIGN_ENTITLEMENTS = cozy/cozy.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Q74Q7X9BL9;
 				INFOPLIST_FILE = cozy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
