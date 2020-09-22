@@ -95,6 +95,9 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1b-FY-SYC">
                                                         <rect key="frame" x="5" y="2" width="42" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="G5R-5F-hAH"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -103,6 +106,7 @@
                                                 <color key="backgroundColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="r1b-FY-SYC" secondAttribute="trailing" constant="5" id="6RP-6u-btO"/>
+                                                    <constraint firstAttribute="height" constant="25" id="L09-PD-JfG"/>
                                                     <constraint firstItem="r1b-FY-SYC" firstAttribute="top" secondItem="6CF-xq-qUg" secondAttribute="top" constant="2" id="XVB-Nn-KuB"/>
                                                     <constraint firstItem="r1b-FY-SYC" firstAttribute="leading" secondItem="6CF-xq-qUg" secondAttribute="leading" constant="5" id="ekj-ID-SzS"/>
                                                     <constraint firstAttribute="bottom" secondItem="r1b-FY-SYC" secondAttribute="bottom" constant="2" id="iv2-qI-OD8"/>

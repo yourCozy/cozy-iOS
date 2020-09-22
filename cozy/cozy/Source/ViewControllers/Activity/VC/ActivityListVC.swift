@@ -48,6 +48,7 @@ class ActivityListVC: UIViewController {
                 self.lblNoData.isHidden = true
 
                 self.activityList.removeAll()
+
                 for data in data {
                     // D-day 지난 데이터 제거
                     if data.dday ?? -1 < 0 {
@@ -56,6 +57,12 @@ class ActivityListVC: UIViewController {
                         self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName ?? "미정", activityName: data.activityName ?? "미정", price: data.price ?? 0, image1: data.image1 ?? "", dday: data.dday ?? 0))
                     }
                 }
+
+                // 모두 디데이가 지난 데이터일때
+                if self.activityList.count <= 0 {
+                    self.lblNoData.isHidden = false
+                }
+
                 self.activityTableView.reloadData()
 
             case .requestErr:
