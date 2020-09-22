@@ -61,7 +61,6 @@ class LoginVC: UIViewController {
             if let error = error {
                 print(error)
             } else {
-                print("loginWithKakaoAccount() success.")
                 UserApi.shared.me { (user, error) in
                     if let error = error {
                         print(error)

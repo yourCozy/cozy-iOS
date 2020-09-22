@@ -10,6 +10,9 @@
         <array key="NanumSquareRoundL.ttf">
             <string>NanumSquareRoundL</string>
         </array>
+        <array key="NanumSquareRoundR.ttf">
+            <string>NanumSquareRoundR</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -23,15 +26,21 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5gw-PF-Rlp">
                         <rect key="frame" x="24" y="0.0" width="272" height="303"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="303" id="0OU-6F-pzK"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQ7-1A-Pn2">
-                        <rect key="frame" x="24" y="323" width="272" height="15.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQ7-1A-Pn2">
+                        <rect key="frame" x="24" y="323" width="272" height="96"/>
                         <fontDescription key="fontDescription" name="NanumSquareRoundL" family="NanumSquareRound" pointSize="14"/>
                         <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미지 준비중입니다 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhJ-y3-0fg">
+                        <rect key="frame" x="94.5" y="146" width="131" height="16"/>
+                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                        <color key="textColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -42,12 +51,16 @@
                     <constraint firstItem="MQ7-1A-Pn2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="72z-gI-wtc"/>
                     <constraint firstItem="5gw-PF-Rlp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="HGY-J4-Rnb"/>
                     <constraint firstItem="5gw-PF-Rlp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Vif-cj-vCp"/>
+                    <constraint firstItem="KhJ-y3-0fg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="135" id="WQ9-Ek-eoa"/>
+                    <constraint firstItem="KhJ-y3-0fg" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="cp2-YV-wSP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="MQ7-1A-Pn2" secondAttribute="bottom" constant="20" id="ngd-rB-bGZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="detailImageView" destination="5gw-PF-Rlp" id="8w0-MN-iG2"/>
                 <outlet property="detailLabel" destination="MQ7-1A-Pn2" id="seh-vC-U7G"/>
+                <outlet property="readyLabel" destination="KhJ-y3-0fg" id="ibS-iU-cd9"/>
             </connections>
             <point key="canvasLocation" x="139" y="153"/>
         </tableViewCell>
