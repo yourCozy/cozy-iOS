@@ -127,18 +127,6 @@ class MypageVC: UIViewController {
         }
     }
 
-    @IBAction func goNotice(_ sender: UIButton) {
-        let sb = UIStoryboard(name: "Mypage", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "NoticeVC") as! NoticeVC
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
-    @IBAction func goEvent(_ sender: UIButton) {
-        let sb = UIStoryboard(name: "Mypage", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "EventVC") as! EventVC
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
     @IBAction func goLogin(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
