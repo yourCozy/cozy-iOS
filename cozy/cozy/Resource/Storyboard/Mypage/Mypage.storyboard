@@ -74,22 +74,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxY-TK-FPa">
-                                                <rect key="frame" x="0.0" y="340.5" width="414" height="170"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 본 책방 로그인시 이용 가능합니다 :)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgv-F7-0n2">
-                                                        <rect key="frame" x="90.5" y="77.5" width="233.5" height="15.5"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
-                                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="wgv-F7-0n2" firstAttribute="centerX" secondItem="BxY-TK-FPa" secondAttribute="centerX" id="3tM-gz-zum"/>
-                                                    <constraint firstItem="wgv-F7-0n2" firstAttribute="centerY" secondItem="BxY-TK-FPa" secondAttribute="centerY" id="jo3-n1-kTD"/>
-                                                </constraints>
-                                            </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t3o-ix-icU">
                                                 <rect key="frame" x="24" y="347.5" width="390" height="146"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -191,17 +175,21 @@
                                                     <constraint firstItem="a7q-jx-Uo3" firstAttribute="centerX" secondItem="Lz3-cD-fT0" secondAttribute="centerX" id="fXf-Vr-Ep2"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 본 책방이 없어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZv-Nv-kwh">
+                                                <rect key="frame" x="142.5" y="409.5" width="129.5" height="15.5"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                                <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="BxY-TK-FPa" firstAttribute="top" secondItem="ysq-G8-LtZ" secondAttribute="bottom" constant="5" id="0Iv-RE-81S"/>
+                                            <constraint firstItem="NZv-Nv-kwh" firstAttribute="top" secondItem="XOR-M8-fpS" secondAttribute="bottom" constant="120" id="2Qv-wT-fku"/>
                                             <constraint firstItem="QFC-Jk-SmH" firstAttribute="centerX" secondItem="p1M-kU-u1S" secondAttribute="centerX" id="3dJ-OT-0HC"/>
-                                            <constraint firstAttribute="trailing" secondItem="BxY-TK-FPa" secondAttribute="trailing" id="4hZ-hZ-leG"/>
                                             <constraint firstItem="ysq-G8-LtZ" firstAttribute="top" secondItem="XOR-M8-fpS" secondAttribute="bottom" constant="28" id="67x-8w-GxJ"/>
                                             <constraint firstItem="Lz3-cD-fT0" firstAttribute="top" secondItem="QnS-rU-C3R" secondAttribute="top" id="7X4-WN-S9i"/>
                                             <constraint firstItem="7Sc-Oj-CdW" firstAttribute="top" secondItem="t3o-ix-icU" secondAttribute="bottom" constant="32" id="7sZ-61-cwk"/>
                                             <constraint firstItem="jYa-yi-N3X" firstAttribute="centerX" secondItem="arO-Di-quh" secondAttribute="centerX" id="Fwe-12-zmS"/>
-                                            <constraint firstItem="7Sc-Oj-CdW" firstAttribute="top" secondItem="BxY-TK-FPa" secondAttribute="bottom" constant="15" id="HwU-mE-DEh"/>
                                             <constraint firstItem="Lz3-cD-fT0" firstAttribute="leading" secondItem="QnS-rU-C3R" secondAttribute="leading" id="I2m-oY-u1e"/>
                                             <constraint firstItem="t3o-ix-icU" firstAttribute="leading" secondItem="QnS-rU-C3R" secondAttribute="leading" constant="24" id="NDi-xq-oep"/>
                                             <constraint firstItem="arO-Di-quh" firstAttribute="top" secondItem="jYa-yi-N3X" secondAttribute="bottom" constant="6" id="Ngi-9E-wBJ"/>
@@ -216,8 +204,8 @@
                                             <constraint firstAttribute="trailing" secondItem="7Sc-Oj-CdW" secondAttribute="trailing" id="eKt-Vi-goF"/>
                                             <constraint firstItem="jYa-yi-N3X" firstAttribute="top" secondItem="HRJ-3j-FpN" secondAttribute="bottom" constant="16" id="hT8-q3-18A"/>
                                             <constraint firstItem="ysq-G8-LtZ" firstAttribute="leading" secondItem="QnS-rU-C3R" secondAttribute="leading" constant="24" id="j23-EP-cjG"/>
-                                            <constraint firstItem="BxY-TK-FPa" firstAttribute="leading" secondItem="QnS-rU-C3R" secondAttribute="leading" id="kYK-aj-zvO"/>
                                             <constraint firstItem="4vP-wN-gNS" firstAttribute="top" secondItem="arO-Di-quh" secondAttribute="bottom" constant="30" id="kzd-L8-dJ5"/>
+                                            <constraint firstItem="NZv-Nv-kwh" firstAttribute="centerX" secondItem="QnS-rU-C3R" secondAttribute="centerX" id="mRS-eM-pjY"/>
                                             <constraint firstItem="HRJ-3j-FpN" firstAttribute="top" secondItem="QnS-rU-C3R" secondAttribute="top" constant="34" id="nEQ-ho-NIK"/>
                                             <constraint firstItem="t3o-ix-icU" firstAttribute="top" secondItem="ysq-G8-LtZ" secondAttribute="bottom" constant="12" id="ppy-sB-Y9e"/>
                                             <constraint firstItem="QFC-Jk-SmH" firstAttribute="top" secondItem="arO-Di-quh" secondAttribute="bottom" constant="36" id="qvV-Ly-Icz"/>
@@ -257,11 +245,11 @@
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="beforeView" destination="Lz3-cD-fT0" id="VWI-eo-QoT"/>
-                        <outlet property="beforeView2" destination="BxY-TK-FPa" id="PV6-GJ-99h"/>
                         <outlet property="emailLabel" destination="arO-Di-quh" id="ZhX-TB-gbQ"/>
                         <outlet property="loginButton" destination="a7q-jx-Uo3" id="gpZ-nZ-FCb"/>
                         <outlet property="nameLabel" destination="jYa-yi-N3X" id="490-KB-98c"/>
                         <outlet property="profileImage" destination="HRJ-3j-FpN" id="TQr-Qe-WND"/>
+                        <outlet property="readyLabel" destination="NZv-Nv-kwh" id="scz-Ot-gHU"/>
                         <outlet property="recentCollectionView" destination="t3o-ix-icU" id="KWJ-uQ-s97"/>
                     </connections>
                 </viewController>
@@ -278,11 +266,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F8U-gK-4iw">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관심 책방이 없습니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hZ-KC-6mP">
-                                <rect key="frame" x="147" y="440" width="120.5" height="16.5"/>
+                                <rect key="frame" x="144" y="440.5" width="126" height="15.5"/>
                                 <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -292,7 +280,7 @@
                         <constraints>
                             <constraint firstItem="7hZ-KC-6mP" firstAttribute="centerX" secondItem="aSV-1p-Hxx" secondAttribute="centerX" id="184-4V-x9b"/>
                             <constraint firstItem="hbp-6N-mG2" firstAttribute="trailing" secondItem="F8U-gK-4iw" secondAttribute="trailing" id="D9x-qy-wV2"/>
-                            <constraint firstItem="F8U-gK-4iw" firstAttribute="top" secondItem="hbp-6N-mG2" secondAttribute="top" id="FWk-2f-4nG"/>
+                            <constraint firstItem="F8U-gK-4iw" firstAttribute="top" secondItem="hbp-6N-mG2" secondAttribute="top" constant="10" id="FWk-2f-4nG"/>
                             <constraint firstItem="7hZ-KC-6mP" firstAttribute="centerY" secondItem="aSV-1p-Hxx" secondAttribute="centerY" id="XzY-wQ-y6x"/>
                             <constraint firstItem="hbp-6N-mG2" firstAttribute="bottom" secondItem="F8U-gK-4iw" secondAttribute="bottom" id="afn-NI-CV8"/>
                             <constraint firstItem="F8U-gK-4iw" firstAttribute="leading" secondItem="hbp-6N-mG2" secondAttribute="leading" id="fQh-og-GSV"/>

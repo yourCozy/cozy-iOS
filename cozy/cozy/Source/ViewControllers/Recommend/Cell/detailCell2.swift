@@ -12,6 +12,7 @@ class detailCell2: UITableViewCell {
 
     @IBOutlet weak var detailImageView: UIImageView!
     @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var readyLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

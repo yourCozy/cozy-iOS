@@ -12,13 +12,33 @@ import Alamofire
 struct MypageRecentService {
     static let shared = MypageRecentService()
 
-    func getMypageRecentData(completion: @escaping(NetworkResult<Any>) -> Void) {
+    func getMypageRecentDatawithLogin(completion: @escaping(NetworkResult<Any>) -> Void) {
 
         guard let token = UserDefaults.standard.string(forKey: "token") else { return }
 
         let header: HTTPHeaders = [
             "Content-Type": "application/json",
             "token": token
+        ]
+
+        let dataRequest = AF.request(APIConstants.mypageRecentURL, method: .get, encoding: JSONEncoding.default, headers: header)
+
+        dataRequest.responseData { dataResponse in
+            switch dataResponse.result {
+            case .success:
+                guard let statusCode = dataResponse.response?.statusCode else { return }
+                guard let value = dataResponse.value else { return }
+                let networkResult = self.judge(by: statusCode, value)
+                completion(networkResult)
+            case .failure: completion(.networkFail)
+            }
+        }
+    }
+
+    func getMypageRecentData(completion: @escaping(NetworkResult<Any>) -> Void) {
+
+        let header: HTTPHeaders = [
+            "Content-Type": "application/json"
         ]
 
         let dataRequest = AF.request(APIConstants.mypageRecentURL, method: .get, encoding: JSONEncoding.default, headers: header)
