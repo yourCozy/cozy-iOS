@@ -66,7 +66,6 @@ class ActivityRecommendVC: UIViewController {
                 let image1 = data[0].image1 ?? ""
                 if image1 == "" {
                     self.lblNoImage.isHidden = false
-                    //                    self.mainImgView.image = UIImage(named: "imageNull")
                 } else {
                     self.lblNoImage.isHidden = true
                     let url = URL(string: image1)
@@ -79,20 +78,37 @@ class ActivityRecommendVC: UIViewController {
 
                 self.displayDetailList.append(image1)
 
-                if self.displayDetailList.count == 0 {
-                    //                    self.displayDetailList = ["imageNull"]
-                }
-
                 self.subImgCollectionView.reloadData()
 
                 // 텍스트 데이터 삽입
                 self.lblHashtag.text = data[0].categoryName ?? "행사"
                 self.lblTitle.text = data[0].activityName ?? ""
-                self.lblDday.text = "D-" + String(data[0].dday ?? 0)
+
+                if data[0].dday == nil {
+                    self.lblDday.text = "선착순"
+                } else {
+                    self.lblDday.text = "D-" + String(data[0].dday ?? 0)
+                }
+
                 self.lblDisplayPeriod.text = data[0].period
-                self.lblDeadline.text = data[0].deadline
-                self.lblNumOfPeople.text = String(data[0].limitation ?? 0) + "명"
+
+                if data[0].deadline == "3000-01-01"{
+                    self.lblDeadline.text = "선착순"
+                } else {
+                    self.lblDeadline.text = data[0].deadline
+                }
+
+                if data[0].limitation == nil {
+                    self.lblNumOfPeople.text = "제한없음"
+                } else if data[0].limitation == 0 {
+                    self.lblNumOfPeople.text = "제한없음"
+                } else {
+                    self.lblNumOfPeople.text = String(data[0].limitation ?? 0) + "명"
+                }
+
                 if data[0].price == 0 {
+                    self.lblPrice.text = "무료"
+                } else if data[0].price == nil {
                     self.lblPrice.text = "무료"
                 } else {
                     self.lblPrice.text = String(data[0].price ?? 0) + "원"

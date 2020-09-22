@@ -50,7 +50,7 @@ class OnboardingVC: UIViewController {
                 }
             }
         }
-        
+
         if button.tag == 2 {
             if btnTag2Count.count < 3 {
                 if  button.backgroundColor == UIColor.realwhite {

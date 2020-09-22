@@ -42,7 +42,11 @@ class ActivityTableViewCell: UITableViewCell {
 
     func setData(image: String, lblDday: Int, activityCellContents: String, activityCellBookStoreName: String, activityCellPrice: Int) {
 
-        self.lblDday.text = "D-" + String(lblDday)
+        if lblDday == -1 {
+            self.lblDday.text = "선착순"
+        } else {
+            self.lblDday.text = "D-" + String(lblDday)
+        }
 
         if image == "" {
             lblNoImage.isHidden = false
@@ -56,7 +60,12 @@ class ActivityTableViewCell: UITableViewCell {
 
         activityCellLabel.text = activityCellContents
         activityCellBookStoreNameLabel.text = activityCellBookStoreName
-        activityPriceLabel.text = String(activityCellPrice) + "원"
+
+        if activityCellPrice == 0 {
+            activityPriceLabel.text = "무료"
+        } else {
+            activityPriceLabel.text = String(activityCellPrice) + "원"
+        }
 
     }
 }
