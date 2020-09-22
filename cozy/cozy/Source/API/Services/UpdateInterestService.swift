@@ -48,7 +48,6 @@ struct UpdateInterestService {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(UpdateInterestModel.self, from: data) else { return .pathErr }
         guard let recommendData = decodedData.data else { return .requestErr(decodedData.message) }
-        print(recommendData)
         return .success(recommendData)
     }
 }
