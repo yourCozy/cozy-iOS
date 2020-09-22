@@ -175,16 +175,9 @@
                                                     <constraint firstItem="a7q-jx-Uo3" firstAttribute="centerX" secondItem="Lz3-cD-fT0" secondAttribute="centerX" id="fXf-Vr-Ep2"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 본 책방이 없어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZv-Nv-kwh">
-                                                <rect key="frame" x="142.5" y="409.5" width="129.5" height="15.5"/>
-                                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
-                                                <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="NZv-Nv-kwh" firstAttribute="top" secondItem="XOR-M8-fpS" secondAttribute="bottom" constant="120" id="2Qv-wT-fku"/>
                                             <constraint firstItem="QFC-Jk-SmH" firstAttribute="centerX" secondItem="p1M-kU-u1S" secondAttribute="centerX" id="3dJ-OT-0HC"/>
                                             <constraint firstItem="ysq-G8-LtZ" firstAttribute="top" secondItem="XOR-M8-fpS" secondAttribute="bottom" constant="28" id="67x-8w-GxJ"/>
                                             <constraint firstItem="Lz3-cD-fT0" firstAttribute="top" secondItem="QnS-rU-C3R" secondAttribute="top" id="7X4-WN-S9i"/>
@@ -205,7 +198,6 @@
                                             <constraint firstItem="jYa-yi-N3X" firstAttribute="top" secondItem="HRJ-3j-FpN" secondAttribute="bottom" constant="16" id="hT8-q3-18A"/>
                                             <constraint firstItem="ysq-G8-LtZ" firstAttribute="leading" secondItem="QnS-rU-C3R" secondAttribute="leading" constant="24" id="j23-EP-cjG"/>
                                             <constraint firstItem="4vP-wN-gNS" firstAttribute="top" secondItem="arO-Di-quh" secondAttribute="bottom" constant="30" id="kzd-L8-dJ5"/>
-                                            <constraint firstItem="NZv-Nv-kwh" firstAttribute="centerX" secondItem="QnS-rU-C3R" secondAttribute="centerX" id="mRS-eM-pjY"/>
                                             <constraint firstItem="HRJ-3j-FpN" firstAttribute="top" secondItem="QnS-rU-C3R" secondAttribute="top" constant="34" id="nEQ-ho-NIK"/>
                                             <constraint firstItem="t3o-ix-icU" firstAttribute="top" secondItem="ysq-G8-LtZ" secondAttribute="bottom" constant="12" id="ppy-sB-Y9e"/>
                                             <constraint firstItem="QFC-Jk-SmH" firstAttribute="top" secondItem="arO-Di-quh" secondAttribute="bottom" constant="36" id="qvV-Ly-Icz"/>
@@ -249,7 +241,6 @@
                         <outlet property="loginButton" destination="a7q-jx-Uo3" id="gpZ-nZ-FCb"/>
                         <outlet property="nameLabel" destination="jYa-yi-N3X" id="490-KB-98c"/>
                         <outlet property="profileImage" destination="HRJ-3j-FpN" id="TQr-Qe-WND"/>
-                        <outlet property="readyLabel" destination="NZv-Nv-kwh" id="scz-Ot-gHU"/>
                         <outlet property="recentCollectionView" destination="t3o-ix-icU" id="KWJ-uQ-s97"/>
                     </connections>
                 </viewController>
