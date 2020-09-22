@@ -47,11 +47,10 @@ class MypageVC: UIViewController {
 
         if isUserLoggedIN() == true {
             beforeView.isHidden = true
-            beforeView2.isHidden = true
             addInfoDataWithLogin()
-            addRecentData()
+            addRecentDataWithLogin()
         } else {
-            beforeView2.layer.zPosition = 1
+            addRecentData()
         }
     }
 
@@ -65,7 +64,11 @@ class MypageVC: UIViewController {
     }
 
     @objc func reloadData() {
-        addRecentData()
+        if isUserLoggedIN() == true {
+            addRecentDataWithLogin()
+        } else {
+            addRecentData()
+        }
     }
 
     @IBAction func goInterestVC(_ sender: UIButton) {
@@ -101,6 +104,28 @@ class MypageVC: UIViewController {
                 print("server error")
             case .networkFail:
                 print("network error")
+            }
+        }
+    }
+
+    func addRecentDataWithLogin() {
+        MypageRecentService.shared.getMypageRecentData { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [MypageRecentData] else { return }
+                self.recentList.removeAll()
+                for data in data {
+                    self.recentList.append(MypageRecentData(bookstoreIdx: data.bookstoreIdx ?? 0, bookstoreName: data.bookstoreName ?? "", mainImg: data.mainImg ?? ""))
+                }
+                self.recentCollectionView.reloadData()
+            case .requestErr:
+                print("Recent Request error")
+            case .pathErr:
+                print("recent path error")
+            case .serverErr:
+                print("recent server error")
+            case .networkFail:
+                print("recent network error")
             }
         }
     }

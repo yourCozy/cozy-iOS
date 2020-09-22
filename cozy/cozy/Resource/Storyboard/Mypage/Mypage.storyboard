@@ -74,22 +74,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxY-TK-FPa">
-                                                <rect key="frame" x="0.0" y="340.5" width="414" height="170"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 본 책방 로그인시 이용 가능합니다 :)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgv-F7-0n2">
-                                                        <rect key="frame" x="90.5" y="77.5" width="233.5" height="15.5"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
-                                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="wgv-F7-0n2" firstAttribute="centerX" secondItem="BxY-TK-FPa" secondAttribute="centerX" id="3tM-gz-zum"/>
-                                                    <constraint firstItem="wgv-F7-0n2" firstAttribute="centerY" secondItem="BxY-TK-FPa" secondAttribute="centerY" id="jo3-n1-kTD"/>
-                                                </constraints>
-                                            </view>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t3o-ix-icU">
                                                 <rect key="frame" x="24" y="347.5" width="390" height="146"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -194,14 +178,11 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="BxY-TK-FPa" firstAttribute="top" secondItem="ysq-G8-LtZ" secondAttribute="bottom" constant="5" id="0Iv-RE-81S"/>
                                             <constraint firstItem="QFC-Jk-SmH" firstAttribute="centerX" secondItem="p1M-kU-u1S" secondAttribute="centerX" id="3dJ-OT-0HC"/>
-                                            <constraint firstAttribute="trailing" secondItem="BxY-TK-FPa" secondAttribute="trailing" id="4hZ-hZ-leG"/>
                                             <constraint firstItem="ysq-G8-LtZ" firstAttribute="top" secondItem="XOR-M8-fpS" secondAttribute="bottom" constant="28" id="67x-8w-GxJ"/>
                                             <constraint firstItem="Lz3-cD-fT0" firstAttribute="top" secondItem="QnS-rU-C3R" secondAttribute="top" id="7X4-WN-S9i"/>
                                             <constraint firstItem="7Sc-Oj-CdW" firstAttribute="top" secondItem="t3o-ix-icU" secondAttribute="bottom" constant="32" id="7sZ-61-cwk"/>
                                             <constraint firstItem="jYa-yi-N3X" firstAttribute="centerX" secondItem="arO-Di-quh" secondAttribute="centerX" id="Fwe-12-zmS"/>
-                                            <constraint firstItem="7Sc-Oj-CdW" firstAttribute="top" secondItem="BxY-TK-FPa" secondAttribute="bottom" constant="15" id="HwU-mE-DEh"/>
                                             <constraint firstItem="Lz3-cD-fT0" firstAttribute="leading" secondItem="QnS-rU-C3R" secondAttribute="leading" id="I2m-oY-u1e"/>
                                             <constraint firstItem="t3o-ix-icU" firstAttribute="leading" secondItem="QnS-rU-C3R" secondAttribute="leading" constant="24" id="NDi-xq-oep"/>
                                             <constraint firstItem="arO-Di-quh" firstAttribute="top" secondItem="jYa-yi-N3X" secondAttribute="bottom" constant="6" id="Ngi-9E-wBJ"/>
@@ -216,7 +197,6 @@
                                             <constraint firstAttribute="trailing" secondItem="7Sc-Oj-CdW" secondAttribute="trailing" id="eKt-Vi-goF"/>
                                             <constraint firstItem="jYa-yi-N3X" firstAttribute="top" secondItem="HRJ-3j-FpN" secondAttribute="bottom" constant="16" id="hT8-q3-18A"/>
                                             <constraint firstItem="ysq-G8-LtZ" firstAttribute="leading" secondItem="QnS-rU-C3R" secondAttribute="leading" constant="24" id="j23-EP-cjG"/>
-                                            <constraint firstItem="BxY-TK-FPa" firstAttribute="leading" secondItem="QnS-rU-C3R" secondAttribute="leading" id="kYK-aj-zvO"/>
                                             <constraint firstItem="4vP-wN-gNS" firstAttribute="top" secondItem="arO-Di-quh" secondAttribute="bottom" constant="30" id="kzd-L8-dJ5"/>
                                             <constraint firstItem="HRJ-3j-FpN" firstAttribute="top" secondItem="QnS-rU-C3R" secondAttribute="top" constant="34" id="nEQ-ho-NIK"/>
                                             <constraint firstItem="t3o-ix-icU" firstAttribute="top" secondItem="ysq-G8-LtZ" secondAttribute="bottom" constant="12" id="ppy-sB-Y9e"/>
@@ -257,7 +237,6 @@
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="beforeView" destination="Lz3-cD-fT0" id="VWI-eo-QoT"/>
-                        <outlet property="beforeView2" destination="BxY-TK-FPa" id="PV6-GJ-99h"/>
                         <outlet property="emailLabel" destination="arO-Di-quh" id="ZhX-TB-gbQ"/>
                         <outlet property="loginButton" destination="a7q-jx-Uo3" id="gpZ-nZ-FCb"/>
                         <outlet property="nameLabel" destination="jYa-yi-N3X" id="490-KB-98c"/>
