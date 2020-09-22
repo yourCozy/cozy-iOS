@@ -391,7 +391,13 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
                 cell.descripLabel1.text = self.feedList2[indexPath.row].introduction
                 cell.nameLabel1.text = self.feedList2[indexPath.row].activityName
-                cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)    "
+
+                if self.feedList2[indexPath.row].dday == 0 {
+                    cell.daycntLabel1.text = " 선착순 "
+                } else {
+                    cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)    "
+                }
+
                 cell.priceLabel1.text = "\(self.feedList2[indexPath.row].price!) 원"
 
                 if indexPath.row + 1 >= self.feedList2.count {
@@ -406,6 +412,12 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                         let modifier = AnyImageModifier { return $0.withRenderingMode(.alwaysOriginal) }
                         let imgurl2 = URL(string: self.feedList2[indexPath.row+1].image1!)
                         cell.imageButton2.kf.setImage(with: imgurl2, for: .normal, options: [.imageModifier(modifier)])
+                    }
+
+                    if self.feedList2[indexPath.row+1].dday == 0 {
+                        cell.dayCntLabel2.text = " 선착순 "
+                    } else {
+                        cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)    "
                     }
 
                     cell.descripLabel2.text = self.feedList2[indexPath.row+1].introduction
