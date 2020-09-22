@@ -38,11 +38,12 @@ struct RecommendActivityData: Codable {
     var introduction: String?
     var dday: Int?
 
-    init(activityIdx: Int, activityName: String, image1: String, price: Int, dday: Int) {
+    init(activityIdx: Int, activityName: String, image1: String, price: Int, introduction: String, dday: Int) {
         self.activityIdx = activityIdx
         self.activityName = activityName
         self.image1 = image1
         self.price = price
+        self.introduction = introduction
         self.dday = dday
     }
 }

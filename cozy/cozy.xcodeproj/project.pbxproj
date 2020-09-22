@@ -110,13 +110,7 @@
 		CC263D00250DFDE6001F6BF5 /* MypageInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC263CFF250DFDE6001F6BF5 /* MypageInfoModel.swift */; };
 		CC263D02250DFE41001F6BF5 /* MypageRecentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC263D01250DFE41001F6BF5 /* MypageRecentModel.swift */; };
 		CCA0FB2824FE9A9E006B1F5B /* InterestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */; };
-		CCBBD2D525071BA3006A73FA /* NoticeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D425071BA3006A73FA /* NoticeVC.swift */; };
-		CCBBD2D725071C03006A73FA /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D625071C03006A73FA /* EventVC.swift */; };
-		CCBBD2D925072A5A006A73FA /* noticeTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2D825072A5A006A73FA /* noticeTitleCell.swift */; };
-		CCBBD2DB25072A6F006A73FA /* noticeContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2DA25072A6F006A73FA /* noticeContentCell.swift */; };
 		CCBBD2DD25073FE4006A73FA /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */; };
-		CCBBD2E125074A9C006A73FA /* eventTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2E025074A9C006A73FA /* eventTitleCell.swift */; };
-		CCBBD2E325074B08006A73FA /* eventContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBD2E225074B08006A73FA /* eventContentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -228,13 +222,7 @@
 		CC263CFF250DFDE6001F6BF5 /* MypageInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageInfoModel.swift; sourceTree = "<group>"; };
 		CC263D01250DFE41001F6BF5 /* MypageRecentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageRecentModel.swift; sourceTree = "<group>"; };
 		CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestVC.swift; sourceTree = "<group>"; };
-		CCBBD2D425071BA3006A73FA /* NoticeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeVC.swift; sourceTree = "<group>"; };
-		CCBBD2D625071C03006A73FA /* EventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
-		CCBBD2D825072A5A006A73FA /* noticeTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeTitleCell.swift; sourceTree = "<group>"; };
-		CCBBD2DA25072A6F006A73FA /* noticeContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noticeContentCell.swift; sourceTree = "<group>"; };
 		CCBBD2DC25073FE4006A73FA /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
-		CCBBD2E025074A9C006A73FA /* eventTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventTitleCell.swift; sourceTree = "<group>"; };
-		CCBBD2E225074B08006A73FA /* eventContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventContentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -670,10 +658,6 @@
 		CC772906250B8A4A001DB8FC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CCBBD2D825072A5A006A73FA /* noticeTitleCell.swift */,
-				CCBBD2DA25072A6F006A73FA /* noticeContentCell.swift */,
-				CCBBD2E025074A9C006A73FA /* eventTitleCell.swift */,
-				CCBBD2E225074B08006A73FA /* eventContentCell.swift */,
 				CC05FEC224F5590F008747B6 /* recentCell.swift */,
 			);
 			path = Cell;
@@ -684,8 +668,6 @@
 			children = (
 				B646AF8224EC03A500AC96A9 /* MypageVC.swift */,
 				CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */,
-				CCBBD2D425071BA3006A73FA /* NoticeVC.swift */,
-				CCBBD2D625071C03006A73FA /* EventVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -847,11 +829,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCBBD2D525071BA3006A73FA /* NoticeVC.swift in Sources */,
 				B631283425075C01003D33E3 /* KakaoLoginModel.swift in Sources */,
-				CCBBD2D925072A5A006A73FA /* noticeTitleCell.swift in Sources */,
 				18981F9B24F9104900D6A921 /* ActivityListModel.swift in Sources */,
-				CCBBD2E325074B08006A73FA /* eventContentCell.swift in Sources */,
 				B658A3C8250168450076BCD4 /* LoginVC.swift in Sources */,
 				B646AF8124EC039200AC96A9 /* ActivityVC.swift in Sources */,
 				B6A0BFB024FC26DD00D0083D /* RegionCell.swift in Sources */,
@@ -869,7 +848,6 @@
 				CC263CFE250DFDAA001F6BF5 /* MypageInfoService.swift in Sources */,
 				B646AF6224EBFFEB00AC96A9 /* UIColor+Extensions.swift in Sources */,
 				B658A3C1250157110076BCD4 /* onboardcell4.swift in Sources */,
-				CCBBD2D725071C03006A73FA /* EventVC.swift in Sources */,
 				B64940A524F1750E0052A21F /* MainNavController.swift in Sources */,
 				B658A3B9250156A50076BCD4 /* onboardcell3.swift in Sources */,
 				B6A487AE24F812F50058025C /* MapSelectCell.swift in Sources */,
@@ -884,7 +862,6 @@
 				B658A3B52501568C0076BCD4 /* onboardcell2.swift in Sources */,
 				B6208CA125066C2300185624 /* MapCountService.swift in Sources */,
 				B658A3AD250154690076BCD4 /* OnboardingSlider.swift in Sources */,
-				CCBBD2E125074A9C006A73FA /* eventTitleCell.swift in Sources */,
 				B6B1E1CA24FED56A00E60FB0 /* detailCell3.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
 				187C130A25065E5D004FD60B /* RecommendActivityService.swift in Sources */,
@@ -897,7 +874,6 @@
 				B646AF6A24EC00E900AC96A9 /* NetworkResult.swift in Sources */,
 				B658A3B1250156780076BCD4 /* onboardcell1.swift in Sources */,
 				B65058442507FB8F00D832E1 /* UpdateInterestModel.swift in Sources */,
-				CCBBD2DB25072A6F006A73FA /* noticeContentCell.swift in Sources */,
 				B6F4141124F1A256009863D7 /* UIButton+Extensions.swift in Sources */,
 				B631283625075D66003D33E3 /* KakaoLoginService.swift in Sources */,
 				B64940A924F189780052A21F /* recommendCell.swift in Sources */,

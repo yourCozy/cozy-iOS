@@ -149,9 +149,8 @@ class BookDetailVC: UIViewController {
             case .success(let data) :
                 guard let data = data as? [RecommendActivityData] else { return }
                 for data in data {
-                    self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx, activityName: data.activityName ?? "", image1: data.image1 ?? "", price: data.price ?? 0, dday: data.dday ?? 0))
+                    self.feedList2.append(RecommendActivityData(activityIdx: data.activityIdx, activityName: data.activityName ?? "", image1: data.image1 ?? "", price: data.price ?? 0, introduction: data.introduction ?? "", dday: data.dday ?? 0))
                 }
-                print(data)
                 self.detailTableView.reloadData()
             case .requestErr:
                 self.feedList2.removeAll()
@@ -391,7 +390,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
                 cell.descripLabel1.text = self.feedList2[indexPath.row].introduction
                 cell.nameLabel1.text = self.feedList2[indexPath.row].activityName
-                cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)"
+                cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)    "
                 cell.priceLabel1.text = "\(self.feedList2[indexPath.row].price!) 원"
 
                 if indexPath.row + 1 >= self.feedList2.count {
@@ -410,7 +409,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
                     cell.descripLabel2.text = self.feedList2[indexPath.row+1].introduction
                     cell.nameLabel2.text = self.feedList2[indexPath.row+1].activityName
-                    cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)"
+                    cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)    "
                     cell.priceLabel2.text = "\(self.feedList2[indexPath.row+1].price!)원"
                 }
 
