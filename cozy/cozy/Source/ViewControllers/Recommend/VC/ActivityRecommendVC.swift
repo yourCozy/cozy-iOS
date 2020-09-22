@@ -97,12 +97,10 @@ class ActivityRecommendVC: UIViewController {
                 } else {
                     self.lblPrice.text = String(data[0].price ?? 0) + "원"
                 }
+
                 self.lblActivityIntroduction.text = data[0].introduction ?? ""
 
             case .requestErr:
-                //                print("Request error")
-                //                self.mainImgView.image = UIImage(named: "imageNull")
-                //                self.displayDetailList = ["imageNull"]
                 // 텍스트 데이터 삽입
                 self.lblHashtag.text = "미정"
                 self.lblTitle.text = "미정"
