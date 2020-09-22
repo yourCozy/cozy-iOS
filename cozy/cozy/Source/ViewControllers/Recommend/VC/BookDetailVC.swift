@@ -393,12 +393,16 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 cell.nameLabel1.text = self.feedList2[indexPath.row].activityName
 
                 if self.feedList2[indexPath.row].dday == 0 {
-                    cell.daycntLabel1.text = " 선착순 "
+                    cell.daycntLabel1.text = " 선착순   "
                 } else {
                     cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)    "
                 }
 
-                cell.priceLabel1.text = "\(self.feedList2[indexPath.row].price!) 원"
+                if self.feedList2[indexPath.row].price == 0 {
+                    cell.priceLabel1.text = "무료"
+                } else {
+                    cell.priceLabel1.text = "\(self.feedList2[indexPath.row].price!) 원"
+                }
 
                 if indexPath.row + 1 >= self.feedList2.count {
                     cell.imageButton2.isHidden = true
@@ -415,15 +419,19 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                     }
 
                     if self.feedList2[indexPath.row+1].dday == 0 {
-                        cell.dayCntLabel2.text = " 선착순 "
+                        cell.dayCntLabel2.text = " 선착순   "
                     } else {
                         cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)    "
                     }
 
+                    if self.feedList2[indexPath.row+1].price == 0 {
+                        cell.priceLabel2.text = "무료"
+                    } else {
+                        cell.priceLabel2.text = "\(self.feedList2[indexPath.row+1].price!) 원"
+                    }
+
                     cell.descripLabel2.text = self.feedList2[indexPath.row+1].introduction
                     cell.nameLabel2.text = self.feedList2[indexPath.row+1].activityName
-                    cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)    "
-                    cell.priceLabel2.text = "\(self.feedList2[indexPath.row+1].price!)원"
                 }
 
                 return cell
