@@ -299,7 +299,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             return 701
         } else {
             if self.isClickBook {
-                return 450
+                return 460
             } else {
                 return 350
             }
@@ -372,6 +372,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 if self.feedList1[indexPath.row].image?.count != 0 {
                     let feedimgurl = URL(string: self.feedList1[indexPath.row].image!)
                     cell.detailImageView.kf.setImage(with: feedimgurl)
+                    cell.readyLabel.isHidden = true
                 }
 
                 cell.detailLabel.text = self.feedList1[indexPath.row].text

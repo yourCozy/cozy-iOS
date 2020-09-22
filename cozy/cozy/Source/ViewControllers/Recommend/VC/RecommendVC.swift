@@ -29,7 +29,6 @@ class RecommendVC: UIViewController {
     }
 
     @objc func reloadData() {
-        print("🔥reload recommendVC")
         getData()
     }
 
