@@ -33,10 +33,23 @@ class ActivityListVC: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.gray
         let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
         self.navigationItem.leftBarButtonItem = backButton
+
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction(swipe:)))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
     }
 
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    @objc func rightSwipeAction(swipe: UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            self.goBack()
+        default:
+            break
+        }
     }
 
     private func setBookStoreData() {
@@ -44,24 +57,17 @@ class ActivityListVC: UIViewController {
             switch NetworkResult {
             case .success(let data):
                 guard let data = data as? [ActivityListData] else {return print("activityList error")}
-
                 self.lblNoData.isHidden = true
-
                 self.activityList.removeAll()
-
                 for data in data {
                     self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName ?? "미정", activityName: data.activityName ?? "미정", price: data.price ?? 0, image1: data.image1 ?? "", dday: data.dday ?? -1))
                 }
-
                 // 모두 디데이가 지난 데이터일때
                 if self.activityList.count <= 0 {
                     self.lblNoData.isHidden = false
                 }
-
                 self.activityTableView.reloadData()
-
             case .requestErr:
-//                print("Request error")
                 self.lblNoData.isHidden = false
             case .pathErr:
                 print("path error")

@@ -48,6 +48,19 @@ class BookDetailVC: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.gray
         let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
         self.navigationItem.leftBarButtonItem = backButton
+
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction(swipe:)))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
+    }
+
+    @objc func rightSwipeAction(swipe: UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            self.goBack()
+        default:
+            break
+        }
     }
 
     func setTableView() {
