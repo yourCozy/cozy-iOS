@@ -333,7 +333,13 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             descripAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: descripAttr.length))
             cell.descriptionLabel.attributedText = descripAttr
 
-            cell.locationLabel.text = self.detailList[0].location
+            cell.locationLabel.numberOfLines = 2
+            let locationText = NSAttributedString(string: self.detailList[0].location ?? "")
+            let locationAttr = NSMutableAttributedString()
+            locationAttr.append(locationText)
+            locationAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: locationAttr.length))
+            cell.locationLabel.attributedText = locationAttr
+
             cell.timeLabel.text = self.detailList[0].businessHours
 
             if self.detailList[0].checked == 0 {
@@ -343,7 +349,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             }
 
             cell.restLabel.numberOfLines = 2
-            let restText = NSMutableAttributedString(string: "\(self.detailList[0].dayoff ?? "")\n공휴일, 일요일")
+            let restText = NSMutableAttributedString(string: "\(self.detailList[0].dayoff ?? "")")
             let restAttr = NSMutableAttributedString()
             restAttr.append(restText)
             restAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: restAttr.length))

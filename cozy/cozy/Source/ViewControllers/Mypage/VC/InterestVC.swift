@@ -77,7 +77,12 @@ class InterestVC: UIViewController {
     }
 }
 
-extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate {
+extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate, BookListCellDelegate {
+
+    // 북마크 취소
+    func addBookmark(index: Int) {
+        print("click bookmark button")
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.interestList.count
@@ -90,6 +95,8 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: interestIdentifier) as! BookListCell
         cell.selectionStyle = .none
+        cell.delegate = self
+        cell.index = indexPath.row
 
         if self.interestList[indexPath.row].mainImg?.count != 0 {
             let url = URL(string: self.interestList[indexPath.row].mainImg!)
@@ -106,6 +113,14 @@ extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControll
         cell.bookMarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
 
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let bookstoreIdx = self.interestList[indexPath.row].bookstoreIdx
+        let sb = UIStoryboard(name: "BookDetail", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+        vc.bookstoreIdx = bookstoreIdx ?? 1
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
