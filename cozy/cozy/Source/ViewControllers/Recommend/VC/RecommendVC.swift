@@ -32,17 +32,12 @@ class RecommendVC: UIViewController {
         getData()
     }
 
-    func isUserLoggedIN() -> Bool {
-        let str = UserDefaults.standard.object(forKey: "token") as! String
-        if str.count > 0 {
-            return true
-        } else {
-            return false
-        }
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
     }
 
     private func getData() {
-        if isUserLoggedIN() == true {
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
             getRecommendListDataWithLogin()
         } else {
             getRecommendListData()
@@ -186,10 +181,10 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 2.0
 
-            let usernickname = UserDefaults.standard.object(forKey: "nickname") as! String
             var text1 = NSAttributedString()
 
-            if usernickname.count > 0 {
+            if self.isKeyPresentInUserDefaults(key: "nickname") == true {
+                let usernickname = UserDefaults.standard.object(forKey: "nickname") as! String
                 text1 = NSAttributedString(string: usernickname, attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])
             } else {
                 text1 = NSAttributedString(string: "코지", attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 22)!, .foregroundColor: UIColor.mango])

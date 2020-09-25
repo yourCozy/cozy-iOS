@@ -28,8 +28,12 @@ class MapVC: UIViewController {
         getMapData()
     }
 
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
+    }
+
     private func getMapData() {
-        if isUserLoggedIN() == true {
+        if isKeyPresentInUserDefaults(key: "token") == true {
             getMapListDataWithLogin()
         } else {
             getMapListData()
@@ -58,15 +62,6 @@ class MapVC: UIViewController {
         mapTableView.register(nibName, forCellReuseIdentifier: mapIdentifier2)
         mapTableView.delegate = self
         mapTableView.dataSource = self
-    }
-
-    func isUserLoggedIN() -> Bool {
-        let str = UserDefaults.standard.object(forKey: "token") as! String
-        if str.count > 0 {
-            return true
-        } else {
-            return false
-        }
     }
 
     @objc func selectButton() {

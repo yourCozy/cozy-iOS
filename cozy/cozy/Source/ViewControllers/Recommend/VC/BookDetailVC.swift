@@ -39,13 +39,8 @@ class BookDetailVC: UIViewController {
         NotificationCenter.default.post(name: .dismissDetailVC, object: nil)
     }
 
-    func isUserLoggedIN() -> Bool {
-        let str = UserDefaults.standard.object(forKey: "token") as! String
-        if str.count > 0 {
-            return true
-        } else {
-            return false
-        }
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
     }
 
     func setNav() {
@@ -72,7 +67,7 @@ class BookDetailVC: UIViewController {
     }
 
     func setDetailUI() {
-        if isUserLoggedIN() == true {
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
             setDetailDataWithLogin()
         } else {
             setDetailData()

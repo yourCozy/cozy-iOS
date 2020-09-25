@@ -248,13 +248,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		187FEED324FCD55F00476D89 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		187FEED824FE3BCA00476D89 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,7 +461,6 @@
 		B646AF7B24EC034A00AC96A9 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
-				187FEED324FCD55F00476D89 /* Model */,
 				B649CCEF24FAB6450032AF31 /* VC */,
 				B649CCF024FAB64B0032AF31 /* Cell */,
 			);
