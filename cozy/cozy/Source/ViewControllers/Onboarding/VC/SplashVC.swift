@@ -13,7 +13,9 @@ class SplashVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if self.isKeyPresentInUserDefaults(key: "firstTime") == true {
+        if self.isKeyPresentInUserDefaults(key: "token") {
+            perform(#selector(goMain), with: nil, afterDelay: 2.0)
+        } else if self.isKeyPresentInUserDefaults(key: "firstTime") == true {
             perform(#selector(goLogin), with: nil, afterDelay: 2.0)
         } else {
             perform(#selector(goOnboardingIntro), with: nil, afterDelay: 2.0)
@@ -34,6 +36,13 @@ class SplashVC: UIViewController {
     @objc func goLogin() {
         let sb = UIStoryboard(name: "Login", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+
+    @objc func goMain() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }

@@ -24,9 +24,9 @@ class LoginVC: UIViewController {
     }
 
     func setUserDefaults() {
-        UserDefaults.standard.set("", forKey: "token")
-        UserDefaults.standard.set("", forKey: "nickname")
-        UserDefaults.standard.set("", forKey: "firstTime")
+//        UserDefaults.standard.set("", forKey: "token")
+//        UserDefaults.standard.set("", forKey: "nickname")
+        UserDefaults.standard.set("first", forKey: "firstTime")
     }
 
     func setUI() {

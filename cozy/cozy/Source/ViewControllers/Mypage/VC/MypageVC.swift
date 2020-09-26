@@ -30,13 +30,8 @@ class MypageVC: UIViewController {
         setRecentCollectionView()
     }
 
-    func isUserLoggedIN() -> Bool {
-        let str = UserDefaults.standard.object(forKey: "token") as! String
-        if str.count > 0 {
-            return true
-        } else {
-            return false
-        }
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
     }
 
     func setUI() {
@@ -44,7 +39,7 @@ class MypageVC: UIViewController {
         loginButton.setMypageLoginButton()
         self.emailLabel.isHidden =  true
 
-        if isUserLoggedIN() == true {
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
             beforeView.isHidden = true
             addInfoDataWithLogin()
             addRecentDataWithLogin()
@@ -63,7 +58,7 @@ class MypageVC: UIViewController {
     }
 
     @objc func reloadData() {
-        if isUserLoggedIN() == true {
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
             addRecentDataWithLogin()
         } else {
             addRecentData()
@@ -71,7 +66,7 @@ class MypageVC: UIViewController {
     }
 
     @IBAction func goInterestVC(_ sender: UIButton) {
-        if self.isUserLoggedIN() == true {
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
             let sb = UIStoryboard(name: "Mypage", bundle: nil)
             let vc = sb.instantiateViewController(identifier: "InterestVC") as! InterestVC
             self.navigationController?.pushViewController(vc, animated: true)
