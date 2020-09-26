@@ -87,7 +87,7 @@ class ActivityRecommendVC: UIViewController {
                 if data[0].dday == nil {
                     self.lblDday.text = "선착순"
                 } else {
-                    self.lblDday.text = "D-" + String(data[0].dday ?? 0)
+                    self.lblDday.text = "D" + String(data[0].dday ?? 0)
                 }
 
                 self.lblDisplayPeriod.text = data[0].period

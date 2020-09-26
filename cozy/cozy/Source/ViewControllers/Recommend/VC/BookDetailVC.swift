@@ -374,14 +374,19 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             if isClickBook {
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
                 cell.selectionStyle = .none
-
                 if self.feedList1[indexPath.row].image?.count != 0 {
                     let feedimgurl = URL(string: self.feedList1[indexPath.row].image!)
                     cell.detailImageView.kf.setImage(with: feedimgurl)
                     cell.readyLabel.isHidden = true
                 }
-
-                cell.detailLabel.text = self.feedList1[indexPath.row].text
+                cell.detailLabel.numberOfLines = 0
+                let style = NSMutableParagraphStyle()
+                style.lineSpacing = 5.0
+                let detailText = NSAttributedString(string: self.feedList1[indexPath.row].text ?? "")
+                let detailAttr = NSMutableAttributedString()
+                detailAttr.append(detailText)
+                detailAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: detailAttr.length))
+                cell.detailLabel.attributedText = detailAttr
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
@@ -401,7 +406,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 if self.feedList2[indexPath.row].dday == 0 {
                     cell.daycntLabel1.text = " 선착순   "
                 } else {
-                    cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)    "
+                    cell.daycntLabel1.text = "D\(self.feedList2[indexPath.row].dday!)    "
                 }
 
                 if self.feedList2[indexPath.row].price == 0 {
@@ -427,7 +432,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                     if self.feedList2[indexPath.row+1].dday == 0 {
                         cell.dayCntLabel2.text = " 선착순   "
                     } else {
-                        cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)    "
+                        cell.dayCntLabel2.text = "D\(self.feedList2[indexPath.row+1].dday!)    "
                     }
 
                     if self.feedList2[indexPath.row+1].price == 0 {
