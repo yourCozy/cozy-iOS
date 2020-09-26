@@ -302,18 +302,6 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 690
-        } else {
-            if self.isClickBook {
-                return 460
-            } else {
-                return 350
-            }
-        }
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier1) as! detailCell1
@@ -336,7 +324,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             cell.tag2.setTitle("    #\(self.detailList[0].hashtag2!)    ", for: .normal)
             cell.tag3.setTitle("    #\(self.detailList[0].hashtag3!)    ", for: .normal)
 
-            cell.descriptionLabel.numberOfLines = 2
+            cell.descriptionLabel.numberOfLines = 0
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 5.0
 
