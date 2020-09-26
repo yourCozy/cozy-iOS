@@ -353,21 +353,25 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             locationAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: locationAttr.length))
             cell.locationLabel.attributedText = locationAttr
 
-            cell.timeLabel.text = self.detailList[0].businessHours
+            cell.timeRestLabel.numberOfLines = 2
+            let timeRestText = NSMutableAttributedString(string: "\(self.detailList[0].businessHours ?? "")\n\(self.detailList[0].dayoff ?? "")")
+            let timeRestAttr = NSMutableAttributedString()
+            timeRestAttr.append(timeRestText)
+            timeRestAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: timeRestAttr.length))
+            cell.timeRestLabel.attributedText = timeRestAttr
+
+            cell.homeLabel.numberOfLines = 2
+            let activityText = NSMutableAttributedString(string: "\(self.detailList[0].activities ?? "")")
+            let activityAttr = NSMutableAttributedString()
+            activityAttr.append(activityText)
+            activityAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: activityAttr.length))
+            cell.homeLabel.attributedText = activityAttr
 
             if self.detailList[0].checked == 0 {
                 cell.bookmarkButton1.setImage(UIImage(named: "iconsave"), for: .normal)
             } else {
                 cell.bookmarkButton1.setImage(UIImage(named: "iconsavefull"), for: .normal)
             }
-
-            cell.restLabel.numberOfLines = 2
-            let restText = NSMutableAttributedString(string: "\(self.detailList[0].dayoff ?? "")")
-            let restAttr = NSMutableAttributedString()
-            restAttr.append(restText)
-            restAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: restAttr.length))
-            cell.restLabel.attributedText = restAttr
-            cell.homeLabel.text = self.detailList[0].activities
 
             if isClickBook {
                 cell.bookUnderline.isHidden = false

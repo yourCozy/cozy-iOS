@@ -39,8 +39,7 @@ class detailCell1: UITableViewCell {
     @IBOutlet weak var roadButton2: UIButton!
 
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var restLabel: UILabel!
+    @IBOutlet weak var timeRestLabel: UILabel!
     @IBOutlet weak var homeLabel: UILabel!
 
     @IBOutlet weak var bookButton: UIButton!

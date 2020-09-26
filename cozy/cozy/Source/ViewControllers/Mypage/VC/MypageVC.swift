@@ -154,7 +154,7 @@ class MypageVC: UIViewController {
 
 }
 
-extension MypageVC: UICollectionViewDataSource {
+extension MypageVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return recentList.count
     }
@@ -177,10 +177,8 @@ extension MypageVC: UICollectionViewDataSource {
         vc.bookstoreIdx = self.recentList[indexPath.row].bookstoreIdx ?? 1
         self.navigationController?.pushViewController(vc, animated: true)
     }
-}
 
-extension MypageVC: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 13
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 2)
     }
 }
