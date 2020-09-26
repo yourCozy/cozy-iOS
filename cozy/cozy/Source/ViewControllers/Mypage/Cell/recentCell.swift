@@ -9,7 +9,6 @@
 import UIKit
 
 class recentCell: UICollectionViewCell {
-    static let identifier: String = "recentCell"
 
     @IBOutlet weak var bookstoreImage: UIImageView!
     @IBOutlet weak var bookstoreLabel: UILabel!

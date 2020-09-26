@@ -302,18 +302,6 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 701
-        } else {
-            if self.isClickBook {
-                return 460
-            } else {
-                return 350
-            }
-        }
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier1) as! detailCell1
@@ -336,7 +324,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             cell.tag2.setTitle("    #\(self.detailList[0].hashtag2!)    ", for: .normal)
             cell.tag3.setTitle("    #\(self.detailList[0].hashtag3!)    ", for: .normal)
 
-            cell.descriptionLabel.numberOfLines = 2
+            cell.descriptionLabel.numberOfLines = 0
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 5.0
 
@@ -353,21 +341,25 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             locationAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: locationAttr.length))
             cell.locationLabel.attributedText = locationAttr
 
-            cell.timeLabel.text = self.detailList[0].businessHours
+            cell.timeRestLabel.numberOfLines = 2
+            let timeRestText = NSMutableAttributedString(string: "\(self.detailList[0].businessHours ?? "")\n\(self.detailList[0].dayoff ?? "")")
+            let timeRestAttr = NSMutableAttributedString()
+            timeRestAttr.append(timeRestText)
+            timeRestAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: timeRestAttr.length))
+            cell.timeRestLabel.attributedText = timeRestAttr
+
+            cell.homeLabel.numberOfLines = 2
+            let activityText = NSMutableAttributedString(string: "\(self.detailList[0].activities ?? "")")
+            let activityAttr = NSMutableAttributedString()
+            activityAttr.append(activityText)
+            activityAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: activityAttr.length))
+            cell.homeLabel.attributedText = activityAttr
 
             if self.detailList[0].checked == 0 {
                 cell.bookmarkButton1.setImage(UIImage(named: "iconsave"), for: .normal)
             } else {
                 cell.bookmarkButton1.setImage(UIImage(named: "iconsavefull"), for: .normal)
             }
-
-            cell.restLabel.numberOfLines = 2
-            let restText = NSMutableAttributedString(string: "\(self.detailList[0].dayoff ?? "")")
-            let restAttr = NSMutableAttributedString()
-            restAttr.append(restText)
-            restAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: restAttr.length))
-            cell.restLabel.attributedText = restAttr
-            cell.homeLabel.text = self.detailList[0].activities
 
             if isClickBook {
                 cell.bookUnderline.isHidden = false
@@ -382,14 +374,19 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             if isClickBook {
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier2) as! detailCell2
                 cell.selectionStyle = .none
-
                 if self.feedList1[indexPath.row].image?.count != 0 {
                     let feedimgurl = URL(string: self.feedList1[indexPath.row].image!)
                     cell.detailImageView.kf.setImage(with: feedimgurl)
                     cell.readyLabel.isHidden = true
                 }
-
-                cell.detailLabel.text = self.feedList1[indexPath.row].text
+                cell.detailLabel.numberOfLines = 0
+                let style = NSMutableParagraphStyle()
+                style.lineSpacing = 5.0
+                let detailText = NSAttributedString(string: self.feedList1[indexPath.row].text ?? "")
+                let detailAttr = NSMutableAttributedString()
+                detailAttr.append(detailText)
+                detailAttr.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: detailAttr.length))
+                cell.detailLabel.attributedText = detailAttr
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: detailIdentifier3) as! detailCell3
@@ -409,7 +406,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                 if self.feedList2[indexPath.row].dday == 0 {
                     cell.daycntLabel1.text = " 선착순   "
                 } else {
-                    cell.daycntLabel1.text = "D-\(self.feedList2[indexPath.row].dday!)    "
+                    cell.daycntLabel1.text = "D\(self.feedList2[indexPath.row].dday!)    "
                 }
 
                 if self.feedList2[indexPath.row].price == 0 {
@@ -435,7 +432,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
                     if self.feedList2[indexPath.row+1].dday == 0 {
                         cell.dayCntLabel2.text = " 선착순   "
                     } else {
-                        cell.dayCntLabel2.text = "D-\(self.feedList2[indexPath.row+1].dday!)    "
+                        cell.dayCntLabel2.text = "D\(self.feedList2[indexPath.row+1].dday!)    "
                     }
 
                     if self.feedList2[indexPath.row+1].price == 0 {

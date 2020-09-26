@@ -87,7 +87,7 @@ class ActivityRecommendVC: UIViewController {
                 if data[0].dday == nil {
                     self.lblDday.text = "선착순"
                 } else {
-                    self.lblDday.text = "D-" + String(data[0].dday ?? 0)
+                    self.lblDday.text = "D" + String(data[0].dday ?? 0)
                 }
 
                 self.lblDisplayPeriod.text = data[0].period
@@ -142,6 +142,19 @@ class ActivityRecommendVC: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.gray
         let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goBack))
         self.navigationItem.leftBarButtonItem = backButton
+
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction(swipe:)))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
+    }
+
+    @objc func rightSwipeAction(swipe: UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            self.goBack()
+        default:
+            break
+        }
     }
 
     @objc func goBack() {
