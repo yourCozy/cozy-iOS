@@ -304,7 +304,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 701
+            return 690
         } else {
             if self.isClickBook {
                 return 460

@@ -23,7 +23,7 @@ class InterestVC: UIViewController {
         setNav()
         setInterestTableView()
         getInterestData()
-        addObserver()
+//        addObserver()
     }
 
     func setInterestTableView() {
@@ -57,13 +57,13 @@ class InterestVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
-    private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .updateMyBookmark, object: nil)
-    }
-
-    @objc func reloadData() {
-        getInterestData()
-    }
+//    private func addObserver() {
+//        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .updateMyBookmark, object: nil)
+//    }
+//
+//    @objc func reloadData() {
+//        getInterestData()
+//    }
 
     func getInterestData() {
         MypageInterestService.shared.getMypageInterestData { NetworkResult in
@@ -92,7 +92,6 @@ class InterestVC: UIViewController {
 
 extension InterestVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate, BookListCellDelegate {
 
-    // 북마크 취소
     func addBookmark(index: Int) {
         print("click bookmark button")
     }
