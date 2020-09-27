@@ -41,6 +41,8 @@
 
 - 2020.09.23 : v1.0.0 [앱스토어 첫 배포](https://apps.apple.com/kr/app/cozy/id1532862833) 🎉
 
+- 2020.09.27 : v1.0.1 배포 
+
 - 웹 페이지 소개 : https://cozybookpaltform.creatorlink.net/
 
 <br/>
