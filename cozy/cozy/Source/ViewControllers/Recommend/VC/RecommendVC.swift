@@ -163,14 +163,6 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 99
-        } else {
-            return 342
-        }
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier1) as! recommendCell
@@ -196,7 +188,6 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             attrString.append(text1)
             attrString.append(text2)
             attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
-
             cell.recommendLabel.attributedText = attrString
 
             return cell
@@ -218,7 +209,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
 
             cell.descriptionLabel.numberOfLines = 2
             let style = NSMutableParagraphStyle()
-            style.lineSpacing = 1.0
+            style.lineSpacing = 5.0
 
             let descripText = NSAttributedString(string: "\(self.recommendList[indexPath.row].shortIntro1 ?? "")\n\(self.recommendList[indexPath.row].shortIntro2 ?? "")")
             let attrString = NSMutableAttributedString()
