@@ -54,6 +54,8 @@ class SearchVC: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func goSearchList(_ sender: UIButton) {
-
+        let sb = UIStoryboard(name: "Search", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "SearchListVC") as! SearchListVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
