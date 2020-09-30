@@ -114,9 +114,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         let cell = self.tableView.cellForRow(at: indexPath) as! bookstoreCell
         let bookstoreIdx = self.recommendList[index].bookstoreIdx
 
-        let token = UserDefaults.standard.object(forKey: "token") as! String
-        if token.count > 0 {
-
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
             NotificationCenter.default.post(name: .updateBookmark, object: nil)
             NotificationCenter.default.post(name: .updateMyBookmark, object: nil)
 

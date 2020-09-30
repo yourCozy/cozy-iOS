@@ -188,10 +188,13 @@
                             <constraint firstItem="WC0-U8-eaL" firstAttribute="trailing" secondItem="eNH-d6-ywN" secondAttribute="trailing" id="lAW-Bx-OBi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="jIe-R3-0fc"/>
+                    <tabBarItem key="tabBarItem" title="추천" image="tapiconrecommendpressed" id="afO-y7-LHl"/>
                     <navigationItem key="navigationItem" id="6jF-jZ-Msq">
                         <barButtonItem key="leftBarButtonItem" image="textLogo56X20" id="IeW-Fw-kiY">
                             <color key="tintColor" red="0.99215686274509807" green="0.72156862745098038" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="iconsearch" id="5sd-dV-r2i">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -227,6 +230,7 @@
         <image name="blackicon" width="326" height="326"/>
         <image name="iconplace" width="11" height="14"/>
         <image name="iconsavewhite" width="14" height="20"/>
+        <image name="iconsearch" width="22" height="22"/>
         <image name="tapiconrecommendpressed" width="23" height="22"/>
         <image name="textLogo56X20" width="56" height="20"/>
         <systemColor name="systemBackgroundColor">

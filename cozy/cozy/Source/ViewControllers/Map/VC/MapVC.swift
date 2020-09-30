@@ -156,8 +156,7 @@ extension MapVC: UITableViewDelegate, UITableViewDataSource, UIViewControllerTra
         let cell = self.mapTableView.cellForRow(at: indexPath) as! BookListCell
         let bookstoreIdx = self.mapList[index].bookstoreIdx
 
-        let token = UserDefaults.standard.object(forKey: "token") as! String
-        if token.count > 0 {
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
             if cell.bookMarkButton.hasImage(named: "iconsavewhite", for: .normal) {
                 cell.bookMarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
                 let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)

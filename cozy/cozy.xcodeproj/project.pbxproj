@@ -29,6 +29,8 @@
 		18981F9D24FA4BD900D6A921 /* ActivityList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */; };
 		18981F9F24FA5CBD00D6A921 /* ActivityRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */; };
 		33B85403B84CB70CCCF3B7E8 /* Pods_cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693EA2F950DEF536626A6863 /* Pods_cozy.framework */; };
+		B60CE4862524CF7500EB1E70 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60CE4852524CF7500EB1E70 /* Search.storyboard */; };
+		B60CE48A2524CF9A00EB1E70 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CE4892524CF9A00EB1E70 /* SearchVC.swift */; };
 		B6208C9E25066BA700185624 /* MapCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208C9D25066BA700185624 /* MapCountModel.swift */; };
 		B6208CA125066C2300185624 /* MapCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208CA025066C2300185624 /* MapCountService.swift */; };
 		B6208CA3250674E100185624 /* MapListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6208CA2250674E100185624 /* MapListModel.swift */; };
@@ -137,6 +139,8 @@
 		18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityRecommend.storyboard; sourceTree = "<group>"; };
 		693EA2F950DEF536626A6863 /* Pods_cozy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cozy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EA692FCFEDD58231F78E42 /* Pods-cozy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.debug.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.debug.xcconfig"; sourceTree = "<group>"; };
+		B60CE4852524CF7500EB1E70 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		B60CE4892524CF9A00EB1E70 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		B6208C9D25066BA700185624 /* MapCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCountModel.swift; sourceTree = "<group>"; };
 		B6208CA025066C2300185624 /* MapCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCountService.swift; sourceTree = "<group>"; };
 		B6208CA2250674E100185624 /* MapListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListModel.swift; sourceTree = "<group>"; };
@@ -282,6 +286,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B60CE4842524CF5E00EB1E70 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B60CE4852524CF7500EB1E70 /* Search.storyboard */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B60CE4882524CF8800EB1E70 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B60CE4892524CF9A00EB1E70 /* SearchVC.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		B646AF3824EBFE4B00AC96A9 = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +346,7 @@
 		B646AF5F24EBFFCE00AC96A9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B60CE4882524CF8800EB1E70 /* Search */,
 				B658A3C62501682B0076BCD4 /* Login */,
 				B64AF18D24FD5BCD0015F2A7 /* Onboarding */,
 				B64940A324F174CF0052A21F /* NavBar */,
@@ -365,6 +386,7 @@
 		B646AF6424EC005000AC96A9 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				B60CE4842524CF5E00EB1E70 /* Search */,
 				B658A3C3250168170076BCD4 /* Login */,
 				B64AF19024FD5C1A0015F2A7 /* Onboarding */,
 				B646AF6B24EC028F00AC96A9 /* Recommend */,
@@ -743,6 +765,7 @@
 				B658A3B2250156780076BCD4 /* onboardcell1.xib in Resources */,
 				B658A3C5250168240076BCD4 /* Login.storyboard in Resources */,
 				B646AF5124EBFE4C00AC96A9 /* Assets.xcassets in Resources */,
+				B60CE4862524CF7500EB1E70 /* Search.storyboard in Resources */,
 				B6B1E1CB24FED56A00E60FB0 /* detailCell3.xib in Resources */,
 				B649CCF224FAB6AB0032AF31 /* BookDetail.storyboard in Resources */,
 				B646AF7524EC031500AC96A9 /* Activity.storyboard in Resources */,
@@ -855,6 +878,7 @@
 				B6208CA125066C2300185624 /* MapCountService.swift in Sources */,
 				B658A3AD250154690076BCD4 /* OnboardingSlider.swift in Sources */,
 				B6B1E1CA24FED56A00E60FB0 /* detailCell3.swift in Sources */,
+				B60CE48A2524CF9A00EB1E70 /* SearchVC.swift in Sources */,
 				B646AF4524EBFE4B00AC96A9 /* AppDelegate.swift in Sources */,
 				187C130A25065E5D004FD60B /* RecommendActivityService.swift in Sources */,
 				B646AF4F24EBFE4B00AC96A9 /* cozy.xcdatamodeld in Sources */,

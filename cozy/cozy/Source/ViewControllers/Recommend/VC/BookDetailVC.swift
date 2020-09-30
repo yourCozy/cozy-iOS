@@ -211,9 +211,7 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
         let indexPath = IndexPath(row: 0, section: 0)
         let cell = self.detailTableView.cellForRow(at: indexPath) as! detailCell1
 
-        let token = UserDefaults.standard.object(forKey: "token") as! String
-        if token.count > 0 {
-
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
             NotificationCenter.default.post(name: .updateBookmark, object: nil)
             NotificationCenter.default.post(name: .updateMyBookmark, object: nil)
 
@@ -239,7 +237,6 @@ extension BookDetailVC: UITableViewDelegate, UITableViewDataSource, detailCell1D
             needLoginAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
             self.present(needLoginAlert, animated: true, completion: nil)
         }
-
     }
 
     func selectMapButton() {
