@@ -422,7 +422,6 @@
 			children = (
 				B646AF6F24EC02FB00AC96A9 /* Recommend.storyboard */,
 				B649CCF124FAB6AB0032AF31 /* BookDetail.storyboard */,
-				18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -438,6 +437,7 @@
 		B646AF6D24EC02A000AC96A9 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */,
 				B646AF7424EC031500AC96A9 /* Activity.storyboard */,
 				18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */,
 			);

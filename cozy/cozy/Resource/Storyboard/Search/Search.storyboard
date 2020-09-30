@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareRoundR.ttf">
+            <string>NanumSquareRoundR</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--SearchVC-->
         <scene sceneID="liI-Sm-Zdg">
@@ -16,18 +21,195 @@
                     <view key="view" contentMode="scaleToFill" id="wIh-YJ-EA7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afT-cL-KHj">
+                                <rect key="frame" x="0.0" y="98" width="414" height="2"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="y3d-kJ-OtA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pE-Ne-10v">
+                                <rect key="frame" x="24" y="46" width="366" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbz-W4-tWE">
+                                        <rect key="frame" x="12" y="9" width="17" height="22"/>
+                                        <state key="normal" image="iconbefore17X14"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="Wd7-R5-Rdq" eventType="touchUpInside" id="rrP-Ot-R7w"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="검색어를 입력하세요!" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AGD-Q2-VBK">
+                                        <rect key="frame" x="44" y="11.5" width="270" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="270" id="7Cx-uS-zb4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQc-Ug-kbq">
+                                        <rect key="frame" x="337" y="9" width="18" height="22"/>
+                                        <state key="normal" image="iconsearch18X18"/>
+                                        <connections>
+                                            <action selector="goSearchList:" destination="Wd7-R5-Rdq" eventType="touchUpInside" id="9qd-el-AD9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="lbz-W4-tWE" firstAttribute="centerY" secondItem="7pE-Ne-10v" secondAttribute="centerY" id="0NZ-fD-UAg"/>
+                                    <constraint firstItem="AGD-Q2-VBK" firstAttribute="centerY" secondItem="7pE-Ne-10v" secondAttribute="centerY" id="418-3t-hUk"/>
+                                    <constraint firstItem="oQc-Ug-kbq" firstAttribute="centerY" secondItem="7pE-Ne-10v" secondAttribute="centerY" id="Ern-4h-DkH"/>
+                                    <constraint firstItem="AGD-Q2-VBK" firstAttribute="leading" secondItem="lbz-W4-tWE" secondAttribute="trailing" constant="15" id="HhM-QA-j52"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기 검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLj-LQ-DCk">
+                                <rect key="frame" x="24" y="132" width="58" height="13.5"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEd-ZD-5A2">
+                                <rect key="frame" x="24" y="159.5" width="30" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="맥주">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLs-sa-u2a">
+                                <rect key="frame" x="24" y="193.5" width="51" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="영화상영">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gT-nX-sbY">
+                                <rect key="frame" x="24" y="227.5" width="57" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="전시/공연">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tM0-Yc-NAf">
+                                <rect key="frame" x="89" y="227.5" width="51" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="독립출판">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hS-ZU-qbU">
+                                <rect key="frame" x="148" y="227.5" width="30" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="강연">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpo-j2-LcZ">
+                                <rect key="frame" x="83" y="193.5" width="51" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="심야책방">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-Jj-Y2O">
+                                <rect key="frame" x="142" y="193.5" width="51" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="독서모임">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiG-c1-0dc">
+                                <rect key="frame" x="62" y="159.5" width="30" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="카페">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tox-sR-mHF">
+                                <rect key="frame" x="100" y="159.5" width="39" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="관악구">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVk-6M-yv5">
+                                <rect key="frame" x="147" y="159.5" width="39" height="28"/>
+                                <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="14"/>
+                                <state key="normal" title="마포구">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2ZC-ba-7e6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="QLj-LQ-DCk" firstAttribute="leading" secondItem="2ZC-ba-7e6" secondAttribute="leading" constant="24" id="2qV-mX-fYa"/>
+                            <constraint firstItem="5hS-ZU-qbU" firstAttribute="centerY" secondItem="tM0-Yc-NAf" secondAttribute="centerY" id="4VG-fv-Dnd"/>
+                            <constraint firstItem="RiG-c1-0dc" firstAttribute="leading" secondItem="IEd-ZD-5A2" secondAttribute="trailing" constant="8" id="5Hb-4e-oxB"/>
+                            <constraint firstItem="2hD-Jj-Y2O" firstAttribute="centerY" secondItem="Mpo-j2-LcZ" secondAttribute="centerY" id="7Cw-2v-SXX"/>
+                            <constraint firstItem="4gT-nX-sbY" firstAttribute="leading" secondItem="2ZC-ba-7e6" secondAttribute="leading" constant="24" id="8DB-cb-X4S"/>
+                            <constraint firstItem="Mpo-j2-LcZ" firstAttribute="centerY" secondItem="bLs-sa-u2a" secondAttribute="centerY" id="9iw-R3-wXb"/>
+                            <constraint firstItem="7pE-Ne-10v" firstAttribute="leading" secondItem="2ZC-ba-7e6" secondAttribute="leading" constant="24" id="BcD-o5-Xyz"/>
+                            <constraint firstItem="2ZC-ba-7e6" firstAttribute="trailing" secondItem="7pE-Ne-10v" secondAttribute="trailing" constant="24" id="Dfs-a2-yXc"/>
+                            <constraint firstItem="tM0-Yc-NAf" firstAttribute="leading" secondItem="4gT-nX-sbY" secondAttribute="trailing" constant="8" id="EC8-DZ-9JQ"/>
+                            <constraint firstItem="IEd-ZD-5A2" firstAttribute="top" secondItem="QLj-LQ-DCk" secondAttribute="bottom" constant="14" id="FgD-XY-5gW"/>
+                            <constraint firstItem="lbz-W4-tWE" firstAttribute="leading" secondItem="2ZC-ba-7e6" secondAttribute="leading" constant="36" id="GTU-Ew-14A"/>
+                            <constraint firstItem="QLj-LQ-DCk" firstAttribute="top" secondItem="afT-cL-KHj" secondAttribute="bottom" constant="32" id="GTq-1L-f3d"/>
+                            <constraint firstItem="2hD-Jj-Y2O" firstAttribute="leading" secondItem="Mpo-j2-LcZ" secondAttribute="trailing" constant="8" id="NYp-46-xBe"/>
+                            <constraint firstItem="Mpo-j2-LcZ" firstAttribute="leading" secondItem="bLs-sa-u2a" secondAttribute="trailing" constant="8" id="Nw8-mH-XgI"/>
+                            <constraint firstItem="bLs-sa-u2a" firstAttribute="leading" secondItem="2ZC-ba-7e6" secondAttribute="leading" constant="24" id="PLs-Iy-hrM"/>
+                            <constraint firstItem="bLs-sa-u2a" firstAttribute="top" secondItem="IEd-ZD-5A2" secondAttribute="bottom" constant="6" id="Qh1-HP-6aO"/>
+                            <constraint firstItem="Tox-sR-mHF" firstAttribute="centerY" secondItem="RiG-c1-0dc" secondAttribute="centerY" id="Rh5-6F-mdJ"/>
+                            <constraint firstItem="7pE-Ne-10v" firstAttribute="top" secondItem="2ZC-ba-7e6" secondAttribute="top" constant="2" id="TgV-El-qEG"/>
+                            <constraint firstItem="afT-cL-KHj" firstAttribute="top" secondItem="2ZC-ba-7e6" secondAttribute="top" constant="54" id="VTV-BE-dPi"/>
+                            <constraint firstItem="5hS-ZU-qbU" firstAttribute="leading" secondItem="tM0-Yc-NAf" secondAttribute="trailing" constant="8" id="XKq-jV-OsD"/>
+                            <constraint firstItem="IEd-ZD-5A2" firstAttribute="leading" secondItem="2ZC-ba-7e6" secondAttribute="leading" constant="24" id="XUD-PU-ZhZ"/>
+                            <constraint firstItem="tM0-Yc-NAf" firstAttribute="centerY" secondItem="4gT-nX-sbY" secondAttribute="centerY" id="c2I-tF-q0d"/>
+                            <constraint firstItem="2ZC-ba-7e6" firstAttribute="trailing" secondItem="afT-cL-KHj" secondAttribute="trailing" id="gEk-lb-Byr"/>
+                            <constraint firstItem="afT-cL-KHj" firstAttribute="top" secondItem="7pE-Ne-10v" secondAttribute="bottom" constant="12" id="inq-fl-Vd0"/>
+                            <constraint firstItem="4gT-nX-sbY" firstAttribute="top" secondItem="bLs-sa-u2a" secondAttribute="bottom" constant="6" id="mkb-qL-RTz"/>
+                            <constraint firstItem="2ZC-ba-7e6" firstAttribute="trailing" secondItem="oQc-Ug-kbq" secondAttribute="trailing" constant="35" id="peR-HW-czF"/>
+                            <constraint firstItem="afT-cL-KHj" firstAttribute="leading" secondItem="2ZC-ba-7e6" secondAttribute="leading" id="s7e-rs-8hK"/>
+                            <constraint firstItem="SVk-6M-yv5" firstAttribute="centerY" secondItem="Tox-sR-mHF" secondAttribute="centerY" id="uxP-LK-9yA"/>
+                            <constraint firstItem="SVk-6M-yv5" firstAttribute="leading" secondItem="Tox-sR-mHF" secondAttribute="trailing" constant="8" id="v3Q-sH-2bA"/>
+                            <constraint firstItem="Tox-sR-mHF" firstAttribute="leading" secondItem="RiG-c1-0dc" secondAttribute="trailing" constant="8" id="vX7-RH-Y4f"/>
+                            <constraint firstItem="RiG-c1-0dc" firstAttribute="centerY" secondItem="IEd-ZD-5A2" secondAttribute="centerY" id="z2j-dZ-HXn"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7Xy-hK-ZEU" appends="YES" id="0Xi-qk-2AV"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outletCollection property="searchButtons" destination="IEd-ZD-5A2" collectionClass="NSMutableArray" id="fPK-yq-dbp"/>
+                        <outletCollection property="searchButtons" destination="RiG-c1-0dc" collectionClass="NSMutableArray" id="U0J-af-Clr"/>
+                        <outletCollection property="searchButtons" destination="Tox-sR-mHF" collectionClass="NSMutableArray" id="5Xa-ec-LCQ"/>
+                        <outletCollection property="searchButtons" destination="SVk-6M-yv5" collectionClass="NSMutableArray" id="Juy-65-ZB2"/>
+                        <outletCollection property="searchButtons" destination="bLs-sa-u2a" collectionClass="NSMutableArray" id="lkb-iD-jEO"/>
+                        <outletCollection property="searchButtons" destination="Mpo-j2-LcZ" collectionClass="NSMutableArray" id="ITK-D5-HEB"/>
+                        <outletCollection property="searchButtons" destination="2hD-Jj-Y2O" collectionClass="NSMutableArray" id="a6n-1Y-Ach"/>
+                        <outletCollection property="searchButtons" destination="4gT-nX-sbY" collectionClass="NSMutableArray" id="hOS-3s-ayh"/>
+                        <outletCollection property="searchButtons" destination="tM0-Yc-NAf" collectionClass="NSMutableArray" id="Ocx-IP-8Uo"/>
+                        <outletCollection property="searchButtons" destination="5hS-ZU-qbU" collectionClass="NSMutableArray" id="z6x-6z-7TO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQz-e0-FVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7Xy-hK-ZEU"/>
             </objects>
-            <point key="canvasLocation" x="100" y="108"/>
+            <point key="canvasLocation" x="100.00000000000001" y="107.8125"/>
         </scene>
     </scenes>
     <resources>
+        <image name="iconbefore17X14" width="17" height="14"/>
+        <image name="iconsearch18X18" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

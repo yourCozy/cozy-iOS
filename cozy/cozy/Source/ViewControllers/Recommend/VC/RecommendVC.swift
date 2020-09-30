@@ -44,6 +44,12 @@ class RecommendVC: UIViewController {
         }
     }
 
+    @IBAction func goSearch(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Search", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "SearchVC") as! SearchVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     private func getRecommendListData() {
         RecommendListService.shared.getRecommendListData { NetworkResult in
             switch NetworkResult {

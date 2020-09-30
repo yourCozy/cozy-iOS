@@ -195,6 +195,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="iconsearch" id="5sd-dV-r2i">
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="goSearch:" destination="zWb-Pl-UVL" id="X85-Rv-VGE"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

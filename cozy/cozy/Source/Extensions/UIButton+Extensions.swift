@@ -45,7 +45,7 @@ extension UIButton {
         self.clipsToBounds = true
     }
 
-    func  setTasteButtonTapped() {
+    func setTasteButtonTapped() {
         self.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 14)
         self.setTitleColor( UIColor.realwhite, for: .normal)
         self.layer.borderColor = UIColor.mango.cgColor
@@ -53,6 +53,13 @@ extension UIButton {
         self.layer.cornerRadius = 20
         self.layer.borderWidth = 1
         self.clipsToBounds = true
+    }
+
+    func setSearchButton() {
+        self.layer.borderColor = UIColor.veryLightPink.cgColor
+        self.layer.cornerRadius = 18
+        self.layer.borderWidth = 1
+        self.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
     }
 
     func setOnboardStartButton() {

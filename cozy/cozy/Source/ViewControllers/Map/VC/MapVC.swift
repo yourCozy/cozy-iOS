@@ -64,6 +64,12 @@ class MapVC: UIViewController {
         mapTableView.dataSource = self
     }
 
+    @IBAction func goSearch(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Search", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "SearchVC") as! SearchVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     @objc func selectButton() {
         let storybaord = UIStoryboard(name: "Map", bundle: nil)
         let pvc = storybaord.instantiateViewController(identifier: "MapSelectVC") as! MapSelectVC
