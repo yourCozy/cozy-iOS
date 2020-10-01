@@ -76,6 +76,10 @@ class ActivityRecommendVC: UIViewController {
 
                 self.displayDetailList = self.displayDetailList.filter {$0 != ""}
 
+                if self.displayDetailList.count == 0 {
+                    self.subImgCollectionView.isHidden = true
+                }
+                
                 self.displayDetailList.append(image1)
 
                 self.subImgCollectionView.reloadData()
