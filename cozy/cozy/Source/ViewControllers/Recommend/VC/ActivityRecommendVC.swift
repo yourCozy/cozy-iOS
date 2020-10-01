@@ -38,6 +38,8 @@ class ActivityRecommendVC: UIViewController {
     @IBOutlet var lblFixedCollection: [UILabel]!
     @IBOutlet var lblNotFixedCollection: [UILabel]!
 
+    @IBOutlet weak var commentTableView: UITableView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,6 +47,9 @@ class ActivityRecommendVC: UIViewController {
 
         subImgCollectionView.delegate = self
         subImgCollectionView.dataSource = self
+
+        commentTableView.delegate = self
+        commentTableView.dataSource = self
 
         getActivityDetailData()
 
@@ -79,7 +84,7 @@ class ActivityRecommendVC: UIViewController {
                 if self.displayDetailList.count == 0 {
                     self.subImgCollectionView.isHidden = true
                 }
-                
+
                 self.displayDetailList.append(image1)
 
                 self.subImgCollectionView.reloadData()
@@ -228,4 +233,26 @@ extension ActivityRecommendVC: UICollectionViewDataSource {
         return detailCell
     }
 
+}
+
+extension ActivityRecommendVC: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
+
+extension ActivityRecommendVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let commentCell = tableView.dequeueReusableCell(withIdentifier: commentCell.identifier, for:
+                                                                indexPath) as? commentCell else { return UITableViewCell() }
+
+        commentCell.setData(profileImg: "kendyleNelsenWWuF2NlQ2OUnsplash", name: "Jaeuk", date: "20.09.06 11:30", comment: "이 활동은 홍철책방에 다시 찾아온 감각적인 전시입니다. 1만여 점의 작품 중 주목할 만한 작품을 올해 20주년을 맞아 전시를 진행하고 있습니다.")
+
+        return commentCell
+    }
 }
