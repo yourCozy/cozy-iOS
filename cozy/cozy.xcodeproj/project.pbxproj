@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		185D45C824FA657D001860E7 /* ActivityRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */; };
+		186887DB2525A50400F943E0 /* commentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186887DA2525A50400F943E0 /* commentCell.swift */; };
 		187C1302250286C2004FD60B /* ActivityListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1301250286C2004FD60B /* ActivityListService.swift */; };
 		187C130425064F88004FD60B /* RecommendFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C130325064F88004FD60B /* RecommendFeedService.swift */; };
 		187C1306250650A0004FD60B /* RecommendFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1305250650A0004FD60B /* RecommendFeedModel.swift */; };
@@ -119,6 +120,7 @@
 
 /* Begin PBXFileReference section */
 		185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommendVC.swift; sourceTree = "<group>"; };
+		186887DA2525A50400F943E0 /* commentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentCell.swift; sourceTree = "<group>"; };
 		187C1301250286C2004FD60B /* ActivityListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListService.swift; sourceTree = "<group>"; };
 		187C130325064F88004FD60B /* RecommendFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFeedService.swift; sourceTree = "<group>"; };
 		187C1305250650A0004FD60B /* RecommendFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFeedModel.swift; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 				187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */,
 				B6B1E1C824FED56A00E60FB0 /* detailCell3.swift */,
 				B6B1E1C924FED56A00E60FB0 /* detailCell3.xib */,
+				186887DA2525A50400F943E0 /* commentCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -917,6 +920,7 @@
 				B66A95D3250D4C8D0033E9F2 /* SplashVC.swift in Sources */,
 				B646AF7F24EC037F00AC96A9 /* MapVC.swift in Sources */,
 				B6C424B825054CFF00AAE393 /* BookstoreDetailModel.swift in Sources */,
+				186887DB2525A50400F943E0 /* commentCell.swift in Sources */,
 				187C1313250A1A2B004FD60B /* ActivityDetailModel.swift in Sources */,
 				187FEED724FCD6AA00476D89 /* DisplayDetailCell.swift in Sources */,
 				B658A3AB250152DA0076BCD4 /* OnboardingIntroVC.swift in Sources */,
