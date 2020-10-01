@@ -44,6 +44,12 @@ class RecommendVC: UIViewController {
         }
     }
 
+    @IBAction func goSearch(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Search", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "SearchVC") as! SearchVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     private func getRecommendListData() {
         RecommendListService.shared.getRecommendListData { NetworkResult in
             switch NetworkResult {
@@ -114,9 +120,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         let cell = self.tableView.cellForRow(at: indexPath) as! bookstoreCell
         let bookstoreIdx = self.recommendList[index].bookstoreIdx
 
-        let token = UserDefaults.standard.object(forKey: "token") as! String
-        if token.count > 0 {
-
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
             NotificationCenter.default.post(name: .updateBookmark, object: nil)
             NotificationCenter.default.post(name: .updateMyBookmark, object: nil)
 
@@ -163,14 +167,6 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
         }
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 99
-        } else {
-            return 342
-        }
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier1) as! recommendCell
@@ -196,7 +192,6 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             attrString.append(text1)
             attrString.append(text2)
             attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
-
             cell.recommendLabel.attributedText = attrString
 
             return cell
@@ -218,7 +213,7 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
 
             cell.descriptionLabel.numberOfLines = 2
             let style = NSMutableParagraphStyle()
-            style.lineSpacing = 1.0
+            style.lineSpacing = 5.0
 
             let descripText = NSAttributedString(string: "\(self.recommendList[indexPath.row].shortIntro1 ?? "")\n\(self.recommendList[indexPath.row].shortIntro2 ?? "")")
             let attrString = NSMutableAttributedString()
