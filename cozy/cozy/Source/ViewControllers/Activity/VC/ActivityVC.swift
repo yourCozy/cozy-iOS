@@ -11,8 +11,6 @@ import Alamofire
 
 class ActivityVC: UIViewController {
 
-    private var activityList: [ActivityListData] = []
-
     @IBOutlet var myViews: [UIView]!
 
     @IBOutlet var buttonActivityCollection: [UIButton]!
@@ -50,9 +48,7 @@ class ActivityVC: UIViewController {
 
         ActivityListService.shared.getActivityListData(categoryIdx: tappedView.tag) { NetworkResult in
             switch NetworkResult {
-            case .success(let data):
-                guard let data = data as? [ActivityListData] else {return print("activityList error")}
-
+            case .success:
                 vc.categoryIdx = tappedView.tag
                 self.navigationController?.pushViewController(vc, animated: true)
 
