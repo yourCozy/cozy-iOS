@@ -22,7 +22,7 @@ class SearchListVC: UIViewController {
 
     @IBOutlet weak var searchTableView: UITableView!
     private let searchListLabelIdentifier = "SearchLabelCell"
-    private let searchListIdentifier: String = "bookListCell"
+    private let searchListIdentifier: String = "SearchListCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,6 @@ class SearchListVC: UIViewController {
     }
 
     func setSearchTable() {
-        let nibName = UINib(nibName: "BookListCell", bundle: nil)
-        searchTableView.register(nibName, forCellReuseIdentifier: searchListIdentifier)
         searchTableView.delegate = self
         searchTableView.dataSource = self
     }
@@ -43,14 +41,6 @@ class SearchListVC: UIViewController {
 
 extension SearchListVC: UITableViewDelegate, UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 60
-        } else {
-            return 370
-        }
-    }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -59,7 +49,7 @@ extension SearchListVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return 0
+            return 5
         }
     }
 
@@ -70,7 +60,7 @@ extension SearchListVC: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListIdentifier) as! BookListCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListIdentifier) as! SearchListCell
             cell.selectionStyle = .none
             return cell
         }
