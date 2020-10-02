@@ -54,12 +54,9 @@ class ActivityVC: UIViewController {
 
             case .requestErr:
                 print("request error")
-                let alert = UIAlertController(title: "활동이 없습니다 :)", message: "준비중입니다", preferredStyle: UIAlertController.Style.alert)
-
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-
-                alert.addAction(defaultAction)
-                self.present(alert, animated: false, completion: nil)
+                let alert = UIAlertController(title: "활동이 없습니다 :)", message: "준비중입니다!", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
 
             case .pathErr:
                 print("path error")
