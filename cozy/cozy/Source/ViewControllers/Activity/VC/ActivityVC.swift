@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Alamofire
 
 class ActivityVC: UIViewController {
+
+    private var activityList: [ActivityListData] = []
 
     @IBOutlet var myViews: [UIView]!
 
@@ -44,9 +47,32 @@ class ActivityVC: UIViewController {
 
         let sb = UIStoryboard(name: "ActivityList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
-        vc.categoryIdx = tappedView.tag
 
-        self.navigationController?.pushViewController(vc, animated: true)
+        ActivityListService.shared.getActivityListData(categoryIdx: tappedView.tag) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [ActivityListData] else {return print("activityList error")}
+
+                vc.categoryIdx = tappedView.tag
+                self.navigationController?.pushViewController(vc, animated: true)
+
+            case .requestErr:
+                print("request error")
+                let alert = UIAlertController(title: "활동이 없습니다 :)", message: "준비중입니다", preferredStyle: UIAlertController.Style.alert)
+
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+
+                alert.addAction(defaultAction)
+                self.present(alert, animated: false, completion: nil)
+
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
     }
 
     @IBAction func btnActivityAction(_ sender: UIButton) {
