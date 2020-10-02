@@ -21,6 +21,7 @@ class SearchListVC: UIViewController {
     }
 
     @IBOutlet weak var searchTableView: UITableView!
+
     private let searchListLabelIdentifier = "SearchLabelCell"
     private let searchListIdentifier: String = "SearchListCell"
 
@@ -56,12 +57,24 @@ extension SearchListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListLabelIdentifier) as! SearchLabelCell
-            cell.resultLabel.text = "검색 결과 00건"
+
+            let resultText1 = NSAttributedString(string: "검색 결과 ")
+            let resultText2 = NSAttributedString(string: "10", attributes: [.foregroundColor: UIColor.mango])
+            let resultText3 = NSAttributedString(string: "건")
+
+            let attrString = NSMutableAttributedString()
+            attrString.append(resultText1)
+            attrString.append(resultText2)
+            attrString.append(resultText3)
+
+            cell.resultLabel.attributedText = attrString
             cell.selectionStyle = .none
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListIdentifier) as! SearchListCell
             cell.selectionStyle = .none
+            
             return cell
         }
     }
