@@ -193,7 +193,7 @@ class ActivityRecommendVC: UIViewController {
             lbl.textColor = UIColor.brownishGrey
         }
 
-        lblActivityIntroduction.font = UIFont(name: "NanumSquareRoundB", size: 16)
+        lblActivityIntroduction.font = UIFont(name: "NanumSquareRoundL", size: 16)
         lblActivityIntroduction.textColor = UIColor.brownishGrey
     }
 

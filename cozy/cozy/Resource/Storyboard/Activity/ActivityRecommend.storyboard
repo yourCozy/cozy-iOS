@@ -43,7 +43,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미지 준비중입니다 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsL-HZ-K1B">
-                                                <rect key="frame" x="127" y="114.5" width="160" height="21"/>
+                                                <rect key="frame" x="123" y="115" width="168.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="18"/>
                                                 <color key="textColor" systemColor="systemGray2Color"/>
                                                 <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                                                                     <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미지 준비중입니다 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZO-Yp-R39">
-                                                                    <rect key="frame" x="16.5" y="33.5" width="89" height="12"/>
+                                                                    <rect key="frame" x="14.5" y="33.5" width="93.5" height="12"/>
                                                                     <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="10"/>
                                                                     <color key="textColor" systemColor="systemGray2Color"/>
                                                                     <nil key="highlightedColor"/>
@@ -191,16 +191,27 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuN-Kz-aCx">
-                                                <rect key="frame" x="24" y="668" width="366" height="122"/>
-                                                <string key="text">홍철책방에 다시 찾아온 감각적인 전시를 소개합니
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuN-Kz-aCx">
+                                                <rect key="frame" x="24" y="667" width="366" height="106.5"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">홍철책방에 다시 찾아온 감각적인 전시를 소개합니
 다. 올해로 벌써 두번째로 전시를 함께 진행하게된 주
 목받는 디자이너 무라카미 다카시의 개인전으로 평
 소 저희 책방 능히 넣는 싹이 청춘의 하는 생생하며, 
 못할 아니다. 품에 것이 밥을 우리의 그러므로 아름답
-고 힘차게 광야에서 것은 뿐이다.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+</string>
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="NanumSquareRoundL"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="고 힘차게 광야에서 것은 뿐이다.">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="NanumSquareRoundL"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line375X8Lightgray" translatesAutoresizingMaskIntoConstraints="NO" id="uKi-n1-ASH">
@@ -210,13 +221,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="활동소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puf-wM-PXT">
-                                                <rect key="frame" x="24" y="635" width="55.5" height="19"/>
+                                                <rect key="frame" x="24" y="635" width="58.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fSM-dQ-n2Z">
-                                                <rect key="frame" x="0.0" y="862" width="414" height="538"/>
+                                                <rect key="frame" x="0.0" y="845.5" width="414" height="554.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="195" id="aVB-vk-MM8" customClass="commentCell" customModule="cozy" customModuleProvider="target">
@@ -279,7 +290,7 @@
                                                 </prototypes>
                                             </tableView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line375X8Lightgray" translatesAutoresizingMaskIntoConstraints="NO" id="QDG-5u-cG5">
-                                                <rect key="frame" x="0.0" y="818" width="414" height="8"/>
+                                                <rect key="frame" x="0.0" y="801.5" width="414" height="8"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="8" id="abZ-hO-iUi"/>
                                                 </constraints>
