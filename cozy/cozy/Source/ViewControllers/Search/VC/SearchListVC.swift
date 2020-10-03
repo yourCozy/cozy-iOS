@@ -21,8 +21,9 @@ class SearchListVC: UIViewController {
     }
 
     @IBOutlet weak var searchTableView: UITableView!
+
     private let searchListLabelIdentifier = "SearchLabelCell"
-    private let searchListIdentifier: String = "bookListCell"
+    private let searchListIdentifier: String = "SearchListCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,6 @@ class SearchListVC: UIViewController {
     }
 
     func setSearchTable() {
-        let nibName = UINib(nibName: "BookListCell", bundle: nil)
-        searchTableView.register(nibName, forCellReuseIdentifier: searchListIdentifier)
         searchTableView.delegate = self
         searchTableView.dataSource = self
     }
@@ -43,14 +42,6 @@ class SearchListVC: UIViewController {
 
 extension SearchListVC: UITableViewDelegate, UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 60
-        } else {
-            return 370
-        }
-    }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -59,19 +50,31 @@ extension SearchListVC: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return 0
+            return 5
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListLabelIdentifier) as! SearchLabelCell
-            cell.resultLabel.text = "검색 결과 00건"
+
+            let resultText1 = NSAttributedString(string: "검색 결과 ")
+            let resultText2 = NSAttributedString(string: "10", attributes: [.foregroundColor: UIColor.mango])
+            let resultText3 = NSAttributedString(string: "건")
+
+            let attrString = NSMutableAttributedString()
+            attrString.append(resultText1)
+            attrString.append(resultText2)
+            attrString.append(resultText3)
+
+            cell.resultLabel.attributedText = attrString
             cell.selectionStyle = .none
+            
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListIdentifier) as! BookListCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListIdentifier) as! SearchListCell
             cell.selectionStyle = .none
+            
             return cell
         }
     }

@@ -19,6 +19,9 @@ struct APIConstants {
     // 소셜 로그인
     static let authLoginURL = APIConstants.baseURL + "/auth/social"
 
+    // 키워드 검색
+    static let searchURL = APIConstants.baseURL + "/bookstore/search/"
+
     //Main - 추천
     // 책방추천 8개
     static let recommendURL = APIConstants.baseURL + "/bookstore/recommendation"
