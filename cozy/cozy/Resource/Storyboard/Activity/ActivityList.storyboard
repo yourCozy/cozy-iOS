@@ -164,28 +164,19 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이터 준비중입니다 :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPc-k4-dBg">
-                                <rect key="frame" x="122.5" y="465" width="169" height="20"/>
-                                <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="18"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eam-cb-ms3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eam-cb-ms3" firstAttribute="bottom" secondItem="iD0-tg-dwj" secondAttribute="bottom" id="5Ne-ww-PtH"/>
                             <constraint firstItem="iD0-tg-dwj" firstAttribute="top" secondItem="eam-cb-ms3" secondAttribute="top" id="AbG-kY-diy"/>
-                            <constraint firstItem="QPc-k4-dBg" firstAttribute="centerX" secondItem="eam-cb-ms3" secondAttribute="centerX" id="JNT-RN-EOs"/>
                             <constraint firstItem="iD0-tg-dwj" firstAttribute="trailing" secondItem="eam-cb-ms3" secondAttribute="trailing" id="LQE-dW-CJN"/>
                             <constraint firstItem="iD0-tg-dwj" firstAttribute="leading" secondItem="ebw-S7-foi" secondAttribute="leading" id="NrJ-b4-Art"/>
-                            <constraint firstItem="QPc-k4-dBg" firstAttribute="centerY" secondItem="eam-cb-ms3" secondAttribute="centerY" id="iAq-Nv-ln3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Na5-xB-oje"/>
                     <connections>
                         <outlet property="activityTableView" destination="iD0-tg-dwj" id="IpW-EJ-90r"/>
-                        <outlet property="lblNoData" destination="QPc-k4-dBg" id="Lgh-7L-1Zm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NDJ-fe-Nal" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
