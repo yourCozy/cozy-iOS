@@ -62,6 +62,13 @@ extension UIButton {
         self.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
     }
 
+    func setSearchListTagButton() {
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.cornerRadius = 13
+        self.layer.borderWidth = 1
+        self.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+    }
+
     func setOnboardStartButton() {
         self.layer.cornerRadius = 25
         self.layer.shadowColor = UIColor.black.cgColor
