@@ -11,10 +11,7 @@ import Alamofire
 
 class ActivityListVC: UIViewController {
 
-    @IBOutlet weak var lblNoData: UILabel!
-
-    var categoryIdx: Int = 0
-    private var activityList: [ActivityListData] = []
+    var activityList: [ActivityListData] = []
 
     @IBOutlet weak var activityTableView: UITableView!
 
@@ -23,7 +20,6 @@ class ActivityListVC: UIViewController {
 
         setNav()
 
-        setBookStoreData()
         activityTableView.delegate = self
         activityTableView.dataSource = self
     }
@@ -51,34 +47,6 @@ class ActivityListVC: UIViewController {
             break
         }
     }
-
-    private func setBookStoreData() {
-        ActivityListService.shared.getActivityListData(categoryIdx: categoryIdx) { NetworkResult in
-            switch NetworkResult {
-            case .success(let data):
-                guard let data = data as? [ActivityListData] else {return print("activityList error")}
-                self.lblNoData.isHidden = true
-                self.activityList.removeAll()
-                for data in data {
-                    self.activityList.append(ActivityListData(activityIdx: data.activityIdx, bookstoreName: data.bookstoreName ?? "미정", activityName: data.activityName ?? "미정", price: data.price ?? 0, image1: data.image1 ?? "", dday: data.dday ?? -1))
-                }
-                // 모두 디데이가 지난 데이터일때
-                if self.activityList.count <= 0 {
-                    self.lblNoData.isHidden = false
-                }
-                self.activityTableView.reloadData()
-            case .requestErr:
-                self.lblNoData.isHidden = false
-            case .pathErr:
-                print("path error")
-            case .serverErr:
-                print("server error")
-            case .networkFail:
-                print("network error")
-            }
-        }
-    }
-
 }
 
 extension ActivityListVC: UITableViewDelegate {

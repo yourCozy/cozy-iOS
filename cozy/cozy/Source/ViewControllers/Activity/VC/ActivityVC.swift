@@ -48,8 +48,10 @@ class ActivityVC: UIViewController {
 
         ActivityListService.shared.getActivityListData(categoryIdx: tappedView.tag) { NetworkResult in
             switch NetworkResult {
-            case .success:
-                vc.categoryIdx = tappedView.tag
+            case .success(let data):
+                guard let data = data as? [ActivityListData] else {return print("activityList error")}
+                vc.activityList.append(contentsOf: data)
+//                vc.categoryIdx = tappedView.tag
                 self.navigationController?.pushViewController(vc, animated: true)
 
             case .requestErr:
@@ -72,8 +74,27 @@ class ActivityVC: UIViewController {
 
         let sb = UIStoryboard(name: "ActivityList", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ActivityListVC") as! ActivityListVC
-        vc.categoryIdx = sender.tag
 
-        self.navigationController?.pushViewController(vc, animated: true)
+        ActivityListService.shared.getActivityListData(categoryIdx: sender.tag) { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? [ActivityListData] else {return print("activityList error")}
+                vc.activityList.append(contentsOf: data)
+                self.navigationController?.pushViewController(vc, animated: true)
+
+            case .requestErr:
+                print("request error")
+                let alert = UIAlertController(title: "활동이 없습니다 :)", message: "준비중입니다!", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
     }
 }
