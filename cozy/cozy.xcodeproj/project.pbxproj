@@ -29,6 +29,7 @@
 		18981F9B24F9104900D6A921 /* ActivityListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18981F9A24F9104900D6A921 /* ActivityListModel.swift */; };
 		18981F9D24FA4BD900D6A921 /* ActivityList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */; };
 		18981F9F24FA5CBD00D6A921 /* ActivityRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */; };
+		18FDE82525287FC9009D1B8C /* Logout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FDE82425287FC9009D1B8C /* Logout.storyboard */; };
 		33B85403B84CB70CCCF3B7E8 /* Pods_cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693EA2F950DEF536626A6863 /* Pods_cozy.framework */; };
 		B60CE4862524CF7500EB1E70 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60CE4852524CF7500EB1E70 /* Search.storyboard */; };
 		B60CE48A2524CF9A00EB1E70 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CE4892524CF9A00EB1E70 /* SearchVC.swift */; };
@@ -144,6 +145,7 @@
 		18981F9A24F9104900D6A921 /* ActivityListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListModel.swift; sourceTree = "<group>"; };
 		18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityList.storyboard; sourceTree = "<group>"; };
 		18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityRecommend.storyboard; sourceTree = "<group>"; };
+		18FDE82425287FC9009D1B8C /* Logout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Logout.storyboard; sourceTree = "<group>"; };
 		693EA2F950DEF536626A6863 /* Pods_cozy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cozy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EA692FCFEDD58231F78E42 /* Pods-cozy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.debug.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.debug.xcconfig"; sourceTree = "<group>"; };
 		B60CE4852524CF7500EB1E70 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				B646AF7624EC031F00AC96A9 /* Mypage.storyboard */,
+				18FDE82425287FC9009D1B8C /* Logout.storyboard */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -805,6 +808,7 @@
 				B646AF7524EC031500AC96A9 /* Activity.storyboard in Resources */,
 				B646AF4C24EBFE4B00AC96A9 /* Main.storyboard in Resources */,
 				B649CCED24FAB1E20032AF31 /* BookListCell.xib in Resources */,
+				18FDE82525287FC9009D1B8C /* Logout.storyboard in Resources */,
 				B64AF19224FD5C270015F2A7 /* Onboarding.storyboard in Resources */,
 				B658A3A9250152C40076BCD4 /* OnboardingIntro.storyboard in Resources */,
 				B646AF7324EC030B00AC96A9 /* Map.storyboard in Resources */,
