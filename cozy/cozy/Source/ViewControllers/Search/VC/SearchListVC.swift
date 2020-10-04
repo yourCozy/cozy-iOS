@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchListVC: UIViewController {
 
@@ -136,6 +137,41 @@ extension SearchListVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListIdentifier) as! SearchListCell
             cell.selectionStyle = .none
+
+            cell.tag1.setTitle("#\(self.searchList[indexPath.row].hashtag1 ?? "")", for: .normal)
+            cell.tag2.setTitle("#\(self.searchList[indexPath.row].hashtag2 ?? "")", for: .normal)
+            cell.tag3.setTitle("#\(self.searchList[indexPath.row].hashtag3 ?? "")", for: .normal)
+
+            if self.searchList[indexPath.row].mainImg?.count != 0 {
+                let imgurl = URL(string: self.searchList[indexPath.row].mainImg!)
+                cell.bookstoreImage.kf.setImage(with: imgurl)
+            }
+
+            let style = NSMutableParagraphStyle()
+            style.lineSpacing = 5.0
+
+            var descripText = NSAttributedString()
+            let attrString = NSMutableAttributedString()
+
+            if self.searchList[indexPath.row].shortIntro2?.count == 0 {
+                descripText = NSAttributedString(string: self.searchList[indexPath.row].shortIntro1 ?? "")
+            } else {
+                descripText = NSAttributedString(string: "\(self.searchList[indexPath.row].shortIntro1 ?? "")\n\(self.searchList[indexPath.row].shortIntro2 ?? "")")
+            }
+
+            attrString.append(descripText)
+            attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
+            cell.descripLabel.attributedText = attrString
+
+            cell.nameLabel.text = self.searchList[indexPath.row].bookstoreName
+            cell.addressLabel.text = self.searchList[indexPath.row].location
+
+            if self.searchList[indexPath.row].checked == 1 {
+                cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
+            } else {
+                cell.bookmarkButton.setImage(UIImage(named: "iconsavewhite"), for: .normal)
+            }
+
             return cell
         }
     }

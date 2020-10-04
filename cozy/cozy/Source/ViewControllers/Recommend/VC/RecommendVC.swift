@@ -149,10 +149,12 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "BookDetail", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
-        vc.bookstoreIdx = self.recommendList[indexPath.row].bookstoreIdx!
-        self.navigationController?.pushViewController(vc, animated: true)
+        if indexPath.section == 1 {
+            let sb = UIStoryboard(name: "BookDetail", bundle: nil)
+            let vc = sb.instantiateViewController(identifier: "BookDetailVC") as! BookDetailVC
+            vc.bookstoreIdx = self.recommendList[indexPath.row].bookstoreIdx!
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -211,15 +213,23 @@ extension RecommendVC: UITableViewDelegate, UITableViewDataSource, bookstoreDele
             cell.tag2.setTitle("    #\(self.recommendList[indexPath.row].hashtag2 ?? "")    ", for: .normal)
             cell.tag3.setTitle("    #\(self.recommendList[indexPath.row].hashtag3 ?? "")    ", for: .normal)
 
-            cell.descriptionLabel.numberOfLines = 2
+            cell.descriptionLabel.numberOfLines = 0
             let style = NSMutableParagraphStyle()
             style.lineSpacing = 5.0
 
-            let descripText = NSAttributedString(string: "\(self.recommendList[indexPath.row].shortIntro1 ?? "")\n\(self.recommendList[indexPath.row].shortIntro2 ?? "")")
+            var descripText = NSAttributedString()
             let attrString = NSMutableAttributedString()
+
+            if self.recommendList[indexPath.row].shortIntro2?.count == 0 {
+                descripText = NSAttributedString(string: self.recommendList[indexPath.row].shortIntro1 ?? "")
+            } else {
+                descripText = NSAttributedString(string: "\(self.recommendList[indexPath.row].shortIntro1 ?? "")\n\(self.recommendList[indexPath.row].shortIntro2 ?? "")")
+            }
+
             attrString.append(descripText)
             attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
             cell.descriptionLabel.attributedText = attrString
+
             cell.nameLabel.text = self.recommendList[indexPath.row].bookstoreName
             cell.addressLabel.text = self.recommendList[indexPath.row].location
 

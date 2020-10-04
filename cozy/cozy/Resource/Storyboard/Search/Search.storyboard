@@ -305,28 +305,28 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="366" height="216"/>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvS-tl-EVs">
-                                                            <rect key="frame" x="16" y="16" width="34" height="26"/>
-                                                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
+                                                            <rect key="frame" x="16" y="16" width="31" height="25"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="11"/>
                                                             <state key="normal" title="#tag1">
                                                                 <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.029999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                                             </state>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmJ-MV-3hw">
-                                                            <rect key="frame" x="54" y="16" width="34" height="26"/>
-                                                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
+                                                            <rect key="frame" x="51" y="16" width="31" height="25"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="11"/>
                                                             <state key="normal" title="#tag2">
                                                                 <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.029999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                                             </state>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaK-FE-8gK">
-                                                            <rect key="frame" x="92" y="16" width="34" height="26"/>
-                                                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="12"/>
+                                                            <rect key="frame" x="86" y="16" width="31" height="25"/>
+                                                            <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="11"/>
                                                             <state key="normal" title="#tag3">
                                                                 <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.029999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                                             </state>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAn-FF-0Mt">
-                                                            <rect key="frame" x="333" y="18" width="14" height="22"/>
+                                                            <rect key="frame" x="333" y="17.5" width="14" height="22"/>
                                                             <state key="normal" image="iconsavewhite"/>
                                                         </button>
                                                     </subviews>
@@ -378,6 +378,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addressLabel" destination="50P-5J-NwA" id="25n-XZ-8wb"/>
+                                            <outlet property="bookmarkButton" destination="YAn-FF-0Mt" id="OOH-PI-LeI"/>
                                             <outlet property="bookstoreImage" destination="98j-gh-1Ef" id="mSJ-xb-31R"/>
                                             <outlet property="descripLabel" destination="nD0-Uj-dtr" id="ooO-U9-D2H"/>
                                             <outlet property="nameLabel" destination="Da7-zK-PWg" id="Zff-bL-gmo"/>
