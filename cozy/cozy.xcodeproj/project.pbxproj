@@ -317,6 +317,36 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		B61C9ABB2529CCCB00EEE1AB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B61C9ABC2529CCD600EEE1AB /* VC */,
+				B61C9ABE2529CCF300EEE1AB /* Cell */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B61C9ABC2529CCD600EEE1AB /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				B649CCF324FAB6C80032AF31 /* BookDetailVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		B61C9ABE2529CCF300EEE1AB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B6985F1424FAC682002A3E6B /* detailCell1.swift */,
+				B6985F1524FAC682002A3E6B /* detailCell1.xib */,
+				B6985F1824FAC81B002A3E6B /* detailCell2.swift */,
+				B6985F1924FAC81B002A3E6B /* detailCell2.xib */,
+				B6B1E1C824FED56A00E60FB0 /* detailCell3.swift */,
+				B6B1E1C924FED56A00E60FB0 /* detailCell3.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B646AF3824EBFE4B00AC96A9 = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +391,7 @@
 		B646AF5F24EBFFCE00AC96A9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B61C9ABB2529CCCB00EEE1AB /* Detail */,
 				B60CE4882524CF8800EB1E70 /* Search */,
 				B658A3C62501682B0076BCD4 /* Login */,
 				B64AF18D24FD5BCD0015F2A7 /* Onboarding */,
@@ -539,7 +570,6 @@
 			children = (
 				185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */,
 				B646AF7C24EC037000AC96A9 /* RecommendVC.swift */,
-				B649CCF324FAB6C80032AF31 /* BookDetailVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -549,13 +579,7 @@
 			children = (
 				B64940A824F189780052A21F /* recommendCell.swift */,
 				B64940AA24F18A3B0052A21F /* bookstoreCell.swift */,
-				B6985F1424FAC682002A3E6B /* detailCell1.swift */,
-				B6985F1524FAC682002A3E6B /* detailCell1.xib */,
-				B6985F1824FAC81B002A3E6B /* detailCell2.swift */,
-				B6985F1924FAC81B002A3E6B /* detailCell2.xib */,
 				187FEED624FCD6AA00476D89 /* DisplayDetailCell.swift */,
-				B6B1E1C824FED56A00E60FB0 /* detailCell3.swift */,
-				B6B1E1C924FED56A00E60FB0 /* detailCell3.xib */,
 				186887DA2525A50400F943E0 /* commentCell.swift */,
 			);
 			path = Cell;

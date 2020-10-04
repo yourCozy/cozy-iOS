@@ -34,7 +34,16 @@ class SearchListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        addObserver()
         getData()
+    }
+
+    private func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: .updateSearchBookmark, object: nil)
+    }
+
+    @objc func reloadData() {
+        self.getData()
     }
 
     func setUI() {
@@ -142,9 +151,6 @@ extension SearchListVC: UITableViewDelegate, UITableViewDataSource, searchDelega
         let bookstoreIdx = self.searchList[index].bookstoreIdx
 
         if self.isKeyPresentInUserDefaults(key: "token") == true {
-//            NotificationCenter.default.post(name: .updateBookmark, object: nil)
-//            NotificationCenter.default.post(name: .updateMyBookmark, object: nil)
-
             if cell.bookmarkButton.hasImage(named: "iconsavewhite", for: .normal) {
                 cell.bookmarkButton.setImage(UIImage(named: "iconsavefull"), for: .normal)
                 let alert = UIAlertController(title: "콕!", message: "관심 책방에 등록되었습니다.", preferredStyle: UIAlertController.Style.alert)
