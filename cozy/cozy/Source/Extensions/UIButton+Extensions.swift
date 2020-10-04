@@ -64,7 +64,7 @@ extension UIButton {
 
     func setSearchListTagButton() {
         self.layer.borderColor = UIColor.white.cgColor
-        self.layer.cornerRadius = 13
+        self.layer.cornerRadius = 11
         self.layer.borderWidth = 1
         self.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
     }

@@ -20,6 +20,7 @@ class SearchVC: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet var searchButtons: [UIButton]!
 
     override func viewDidLoad() {
@@ -44,6 +45,7 @@ class SearchVC: UIViewController, UIGestureRecognizerDelegate {
             let _: UIButton = {
                 let btn = searchButtons[i]
                 btn.setSearchButton()
+                btn.addTarget(self, action: #selector(goSearchWithButton(_:)), for: .touchUpInside)
                 return btn
             }()
         }
@@ -54,8 +56,22 @@ class SearchVC: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func goSearchList(_ sender: UIButton) {
+        if self.searchTextField.text?.count == 0 {
+            let needKeywordAlert = UIAlertController(title: "검색어가 없어요!", message: "다시 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+            needKeywordAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(needKeywordAlert, animated: true, completion: nil)
+        } else {
+            let sb = UIStoryboard(name: "Search", bundle: nil)
+            let vc = sb.instantiateViewController(identifier: "SearchListVC") as! SearchListVC
+            vc.searchKeyword = self.searchTextField.text ?? ""
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
+    @objc func goSearchWithButton(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Search", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "SearchListVC") as! SearchListVC
+        vc.searchKeyword = sender.currentTitle ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

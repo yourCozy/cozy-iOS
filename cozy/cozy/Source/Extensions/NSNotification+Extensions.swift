@@ -13,4 +13,5 @@ extension NSNotification.Name {
     static let dismissDetailVC = NSNotification.Name("dismissDetailVC")
     static let updateBookmark = NSNotification.Name("updateBookmark")
     static let updateMyBookmark = NSNotification.Name("updateMyBookmark")
+    static let updateSearchBookmark = NSNotification.Name("updateSearchBookmark")
 }

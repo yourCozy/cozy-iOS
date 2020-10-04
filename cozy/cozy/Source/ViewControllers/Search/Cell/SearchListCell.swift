@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol searchDelegate: AnyObject {
+    func clickBookmarkButton(index: Int)
+}
+
 class SearchListCell: UITableViewCell {
+
+    weak var delegate: searchDelegate?
+
+    var index: Int = 0
 
     @IBOutlet weak var wholeView: UIView!
 
@@ -17,6 +25,7 @@ class SearchListCell: UITableViewCell {
     @IBOutlet weak var tag3: UIButton!
 
     @IBOutlet weak var bookstoreImage: UIImageView!
+    @IBOutlet weak var bookmarkButton: UIButton!
 
     @IBOutlet weak var descripLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -33,6 +42,10 @@ class SearchListCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    @IBAction func clickBookmark(_ sender: UIButton) {
+        self.delegate?.clickBookmarkButton(index: index)
     }
 
 }
