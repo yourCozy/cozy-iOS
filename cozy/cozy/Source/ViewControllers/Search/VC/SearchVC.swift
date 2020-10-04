@@ -33,6 +33,10 @@ class SearchVC: UIViewController, UIGestureRecognizerDelegate {
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
         tapGesture.delegate = self
         self.view.addGestureRecognizer(tapGesture)
+
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction(swipe:)))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
     }
 
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -49,6 +53,19 @@ class SearchVC: UIViewController, UIGestureRecognizerDelegate {
                 return btn
             }()
         }
+    }
+
+    @objc func rightSwipeAction(swipe: UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            self.goSwipeBack()
+        default:
+            break
+        }
+    }
+
+    @objc func goSwipeBack() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func goBack(_ sender: UIButton) {
