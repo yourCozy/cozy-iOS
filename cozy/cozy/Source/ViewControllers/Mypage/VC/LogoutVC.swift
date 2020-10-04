@@ -22,11 +22,23 @@ class LogoutVC: UIViewController {
 
         let alert = UIAlertController(title: "로그아웃 하시겠어요?", message: "메인 페이지로 돌아갑니다 :)", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "아니요", style: UIAlertAction.Style.default, handler: nil))
-        alert.addAction(UIAlertAction(title: "네", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "네", style: UIAlertAction.Style.default, handler: { (_: UIAlertAction!) in
+            self.doLogout()
+        }))
+
         self.present(alert, animated: true, completion: nil)
 
+    }
+
+    func doLogout() {
         UserDefaults.standard.removeObject(forKey: "token")
         UserDefaults.standard.removeObject(forKey: "nickname")
+
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MainTabVC") as! MainTabVC
+        vc.modalPresentationStyle = .fullScreen
+
+        self.present(vc, animated: true, completion: nil)
     }
 
     /*
