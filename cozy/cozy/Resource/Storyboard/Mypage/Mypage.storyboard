@@ -233,6 +233,12 @@
                         <barButtonItem key="leftBarButtonItem" image="textLogo56X20" id="X20-yn-jPy">
                             <color key="tintColor" red="0.99215686274509807" green="0.72156862745098038" blue="0.1764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="iconsetting" id="7LJ-DD-TgV">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="goSettingVC:" destination="GuZ-H9-OMw" id="2Id-wC-Nrt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="896"/>
@@ -311,6 +317,7 @@
     </scenes>
     <resources>
         <image name="iconpick" width="21" height="24"/>
+        <image name="iconsetting" width="22" height="22"/>
         <image name="tapiconmyinfopressed" width="21" height="22"/>
         <image name="textLogo56X20" width="56" height="20"/>
         <systemColor name="systemBackgroundColor">

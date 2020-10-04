@@ -65,6 +65,18 @@ class MypageVC: UIViewController {
         }
     }
 
+    @IBAction func goSettingVC(_ sender: UIBarButtonItem) {
+        if self.isKeyPresentInUserDefaults(key: "token") == true {
+            let sb = UIStoryboard(name: "Logout", bundle: nil)
+            let vc = sb.instantiateViewController(identifier: "LogoutVC") as! LogoutVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let needLoginAlert = UIAlertController(title: "로그인 한 회원만 이용할 수 있어요!", message: "로그인을 해주세요.", preferredStyle: UIAlertController.Style.alert)
+            needLoginAlert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(needLoginAlert, animated: true, completion: nil)
+        }
+    }
+
     @IBAction func goInterestVC(_ sender: UIButton) {
         if self.isKeyPresentInUserDefaults(key: "token") == true {
             let sb = UIStoryboard(name: "Mypage", bundle: nil)
