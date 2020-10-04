@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		185D45C824FA657D001860E7 /* ActivityRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */; };
+		185EE1212529C9A100A6FB83 /* LogoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185EE1202529C9A100A6FB83 /* LogoutModel.swift */; };
+		185EE1242529CA9F00A6FB83 /* LogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185EE1232529CA9F00A6FB83 /* LogoutService.swift */; };
 		186887DB2525A50400F943E0 /* commentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186887DA2525A50400F943E0 /* commentCell.swift */; };
 		187C1302250286C2004FD60B /* ActivityListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1301250286C2004FD60B /* ActivityListService.swift */; };
 		187C130425064F88004FD60B /* RecommendFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C130325064F88004FD60B /* RecommendFeedService.swift */; };
@@ -125,6 +127,8 @@
 
 /* Begin PBXFileReference section */
 		185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommendVC.swift; sourceTree = "<group>"; };
+		185EE1202529C9A100A6FB83 /* LogoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutModel.swift; sourceTree = "<group>"; };
+		185EE1232529CA9F00A6FB83 /* LogoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutService.swift; sourceTree = "<group>"; };
 		186887DA2525A50400F943E0 /* commentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentCell.swift; sourceTree = "<group>"; };
 		187C1301250286C2004FD60B /* ActivityListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListService.swift; sourceTree = "<group>"; };
 		187C130325064F88004FD60B /* RecommendFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFeedService.swift; sourceTree = "<group>"; };
@@ -662,6 +666,7 @@
 				CC263CFD250DFDAA001F6BF5 /* MypageInfoService.swift */,
 				B6F3CE05251006DD00B0A7CD /* MypageInterestService.swift */,
 				B688E31525273AE6003F42B4 /* SearchService.swift */,
+				185EE1232529CA9F00A6FB83 /* LogoutService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -686,6 +691,7 @@
 				187C1327250FD212004FD60B /* CommentModel.swift */,
 				B6F3CE03251005C500B0A7CD /* MypageInterestModel.swift */,
 				B688E312252739C8003F42B4 /* SearchListModel.swift */,
+				185EE1202529C9A100A6FB83 /* LogoutModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -917,6 +923,7 @@
 				B688E30E2527316B003F42B4 /* SearchListCell.swift in Sources */,
 				B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */,
 				B6208C9E25066BA700185624 /* MapCountModel.swift in Sources */,
+				185EE1212529C9A100A6FB83 /* LogoutModel.swift in Sources */,
 				B658A3B52501568C0076BCD4 /* onboardcell2.swift in Sources */,
 				B6208CA125066C2300185624 /* MapCountService.swift in Sources */,
 				B658A3AD250154690076BCD4 /* OnboardingSlider.swift in Sources */,
@@ -955,6 +962,7 @@
 				187C1302250286C2004FD60B /* ActivityListService.swift in Sources */,
 				B64AF18F24FD5C100015F2A7 /* OnboardingVC.swift in Sources */,
 				B688E31625273AE6003F42B4 /* SearchService.swift in Sources */,
+				185EE1242529CA9F00A6FB83 /* LogoutService.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
 				B6C6CDBC2524E02F0028753C /* SearchListVC.swift in Sources */,
 				CC263D02250DFE41001F6BF5 /* MypageRecentModel.swift in Sources */,

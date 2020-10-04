@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import Alamofire
+import Kingfisher
 
 class LogoutVC: UIViewController {
 
     static let identifier: String = "LogoutVC"
 
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblPhone: UILabel!
+    @IBOutlet weak var lblPassword: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setLogoutData()
         // Do any additional setup after loading the view.
     }
 
@@ -41,14 +49,24 @@ class LogoutVC: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setLogoutData() {
+        LogoutService.shared.getLogoutData { NetworkResult in
+            switch NetworkResult {
+            case .success(let data):
+                guard let data = data as? LogoutData else {return print("logoutData error")}
+                let url = URL(string: data.profileImg ?? "")
+                self.profileImg.kf.setImage(with: url)
+                self.lblName.text = data.nickname
+                
+            case .requestErr:
+                print("request error")
+            case .pathErr:
+                print("path error")
+            case .serverErr:
+                print("server error")
+            case .networkFail:
+                print("network error")
+            }
+        }
     }
-    */
-
 }
