@@ -38,8 +38,6 @@ class ActivityRecommendVC: UIViewController {
     @IBOutlet var lblFixedCollection: [UILabel]!
     @IBOutlet var lblNotFixedCollection: [UILabel]!
 
-    @IBOutlet weak var commentTableView: UITableView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,8 +46,8 @@ class ActivityRecommendVC: UIViewController {
         subImgCollectionView.delegate = self
         subImgCollectionView.dataSource = self
 
-        commentTableView.delegate = self
-        commentTableView.dataSource = self
+//        commentTableView.delegate = self
+//        commentTableView.dataSource = self
 
         getActivityDetailData()
 
