@@ -578,6 +578,12 @@
                         <barButtonItem key="leftBarButtonItem" image="textLogo56X20" id="CUI-Xg-1gF">
                             <color key="tintColor" red="0.99215686270000003" green="0.72156862749999995" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="iconsearch" id="ZbA-zk-NXd">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="goSearch:" destination="xX9-M1-hcf" id="sfO-16-jWh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -657,6 +663,7 @@
         <image name="iconrecite" width="22" height="30"/>
         <image name="iconrecommend" width="30" height="28"/>
         <image name="iconrental" width="29" height="25"/>
+        <image name="iconsearch" width="22" height="22"/>
         <image name="iconsilentreading" width="20" height="30"/>
         <image name="iconstay" width="27" height="30"/>
         <image name="icontranscription" width="30" height="25"/>

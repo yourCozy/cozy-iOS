@@ -40,6 +40,12 @@ class ActivityVC: UIViewController {
         }
     }
 
+    @IBAction func goSearch(_ sender: Any) {
+        let sb = UIStoryboard(name: "Search", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "SearchVC") as! SearchVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
     @objc func viewTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedView = tapGestureRecognizer.view!
 
