@@ -28,10 +28,9 @@ class LogoutVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setNav()
         setLabelStyle()
         setLogoutData()
-        // Do any additional setup after loading the view.
     }
 
     func setLabelStyle() {
@@ -41,6 +40,30 @@ class LogoutVC: UIViewController {
         view1.backgroundColor = UIColor.veryLightPinkFour
 //        view2.backgroundColor = UIColor.veryLightPinkFour
         view3.backgroundColor = UIColor.veryLightPinkFour
+    }
+
+    func setNav() {
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.tintColor = UIColor.gray
+        let backButton = UIBarButtonItem(image: UIImage(named: "iconbefore"), style: .plain, target: self, action: #selector(goback))
+        self.navigationItem.leftBarButtonItem = backButton
+
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction(swipe:)))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
+    }
+
+    @objc func rightSwipeAction(swipe: UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            self.goback()
+        default:
+            break
+        }
+    }
+
+    @objc func goback() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func logout(_ sender: Any) {

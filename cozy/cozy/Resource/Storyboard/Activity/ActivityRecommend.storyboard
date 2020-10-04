@@ -186,7 +186,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuN-Kz-aCx">
-                                                <rect key="frame" x="24" y="667" width="366" height="106.5"/>
+                                                <rect key="frame" x="24" y="667" width="366" height="115"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">홍철책방에 다시 찾아온 감각적인 전시를 소개합니
@@ -197,13 +197,13 @@
 </string>
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="16" name="NanumSquareRoundL"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="고 힘차게 광야에서 것은 뿐이다.">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                            <font key="NSFont" size="16" name="NanumSquareRoundL"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -253,6 +253,7 @@
                                             <constraint firstItem="CDt-1G-I2n" firstAttribute="top" secondItem="pBb-Lz-fOD" secondAttribute="bottom" constant="24" id="dT2-Un-WuZ"/>
                                             <constraint firstItem="RsL-HZ-K1B" firstAttribute="centerX" secondItem="RGt-Ah-zCi" secondAttribute="centerX" id="fdE-x5-Njs"/>
                                             <constraint firstAttribute="trailing" secondItem="h8a-Iw-USE" secondAttribute="trailing" id="fiV-A2-5c8"/>
+                                            <constraint firstItem="6CF-xq-qUg" firstAttribute="top" secondItem="RGt-Ah-zCi" secondAttribute="bottom" constant="113" id="ixZ-Gc-ogD"/>
                                             <constraint firstItem="6CF-xq-qUg" firstAttribute="leading" secondItem="pXx-Cm-M1i" secondAttribute="leading" constant="24" id="jMp-fr-0CD"/>
                                             <constraint firstItem="9il-n9-3Ez" firstAttribute="leading" secondItem="LeW-Fk-Tpx" secondAttribute="trailing" constant="20" id="kPh-Nl-4TS"/>
                                             <constraint firstItem="gKO-gn-yls" firstAttribute="top" secondItem="LeW-Fk-Tpx" secondAttribute="bottom" constant="14" id="kd0-lq-oSn"/>
@@ -290,6 +291,8 @@
                     <navigationItem key="navigationItem" id="yuh-to-Qr8"/>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="commentTableView" destination="fSM-dQ-n2Z" id="Dcf-Id-j8C"/>
+                        <outlet property="hashtagTopConstraint" destination="ixZ-Gc-ogD" id="mzY-mh-vLF"/>
                         <outlet property="hashtagView" destination="6bk-mQ-03R" id="KlC-Xz-Vzo"/>
                         <outlet property="lblActivityIntroduction" destination="NuN-Kz-aCx" id="EqE-fF-LTR"/>
                         <outlet property="lblDday" destination="r1b-FY-SYC" id="Lyz-Zt-OrR"/>

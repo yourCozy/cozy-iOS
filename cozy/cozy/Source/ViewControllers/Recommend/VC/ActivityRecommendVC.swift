@@ -38,22 +38,17 @@ class ActivityRecommendVC: UIViewController {
     @IBOutlet var lblFixedCollection: [UILabel]!
     @IBOutlet var lblNotFixedCollection: [UILabel]!
 
+    @IBOutlet weak var commentTableView: UITableView!
+
+    @IBOutlet weak var hashtagTopConstraint: NSLayoutConstraint!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setNav()
-
-        subImgCollectionView.delegate = self
-        subImgCollectionView.dataSource = self
-
-//        commentTableView.delegate = self
-//        commentTableView.dataSource = self
-
+        setUI()
         getActivityDetailData()
-
         setHashtagStyle()
         setLabelStyle()
-
     }
 
     private func getActivityDetailData() {
@@ -81,6 +76,7 @@ class ActivityRecommendVC: UIViewController {
 
                 if self.displayDetailList.count == 0 {
                     self.subImgCollectionView.isHidden = true
+                    self.hashtagTopConstraint.constant = 20
                 }
 
                 self.displayDetailList.append(image1)
@@ -142,6 +138,11 @@ class ActivityRecommendVC: UIViewController {
                 print("network error")
             }
         }
+    }
+
+    func setUI() {
+        subImgCollectionView.delegate = self
+        subImgCollectionView.dataSource = self
     }
 
     func setNav() {
