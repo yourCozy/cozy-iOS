@@ -98,11 +98,11 @@ class ActivityVC: UIViewController {
         }
     }
 
-    @IBAction func goLogout(_ sender: Any) {
-
-        let sb = UIStoryboard(name: "Logout", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "LogoutVC") as! LogoutVC
-
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
+//    @IBAction func goLogout(_ sender: Any) {
+//
+//        let sb = UIStoryboard(name: "Logout", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: "LogoutVC") as! LogoutVC
+//
+//        self.navigationController?.pushViewController(vc, animated: true)
+//    }
 }
