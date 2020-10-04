@@ -143,8 +143,6 @@ class ActivityRecommendVC: UIViewController {
     func setUI() {
         subImgCollectionView.delegate = self
         subImgCollectionView.dataSource = self
-        commentTableView.delegate = self
-        commentTableView.dataSource = self
     }
 
     func setNav() {
