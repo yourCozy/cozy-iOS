@@ -34,6 +34,7 @@ class SearchListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        addGesture()
         addObserver()
         getData()
     }
@@ -60,6 +61,25 @@ class SearchListVC: UIViewController {
         self.readyLabel.attributedText = attrString
 
         self.readyLabel.isHidden = true
+    }
+
+    func addGesture() {
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(rightSwipeAction(swipe:)))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
+    }
+
+    @objc func rightSwipeAction(swipe: UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            self.goSwipeBack()
+        default:
+            break
+        }
+    }
+
+    @objc func goSwipeBack() {
+        self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func goBack(_ sender: UIButton) {

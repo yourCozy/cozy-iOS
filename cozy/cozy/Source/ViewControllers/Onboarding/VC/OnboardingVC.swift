@@ -20,10 +20,12 @@ class OnboardingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setLabelLooksLike()
         setBtn()
+    }
 
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
     }
 
     @IBAction func changeButton(_ sender: Any) {
@@ -76,7 +78,6 @@ class OnboardingVC: UIViewController {
         } else {
             btnStart.backgroundColor = UIColor.brownishGrey
         }
-
     }
 
     @IBAction func btnStart(_ sender: UIButton) {
@@ -109,17 +110,23 @@ class OnboardingVC: UIViewController {
     func setLabelLooksLike() {
 
         onboardingLabel.numberOfLines = 2
-
-        // 단락 스타일 속성
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 2.0
 
-        let userName = NSAttributedString(string: "코지", attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 28)!, .foregroundColor: UIColor.mango])
-        let text1 = NSAttributedString(string: "님, \n오늘밤 책 한잔 어때요?", attributes: [.font: UIFont(name: "NanumSquareRoundL", size: 28)!])
+        var text1 = NSAttributedString()
+
+        if self.isKeyPresentInUserDefaults(key: "nickname") == true {
+            let usernickname = UserDefaults.standard.object(forKey: "nickname") as! String
+            text1 = NSAttributedString(string: usernickname, attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 28)!, .foregroundColor: UIColor.mango])
+        } else {
+            text1 = NSAttributedString(string: "코지", attributes: [.font: UIFont(name: "NanumSquareRoundB", size: 28)!, .foregroundColor: UIColor.mango])
+        }
+
+        let text2 = NSAttributedString(string: "님의 취향을 \n알려주세요", attributes: [.font: UIFont(name: "NanumSquareRoundL", size: 28)!])
 
         let attrString = NSMutableAttributedString()
-        attrString.append(userName)
         attrString.append(text1)
+        attrString.append(text2)
         attrString.addAttributes([.paragraphStyle: style], range: NSRange(location: 0, length: attrString.length))
 
         onboardingLabel.attributedText = attrString
