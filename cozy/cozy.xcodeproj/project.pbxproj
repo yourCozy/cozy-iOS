@@ -30,6 +30,7 @@
 		18981F9D24FA4BD900D6A921 /* ActivityList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */; };
 		18981F9F24FA5CBD00D6A921 /* ActivityRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */; };
 		18FDE82525287FC9009D1B8C /* Logout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FDE82425287FC9009D1B8C /* Logout.storyboard */; };
+		18FDE8282529BA18009D1B8C /* LogoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDE8272529BA18009D1B8C /* LogoutVC.swift */; };
 		33B85403B84CB70CCCF3B7E8 /* Pods_cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693EA2F950DEF536626A6863 /* Pods_cozy.framework */; };
 		B60CE4862524CF7500EB1E70 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60CE4852524CF7500EB1E70 /* Search.storyboard */; };
 		B60CE48A2524CF9A00EB1E70 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CE4892524CF9A00EB1E70 /* SearchVC.swift */; };
@@ -146,6 +147,7 @@
 		18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityList.storyboard; sourceTree = "<group>"; };
 		18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityRecommend.storyboard; sourceTree = "<group>"; };
 		18FDE82425287FC9009D1B8C /* Logout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Logout.storyboard; sourceTree = "<group>"; };
+		18FDE8272529BA18009D1B8C /* LogoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutVC.swift; sourceTree = "<group>"; };
 		693EA2F950DEF536626A6863 /* Pods_cozy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cozy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EA692FCFEDD58231F78E42 /* Pods-cozy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.debug.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.debug.xcconfig"; sourceTree = "<group>"; };
 		B60CE4852524CF7500EB1E70 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -719,6 +721,7 @@
 			children = (
 				B646AF8224EC03A500AC96A9 /* MypageVC.swift */,
 				CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */,
+				18FDE8272529BA18009D1B8C /* LogoutVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */,
 				185D45C824FA657D001860E7 /* ActivityRecommendVC.swift in Sources */,
 				B66A95CF250CCFF50033E9F2 /* AppleLoginService.swift in Sources */,
+				18FDE8282529BA18009D1B8C /* LogoutVC.swift in Sources */,
 				B6985F1A24FAC81B002A3E6B /* detailCell2.swift in Sources */,
 				B649CCE724FAAEFE0032AF31 /* NSObject+Extensions.swift in Sources */,
 				B649CCEC24FAB1E20032AF31 /* BookListCell.swift in Sources */,
