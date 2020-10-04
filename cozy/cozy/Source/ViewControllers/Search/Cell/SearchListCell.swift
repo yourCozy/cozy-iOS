@@ -17,6 +17,7 @@ class SearchListCell: UITableViewCell {
     @IBOutlet weak var tag3: UIButton!
 
     @IBOutlet weak var bookstoreImage: UIImageView!
+    @IBOutlet weak var bookmarkButton: UIButton!
 
     @IBOutlet weak var descripLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!

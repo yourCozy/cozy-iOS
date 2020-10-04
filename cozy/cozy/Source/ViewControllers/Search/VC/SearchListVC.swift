@@ -21,18 +21,22 @@ class SearchListVC: UIViewController {
     }
 
     @IBOutlet weak var searchTableView: UITableView!
+    @IBOutlet weak var keywordLabel: UILabel!
+
+    var searchKeyword: String = "키워드"
 
     private let searchListLabelIdentifier = "SearchLabelCell"
     private let searchListIdentifier: String = "SearchListCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setSearchTable()
+        setUI()
     }
 
-    func setSearchTable() {
+    func setUI() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
+        self.keywordLabel.text = self.searchKeyword
     }
 
     @IBAction func goBack(_ sender: UIButton) {
@@ -69,12 +73,10 @@ extension SearchListVC: UITableViewDelegate, UITableViewDataSource {
 
             cell.resultLabel.attributedText = attrString
             cell.selectionStyle = .none
-            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: self.searchListIdentifier) as! SearchListCell
             cell.selectionStyle = .none
-            
             return cell
         }
     }

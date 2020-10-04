@@ -184,6 +184,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="searchTextField" destination="AGD-Q2-VBK" id="DbK-1f-9mb"/>
                         <outletCollection property="searchButtons" destination="IEd-ZD-5A2" collectionClass="NSMutableArray" id="fPK-yq-dbp"/>
                         <outletCollection property="searchButtons" destination="RiG-c1-0dc" collectionClass="NSMutableArray" id="U0J-af-Clr"/>
                         <outletCollection property="searchButtons" destination="Tox-sR-mHF" collectionClass="NSMutableArray" id="5Xa-ec-LCQ"/>
@@ -324,6 +325,10 @@
                                                                 <color key="titleColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.029999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                                             </state>
                                                         </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAn-FF-0Mt">
+                                                            <rect key="frame" x="333" y="18" width="14" height="22"/>
+                                                            <state key="normal" image="iconsavewhite"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -338,6 +343,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="UcU-Aq-CA5" secondAttribute="trailing" id="EVn-SX-z8a"/>
                                                         <constraint firstItem="dmJ-MV-3hw" firstAttribute="centerY" secondItem="cvS-tl-EVs" secondAttribute="centerY" id="POF-L7-E35"/>
                                                         <constraint firstItem="98j-gh-1Ef" firstAttribute="leading" secondItem="nfS-Rp-6Wa" secondAttribute="leading" id="UTd-B8-OGH"/>
+                                                        <constraint firstItem="YAn-FF-0Mt" firstAttribute="centerY" secondItem="EaK-FE-8gK" secondAttribute="centerY" id="Ytr-9A-ahG"/>
                                                         <constraint firstAttribute="trailing" secondItem="Da7-zK-PWg" secondAttribute="trailing" constant="15" id="fc8-rq-hJk"/>
                                                         <constraint firstItem="dmJ-MV-3hw" firstAttribute="leading" secondItem="cvS-tl-EVs" secondAttribute="trailing" constant="4" id="fhp-X7-NEm"/>
                                                         <constraint firstItem="98j-gh-1Ef" firstAttribute="top" secondItem="nfS-Rp-6Wa" secondAttribute="top" id="fik-db-Wbx"/>
@@ -362,6 +368,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="50P-5J-NwA" secondAttribute="bottom" constant="48" id="8bO-eq-rKl"/>
                                                 <constraint firstAttribute="bottom" secondItem="nfS-Rp-6Wa" secondAttribute="bottom" constant="32" id="Eih-QK-X16"/>
                                                 <constraint firstItem="nfS-Rp-6Wa" firstAttribute="top" secondItem="BW1-co-fMJ" secondAttribute="top" constant="1" id="LQw-Yw-0jv"/>
+                                                <constraint firstAttribute="trailing" secondItem="YAn-FF-0Mt" secondAttribute="trailing" constant="43" id="Xto-w6-nr4"/>
                                                 <constraint firstAttribute="trailing" secondItem="nfS-Rp-6Wa" secondAttribute="trailing" constant="24" id="c1l-tp-Fda"/>
                                                 <constraint firstAttribute="trailing" secondItem="50P-5J-NwA" secondAttribute="trailing" constant="40" id="f1c-LY-CXl"/>
                                                 <constraint firstItem="50P-5J-NwA" firstAttribute="top" secondItem="hVq-cf-mxq" secondAttribute="bottom" constant="8" id="g7A-aU-6GU"/>
@@ -403,6 +410,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="keywordLabel" destination="YTO-Qj-hba" id="tHW-9E-AWO"/>
                         <outlet property="searchTableView" destination="841-kp-BSQ" id="ver-ZG-iVV"/>
                     </connections>
                 </viewController>
@@ -415,6 +423,7 @@
         <image name="blackicon" width="326" height="326"/>
         <image name="iconbefore17X14" width="17" height="14"/>
         <image name="iconlocationgray" width="11" height="14"/>
+        <image name="iconsavewhite" width="14" height="20"/>
         <image name="iconsearch18X18" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
