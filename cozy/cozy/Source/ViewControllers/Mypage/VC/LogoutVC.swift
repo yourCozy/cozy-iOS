@@ -15,15 +15,32 @@ class LogoutVC: UIViewController {
     static let identifier: String = "LogoutVC"
 
     @IBOutlet weak var profileImg: UIImageView!
+
+    @IBOutlet var lbl: [UILabel]!
+
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblPhone: UILabel!
+//    @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblPassword: UILabel!
+
+    @IBOutlet weak var view1: UIView!
+//    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view3: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setLabelStyle()
         setLogoutData()
         // Do any additional setup after loading the view.
+    }
+
+    func setLabelStyle() {
+        for lbl in lbl {
+            lbl.textColor = UIColor.brownishGrey
+        }
+        view1.backgroundColor = UIColor.veryLightPinkFour
+//        view2.backgroundColor = UIColor.veryLightPinkFour
+        view3.backgroundColor = UIColor.veryLightPinkFour
     }
 
     @IBAction func logout(_ sender: Any) {
@@ -57,7 +74,7 @@ class LogoutVC: UIViewController {
                 let url = URL(string: data.profileImg ?? "")
                 self.profileImg.kf.setImage(with: url)
                 self.lblName.text = data.nickname
-                
+
             case .requestErr:
                 print("request error")
             case .pathErr:
