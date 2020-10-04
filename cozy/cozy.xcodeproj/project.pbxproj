@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		185D45C824FA657D001860E7 /* ActivityRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */; };
+		185EE1212529C9A100A6FB83 /* LogoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185EE1202529C9A100A6FB83 /* LogoutModel.swift */; };
+		185EE1242529CA9F00A6FB83 /* LogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185EE1232529CA9F00A6FB83 /* LogoutService.swift */; };
 		186887DB2525A50400F943E0 /* commentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186887DA2525A50400F943E0 /* commentCell.swift */; };
 		187C1302250286C2004FD60B /* ActivityListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C1301250286C2004FD60B /* ActivityListService.swift */; };
 		187C130425064F88004FD60B /* RecommendFeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C130325064F88004FD60B /* RecommendFeedService.swift */; };
@@ -30,6 +32,7 @@
 		18981F9D24FA4BD900D6A921 /* ActivityList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */; };
 		18981F9F24FA5CBD00D6A921 /* ActivityRecommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */; };
 		18FDE82525287FC9009D1B8C /* Logout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FDE82425287FC9009D1B8C /* Logout.storyboard */; };
+		18FDE8282529BA18009D1B8C /* LogoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDE8272529BA18009D1B8C /* LogoutVC.swift */; };
 		33B85403B84CB70CCCF3B7E8 /* Pods_cozy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693EA2F950DEF536626A6863 /* Pods_cozy.framework */; };
 		B60CE4862524CF7500EB1E70 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B60CE4852524CF7500EB1E70 /* Search.storyboard */; };
 		B60CE48A2524CF9A00EB1E70 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CE4892524CF9A00EB1E70 /* SearchVC.swift */; };
@@ -124,6 +127,8 @@
 
 /* Begin PBXFileReference section */
 		185D45C724FA657D001860E7 /* ActivityRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecommendVC.swift; sourceTree = "<group>"; };
+		185EE1202529C9A100A6FB83 /* LogoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutModel.swift; sourceTree = "<group>"; };
+		185EE1232529CA9F00A6FB83 /* LogoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutService.swift; sourceTree = "<group>"; };
 		186887DA2525A50400F943E0 /* commentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentCell.swift; sourceTree = "<group>"; };
 		187C1301250286C2004FD60B /* ActivityListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListService.swift; sourceTree = "<group>"; };
 		187C130325064F88004FD60B /* RecommendFeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendFeedService.swift; sourceTree = "<group>"; };
@@ -146,6 +151,7 @@
 		18981F9C24FA4BD900D6A921 /* ActivityList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityList.storyboard; sourceTree = "<group>"; };
 		18981F9E24FA5CBD00D6A921 /* ActivityRecommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivityRecommend.storyboard; sourceTree = "<group>"; };
 		18FDE82425287FC9009D1B8C /* Logout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Logout.storyboard; sourceTree = "<group>"; };
+		18FDE8272529BA18009D1B8C /* LogoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutVC.swift; sourceTree = "<group>"; };
 		693EA2F950DEF536626A6863 /* Pods_cozy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cozy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EA692FCFEDD58231F78E42 /* Pods-cozy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cozy.debug.xcconfig"; path = "Target Support Files/Pods-cozy/Pods-cozy.debug.xcconfig"; sourceTree = "<group>"; };
 		B60CE4852524CF7500EB1E70 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -660,6 +666,7 @@
 				CC263CFD250DFDAA001F6BF5 /* MypageInfoService.swift */,
 				B6F3CE05251006DD00B0A7CD /* MypageInterestService.swift */,
 				B688E31525273AE6003F42B4 /* SearchService.swift */,
+				185EE1232529CA9F00A6FB83 /* LogoutService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -684,6 +691,7 @@
 				187C1327250FD212004FD60B /* CommentModel.swift */,
 				B6F3CE03251005C500B0A7CD /* MypageInterestModel.swift */,
 				B688E312252739C8003F42B4 /* SearchListModel.swift */,
+				185EE1202529C9A100A6FB83 /* LogoutModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -719,6 +727,7 @@
 			children = (
 				B646AF8224EC03A500AC96A9 /* MypageVC.swift */,
 				CCA0FB2724FE9A9E006B1F5B /* InterestVC.swift */,
+				18FDE8272529BA18009D1B8C /* LogoutVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -890,6 +899,7 @@
 				CC05FEC324F5590F008747B6 /* recentCell.swift in Sources */,
 				185D45C824FA657D001860E7 /* ActivityRecommendVC.swift in Sources */,
 				B66A95CF250CCFF50033E9F2 /* AppleLoginService.swift in Sources */,
+				18FDE8282529BA18009D1B8C /* LogoutVC.swift in Sources */,
 				B6985F1A24FAC81B002A3E6B /* detailCell2.swift in Sources */,
 				B649CCE724FAAEFE0032AF31 /* NSObject+Extensions.swift in Sources */,
 				B649CCEC24FAB1E20032AF31 /* BookListCell.swift in Sources */,
@@ -913,6 +923,7 @@
 				B688E30E2527316B003F42B4 /* SearchListCell.swift in Sources */,
 				B6C424BA25054DD500AAE393 /* BookstoreDetailService.swift in Sources */,
 				B6208C9E25066BA700185624 /* MapCountModel.swift in Sources */,
+				185EE1212529C9A100A6FB83 /* LogoutModel.swift in Sources */,
 				B658A3B52501568C0076BCD4 /* onboardcell2.swift in Sources */,
 				B6208CA125066C2300185624 /* MapCountService.swift in Sources */,
 				B658A3AD250154690076BCD4 /* OnboardingSlider.swift in Sources */,
@@ -951,6 +962,7 @@
 				187C1302250286C2004FD60B /* ActivityListService.swift in Sources */,
 				B64AF18F24FD5C100015F2A7 /* OnboardingVC.swift in Sources */,
 				B688E31625273AE6003F42B4 /* SearchService.swift in Sources */,
+				185EE1242529CA9F00A6FB83 /* LogoutService.swift in Sources */,
 				B64940AB24F18A3B0052A21F /* bookstoreCell.swift in Sources */,
 				B6C6CDBC2524E02F0028753C /* SearchListVC.swift in Sources */,
 				CC263D02250DFE41001F6BF5 /* MypageRecentModel.swift in Sources */,
