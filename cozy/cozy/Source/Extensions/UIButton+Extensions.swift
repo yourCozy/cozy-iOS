@@ -38,6 +38,7 @@ extension UIButton {
     func setTasteButtonUntapped() {
         self.titleLabel?.font = UIFont(name: "NanumSquareRoundB", size: 14)
         self.setTitleColor(UIColor.brownishGrey, for: .normal)
+        self.contentEdgeInsets = UIEdgeInsets(top: 12, left: 23, bottom: 12, right: 22)
         self.layer.borderColor = UIColor.veryLightPink.cgColor
         self.layer.backgroundColor = UIColor.realwhite.cgColor
         self.layer.cornerRadius = 20
