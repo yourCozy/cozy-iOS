@@ -70,6 +70,24 @@ class LoginVC: UIViewController {
                 }
             }
         }
+
+//        // 카카오톡 설치 여부 확인
+//        if (AuthApi.isKakaoTalkLoginAvailable()) {
+//            AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+//                if let error = error {
+//                    print(error)
+//                }
+//                else {
+//                    UserApi.shared.me { (user, error) in
+//                        if let error = error {
+//                            print(error)
+//                        } else {
+//                            self.connectKakaoLogin(id: "\(user!.id)", nickname: (user?.kakaoAccount?.profile!.nickname)!, refreshToken: oauthToken!.refreshToken)
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
 
     private func connectKakaoLogin(id: String, nickname: String, refreshToken: String) {
