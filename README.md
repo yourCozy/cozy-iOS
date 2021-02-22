@@ -45,6 +45,8 @@
 
 - 2020.10.05 : v1.0.2 배포 
 
+- 2021.02.22 : v1.0.3 배포 
+
 - 웹 페이지 소개 : https://cozybookpaltform.creatorlink.net/
 
 <br/>
